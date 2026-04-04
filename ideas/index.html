@@ -838,6 +838,213 @@
         .gtm-outbound { background: rgba(255,107,107,0.15); color: var(--accent-3); }
         .gtm-hybrid { background: rgba(255,217,61,0.15); color: var(--accent-4); }
 
+        /* TEAM SECTION */
+        .team-idea-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .team-idea-block .top-bar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .team-idea-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .team-idea-header h3 {
+            font-size: 1.15rem;
+            margin: 0;
+        }
+        .team-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .team-badge {
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        .team-members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .team-member-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+        .team-member-card .member-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .member-avatar {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .member-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .member-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .member-tasks {
+            list-style: none;
+            padding: 0;
+        }
+        .member-tasks li {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            padding: 0.25rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .member-tasks li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-1);
+        }
+        .stage-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        .stage-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            position: relative;
+        }
+        .stage-item .stage-num {
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            padding: 0.1rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .stage-item h5 {
+            font-size: 0.82rem;
+            margin: 0.5rem 0 0.4rem;
+        }
+        .stage-item p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.4;
+        }
+        .hiring-timeline {
+            margin-top: 1.2rem;
+        }
+        .hire-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(42,42,94,0.5);
+            font-size: 0.8rem;
+        }
+        .hire-row:last-child { border-bottom: none; }
+        .hire-num {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .hire-info {
+            flex: 1;
+        }
+        .hire-role {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .hire-trigger {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .hire-cost {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .ai-auto-bar {
+            height: 6px;
+            background: rgba(108,99,255,0.15);
+            border-radius: 3px;
+            margin-top: 0.3rem;
+            overflow: hidden;
+        }
+        .ai-auto-bar .fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.6s ease;
+        }
+        .burn-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .team-section-cmp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.78rem;
+        }
+        .team-section-cmp-table th {
+            background: var(--bg-secondary);
+            padding: 0.6rem 0.5rem;
+            text-align: left;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.7rem;
+            border-bottom: 2px solid var(--border);
+        }
+        .team-section-cmp-table td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid rgba(42,42,94,0.3);
+            color: var(--text-secondary);
+        }
+        .team-section-cmp-table tr:hover td {
+            background: rgba(108,99,255,0.05);
+        }
+
         /* LOGIN SCREEN */
         .login-overlay {
             position: fixed;
