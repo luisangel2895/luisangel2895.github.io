@@ -1718,6 +1718,561 @@ const FEASIBILITY = {
     }
 };
 
+// ==================== TEAM DATA ====================
+const TEAMS = {
+    1: { // Servicios Hogar
+        comparable: "ServiceTitan: 2 cofundadores (hijos de plomeros), $3M ARR con 20 personas sin marketing. Su depto mas grande: Customer Experience (27 de 95 empleados en 2015).",
+        members: [
+            {
+                role: "Fundador Tecnico / CEO",
+                icon: "👨‍💻",
+                type: "tu",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Desarrollar MVP: calendario, despacho, facturacion SUNAT, app movil",
+                    "Visitar 20-30 negocios de servicios del hogar para discovery",
+                    "Onboarding personal de cada cliente beta (2-4h/cliente)",
+                    "Soporte via WhatsApp a tecnicos en campo",
+                    "Ventas: demos, visitas a gremios y asociaciones de tecnicos"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Sem 1-4", focus: "Discovery: visitar 20-30 negocios, mapear workflow de scheduling + facturacion" },
+            { name: "MVP", time: "Sem 5-12", focus: "Construir: calendario, jobs, facturacion SUNAT via NubeFact, app movil Flutter" },
+            { name: "Beta", time: "Sem 12-20", focus: "10 clientes: onboarding personal, bugs, WhatsApp support 24/7" },
+            { name: "Revenue", time: "Mes 5-8", focus: "S/99-199/mes. 50% ventas, 30% producto, 20% soporte" },
+            { name: "Growth", time: "Mes 8-14", focus: "30-50 clientes. DEBES contratar. No puedes solo con 40+ clientes" }
+        ],
+        hires: [
+            { num: 2, role: "Customer Success", trigger: "20-30 clientes o S/5K MRR", cost: "S/ 2,500-3,500" },
+            { num: 3, role: "Vendedor Field Sales", trigger: "40-50 clientes o S/10K MRR", cost: "S/ 2,000-3,000 + com." },
+            { num: 4, role: "Junior Developer", trigger: "60+ clientes o S/15K MRR", cost: "S/ 3,000-5,000" },
+            { num: 5, role: "2do Vendedor (otra ciudad)", trigger: "100 clientes o expansion", cost: "S/ 2,000-3,000 + com." }
+        ],
+        aiTasks: [
+            { task: "Desarrollo codigo", pct: 50 },
+            { task: "Soporte L1 (chatbot)", pct: 70 },
+            { task: "Migracion de datos", pct: 50 },
+            { task: "Onboarding/training", pct: 30 },
+            { task: "Ventas y demos", pct: 0 },
+            { task: "Customer discovery", pct: 10 }
+        ],
+        monthlyBurn: "$1,100-2,100",
+        burnPEN: "S/ 4,300-7,900",
+        keyLesson: "ServiceTitan gasto $2.12 por cada $1 cobrado en onboarding. Tu depto mas grande sera Customer Success, NO ingenieria."
+    },
+    2: { // Compliance IA
+        comparable: "Vanta: Christina Cacioppo construyo 18 meses sola. Primera contratacion = experta en compliance, NO ingeniera. 600 clientes sin website. $10M ARR con solo seed money. Cifrato (YC W25): 2 cofundadores, apunta a firmas contables.",
+        members: [
+            {
+                role: "Fundador Tecnico / CEO",
+                icon: "👨‍💻",
+                type: "tu",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Conectar SUNAT API + LLMs para categorizacion automatica de facturas",
+                    "Construir dashboard: IGV, IR, reconciliacion bancaria, PDTs",
+                    "Sentarse en oficinas de contadores (playbook Vanta: vivir con tu cliente)",
+                    "Validar logica tributaria con CPA advisor",
+                    "Ventas a firmas contables (1 firma = 20-100 empresas clientes)"
+                ]
+            },
+            {
+                role: "Asesor CPA (part-time)",
+                icon: "📊",
+                type: "advisor",
+                salary: "S/ 1,500-2,500",
+                tasks: [
+                    "Validar logica de calculo IGV/IR/PLAME",
+                    "Revisar outputs del LLM en escenarios tributarios edge-case",
+                    "Asesorar sobre actualizaciones regulatorias SUNAT",
+                    "Probar el producto con datos reales de sus clientes"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Sem 1-4", focus: "Hablar con 15-20 contadores. Sentarte en su oficina. Mapear dolor: descargar facturas, reconciliar, calcular IGV" },
+            { name: "MVP", time: "Sem 5-12", focus: "SUNAT API + LLM categorization + dashboard IGV. Tech: Python + React + Claude API" },
+            { name: "Beta", time: "Sem 12-20", focus: "5-10 firmas contables. Cada firma = 20-100 empresas. Free 3 meses, luego S/49-99/mes" },
+            { name: "Revenue", time: "Mes 5-10", focus: "10-30 firmas. 40% producto, 30% ventas, 30% customer success" },
+            { name: "Growth", time: "Mes 10-18", focus: "Mas PDTs, PLAME, declaraciones anuales. Expansion a Colombia/Chile" }
+        ],
+        hires: [
+            { num: "A", role: "CPA Advisor (desde dia 1)", trigger: "INMEDIATO - leccion Vanta", cost: "S/ 1,500-2,500 PT" },
+            { num: 2, role: "Customer Success / Contador Hibrido", trigger: "10 firmas o S/3K MRR", cost: "S/ 2,500-4,000" },
+            { num: 3, role: "Junior Developer", trigger: "20 firmas o S/8K MRR", cost: "S/ 3,000-5,000" },
+            { num: 4, role: "Vendedor BD", trigger: "30 firmas o S/15K MRR", cost: "S/ 2,500-3,500 + com." }
+        ],
+        aiTasks: [
+            { task: "Categorizacion facturas", pct: 85 },
+            { task: "Calculo IGV/IR", pct: 90 },
+            { task: "Interpretacion regulatoria", pct: 60 },
+            { task: "Filing SUNAT", pct: 70 },
+            { task: "Onboarding clientes", pct: 40 },
+            { task: "Asesoria tributaria edge-cases", pct: 10 },
+            { task: "Ventas a firmas", pct: 5 }
+        ],
+        monthlyBurn: "$1,500-2,800",
+        burnPEN: "S/ 5,750-10,400",
+        keyLesson: "Vanta: primera contratacion fue experta en compliance, NO ingeniera. No pares de vender para construir (casi murieron haciendolo). Cifrato apunta a firmas contables, no empresas directas."
+    },
+    3: { // Marketplace B2B
+        comparable: "Tul: CEO con 10 anos en Cementos Argos, 3 cofundadores, $4M seed, 16 centros logisticos. Faire: 4 ex-Square, net-60 terms llevo GMV de $100K a $1M/mes en 3 meses. Sin warehouses.",
+        members: [
+            {
+                role: "CTO / Cofundador Tecnico",
+                icon: "👨‍💻",
+                type: "cofounder",
+                salary: "S/ 5,000-8,000",
+                tasks: [
+                    "Construir plataforma: catalogo, carrito, dashboard proveedores/compradores",
+                    "Integracion pagos: MercadoPago, Yape Business, transferencias",
+                    "Sistema de notificaciones: confirmacion, despacho, pago",
+                    "Analytics: productos mas buscados, abandonos, recompras"
+                ]
+            },
+            {
+                role: "CEO / Ventas Proveedores",
+                icon: "🏭",
+                type: "cofounder",
+                salary: "S/ 4,000-6,000",
+                tasks: [
+                    "Visitar 30-40 fabricantes/distribuidores (Pacasmayo, UNACEM, Aceros Arequipa)",
+                    "Asegurar 15-20 proveedores con catalogos y precios para lanzamiento",
+                    "Negociar terminos de pago con proveedores",
+                    "Onboarding personal de cada proveedor en la plataforma",
+                    "REQUIERE experiencia previa en industria construccion"
+                ]
+            },
+            {
+                role: "COO / Ventas Ferreterias",
+                icon: "🏪",
+                type: "cofounder",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Visitar 40-50 ferreterias en Lima: mapear como compran actualmente",
+                    "Reclutar 20-30 ferreterias piloto para lanzamiento",
+                    "Coordinar primeras ordenes end-to-end: pedido → proveedor → entrega",
+                    "Soporte WhatsApp 24/7 para compradores",
+                    "Entrenar duenos/gerentes en uso de plataforma"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Sem 1-4", focus: "CEO visita proveedores, COO visita ferreterias, CTO mapea requerimientos tecnicos" },
+            { name: "MVP", time: "Sem 5-12", focus: "CTO construye plataforma. CEO: 15-20 proveedores listos. COO: 20-30 ferreterias registradas" },
+            { name: "Beta", time: "Sem 12-20", focus: "Primeras transacciones. Sin logistica propia: proveedores envian directo (modelo Faire)" },
+            { name: "Revenue", time: "Mes 5-10", focus: "20-50 compradores activos. Comision 5-10% del GMV" },
+            { name: "Growth", time: "Mes 10-18", focus: "Coordinador logistico si quejas de entrega aumentan. 3PL > warehouses propios" }
+        ],
+        hires: [
+            { num: 4, role: "Junior Developer", trigger: "50+ compradores activos", cost: "S/ 3,000-4,500" },
+            { num: 5, role: "Coordinador Logistica", trigger: "100+ ordenes/mes", cost: "S/ 2,000-3,000" },
+            { num: 6, role: "2do Vendedor Compradores", trigger: "100+ compradores en Lima", cost: "S/ 2,000-3,000 + com." },
+            { num: 7, role: "Soporte WhatsApp/Tel", trigger: "200+ compradores activos", cost: "S/ 1,800-2,500" }
+        ],
+        aiTasks: [
+            { task: "Gestion catalogo productos", pct: 60 },
+            { task: "Comparacion precios", pct: 90 },
+            { task: "Matching pedido-proveedor", pct: 80 },
+            { task: "Reclutamiento proveedores", pct: 5 },
+            { task: "Reclutamiento ferreterias", pct: 5 },
+            { task: "Logistica coordinacion", pct: 30 },
+            { task: "Soporte cliente", pct: 50 },
+            { task: "Scoring crediticio", pct: 70 }
+        ],
+        monthlyBurn: "$4,100-6,800",
+        burnPEN: "S/ 15,300-25,400",
+        keyLesson: "Capital necesario ano 1: $50-80K USD. Empieza sin logistica propia (modelo Faire). CEO DEBE tener experiencia en industria construccion como Tul."
+    },
+    4: { // Salud Digital
+        comparable: "Nimbo: bootstrapped, 16K doctores, freemium $19.99/mes. Doctoralia: empezo como DIRECTORIO (no software), luego agrego booking, luego clinica management via adquisicion. 2,400+ empleados hoy.",
+        members: [
+            {
+                role: "Fundador Tecnico / CEO",
+                icon: "👨‍💻",
+                type: "tu",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Opcion A: Full clinic (EHR + agenda + facturacion) - 10-12 semanas",
+                    "Opcion B RECOMENDADA: Directorio + booking primero - 6-8 semanas",
+                    "SEO: optimizar 'dentista en Miraflores', 'ginecologo San Isidro'",
+                    "Onboarding doctores con perfiles gratis → upsell premium",
+                    "Integracion WhatsApp Business API para recordatorios pacientes"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Sem 1-4", focus: "Visitar 20-30 consultorios. Elegir nicho: generalistas son mas facil. Mapear workflow" },
+            { name: "MVP", time: "Sem 5-12", focus: "Opcion B: directorio SEO + booking online. Next.js para SSR. Perfiles gratis para doctores" },
+            { name: "Beta", time: "Sem 12-24", focus: "50-100 doctores con perfil gratis. Metrica clave: reservas/semana via plataforma" },
+            { name: "Revenue", time: "Mes 6-12", focus: "Premium S/49-99/mes. 100-500 doctores. SEO trae pacientes → doctores ven valor" },
+            { name: "Growth", time: "Mes 12-24", focus: "Agregar clinic management (EHR, facturacion). Expandir a otras ciudades Peru" }
+        ],
+        hires: [
+            { num: "A", role: "Asesor Medico (si Opcion A)", trigger: "Dia 1 si manejas datos clinicos", cost: "S/ 1,000-2,000 PT" },
+            { num: 2, role: "Ventas / Onboarding Doctores", trigger: "100+ doctores, quieres llegar a 500", cost: "S/ 2,000-3,000 + com." },
+            { num: 3, role: "Customer Success / Soporte", trigger: "200+ doctores", cost: "S/ 2,000-3,000" },
+            { num: 4, role: "Junior Developer", trigger: "300+ doctores, backlog creciendo", cost: "S/ 3,000-5,000" },
+            { num: 5, role: "SEO / Content Specialist", trigger: "Si modelo directorio", cost: "S/ 2,000-3,500" }
+        ],
+        aiTasks: [
+            { task: "Creacion perfiles doctores", pct: 70 },
+            { task: "Contenido SEO", pct: 80 },
+            { task: "Scheduling / agenda", pct: 95 },
+            { task: "Recordatorios pacientes", pct: 95 },
+            { task: "Templates notas clinicas", pct: 50 },
+            { task: "Facturacion SUNAT", pct: 85 },
+            { task: "Adquisicion doctores", pct: 15 },
+            { task: "Validacion medica", pct: 5 }
+        ],
+        monthlyBurn: "$1,100-2,100",
+        burnPEN: "S/ 4,150-7,700",
+        keyLesson: "Empieza como DIRECTORIO (Doctoralia), no como clinic management. Menor friction, SEO trae pacientes gratis, doctores se unen por el trafico."
+    },
+    5: { // Infra Pagos
+        comparable: "dLocal: fundadores ejecutivos senior fintech, anos para licencias. Palla: $14.5M raised solo para corredor USA-LatAm. Kushki: $100M+ raised, equipo de 200+.",
+        members: [
+            {
+                role: "CTO / Lead Engineer",
+                icon: "👨‍💻",
+                type: "cofounder",
+                salary: "S/ 8,000-12,000",
+                tasks: [
+                    "Arquitectura API de pagos: procesamiento, settlement, reconciliacion",
+                    "Integraciones bancarias (APIs limitadas en LatAm, muchas legacy)",
+                    "Infraestructura seguridad: PCI DSS compliance, encriptacion, tokenizacion",
+                    "Monitoreo transacciones en tiempo real, alertas fraude"
+                ]
+            },
+            {
+                role: "Head of Compliance",
+                icon: "⚖️",
+                type: "cofounder",
+                salary: "S/ 6,000-10,000",
+                tasks: [
+                    "Gestionar licencia EEDE ante SBS ($800K+ capital minimo)",
+                    "Programas AML/KYC: reportes UIF, monitoreo transacciones sospechosas",
+                    "Compliance multi-jurisdiccion: BCRP Peru, BCB Brasil, SFC Colombia",
+                    "Auditorias regulatorias periodicas, relacion con reguladores"
+                ]
+            },
+            {
+                role: "VP Business Dev Bancario",
+                icon: "🏦",
+                type: "cofounder",
+                salary: "S/ 6,000-9,000",
+                tasks: [
+                    "Negociar partnerships con 2-3 bancos por pais (6-12 meses cada uno)",
+                    "Pipeline merchants enterprise: Ciclo venta 6-18 meses por cliente",
+                    "Relaciones con procesadores locales: Niubiz, Izipay, Nequi",
+                    "Pricing strategy por corredor de pagos y tipo de transaccion"
+                ]
+            },
+            {
+                role: "Abogado Fintech (externo)",
+                icon: "📋",
+                type: "advisor",
+                salary: "S/ 3,000-8,000",
+                tasks: [
+                    "Solicitud licencia EEDE/EME ante SBS",
+                    "Contratos con bancos corresponsales",
+                    "Asesoria regulatoria multi-pais",
+                    "Due diligence para rondas de inversion"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Regulatorio", time: "Mes 1-12", focus: "Licencia EEDE: $800K capital, 6-12 meses proceso SBS. Partnerships bancarias en paralelo" },
+            { name: "Integracion", time: "Mes 6-18", focus: "APIs bancarias, procesadores, sistema AML/KYC. PCI DSS certification" },
+            { name: "Piloto", time: "Mes 12-24", focus: "Primeras transacciones controladas. 1-2 merchants piloto con volumenes bajos" },
+            { name: "Revenue", time: "Mes 18-30", focus: "Escalar merchants. Revenue por transaccion: 1-3% del volumen procesado" },
+            { name: "Expansion", time: "Mes 24+", focus: "Segundo pais. Cada pais = nueva licencia, nuevos bancos. dLocal tardo anos" }
+        ],
+        hires: [
+            { num: 5, role: "Senior Backend Engineer", trigger: "Post-licencia, pre-piloto", cost: "S/ 8,000-12,000" },
+            { num: 6, role: "Fraud Analyst", trigger: "Primeras transacciones", cost: "S/ 4,000-6,000" },
+            { num: 7, role: "Account Manager", trigger: "5+ merchants activos", cost: "S/ 4,000-6,000" },
+            { num: 8, role: "DevOps / SRE", trigger: "Volumen transaccional creciente", cost: "S/ 6,000-9,000" }
+        ],
+        aiTasks: [
+            { task: "Deteccion fraude", pct: 75 },
+            { task: "Monitoreo AML", pct: 60 },
+            { task: "Reconciliacion pagos", pct: 80 },
+            { task: "Soporte merchants", pct: 40 },
+            { task: "Partnerships bancarias", pct: 0 },
+            { task: "Proceso regulatorio", pct: 5 }
+        ],
+        monthlyBurn: "$8,000-15,000",
+        burnPEN: "S/ 30,000-56,000",
+        keyLesson: "IMPOSIBLE sin $800K+ capital regulatorio. 12-24 meses sin revenue. Solo funciona con cofundadores senior ex-fintech y venture capital desde dia 1."
+    },
+    6: { // Restaurant OS
+        comparable: "Toast: 3 cofundadores, $500K seed, 80% field sales puerta a puerta, visitas in-situ cierran 3x mas (45% vs 15%). OlaClick (YC W21): $8M raised, 45K restaurants, empezaron solo menu digital.",
+        members: [
+            {
+                role: "Fundador Tecnico / CEO",
+                icon: "👨‍💻",
+                type: "tu",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Construir POS: toma pedidos, facturacion SUNAT (XML), offline-first",
+                    "App meseros/cocina: pedidos en tiempo real, KDS (kitchen display)",
+                    "Integracion procesador pagos: Niubiz/Izipay para tarjetas",
+                    "Instalacion presencial en cada restaurante (2-4h por local)",
+                    "Ventas puerta a puerta: Toast descubrio que in-situ cierra 3x mas"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Sem 1-4", focus: "Visitar 15-20 restaurantes. Entender: POS actual, dolor con SUNAT, delivery, inventario" },
+            { name: "MVP", time: "Sem 5-16", focus: "POS basico + facturacion SUNAT XML + app pedidos. MAS complejo que otros MVPs: offline-first es critico" },
+            { name: "Beta", time: "Sem 16-24", focus: "3-5 restaurantes piloto. Hardware: tablet $150-300 + impresora $100-300 + lector tarjetas $50-150" },
+            { name: "Revenue", time: "Mes 7-12", focus: "S/149-299/mes + % transacciones. Ir puerta a puerta como Toast" },
+            { name: "Growth", time: "Mes 12+", focus: "Necesitas field sales org. Hardware logistics. Cada restaurante = instalacion presencial" }
+        ],
+        hires: [
+            { num: 2, role: "Field Sales Rep", trigger: "10+ restaurantes o S/5K MRR", cost: "S/ 2,000-3,000 + com." },
+            { num: 3, role: "Soporte Tecnico / Instalador", trigger: "20+ restaurantes", cost: "S/ 2,000-3,000" },
+            { num: 4, role: "Junior Developer", trigger: "30+ restaurantes o S/12K MRR", cost: "S/ 3,000-5,000" },
+            { num: 5, role: "Hardware Logistics", trigger: "50+ restaurantes", cost: "S/ 2,000-2,500" }
+        ],
+        aiTasks: [
+            { task: "Desarrollo codigo", pct: 50 },
+            { task: "Prediccion demanda/inventario", pct: 70 },
+            { task: "Menu optimization", pct: 60 },
+            { task: "Soporte L1", pct: 50 },
+            { task: "Instalacion presencial", pct: 0 },
+            { task: "Field sales", pct: 0 },
+            { task: "Facturacion SUNAT XML", pct: 80 }
+        ],
+        monthlyBurn: "$1,500-3,000",
+        burnPEN: "S/ 5,500-11,000",
+        keyLesson: "Hardware + instalacion presencial + SUNAT XML = triple complejidad. OlaClick empezo con SOLO menu digital (mucho mas simple). Considera empezar igual."
+    },
+    7: { // LegalTech IA
+        comparable: "Harvey AI: $11B val, equipo ex-Allen & Overy + OpenAI. Juztina (Peru): 100K users en 6 meses, 1M consultas. Clio: $5B, empezo como lifestyle business de 1 persona.",
+        members: [
+            {
+                role: "Fundador Tecnico / CEO",
+                icon: "👨‍💻",
+                type: "tu",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Construir RAG pipeline: indexar SPIJ + jurisprudencia peruana (publicos)",
+                    "LLM integration: Claude/GPT-4 para analisis legal con citaciones",
+                    "Frontend: buscador legal inteligente + generador de documentos",
+                    "Reducir alucinaciones: RAG + verificacion cruzada de fuentes",
+                    "Ventas: PLG para abogados individuales + outbound para estudios"
+                ]
+            },
+            {
+                role: "Abogado Consultor (part-time)",
+                icon: "⚖️",
+                type: "advisor",
+                salary: "S/ 1,500-3,000",
+                tasks: [
+                    "Validar outputs del LLM en casos legales reales",
+                    "Identificar areas de mayor demanda (laboral, civil, penal, tributario)",
+                    "Testing: probar consultas legales y evaluar precision",
+                    "Red de contactos: introducir a estudios de abogados para beta"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Sem 1-4", focus: "Hablar con 10-15 abogados. Indexar SPIJ/jurisprudencia. Probar RAG con Claude API" },
+            { name: "MVP", time: "Sem 5-12", focus: "Buscador legal IA + generador documentos basicos. Python + React + vector DB (Pinecone/Weaviate)" },
+            { name: "Beta", time: "Sem 12-20", focus: "1-2 estudios beta. PLG: landing page con demo gratis. Juztina llego a 100K asi" },
+            { name: "Revenue", time: "Mes 5-8", focus: "S/49-99/mes individual, S/299-999/mes estudios. Diferenciacion vs Juztina: B2B, nicho especifico" },
+            { name: "Growth", time: "Mes 8-18", focus: "Expansion: Colombia, Chile, Mexico (diferentes marcos legales). API para legaltech partners" }
+        ],
+        hires: [
+            { num: "A", role: "Abogado Consultor PT (dia 1)", trigger: "INMEDIATO - validar outputs", cost: "S/ 1,500-3,000 PT" },
+            { num: 2, role: "Junior Developer (RAG/ML)", trigger: "15+ estudios o S/5K MRR", cost: "S/ 3,500-5,500" },
+            { num: 3, role: "Content Legal / Curador", trigger: "Para mantener corpus actualizado", cost: "S/ 2,500-4,000" },
+            { num: 4, role: "Ventas B2B Estudios", trigger: "30+ clientes o S/15K MRR", cost: "S/ 2,500-3,500 + com." }
+        ],
+        aiTasks: [
+            { task: "Busqueda jurisprudencia", pct: 90 },
+            { task: "Generacion documentos legales", pct: 75 },
+            { task: "Analisis de contratos", pct: 70 },
+            { task: "Actualizacion corpus legal", pct: 60 },
+            { task: "Soporte usuario", pct: 65 },
+            { task: "Validacion legal outputs", pct: 10 },
+            { task: "Ventas a estudios", pct: 5 }
+        ],
+        monthlyBurn: "$1,400-2,500",
+        burnPEN: "S/ 5,200-9,500",
+        keyLesson: "Pureza software MAS ALTA (92%). Juztina ya tiene 100K users = mercado validado. Diferenciarse: B2B para estudios, nicho especifico (laboral, tributario), o API."
+    },
+    8: { // MiningTech SaaS
+        comparable: "Maptek: geologo empezo vendiendo 2 licencias/ano en los 80s, hoy 440+ staff, 2500 sites. Deswik: 3 cofundadores ex-Mine2-4D, duplicaron empleados cada ano, AUD 79M revenue cuando Sandvik los compro. Ratio clave: por cada 1 dev, 1.5 consultores mineros.",
+        members: [
+            {
+                role: "CTO / Lead Developer",
+                icon: "👨‍💻",
+                type: "cofounder",
+                salary: "S/ 8,000-11,000",
+                tasks: [
+                    "Visualizacion 3D geologica en browser (WebGL/Three.js)",
+                    "Import/export datos mineros: drillholes, block models, surveys",
+                    "Diseno de pit: pit shells, scheduling, haul roads",
+                    "Reportes compliance OSINERGMIN/OEFA"
+                ]
+            },
+            {
+                role: "Ingeniero Minero / CPO",
+                icon: "⛏️",
+                type: "cofounder",
+                salary: "S/ 7,000-10,000",
+                tasks: [
+                    "Definir requerimientos basado en workflows reales de mina",
+                    "Testear cada feature con datos reales de depositos",
+                    "Crear planes de mina demo: 'esto toma 2h en Vulcan, 20min en nosotros'",
+                    "Visitar minas piloto, embeberse en operaciones",
+                    "Documentacion tecnica y training para mine planners"
+                ]
+            },
+            {
+                role: "VP Sales Enterprise",
+                icon: "💼",
+                type: "cofounder",
+                salary: "S/ 5,000-8,000 + com.",
+                tasks: [
+                    "Pipeline: mapear 130+ minas activas en Peru",
+                    "Asistir a PERUMIN, PDAC, Expomin Chile",
+                    "Ciclo venta 12-24 meses: demos, POCs, pilotos en sitio",
+                    "Negociar con mid-tier mines primero (Vulcan/Deswik son caros para ellos)",
+                    "Casos de estudio: 'impacto medible en KPIs - menos incidentes, mejor recovery'"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Mes 1-4", focus: "Visor 3D basico + import drillholes. Mining engineer consigue datos reales de colegas. Sales mapea mercado Peru" },
+            { name: "MVP", time: "Mes 5-9", focus: "Prototipo: import, vista 3D, pit shell basico, secciones. Cloud vs desktop Vulcan = ventaja" },
+            { name: "Beta", time: "Mes 10-15", focus: "2-3 minas piloto gratis. Mining eng embebido en sitio. Sales convierte pilotos a pagos" },
+            { name: "Revenue", time: "Mes 16-24", focus: "$2,000-5,000/mes/sitio. 5-10 clientes = $10-30K MRR" },
+            { name: "Growth", time: "Mes 24+", focus: "2do dev, 2do consultor minero. Expansion Chile. Underground mining module" }
+        ],
+        hires: [
+            { num: 4, role: "2do Developer (3D/frontend)", trigger: "3 clientes pagando o $10K MRR", cost: "S/ 6,000-9,000" },
+            { num: 5, role: "2do Consultor Minero", trigger: "5 clientes - ratio 1.5:1 vs devs", cost: "S/ 5,000-8,000" },
+            { num: 6, role: "Customer Success Mgr", trigger: "10 clientes o $40K MRR", cost: "S/ 3,500-5,000" },
+            { num: 7, role: "Sales Engineer / Pre-sales", trigger: "$80K+ MRR", cost: "S/ 5,000-7,000" }
+        ],
+        aiTasks: [
+            { task: "Optimizacion de pit (AI)", pct: 40 },
+            { task: "Desarrollo codigo", pct: 45 },
+            { task: "Parsing datos mineros", pct: 70 },
+            { task: "Validacion mine planning", pct: 0 },
+            { task: "Enterprise sales", pct: 0 },
+            { task: "Training mine planners", pct: 30 }
+        ],
+        monthlyBurn: "$7,000-11,000",
+        burnPEN: "S/ 26,000-41,000",
+        keyLesson: "Ratio Deswik: 1.5 consultores mineros por cada dev. Expertise minero > engineering headcount. Vender impacto en KPIs, no features."
+    },
+    9: { // AgriExport Tech
+        comparable: "No hay equivalente directo LatAm. Scalion (India): trazabilidad blockchain agro-export. Agrizon (Ecuador): cross-border ag, 200% growth 2022. VUCE/SENASA representan 46% de interacciones comercio exterior Peru.",
+        members: [
+            {
+                role: "Fundador Tecnico / CEO",
+                icon: "👨‍💻",
+                type: "tu",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Document management: certificados SENASA, DUA, bills of lading, packing lists",
+                    "OCR + AI: extraer datos de certificados fitosanitarios automaticamente",
+                    "Compliance tracking: alertas vencimiento certificados, requisitos por pais destino",
+                    "Coordinacion logistica: status containers, freight forwarders",
+                    "Visitar Ica/La Libertad: hablar con exportadores directamente"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Discovery", time: "Mes 1-3", focus: "Visitar Ica, La Libertad. Entrevistar 10-20 exportadores. Mapear VUCE→SENASA→aduanas→logistica→pago" },
+            { name: "MVP", time: "Mes 4-6", focus: "Dashboard documentos: upload, categorizar, trackear status. OCR de certificados SENASA" },
+            { name: "Beta", time: "Mes 7-10", focus: "5-10 exportadores beta. Medir: tiempo ahorrado por embarque. WhatsApp notifications" },
+            { name: "Revenue", time: "Mes 11-15", focus: "$100-300/mes/exportador. 10 clientes = $1-3K MRR. Multi-user: exportador + agente aduanas" },
+            { name: "Growth", time: "Mes 15+", focus: "Modulos compliance por destino (FDA USA, EUDR EU, GACC China). 50+ exportadores" }
+        ],
+        hires: [
+            { num: "A", role: "Especialista Comercio Exterior (PT)", trigger: "5 clientes pagando", cost: "S/ 2,000-3,000 PT" },
+            { num: 2, role: "Junior Developer", trigger: "15 clientes o $3K MRR", cost: "S/ 3,500-5,000" },
+            { num: 3, role: "Customer Success / Trade Compliance", trigger: "30 clientes o $6-10K MRR", cost: "S/ 3,000-4,500" },
+            { num: 4, role: "Ventas Exportadores Grandes", trigger: "50+ clientes o $15K MRR", cost: "S/ 3,000-4,000 + com." }
+        ],
+        aiTasks: [
+            { task: "OCR documentos exportacion", pct: 90 },
+            { task: "Auto-fill formularios aduanas", pct: 85 },
+            { task: "Monitoreo regulatorio (SENASA, FDA)", pct: 70 },
+            { task: "Coordinacion logistica", pct: 40 },
+            { task: "Relacion SENASA inspectores", pct: 0 },
+            { task: "Visitar zonas agricolas", pct: 0 },
+            { task: "Compliance investigacion destino", pct: 60 }
+        ],
+        monthlyBurn: "$1,150-2,300",
+        burnPEN: "S/ 4,300-8,600",
+        keyLesson: "Mercado POCO competido y validado: 2,590+ exportadores, Peru #1 arandanos ($2.56B), exports $14B+. Empieza con UN dolor (documentos OR compliance OR logistica), no los tres."
+    },
+    10: { // CyberSec SMB
+        comparable: "Hackmetrix (Chile): empezo pentesting, pivoteo a compliance SaaS (ISO 27001, PCI DSS), 50 empleados, $1.3M seed. Delta Protect (Mexico): CISO-as-a-Service, 150+ clientes en 7 paises, trigger = regulacion fintech Mexico.",
+        members: [
+            {
+                role: "CTO / Platform Developer",
+                icon: "👨‍💻",
+                type: "cofounder",
+                salary: "S/ 7,000-10,000",
+                tasks: [
+                    "Construir plataforma compliance: ISO 27001, PCI DSS gap analysis, policy templates",
+                    "Integracion escaneo vulnerabilidades: OpenVAS, Wazuh (open-source)",
+                    "Dashboard: evidence collection automatica desde AWS/GCP/Azure",
+                    "Generacion de politicas con AI (privacy, incident response, access control)"
+                ]
+            },
+            {
+                role: "CISO / Security Analyst",
+                icon: "🔒",
+                type: "cofounder",
+                salary: "S/ 8,000-12,000",
+                tasks: [
+                    "Pentesting clientes: 3-5 dias/test, $2-5K por engagement (paga las cuentas)",
+                    "Auditorias compliance: evaluar gaps ISO 27001, PCI DSS",
+                    "CISO-as-a-Service: security officer fraccional para startups ($500-1.5K/mes)",
+                    "Cara publica de seguridad: eventos PECERT, contenido, credibilidad",
+                    "NO hacer: SOC 24/7 (usar AI SOC tools + partner MSSP)"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Pre-MVP", time: "Mes 1-3", focus: "CISO hace 2-3 pentests gratis/descuento. Dev construye dashboard compliance. Estudiar Ley Datos Peru 2025" },
+            { name: "MVP", time: "Mes 4-7", focus: "Plataforma: ISO 27001 checklist + policy gen AI + vuln scanning. Pentesting paga las cuentas" },
+            { name: "Beta", time: "Mes 8-12", focus: "Vender pentest → upsell compliance SaaS ($200-500/mes). CISO-as-a-Service: $500-1.5K/mes" },
+            { name: "Revenue", time: "Mes 13-18", focus: "10-15 SaaS + 3-5 CISO-as-a-Service + pentests = $5-12K MRR" },
+            { name: "Growth", time: "Mes 18+", focus: "Expansion Colombia/Chile/Mexico. AWS Marketplace (como Hackmetrix). MDR con AI SOC tools" }
+        ],
+        hires: [
+            { num: 3, role: "Junior Pentester", trigger: "5 pentests/mes backlog", cost: "S/ 4,000-6,000" },
+            { num: 4, role: "Junior Developer", trigger: "15 SaaS subs o $5K MRR", cost: "S/ 3,500-5,000" },
+            { num: 5, role: "Business Development", trigger: "20+ SaaS + 5 CISO-as-a-Svc", cost: "S/ 3,000-4,000 + com." },
+            { num: 6, role: "Customer Success (expansion)", trigger: "$30K+ MRR, multi-pais", cost: "S/ 3,000-4,500" }
+        ],
+        aiTasks: [
+            { task: "Monitoreo 24/7 (AI SOC)", pct: 85 },
+            { task: "Generacion politicas seguridad", pct: 75 },
+            { task: "Vulnerability scanning", pct: 95 },
+            { task: "Pentesting", pct: 0 },
+            { task: "Auditoria compliance", pct: 30 },
+            { task: "Relacion clientes", pct: 0 },
+            { task: "Reportes automaticos", pct: 80 }
+        ],
+        monthlyBurn: "$4,600-7,700",
+        burnPEN: "S/ 17,000-29,000",
+        keyLesson: "SOC 24/7 con 2 personas es IMPOSIBLE (168h/sem, 2 personas = 80h). Modelo correcto: compliance SaaS + pentesting + CISO-as-a-Service. Regulacion Peru 2025 = trigger de demanda."
+    }
+};
+
 // ==================== DATA ====================
 const IDEAS = [
     {
