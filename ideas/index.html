@@ -1,0 +1,2678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Ideas de Startup Unicornio | Analisis Ultra-Profundo 2026 | Iteracion 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #111128;
+            --bg-card: #1a1a3e;
+            --bg-card-hover: #222255;
+            --accent-1: #6c63ff;
+            --accent-2: #00d4aa;
+            --accent-3: #ff6b6b;
+            --accent-4: #ffd93d;
+            --accent-5: #4ecdc4;
+            --accent-6: #ff8a5c;
+            --accent-7: #a855f7;
+            --accent-8: #3b82f6;
+            --accent-9: #f43f5e;
+            --accent-10: #22d3ee;
+            --text-primary: #e8e8ff;
+            --text-secondary: #a0a0cc;
+            --text-muted: #6b6b99;
+            --border: #2a2a5e;
+            --gradient-1: linear-gradient(135deg, #6c63ff, #4ecdc4);
+            --gradient-2: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            --gradient-3: linear-gradient(135deg, #00d4aa, #3b82f6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(ellipse at center, #1a1a4e 0%, #0a0a1a 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(108,99,255,0.15), transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0,212,170,0.1), transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .stats-row {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .stat-item {
+            text-align: center;
+        }
+
+        .hero .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 1;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--text-muted);
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10,10,26,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .nav a:hover, .nav a.active {
+            background: var(--bg-card);
+            color: var(--accent-2);
+            border-color: var(--accent-2);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Context Section */
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .context-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .context-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-1);
+        }
+
+        .context-card h3 {
+            color: var(--accent-2);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .context-card .big-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .context-card .description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Idea Cards */
+        .idea-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .idea-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .idea-card:nth-child(1)::before { background: var(--gradient-1); }
+        .idea-card:nth-child(2)::before { background: linear-gradient(90deg, var(--accent-2), var(--accent-8)); }
+        .idea-card:nth-child(3)::before { background: linear-gradient(90deg, var(--accent-4), var(--accent-6)); }
+        .idea-card:nth-child(4)::before { background: linear-gradient(90deg, var(--accent-3), var(--accent-7)); }
+        .idea-card:nth-child(5)::before { background: linear-gradient(90deg, var(--accent-5), var(--accent-1)); }
+
+        .idea-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .idea-number {
+            font-size: 3rem;
+            font-weight: 900;
+            min-width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            color: white;
+        }
+
+        .idea-header-text h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .idea-header-text .tagline {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .idea-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-tam { background: rgba(108,99,255,0.2); color: var(--accent-1); }
+        .badge-growth { background: rgba(0,212,170,0.2); color: var(--accent-2); }
+        .badge-competition { background: rgba(255,107,107,0.2); color: var(--accent-3); }
+        .badge-difficulty { background: rgba(255,217,61,0.2); color: var(--accent-4); }
+
+        .idea-problem {
+            background: rgba(255,107,107,0.08);
+            border-left: 3px solid var(--accent-3);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 2rem;
+        }
+
+        .idea-problem h3 {
+            color: var(--accent-3);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .idea-problem ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .idea-problem li {
+            padding: 0.3rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .idea-problem li::before {
+            content: '!';
+            position: absolute;
+            left: 0;
+            color: var(--accent-3);
+            font-weight: 700;
+        }
+
+        /* Market Grid */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .market-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .market-item .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .market-item .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0.3rem 0;
+        }
+
+        .market-item .detail {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Competitor Table */
+        .comp-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .comp-table th {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            text-align: left;
+            color: var(--accent-2);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .comp-table th:first-child { border-radius: 12px 0 0 0; }
+        .comp-table th:last-child { border-radius: 0 12px 0 0; }
+
+        .comp-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .comp-table tr:last-child td {
+            background: rgba(0,212,170,0.05);
+            color: var(--accent-2);
+            font-weight: 600;
+        }
+
+        .comp-table tr:last-child td:first-child { border-radius: 0 0 0 12px; }
+        .comp-table tr:last-child td:last-child { border-radius: 0 0 12px 0; }
+
+        /* Revenue Model */
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .revenue-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.2rem;
+            border: 1px solid var(--border);
+        }
+
+        .revenue-item .stream-name {
+            font-weight: 600;
+            color: var(--accent-1);
+            margin-bottom: 0.3rem;
+        }
+
+        .revenue-item .stream-detail {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Charts */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chart-container {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .chart-container h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Timeline / Phases */
+        .phases-container {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .phase {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .phase-marker {
+            min-width: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .phase-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .phase-line {
+            width: 2px;
+            flex: 1;
+            background: var(--border);
+            margin-top: 4px;
+        }
+
+        .phase-content {
+            flex: 1;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .phase-content h4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .phase-content h4 span:first-child {
+            color: var(--text-primary);
+        }
+
+        .phase-cost {
+            background: rgba(108,99,255,0.15);
+            color: var(--accent-1);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .phase-time {
+            background: rgba(0,212,170,0.15);
+            color: var(--accent-2);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .phase-features {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .phase-feature {
+            background: var(--bg-card);
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Section */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .comparison-table th {
+            background: var(--bg-card);
+            padding: 1rem 0.8rem;
+            text-align: center;
+            color: var(--accent-2);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            position: sticky;
+            left: 0;
+            background: var(--bg-primary);
+        }
+
+        .score-high { color: var(--accent-2); font-weight: 700; }
+        .score-mid { color: var(--accent-4); font-weight: 600; }
+        .score-low { color: var(--accent-3); }
+
+        /* Ranking bars */
+        .ranking-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .ranking-bar .rank-label {
+            min-width: 200px;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .ranking-bar .bar-track {
+            flex: 1;
+            height: 32px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ranking-bar .bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            transition: width 1s ease-out;
+        }
+
+        /* Methodology */
+        .methodology {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .methodology h3 {
+            color: var(--accent-1);
+            margin-bottom: 1rem;
+        }
+
+        .methodology ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .methodology li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .methodology li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--accent-2);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero .stats-row { gap: 1.5rem; }
+            .idea-card { padding: 1.5rem; }
+            .charts-grid { grid-template-columns: 1fr; }
+            .comp-table { font-size: 0.78rem; }
+            .phase { flex-direction: column; }
+            .phase-marker { flex-direction: row; min-width: auto; }
+            .phase-line { width: auto; height: 2px; flex: 1; }
+            section { padding: 2rem 1rem; }
+        }
+
+        /* Subsection headers */
+        .sub-header {
+            color: var(--accent-2);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Score circles */
+        .score-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 0 auto;
+        }
+
+        .idea-section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 2rem 0;
+        }
+
+        /* Tab system for ideas */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Feasibility Section */
+        .feasibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feasibility-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feasibility-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .feasibility-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .feasibility-meter {
+            height: 10px;
+            background: var(--bg-secondary);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .feasibility-meter .fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease-out;
+        }
+
+        .feasibility-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(42,42,94,0.3);
+            font-size: 0.88rem;
+        }
+
+        .feasibility-stat:last-child { border-bottom: none; }
+
+        .feasibility-stat .label {
+            color: var(--text-secondary);
+        }
+
+        .feasibility-stat .value {
+            font-weight: 700;
+        }
+
+        .feasibility-verdict {
+            margin-top: 1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .verdict-high { background: rgba(0,212,170,0.12); color: var(--accent-2); border: 1px solid rgba(0,212,170,0.3); }
+        .verdict-medium { background: rgba(255,217,61,0.12); color: var(--accent-4); border: 1px solid rgba(255,217,61,0.3); }
+        .verdict-low { background: rgba(255,107,107,0.12); color: var(--accent-3); border: 1px solid rgba(255,107,107,0.3); }
+
+        .bottleneck-tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin: 0.2rem;
+            background: rgba(108,99,255,0.15);
+            color: var(--accent-1);
+        }
+
+        .gtm-tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin: 0.2rem;
+        }
+
+        .gtm-plg { background: rgba(0,212,170,0.15); color: var(--accent-2); }
+        .gtm-outbound { background: rgba(255,107,107,0.15); color: var(--accent-3); }
+        .gtm-hybrid { background: rgba(255,217,61,0.15); color: var(--accent-4); }
+
+        /* LOGIN SCREEN */
+        .login-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--bg-primary);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .login-overlay.hidden {
+            opacity: 0;
+            transform: scale(1.05);
+            pointer-events: none;
+        }
+        .login-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 80px rgba(108,99,255,0.15), 0 0 120px rgba(0,212,170,0.05);
+            animation: loginAppear 0.6s ease;
+        }
+        @keyframes loginAppear {
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .login-icon {
+            width: 70px; height: 70px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 30px rgba(108,99,255,0.3);
+        }
+        .login-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.4rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .login-box .login-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        .login-field {
+            position: relative;
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+        .login-field label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .login-field input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .login-field input:focus {
+            border-color: var(--accent-1);
+            box-shadow: 0 0 0 3px rgba(108,99,255,0.15);
+        }
+        .login-btn {
+            width: 100%;
+            padding: 0.9rem;
+            margin-top: 0.8rem;
+            border: none;
+            border-radius: 10px;
+            background: var(--gradient-1);
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+        }
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108,99,255,0.35);
+        }
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        .login-error {
+            color: var(--accent-3);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            min-height: 1.2em;
+            transition: opacity 0.3s;
+        }
+        .login-footer {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        #app-content { display: none; }
+        #app-content.visible { display: block; }
+    </style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="login-overlay" id="loginOverlay">
+    <div class="login-box">
+        <div class="login-icon">🔐</div>
+        <h2>Acceso Privado</h2>
+        <p class="login-subtitle">Ingresa tus credenciales para ver el analisis</p>
+        <form id="loginForm" onsubmit="return handleLogin(event)">
+            <div class="login-field">
+                <label>Usuario</label>
+                <input type="text" id="loginUser" placeholder="Tu usuario" autocomplete="username" autofocus>
+            </div>
+            <div class="login-field">
+                <label>Contraseña</label>
+                <input type="password" id="loginPass" placeholder="Tu contraseña" autocomplete="current-password">
+            </div>
+            <button type="submit" class="login-btn">Ingresar</button>
+            <div class="login-error" id="loginError"></div>
+        </form>
+        <div class="login-footer">Startup Unicornio Research &bull; 2026</div>
+    </div>
+</div>
+
+<!-- APP CONTENT -->
+<div id="app-content">
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>Top 10 Startup Ideas</h1>
+    <p class="subtitle">Analisis ultra-profundo (3ra iteracion) de las mejores oportunidades de software con potencial unicornio. Desde Peru hacia el mundo. Basado en investigacion de +25 sectores, +40 unicornios LatAm, datos validados 2025-2026.</p>
+    <div class="stats-row">
+        <div class="stat-item">
+            <div class="stat-number">+25</div>
+            <div class="stat-label">Sectores Analizados</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">40+</div>
+            <div class="stat-label">Unicornios LatAm</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Ideas Seleccionadas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">$4.1B</div>
+            <div class="stat-label">VC LatAm 2025</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">$45.1B</div>
+            <div class="stat-label">SaaS LatAm 2030</div>
+        </div>
+    </div>
+    <div style="margin-top: 1.5rem; padding: 0.6rem 1.5rem; background: rgba(0,212,170,0.1); border: 1px solid rgba(0,212,170,0.3); border-radius: 30px; font-size: 0.8rem; color: var(--accent-2); position: relative; z-index: 1;">
+        Iteracion 3 + Factibilidad | SEC filings, Crunchbase, BVP, SaaStr, Contrary | 15 agentes IA | 4 Abril 2026
+    </div>
+    <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+    <a href="#contexto">Contexto</a>
+    <a href="#ranking">Ranking</a>
+    <a href="#idea1">1. Servicios Hogar</a>
+    <a href="#idea2">2. Compliance IA</a>
+    <a href="#idea3">3. Marketplace B2B</a>
+    <a href="#idea4">4. Salud Digital</a>
+    <a href="#idea5">5. Infra Pagos</a>
+    <a href="#idea6">6. Restaurant OS</a>
+    <a href="#idea7">7. LegalTech IA</a>
+    <a href="#idea8">8. MiningTech SaaS</a>
+    <a href="#idea9">9. AgriExport Tech</a>
+    <a href="#idea10">10. CyberSec SMB</a>
+    <a href="#comparativa">Comparativa</a>
+    <a href="#factibilidad">Factibilidad Solo</a>
+</nav>
+
+<!-- CONTEXTO DEL MERCADO -->
+<section id="contexto">
+    <h2 class="section-title">Contexto del Mercado</h2>
+    <p class="section-subtitle">Datos clave de America Latina y Peru que fundamentan la oportunidad</p>
+
+    <div class="context-grid">
+        <div class="context-card">
+            <h3>VC Funding LatAm 2025</h3>
+            <div class="big-number">$4.1B</div>
+            <div class="description">681 rondas, +13.8% vs 2024. Brasil 52.9% ($2.03B), Mexico 25.5% ($980M). Fintech 61%.</div>
+        </div>
+        <div class="context-card">
+            <h3>SaaS LatAm 2030</h3>
+            <div class="big-number">$45.1B</div>
+            <div class="description">Desde $21.4B en 2024. Se duplica en 6 anos. Vertical SaaS crece 2-3x mas rapido que horizontal.</div>
+        </div>
+        <div class="context-card">
+            <h3>Vertical SaaS Global 2033</h3>
+            <div class="big-number">$369B</div>
+            <div class="description">Desde $106.5B en 2024. CAGR 16.3%. NRR de 130%+. Sectores analogicos = mayor oportunidad.</div>
+        </div>
+        <div class="context-card">
+            <h3>RegTech Global 2033</h3>
+            <div class="big-number">$112B</div>
+            <div class="description">Desde $24.3B en 2025. CAGR 21.1%. AI en RegTech: $3.3B en 2026 (CAGR 36.1%).</div>
+        </div>
+        <div class="context-card">
+            <h3>PYMEs en Peru</h3>
+            <div class="big-number">2.3M</div>
+            <div class="description">99% de empresas. Solo 15-30% usa software. Fintech Peru +340% en 6 anos.</div>
+        </div>
+        <div class="context-card">
+            <h3>Peru Agro-Exports 2025</h3>
+            <div class="big-number">$14B+</div>
+            <div class="description">Record historico. #1 mundial en arandanos. +18% YoY. Solo 9% de empresas vende online.</div>
+        </div>
+        <div class="context-card">
+            <h3>Carbon Credits LatAm</h3>
+            <div class="big-number">$63B</div>
+            <div class="description">En 2025. CAGR 33% a $824B para 2034. Peru REDD+: 15-25% ROI anual.</div>
+        </div>
+        <div class="context-card">
+            <h3>Cross-Border Payments LatAm</h3>
+            <div class="big-number">$10.9B</div>
+            <div class="description">En 2025. Remesas $160B+/ano. dLocal: $26B TPV (+45% YoY). Costo 5-8% vs 1-2% digital.</div>
+        </div>
+        <div class="context-card">
+            <h3>AI Agents Global 2030</h3>
+            <div class="big-number">$52.6B</div>
+            <div class="description">Desde $5.25B en 2024. CAGR 46%. 80% de apps empresariales integraran agentes IA para 2026.</div>
+        </div>
+        <div class="context-card">
+            <h3>LegalTech AI 2030</h3>
+            <div class="big-number">$10.8B</div>
+            <div class="description">Desde $3B en 2025. Harvey AI: $11B val. (Mar 2026). Adopcion corp duplicada: 23%→52%.</div>
+        </div>
+    </div>
+
+    <!-- SaaS Benchmarks Row -->
+    <div style="background: var(--bg-card); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); margin-bottom: 2rem;">
+        <h3 style="color: var(--accent-1); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Benchmarks SaaS B2B 2025-2026 (Validados)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem;">
+            <div style="text-align: center;">
+                <div style="color: var(--accent-2); font-size: 1.4rem; font-weight: 700;">$1,200</div>
+                <div style="color: var(--text-muted); font-size: 0.75rem;">CAC Promedio B2B SaaS</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="color: var(--accent-2); font-size: 1.4rem; font-weight: 700;">3.2:1</div>
+                <div style="color: var(--text-muted); font-size: 0.75rem;">LTV:CAC Mediana</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="color: var(--accent-2); font-size: 1.4rem; font-weight: 700;">15 meses</div>
+                <div style="color: var(--text-muted); font-size: 0.75rem;">Payback CAC Mediana</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="color: var(--accent-2); font-size: 1.4rem; font-weight: 700;">70-80%</div>
+                <div style="color: var(--text-muted); font-size: 0.75rem;">Gross Margin SaaS Puro</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="color: var(--accent-2); font-size: 1.4rem; font-weight: 700;">130%+</div>
+                <div style="color: var(--text-muted); font-size: 0.75rem;">NRR Vertical SaaS Top</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="color: var(--accent-2); font-size: 1.4rem; font-weight: 700;">$4.1B</div>
+                <div style="color: var(--text-muted); font-size: 0.75rem;">VC LatAm 2025</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-container">
+            <h4>Distribucion VC LatAm por Sector (2025)</h4>
+            <div class="chart-wrapper"><canvas id="vcSectorChart"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <h4>Tamano de Mercado: 2025 vs 2030-33 (Escala Log, USD Billions)</h4>
+            <div class="chart-wrapper"><canvas id="marketGrowthChart"></canvas></div>
+        </div>
+    </div>
+    <div class="charts-grid" style="margin-top: 2rem;">
+        <div class="chart-container">
+            <h4>CAGR por Sector (% Crecimiento Anual Compuesto)</h4>
+            <div class="chart-wrapper"><canvas id="cagrChart"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <h4>Validacion: Unicornios de Referencia por Sector ($B)</h4>
+            <div class="chart-wrapper"><canvas id="unicornValidationChart"></canvas></div>
+        </div>
+    </div>
+</section>
+
+<!-- RANKING GENERAL -->
+<section id="ranking">
+    <h2 class="section-title">Ranking: Potencial Unicornio</h2>
+    <p class="section-subtitle">Score compuesto basado en TAM, facilidad de ejecucion, competencia, network effects, y time-to-revenue</p>
+
+    <div id="rankingBars"></div>
+
+    <div class="charts-grid" style="margin-top: 2rem;">
+        <div class="chart-container">
+            <h4>ARR Proyectado Ano 5 (USD Millones)</h4>
+            <div class="chart-wrapper"><canvas id="arrChart"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <h4>Inversion MVP vs Time-to-Revenue</h4>
+            <div class="chart-wrapper"><canvas id="mvpChart"></canvas></div>
+        </div>
+    </div>
+</section>
+
+<!-- IDEAS 1-10 (contenedor) -->
+<div id="ideasContainer"></div>
+
+<!-- COMPARATIVA FINAL -->
+<section id="comparativa">
+    <h2 class="section-title">Comparativa Final</h2>
+    <p class="section-subtitle">Todas las metricas clave lado a lado</p>
+
+    <div style="overflow-x: auto; margin-bottom: 3rem;">
+        <table class="comparison-table" id="comparisonTable"></table>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-container">
+            <h4>Margen Proyectado Ano 5 (%)</h4>
+            <div class="chart-wrapper"><canvas id="marginChart"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <h4>Radar: Score Multidimensional</h4>
+            <div class="chart-wrapper"><canvas id="radarChart"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Recomendacion Estrategica -->
+    <div class="methodology" style="margin-top: 3rem;">
+        <h3>Recomendacion Estrategica Final (Iteracion 3)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+            <div>
+                <h4 style="color: var(--accent-2); margin-bottom: 0.5rem;">Menor Riesgo, Inicio Rapido</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;"><strong>#1 Compliance IA</strong> (Score: 93) o <strong>#4 Restaurant OS</strong> (Score: 86) &mdash; Revenue en 2-3 meses, MVP $40-80K, competencia nula en LatAm. RegTech CAGR 21%, Toast prueba el modelo restaurantes.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-4); margin-bottom: 0.5rem;">Mayor Tamano de Oportunidad</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;"><strong>#2 Marketplace B2B</strong> ($480M ARR Y5) o <strong>#5 Infra Pagos</strong> ($504M ARR Y5) &mdash; TAM masivo, Tul ($800M) y dLocal ($26B TPV) validan. Mas capital, mas tiempo, pero mayor premio.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-7); margin-bottom: 0.5rem;">Estrategia "Land & Expand" (RECOMENDADA)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Empezar con <strong>#1 Compliance IA</strong>: genera revenue en 2 meses + adquieres DATA tributaria de miles de PYMEs. Esa data desbloquea credit scoring, embedded finance, y te permite pivotar a #2 o #5. Es la estrategia Deel ($17.3B val, $1B+ ARR, IPO 2026). Omie (Brasil, $162M rev, 130K SMBs) prueba que SaaS SMB en LatAm escala.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-9); margin-bottom: 0.5rem;">Oportunidad Disruptiva 2026</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;"><strong>#7 LegalTech IA</strong> (Score: 85, subio de 81) &mdash; Harvey AI alcanzo $11B en Mar 2026, pero es solo ingles. 500M+ hispanohablantes sin alternativa. LegalTech funding record $4.3B (+54%). El "Harvey de espanol" tiene techo altisimo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FACTIBILIDAD SOLO FUNDADOR -->
+<section id="factibilidad">
+    <h2 class="section-title">Analisis de Factibilidad: Solo Fundador</h2>
+    <p class="section-subtitle">Para cada idea: contactos necesarios, personal, pureza de software, inversion minima para facturar. Basado en investigacion de como empresas comparables (ServiceTitan, Toast, Harvey AI, Faire, dLocal, Vanta) adquirieron sus primeros clientes.</p>
+
+    <!-- Tabla Comparativa de Factibilidad -->
+    <div style="overflow-x: auto; margin-bottom: 3rem;">
+        <table class="comparison-table" id="feasibilityTable"></table>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts-grid">
+        <div class="chart-container">
+            <h4>Pureza de Software (%): Cuanto se puede hacer solo con codigo</h4>
+            <div class="chart-wrapper"><canvas id="softwarePurityChart"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <h4>Costo Minimo para Primera Factura ($K USD)</h4>
+            <div class="chart-wrapper"><canvas id="minCostChart"></canvas></div>
+        </div>
+    </div>
+
+    <div class="charts-grid" style="margin-top: 2rem;">
+        <div class="chart-container">
+            <h4>Contactos/Relaciones Necesarias Pre-Lanzamiento</h4>
+            <div class="chart-wrapper"><canvas id="contactsChart"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <h4>Score Factibilidad Solo Fundador vs Score Unicornio</h4>
+            <div class="chart-wrapper"><canvas id="feasibilityVsUnicornChart"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Tarjetas por idea -->
+    <h3 class="sub-header" style="margin-top: 3rem;">Detalle por Idea</h3>
+    <div id="feasibilityCards"></div>
+
+    <!-- Recomendacion Factibilidad -->
+    <div class="methodology" style="margin-top: 3rem;">
+        <h3>Veredicto Final: Ranking para Solo Fundador con Software Puro</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+            <div>
+                <h4 style="color: var(--accent-2); margin-bottom: 0.5rem;">TOP 1: Compliance IA (Score Solo: 9.2/10)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Pureza software 85%. Costo primera factura: $0.3-1.5K. 1 persona basta. Sin licencias, sin hardware. Cifrato (YC W25) valida el modelo pero solo tiene 13 personas y no cubre Peru profundo. La estrategia: vender a contadores (1 contador = 20-100 PYMEs).</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-5); margin-bottom: 0.5rem;">TOP 2: LegalTech IA (Score Solo: 9.0/10)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Pureza software 92% (la mas alta). Costo primera factura: $2-5K. MVP en 8-12 semanas con LLM APIs. Sin necesidad de firma de abogado. Pero Juztina ya tiene 100K usuarios en Peru. Diferenciacion: nicho especifico (laboral, tributario, minero) o B2B para estudios.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-8); margin-bottom: 0.5rem;">TOP 3: AgriExport Tech (Score Solo: 8.5/10)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Pureza software 82%. 2,590+ exportadores fragmentados. El espacio entre "puerta de granja" y "puerto destino" no tiene software nativo LatAm. Peru es #1 mundial en arandanos. Costo primera factura: $3-8K. Necesitas visitar Ica/La Libertad.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-3); margin-bottom: 0.5rem;">NO VIABLE SOLO: Pagos, MiningTech, Marketplace B2B</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;"><strong>Pagos:</strong> licencia EEDE $800K+, 12-24 meses sin revenue. <strong>MiningTech:</strong> ciclo de venta 6-18 meses, necesitas ingeniero minero. <strong>Marketplace:</strong> 20-40 contactos pre-lanzamiento, Tul levanto $210M por algo. Estas 3 requieren equipo y capital desde dia 1.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section id="metodologia">
+    <div class="methodology">
+        <h3>Metodologia de Investigacion (Iteracion 3 + Factibilidad)</h3>
+        <ul>
+            <li>15 agentes de investigacion paralelos cubriendo +25 sectores en 3 iteraciones + analisis factibilidad</li>
+            <li>Datos validados: YCombinator, CB Insights, Crunchbase, TechCrunch, PitchBook</li>
+            <li>Market reports: Grand View Research, IMARC, Fortune Business Insights, Mordor Intelligence</li>
+            <li>Benchmark 40+ unicornios LatAm + ServiceTitan ($961M ARR), Toast ($6.15B rev), Harvey ($11B)</li>
+            <li>Datos VC: LAVCA, Tracxn, Failory, Cuantico VP, StartupBlink, HolonIQ</li>
+            <li>Peru-especifico: BCRP, SUNAT, SENASA, OEFA, INDECOPI, IDB, ProInnovate</li>
+            <li>Financial data: StockAnalysis, MacroTrends, SEC filings, company 10-K reports</li>
+            <li>Vertical SaaS benchmarks: SaaS Capital, OpenView Partners, Bessemer BVP Cloud Index</li>
+            <li>Cross-validation: cada dato confirmado con 2+ fuentes independientes</li>
+            <li>Peru dev costs: Junior $23-31K, Senior $47-70K/yr (30-50% menos que USA)</li>
+            <li>LatAm CAC 40-60% menor que USA. Time to $1M ARR: mediana 2a9m, best-in-class 9 meses</li>
+            <li>Scoring compuesto: TAM (20%), Facilidad ejecucion (20%), Competencia (15%), Network effects (15%), Margen (15%), Time-to-revenue (15%)</li>
+            <li>Factibilidad solo fundador: Pureza software, contactos pre-launch, costo 1ra factura, equipo minimo, GTM model, bottlenecks humanos</li>
+            <li>Validacion GTM: Como ServiceTitan, Toast, Harvey AI, Faire, dLocal, Vanta adquirieron sus primeros clientes</li>
+            <li>Competidores nuevos descubiertos: Cifrato (YC W25, compliance AI LatAm), Juztina (100K users legal Peru), Nimbo (16K docs)</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>Investigacion generada el 4 de Abril de 2026 | Iteracion 3 + Factibilidad Solo Fundador | +25 sectores, +30 paises, 15 agentes IA</p>
+    <p style="margin-top: 0.5rem;">Datos validados contra SEC filings (TTAN, TOST), Crunchbase, Grand View Research, IMARC, LAVCA, World Bank, BVP memos, SaaStr, Contrary Research. GTM validado contra historias reales de ServiceTitan, Toast, Harvey AI, Faire, Vanta, Deel, Cifrato (YC W25), Juztina.</p>
+</footer>
+
+<script>
+// ==================== FEASIBILITY DATA ====================
+const FEASIBILITY = {
+    1: { // Servicios Hogar
+        softwarePurity: 75,
+        contactsPreLaunch: 3,
+        contactsDetail: "2-5 tecnicos beta testers. Sin partnerships obligatorias. Pagos via Mercado Pago (self-service).",
+        minTeam: 1,
+        minTeamDetail: "Solo dev puede hacer MVP en 8-12 semanas. ServiceTitan empezo con 8 personas pero alcanzo $3M ARR casi sin marketing.",
+        minCostToRevenue: 1.5,
+        minCostDetail: "Hosting $50/mes, APIs gratis, tu tiempo 2-3 meses. Cash real: $500-2,000.",
+        hardwareNeeded: "Ninguno",
+        hardwareDetail: "Puro cloud SaaS. Usuarios usan sus smartphones.",
+        licenses: "Ninguna",
+        soloScore: 7.0,
+        gtmModel: "outbound",
+        gtmDetail: "No es PLG. Tecnicos no buscan software en Google. Ir a ferreterias, WhatsApp groups, ferias. CAC: $50-200/cliente LatAm.",
+        bottlenecks: ["Onboarding manual (30-60 min/cliente)", "Usuarios low-tech", "Localizacion fiscal por pais"],
+        verdict: "medium",
+        verdictText: "Factible pero dificil escalar solo. ARPU bajo ($15-50/mes) requiere volumen. GTM high-touch.",
+        timeToFirstInvoice: "3-4 meses",
+        comparable: "ServiceTitan: 50% clientes por referral, cash flow positivo sin marketing."
+    },
+    2: { // Compliance IA
+        softwarePurity: 85,
+        contactsPreLaunch: 4,
+        contactsDetail: "3-5 contadores para beta test. SUNAT API es publica. NubeFact API self-service. Sin partnerships formales.",
+        minTeam: 1,
+        minTeamDetail: "Vanta empezo con 1 fundadora construyendo sola. Cifrato (YC W25) empezo con 2. Necesitas acceso a un contador para validar.",
+        minCostToRevenue: 1.0,
+        minCostDetail: "SUNAT API gratis, LLM APIs $20-100/mes, hosting $50/mes. Cash real: $300-1,500.",
+        hardwareNeeded: "Ninguno",
+        hardwareDetail: "100% cloud. Sin infraestructura fisica.",
+        licenses: "Ninguna (no necesitas ser PSE para empezar)",
+        soloScore: 9.2,
+        gtmModel: "hybrid",
+        gtmDetail: "Semi-PLG: contadores se enteran por LinkedIn/comunidades. 1 contador = 20-100 PYMEs clientes. CAC: $100-500/firma contable.",
+        bottlenecks: ["Conocimiento tributario profundo", "Confianza del contador", "Actualizaciones regulatorias SUNAT"],
+        verdict: "high",
+        verdictText: "MEJOR OPCION SOLO FUNDADOR. Software puro, sin licencias, $300 para empezar. Cifrato (YC W25) valida modelo.",
+        timeToFirstInvoice: "2-3 meses",
+        comparable: "Cifrato (YC W25): 13 personas, $1M+, 98.7% accuracy. Vanta: 75% de YC como clientes."
+    },
+    3: { // Marketplace B2B
+        softwarePurity: 30,
+        contactsPreLaunch: 30,
+        contactsDetail: "15-20 proveedores + 10-20 ferreterias MINIMO. Tul tenia contactos de 10 anos en Cementos Argos.",
+        minTeam: 3,
+        minTeamDetail: "Imposible solo. Necesitas: 1 dev + 1 ventas proveedores + 1 ventas compradores. Tul: 3 cofundadores + $4M seed.",
+        minCostToRevenue: 12.0,
+        minCostDetail: "Capital de trabajo para financiar compradores (modelo Faire net-60): $5-15K. Viajes, onboarding: $3-5K.",
+        hardwareNeeded: "Ninguno (marketplace puro)",
+        hardwareDetail: "Sin warehouses al inicio, pero Tul eventualmente opero centros de distribucion.",
+        licenses: "Ninguna directa",
+        soloScore: 2.5,
+        gtmModel: "outbound",
+        gtmDetail: "100% boots-on-the-ground. Visitar ferreterias y distribuidores en persona. Faire soluciono chicken-egg con net-60 terms ($$ requerido).",
+        bottlenecks: ["Chicken-and-egg marketplace", "30+ contactos pre-lanzamiento", "Logistica materiales pesados", "Credito B2B", "Precios cambiantes"],
+        verdict: "low",
+        verdictText: "NO VIABLE SOLO. Requiere capital ($5-20K min), equipo (3+ personas), y red de contactos industria. Tul levanto $210M.",
+        timeToFirstInvoice: "5-8 meses",
+        comparable: "Tul: $4M seed, 3 cofundadores con 10 anos industria. Faire: net-60 terms llevo GMV de $100K a $1M/mes en 3 meses."
+    },
+    4: { // Salud Digital
+        softwarePurity: 85,
+        contactsPreLaunch: 4,
+        contactsDetail: "3-5 clinicas/doctores piloto. 1 pasarela de pagos (Culqi, self-service). Sin partnerships mandatorias.",
+        minTeam: 1,
+        minTeamDetail: "Solo dev puede hacer MVP (agenda + HCE basica = CRUD). Nimbo ya existe con 16,000+ doctores en 25 paises.",
+        minCostToRevenue: 1.5,
+        minCostDetail: "Hosting $50/mes, pasarela pagos gratis, tu tiempo 2-4 meses. Cash real: $500-2,000.",
+        hardwareNeeded: "Ninguno",
+        hardwareDetail: "100% cloud. Clinicas usan sus propias computadoras/tablets.",
+        licenses: "Ninguna (eres proveedor de software, no de salud)",
+        soloScore: 8.0,
+        gtmModel: "hybrid",
+        gtmDetail: "Freemium para doctores individuales (como Nimbo $9/mes). Primeros clientes requieren visitas presenciales. Referral doctor-a-doctor funciona.",
+        bottlenecks: ["Onboarding clinicas presencial", "Datos sensibles (Ley 29733)", "Cada especialidad tiene workflows distintos"],
+        verdict: "high",
+        verdictText: "Muy factible solo. Pero competidores (Nimbo, Doctoralia) ya existen. Diferenciacion: IA-nativa, specialty-first, WhatsApp.",
+        timeToFirstInvoice: "3-6 meses",
+        comparable: "Nimbo: 16K doctores, $9-29/mes. Doctoralia: $2.5B val. Zocdoc: empezo con ventas directas a doctores individuales."
+    },
+    5: { // Infra Pagos
+        softwarePurity: 35,
+        contactsPreLaunch: 12,
+        contactsDetail: "2-3 bancos/instituciones financieras por pais (8-15 relaciones). Abogados fintech en cada jurisdiccion.",
+        minTeam: 4,
+        minTeamDetail: "Imposible solo. Necesitas: 1 dev + 1 compliance + 1 bizdev bancario + abogados. dLocal tenia ejecutivos senior de fintech.",
+        minCostToRevenue: 250.0,
+        minCostDetail: "Licencia EEDE Peru: $800K+ capital minimo. Modelo aggregator: $150-500K (legal + banking + float).",
+        hardwareNeeded: "Ninguno (APIs)",
+        hardwareDetail: "Todo software/API, pero capital regulatorio masivo.",
+        licenses: "EEDE (SBS), BCRP, UIF. Multi-pais: BCB Brasil, SFC Colombia.",
+        soloScore: 1.0,
+        gtmModel: "outbound",
+        gtmDetail: "B2B enterprise puro. dLocal vendio a Amazon, Spotify, Uber. Ciclo de venta: 6-18 meses por merchant grande.",
+        bottlenecks: ["Licencias bancarias $800K+", "12-24 meses sin revenue", "Partnerships bancarias (6-12 meses c/u)", "Compliance AML/KYC permanente"],
+        verdict: "low",
+        verdictText: "IMPOSIBLE SOLO. $800K+ en capital regulatorio, 3-5 personas minimo, 12-24 meses a primera transaccion. dLocal necesito anos.",
+        timeToFirstInvoice: "12-24 meses",
+        comparable: "dLocal: fundadores ejecutivos senior fintech, anos para licencias. Palla: $14.5M raised solo para corredor USA-LatAm."
+    },
+    6: { // Restaurant OS
+        softwarePurity: 60,
+        contactsPreLaunch: 6,
+        contactsDetail: "3-5 restaurantes piloto + 1 procesador pagos (Niubiz/Izipay) + 1 integracion SUNAT OSE.",
+        minTeam: 1,
+        minTeamDetail: "Solo dev puede hacer MVP pero es mas complejo (offline-first, POS real-time, SUNAT XML). Toast: 3 cofundadores + $500K seed.",
+        minCostToRevenue: 5.5,
+        minCostDetail: "Hardware por restaurante: $500-1,500. Demo equipment: $500-1K. SUNAT OSE: $500-2K. Total: $3-8K.",
+        hardwareNeeded: "Tablets, impresora tickets, lector tarjetas",
+        hardwareDetail: "$500-1,500 por restaurante: tablet Android $150-300, impresora $100-300, lector tarjetas $50-150.",
+        licenses: "Ninguna de software (pagos via procesadores licenciados)",
+        soloScore: 5.5,
+        gtmModel: "outbound",
+        gtmDetail: "Toast: 80% field sales, visitas in-situ cierran 3x mas (45% vs 15%). Ir puerta a puerta. CAC: $1-3K/restaurante.",
+        bottlenecks: ["Instalacion presencial 2-4h/restaurante", "Hardware breakdowns en servicio", "Rotacion staff 60-80%/ano", "SUNAT facturacion electronica compleja"],
+        verdict: "medium",
+        verdictText: "Factible MVP solo, pero hardware + field sales hacen dificil escalar. Toast necesito field sales org completa.",
+        timeToFirstInvoice: "5-9 meses",
+        comparable: "Toast: $16.6B, field sales puerta a puerta. OlaClick (YC W21): $8M raised, 45K restaurants, solo menu digital."
+    },
+    7: { // LegalTech IA
+        softwarePurity: 92,
+        contactsPreLaunch: 3,
+        contactsDetail: "1-2 estudios de abogados como beta testers + 1 abogado advisor. SPIJ/jurisprudencia son publicos.",
+        minTeam: 1,
+        minTeamDetail: "Solo dev con LLM APIs (Claude/GPT-4) + RAG. MVP en 8-12 semanas. 1 abogado consultor part-time para validar outputs.",
+        minCostToRevenue: 3.5,
+        minCostDetail: "LLM APIs $500-1K, hosting $50/mes, legal corpus $500, empresa $500-900. Total: $2-5K.",
+        hardwareNeeded: "Ninguno",
+        hardwareDetail: "100% cloud. Costo infra: $50-200/mes (LLM API calls son el gasto principal).",
+        licenses: "Ninguna (herramienta de investigacion, no ejercicio legal)",
+        soloScore: 9.0,
+        gtmModel: "hybrid",
+        gtmDetail: "PLG para abogados individuales (Juztina llego a 100K users asi). Enterprise para estudios requiere outbound.",
+        bottlenecks: ["Alucinaciones IA en contexto legal", "Juztina ya tiene 100K usuarios", "Monitoreo cambios legales constante"],
+        verdict: "high",
+        verdictText: "Altamente factible. Pureza software mas alta (92%). Pero Juztina es competencia directa. Diferenciacion: nicho o B2B.",
+        timeToFirstInvoice: "2-4 meses",
+        comparable: "Harvey AI: $11B pero solo ingles. Juztina (Peru): 100K users, 1M consultas en 6 meses. Clio: $5B, empezo como lifestyle business."
+    },
+    8: { // MiningTech SaaS
+        softwarePurity: 55,
+        contactsPreLaunch: 5,
+        contactsDetail: "1-2 companias mineras (Fortune 500 - muy dificil acceder), 1-2 ingenieros mineros, relacion OSINERGMIN.",
+        minTeam: 3,
+        minTeamDetail: "Imposible sin ingeniero minero. Minimo: 1 dev + 1 mining engineer + 1 sales. Maptek tiene 2,500+ sites en 90 paises.",
+        minCostToRevenue: 55.0,
+        minCostDetail: "Ciclo venta 6-18 meses. Viajes a minas remotas $3-5K. Domain consulting $5-15K. Demo $10-30K.",
+        hardwareNeeded: "Potencial IoT/sensores ($10-50K)",
+        hardwareDetail: "Software puro posible si solo reporting layer. Integracion IoT: $10K-50K por sitio piloto.",
+        licenses: "Ninguna de software, pero errores en compliance OEFA/OSINERGMIN generan responsabilidad",
+        soloScore: 2.0,
+        gtmModel: "outbound",
+        gtmDetail: "100% enterprise. Conferencias mineras (PERUMIN, PDAC). Maptek y Deswik venden con presencia fisica en cada pais.",
+        bottlenecks: ["Expertise mineria obligatorio", "Ciclo venta 6-18 meses", "Clientes son multinacionales", "Sites remotos (Arequipa, Ancash)", "Liability en compliance reports"],
+        verdict: "low",
+        verdictText: "NO VIABLE SOLO. Requiere co-founder ing. minero, capital, y 6-18 meses ciclo venta. Maptek/Deswik entrenched.",
+        timeToFirstInvoice: "9-18 meses",
+        comparable: "Maptek: 2,500 sites, 90 paises. Deswik: adquirido por Sandvik (~AUD$79M rev). Enterprise puro."
+    },
+    9: { // AgriExport Tech
+        softwarePurity: 82,
+        contactsPreLaunch: 4,
+        contactsDetail: "1-2 exportadores piloto + 1 advisor comercio exterior. 2,590+ exportadores en Peru (mercado fragmentado, accesible).",
+        minTeam: 1,
+        minTeamDetail: "Solo dev puede hacer MVP: doc management + compliance tracking + logistics coordination. Domain knowledge mas accesible que mineria.",
+        minCostToRevenue: 5.5,
+        minCostDetail: "Empresa $500-900, viajes Ica/La Libertad $500-1K, consulting $1-2K, dev infra $300/mes. Total: $3-8K.",
+        hardwareNeeded: "Ninguno (sensores cold chain opcionales)",
+        hardwareDetail: "Core es software puro. Cold chain IoT es add-on futuro ($500-2K/sensor).",
+        licenses: "Ninguna (no emites certificados, SENASA lo hace)",
+        soloScore: 8.5,
+        gtmModel: "hybrid",
+        gtmDetail: "Free trial para pequenos exportadores + outbound top 100. Alianzas ADEX/PROMPERU. Ferias (Expoalimentaria). Ciclo venta: 1-3 meses.",
+        bottlenecks: ["Visitar zonas agricolas (Ica, La Libertad)", "Regulaciones destino (FDA, EU) cambiantes", "Cada exportador tiene workflows distintos"],
+        verdict: "high",
+        verdictText: "Muy factible y POCO COMPETIDO. 2,590+ exportadores, gap real entre granja y puerto. Peru #1 arandanos, mercado $14B+.",
+        timeToFirstInvoice: "3-5 meses",
+        comparable: "No hay equivalente directo. Agrobit (SAP) = farm mgmt, no export. FreshFro = early stage. Espacio abierto."
+    },
+    10: { // CyberSec SMB
+        softwarePurity: 78,
+        contactsPreLaunch: 7,
+        contactsDetail: "1-2 vendors seguridad (SentinelOne/Wazuh), 2-3 SMBs piloto, 2-3 MSPs/IT companies para distribucion.",
+        minTeam: 2,
+        minTeamDetail: "MSSP 24/7 imposible solo. SaaS compliance tool: si. Modelo AI-first reduce a 1-2 personas, pero clientes esperan respuesta 24/7.",
+        minCostToRevenue: 25.0,
+        minCostDetail: "Security platform licenses $3-10K. SOC 2 (diferible): $20-35K. Sin SOC 2 inicial: $5-15K. Total: $15-40K.",
+        hardwareNeeded: "Ninguno (SaaS) o $5-15K (MSSP)",
+        hardwareDetail: "SaaS puro: $0. MSSP con SOC: $5-15K en infraestructura monitoreo.",
+        licenses: "SOC 2/ISO 27001 esperadas (no obligatorias). $20-50K primer ano.",
+        soloScore: 4.0,
+        gtmModel: "hybrid",
+        gtmDetail: "SaaS compliance tool puede ser PLG. MSSP requiere outbound + channel (MSPs). Peru cybersec: $170M en 2025.",
+        bottlenecks: ["24/7 monitoring (no puedes dormir)", "Incident response requiere humanos", "SOC 2 costoso ($20-50K)", "Confianza para manejar redes de clientes"],
+        verdict: "medium",
+        verdictText: "Solo viable como SaaS compliance (Ley Datos Peru Mar 2025). MSSP 24/7 imposible solo. Pivotear a compliance automation.",
+        timeToFirstInvoice: "4-7 meses",
+        comparable: "CrowdStrike: $25M funding, 2 anos para primer producto. Hackmetrix/Delta Protect (Mexico): early stage."
+    }
+};
+
+// ==================== DATA ====================
+const IDEAS = [
+    {
+        id: 1, name: "Vertical SaaS Servicios del Hogar", short: "Servicios Hogar",
+        tagline: "El ServiceTitan de Latinoamerica",
+        color: "#6c63ff", gradient: "linear-gradient(135deg, #6c63ff, #4ecdc4)",
+        tam: "$30B+ (TAM ServiceTitan)", sam: "$15-25B", som: "$500M-1B",
+        mvpCost: "$50-80K", timeToRevenue: "3 meses", arrY5: 216, marginY5: 58,
+        competitionLatam: "Casi nula", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 87,
+        problem: [
+            "Tecnicos (gasfiteros, electricistas, plomeros) operan 100% informal y analogico",
+            "No tienen agenda digital, cotizaciones automatizadas, ni CRM",
+            "ServiceTitan (TTAN, $6.7B mkt cap, $961M ARR FY2026) resolvio esto en USA - nada en LatAm",
+            "Housecall Pro ($1B+) y Jobber ($1B+) validan demanda global. Vertical SaaS crece 2-3x vs horizontal"
+        ],
+        competitors: [
+            ["ServiceTitan (TTAN)", "$6.7B mkt cap", "$245-398/mes", "Ingles, USA only, $961M revenue FY2026"],
+            ["Housecall Pro (USA)", "$1B+", "$59-109/mes", "Ingles, USA focus"],
+            ["Jobber (Canada)", "$1B+", "$49-129/mes", "Ingles, NA focus"],
+            ["Nuestra Solucion", "Target $1B+", "$15-45/mes", "Espanol nativo, Yape/Plin, WhatsApp-first, SUNAT, LatAm greenfield"]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion SaaS", detail: "$15-45/mes por tecnico. Freemium 30 dias." },
+            { name: "Comision transacciones", detail: "1.5-2.5% por pago procesado en la plataforma." },
+            { name: "Embedded Finance", detail: "Adelanto de pagos, microseguros, credito herramientas." },
+            { name: "Marketplace materiales", detail: "Comision por materiales comprados (alianza ferreterias)." },
+            { name: "Leads/Publicidad", detail: "Clientes buscan tecnicos en la plataforma." }
+        ],
+        roi: [
+            { year: 1, users: "2K", mrr: 50, arr: 0.6, expenses: 0.8, margin: -33 },
+            { year: 2, users: "15K", mrr: 450, arr: 5.4, expenses: 3.5, margin: 35 },
+            { year: 3, users: "80K", mrr: 2400, arr: 28.8, expenses: 15, margin: 48 },
+            { year: 4, users: "250K", mrr: 7500, arr: 90, expenses: 40, margin: 55 },
+            { year: 5, users: "600K", mrr: 18000, arr: 216, expenses: 90, margin: 58 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$50-80K", features: ["App movil React Native", "Agenda + cotizaciones + GPS", "WhatsApp Business API", "Pagos: Yape + transferencia", "3 categorias en Lima"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$120-200K", features: ["Facturacion SUNAT", "Reviews y reputacion", "CRM basico", "IA: foto del problema → estimado", "10+ categorias servicio"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$300-500K", features: ["Arequipa, Trujillo, Cusco", "Embedded payments propio", "Formalizacion tecnicos (RUC)", "Marketplace materiales", "App empresas"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia, Mexico, Chile", "Facturacion por pais", "Microseguros + adelanto ingresos", "Certificacion tecnicos", "API constructoras"] },
+            { name: "Plataforma Completa", time: "Meses 31-48", cost: "$3-5M", features: ["Brasil, Espana, USA hispano", "IA predictiva mantenimiento", "Fintech: cuenta digital tecnicos", "B2B materiales al mayor", "White-label retail"] }
+        ]
+    },
+    {
+        id: 2, name: "Compliance y Gestion Tributaria IA", short: "Compliance IA",
+        tagline: "El Vanta/Deel de cumplimiento regulatorio para PYMEs LatAm",
+        color: "#00d4aa", gradient: "linear-gradient(135deg, #00d4aa, #3b82f6)",
+        tam: "$24.3B RegTech → $112B (2033)", sam: "$3-5B LatAm", som: "50-100K PYMEs",
+        mvpCost: "$40-70K", timeToRevenue: "2 meses", arrY5: 240, marginY5: 67,
+        competitionLatam: "Baja", techComplexity: "Media-Alta", regulatoryComplexity: "Alta",
+        unicornScore: 93,
+        problem: [
+            "67% de PYMEs en Peru han recibido al menos una multa tributaria",
+            "SUNAT requiere declaraciones mensuales complejas (IGV, Renta, PLAME, PLE)",
+            "Contadores cobran $100-500/mes y aun cometen errores. 2.3M PYMEs en Peru",
+            "RegTech global: $24.3B→$112B 2033 (CAGR 21.1%). AI RegTech CAGR 36.1%",
+            "SUNAT SIRE obligatorio para todos desde Ene 2026. E-invoicing XML UBL 2.1 ya mandatorio",
+            "Soluciones existentes (Contasis, Concar) son desktop, sin IA, sin multi-pais. Espacio abierto"
+        ],
+        competitors: [
+            ["Contasis/Concar (Peru)", "Local", "$30-80/mes", "Sin IA, solo Peru, desktop"],
+            ["QuickBooks (Global)", "$7B+", "$25-80/mes", "No adaptado a LatAm"],
+            ["Deel (Global)", "$17.3B, $1B+ ARR", "HR/Payroll global", "Compliance laboral global, no tributario LatAm. IPO 2026"],
+            ["Vanta (USA)", "$4.2B", "$200+/mes", "Security compliance, no tributario"],
+            ["Nuestra Solucion", "Target $1B+", "$25-99/mes", "IA auto-genera declaraciones, multi-pais LatAm, SUNAT/DIAN/SAT nativo"]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion SaaS tiered", detail: "$25 micro, $49 pequena, $99 mediana, $249 corporativo." },
+            { name: "Pay-per-declaration", detail: "$2-5 por declaracion automatica enviada." },
+            { name: "Premium features", detail: "Auditoria IA, proyeccion fiscal, optimizacion tributaria." },
+            { name: "Canal contadores", detail: "$199/mes por 20 clientes para estudios contables." },
+            { name: "Credit scoring", detail: "Scoring financiero basado en data tributaria (futuro)." }
+        ],
+        roi: [
+            { year: 1, users: "1.5K", mrr: 75, arr: 0.9, expenses: 0.7, margin: 22 },
+            { year: 2, users: "12K", mrr: 600, arr: 7.2, expenses: 4, margin: 44 },
+            { year: 3, users: "50K", mrr: 2500, arr: 30, expenses: 14, margin: 53 },
+            { year: 4, users: "150K", mrr: 7500, arr: 90, expenses: 35, margin: 61 },
+            { year: 5, users: "400K", mrr: 20000, arr: 240, expenses: 80, margin: 67 }
+        ],
+        phases: [
+            { name: "MVP Peru", time: "Meses 1-4", cost: "$40-70K", features: ["IA genera declaraciones IGV/Renta", "API SUNAT directa", "Facturacion electronica", "Dashboard + alertas", "Import datos bancarios"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$100-180K", features: ["Planilla (T-Registro, PLAME)", "CTS, gratificaciones, AFP auto", "Libros electronicos PLE", "IA detecta inconsistencias", "Portal contadores"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$250-400K", features: ["Proyeccion fiscal IA", "App movil empresarios", "API abierta ERPs", "Regimen MYPE/RER auto", "Alertas regulatorias RT"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$800K-1.5M", features: ["Colombia DIAN, Mexico SAT, Chile SII", "Motor IA multi-jurisdiccion", "Compliance laboral por pais", "Bancos locales por pais", "Partners contadores"] },
+            { name: "Plataforma Integral", time: "Meses 31-48", cost: "$2-4M", features: ["Brasil, Argentina, Ecuador, CA", "Credit scoring con data tributaria", "ESG/compliance ambiental", "IA generativa consultas", "White-label bancos/fintechs"] }
+        ]
+    },
+    {
+        id: 3, name: "Marketplace B2B Materiales Construccion", short: "Marketplace B2B",
+        tagline: "El Faire/Moglix de construccion para Latinoamerica",
+        color: "#ffd93d", gradient: "linear-gradient(135deg, #ffd93d, #ff8a5c)",
+        tam: "$120-180B", sam: "$40-60B", som: "$2-5B GMV",
+        mvpCost: "$60-100K", timeToRevenue: "4 meses", arrY5: 480, marginY5: 73,
+        competitionLatam: "Media", techComplexity: "Media", regulatoryComplexity: "Media",
+        unicornScore: 90,
+        problem: [
+            "Precios varian hasta 40% entre proveedores para el mismo producto",
+            "Miles de ferreterias y distribuidores sin conexion digital",
+            "Pedidos por telefono, WhatsApp o en persona; sin tracking",
+            "Constructoras pequenas no acceden a credito para materiales",
+            "92% de supply chain minero son MSMEs (EU-LAC Digital Accelerator)"
+        ],
+        competitors: [
+            ["Tul (Colombia)", "$800M val, $210M raised", "5-8% take rate", "Colombia/Ecuador/Mexico, no Peru. 20K envios/mes"],
+            ["Faire (USA)", "$12.6B val", "~25% take rate", "Wholesale general, no LatAm, no construccion"],
+            ["Moglix (India)", "$2.6B", "Transaccion+SaaS", "Industrial MRO, no LatAm"],
+            ["Nuestra Solucion", "Target $2B+", "5-8% take rate", "LatAm construction-first, credito embebido, IA precios"]
+        ],
+        revenueStreams: [
+            { name: "Take-rate transaccion", detail: "5-8% por compra en la plataforma." },
+            { name: "Suscripcion proveedores", detail: "$49-199/mes por visibilidad y analytics premium." },
+            { name: "Embedded Finance", detail: "Credito a constructoras, factoring de facturas." },
+            { name: "Logistica", detail: "Comision por optimizacion de entregas." },
+            { name: "Data/Analytics", detail: "Inteligencia de mercado a fabricantes y distribuidores." },
+            { name: "SaaS ferreterias", detail: "Gestion inventario y POS digital $29-79/mes." }
+        ],
+        roi: [
+            { year: 1, users: "$2M GMV/m", mrr: 120, arr: 1.44, expenses: 1.2, margin: 17 },
+            { year: 2, users: "$15M GMV/m", mrr: 975, arr: 11.7, expenses: 6, margin: 49 },
+            { year: 3, users: "$60M GMV/m", mrr: 4200, arr: 50.4, expenses: 22, margin: 56 },
+            { year: 4, users: "$180M GMV/m", mrr: 13500, arr: 162, expenses: 55, margin: 66 },
+            { year: 5, users: "$500M GMV/m", mrr: 40000, arr: 480, expenses: 130, margin: 73 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$60-100K", features: ["Catalogo materiales web+app", "50-100 ferreterias Lima", "Cotizacion y comparacion RT", "Checkout multi-pago", "Dashboard proveedores"] },
+            { name: "Network Effects", time: "Meses 5-10", cost: "$150-250K", features: ["Ratings proveedores", "Matching IA precio/ubicacion", "Delivery con transportistas", "SUNAT facturacion integrada", "Credito compradores recurrentes"] },
+            { name: "Inteligencia + Credito", time: "Meses 11-18", cost: "$400-700K", features: ["IA prediccion precios", "Gestion de obra vinculada", "Credit scoring alternativo", "API constructoras", "Fabricantes directos"] },
+            { name: "Expansion Regional", time: "Meses 19-30", cost: "$1.5-3M", features: ["Colombia y Mexico", "Factoring facturas", "Logistica inteligente rutas", "Analytics premium fabricantes", "Fidelizacion compradores"] },
+            { name: "Ecosistema", time: "Meses 31-48", cost: "$4-8M", features: ["Chile, Brasil, Ecuador, CA", "Vertical minero/industrial", "Subasta inversa proyectos", "Fintech: prestamos + seguros", "Indice precios construccion RT"] }
+        ]
+    },
+    {
+        id: 4, name: "Plataforma Salud Digital y Gestion Clinica", short: "Salud Digital",
+        tagline: "El Docplanner + Toast de salud para LatAm",
+        color: "#ff6b6b", gradient: "linear-gradient(135deg, #ff6b6b, #a855f7)",
+        tam: "$12.8B Digital Health LatAm → $66.4B (2033)", sam: "$8-12B", som: "$200-500M",
+        mvpCost: "$50-90K", timeToRevenue: "4 meses", arrY5: 96, marginY5: 64,
+        competitionLatam: "Media", techComplexity: "Alta", regulatoryComplexity: "Alta",
+        unicornScore: 79,
+        problem: [
+            "80% de clinicas privadas en LatAm usan papel o Excel para gestion",
+            "Digital health LatAm: $12.8B→$66.4B 2033 (CAGR 20%). Telemedicina: $2.95B→$10.5B",
+            "No hay historia clinica digital unificada entre proveedores en LatAm",
+            "Software clinico (EHR/HIS) es el segmento de mayor crecimiento: CAGR 18.3%",
+            "Docplanner ($2.5B) solo booking. No hay sistema operativo completo para clinicas LatAm"
+        ],
+        competitors: [
+            ["Docplanner (Europa)", "$2.5B", "Marketplace+SaaS", "Booking doctores, no gestion clinica completa"],
+            ["Smart Doctor (Peru)", "$1.5M raised", "B2B telemedicina", "Solo telemedicina corporativa"],
+            ["Hims & Hers (USA)", "$2.35B revenue", "D2C telehealth", "Ingles, USA, no gestion clinica"],
+            ["Nuestra Solucion", "Target $1B+", "$39-149/mes", "Sistema operativo completo clinicas, IA diagnostica, WhatsApp, receta electronica"]
+        ],
+        revenueStreams: [
+            { name: "SaaS por clinica", detail: "$39 (1-3 docs), $79 (4-10), $149 (11+)/mes." },
+            { name: "Comision telemedicina", detail: "15% por teleconsulta realizada." },
+            { name: "Receta electronica", detail: "$1-3 comision farmacia por receta digital." },
+            { name: "Procesamiento pagos", detail: "2-3% por pago de consulta via plataforma." },
+            { name: "Premium pacientes", detail: "$5-10/mes por historial unificado + teleconsulta." }
+        ],
+        roi: [
+            { year: 1, users: "500", mrr: 40, arr: 0.48, expenses: 0.6, margin: -25 },
+            { year: 2, users: "3K", mrr: 270, arr: 3.24, expenses: 2.5, margin: 23 },
+            { year: 3, users: "12K", mrr: 1200, arr: 14.4, expenses: 8, margin: 44 },
+            { year: 4, users: "35K", mrr: 3500, arr: 42, expenses: 18, margin: 57 },
+            { year: 5, users: "80K", mrr: 8000, arr: 96, expenses: 35, margin: 64 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$50-90K", features: ["Agenda citas online", "Historia clinica basica cloud", "Recordatorios WhatsApp/SMS", "SUNAT facturacion clinicas", "Portal paciente"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$120-200K", features: ["Telemedicina videollamada", "Receta electronica digital", "Integracion laboratorios", "Triaje con IA", "App pacientes"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$300-500K", features: ["IA asistencia diagnostica", "Farmacia + delivery meds", "Integracion aseguradoras", "Analytics clinicos", "Alianza farmacias"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia, Mexico, Chile", "Regulacion salud por pais", "Telemedicina cross-border", "Financiamiento tratamientos", "Certificacion clinicas"] },
+            { name: "Ecosistema Salud", time: "Meses 31-48", cost: "$3-6M", features: ["Brasil", "IA imagenes medicas", "Marketplace salud", "API hospitales/EPS", "Wearables integration"] }
+        ]
+    },
+    {
+        id: 5, name: "Infraestructura Pagos Cross-Border", short: "Infra Pagos",
+        tagline: "El Stripe + Plaid de Latinoamerica",
+        color: "#4ecdc4", gradient: "linear-gradient(135deg, #4ecdc4, #6c63ff)",
+        tam: "$222B Cross-Border Global", sam: "$10.9B LatAm", som: "$500M-1B vol.",
+        mvpCost: "$80-150K", timeToRevenue: "5 meses", arrY5: 504, marginY5: 76,
+        competitionLatam: "Media-Alta", techComplexity: "Muy Alta", regulatoryComplexity: "Muy Alta",
+        unicornScore: 85,
+        problem: [
+            "Cross-border LatAm: $10.9B en 2025. Pagos toman 3-5 dias y cuestan 5-8%",
+            "No existe un Plaid que conecte Yape, PIX, Nequi, Mercado Pago",
+            "dLocal: $26B TPV 2024 (+45% YoY), $9.2B en un solo trimestre 2025. Valida la demanda",
+            "Remesas: $160B+/ano a LatAm. Mexico solo: $16.1B en Q3 2025",
+            "Brasil e-commerce $346B→$586B 2027 (19% CAGR). Cross-border 7.16% CAGR global"
+        ],
+        competitors: [
+            ["Stripe (Global)", "$50-65B", "2.9%+$0.30", "Global, debil en LatAm profundo"],
+            ["dLocal (Uruguay)", "$26B TPV", "3-4%", "Cross-border merchant, $9.2B/quarter 2025"],
+            ["Palla (USA-LatAm)", "$14.5M raised", "Competitivo", "Solo USA a LatAm"],
+            ["Nuestra Solucion", "Target $2B+", "1.5-2.5%", "Intra-LatAm + USA, Open Banking API, stablecoins, wallet interop"]
+        ],
+        revenueStreams: [
+            { name: "Transaction fees", detail: "1.5-2.5% por transaccion procesada." },
+            { name: "API access SaaS", detail: "$99-999/mes por acceso open banking APIs." },
+            { name: "FX spread", detail: "0.5-1% en conversion de moneda cross-border." },
+            { name: "Banking-as-a-Service", detail: "Revenue share con empresas que embeben finanzas." },
+            { name: "Float income", detail: "Intereses sobre fondos en transito." }
+        ],
+        roi: [
+            { year: 1, users: "$5M vol/m", mrr: 100, arr: 1.2, expenses: 1.5, margin: -25 },
+            { year: 2, users: "$50M vol/m", mrr: 900, arr: 10.8, expenses: 6, margin: 44 },
+            { year: 3, users: "$300M vol/m", mrr: 4800, arr: 57.6, expenses: 20, margin: 65 },
+            { year: 4, users: "$1B vol/m", mrr: 15000, arr: 180, expenses: 50, margin: 72 },
+            { year: 5, users: "$3B vol/m", mrr: 42000, arr: 504, expenses: 120, margin: 76 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-5", cost: "$80-150K", features: ["API pagos Yape/Plin/banco", "SDK JavaScript/Python/PHP", "Dashboard merchants", "Sandbox developers", "KYC basico"] },
+            { name: "Expansion Rails", time: "Meses 6-12", cost: "$200-400K", features: ["Open Banking Peru", "Cross-border Peru-Colombia", "API compliance/identidad", "Reconciliacion auto", "Split payments"] },
+            { name: "Multi-pais", time: "Meses 13-20", cost: "$500K-1M", features: ["Colombia + Mexico", "Stablecoin settlement USDC", "Embedded lending API", "PIX Brasil", "ML fraud detection"] },
+            { name: "Banking-as-a-Service", time: "Meses 21-32", cost: "$2-4M", features: ["Virtual accounts white-label", "Card issuing", "Lending-as-a-Service", "Remesas USA-LatAm", "Open Banking API unificada"] },
+            { name: "Plataforma Financiera", time: "Meses 33-48", cost: "$5-10M", features: ["Chile, Argentina, Ecuador, CA", "Treasury multi-moneda", "Stablecoin rails nativos", "Insurance-as-a-Service API", "IPO readiness"] }
+        ]
+    },
+    {
+        id: 6, name: "Restaurant OS para LatAm", short: "Restaurant OS",
+        tagline: "El Toast de Latinoamerica",
+        color: "#ff8a5c", gradient: "linear-gradient(135deg, #ff8a5c, #ffd93d)",
+        tam: "$200B+", sam: "$15-25B", som: "$300M-800M",
+        mvpCost: "$45-80K", timeToRevenue: "3 meses", arrY5: 180, marginY5: 60,
+        competitionLatam: "Baja", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 86,
+        problem: [
+            "Peru tiene 220,000+ restaurantes y una escena culinaria de clase mundial",
+            "La mayoria usa caja registradora o cuaderno, especialmente fuera de Lima",
+            "88% de operadores de restaurantes planean invertir en tecnologia en 2025-2026",
+            "Toast ($16.6B mkt cap, $6.15B rev 2025, 164K locations, ARR $2B+) = prueba definitiva",
+            "Toast no opera en LatAm. InfoRest (Peru) es basico POS sin delivery/IA/fintech"
+        ],
+        competitors: [
+            ["Toast (TOST)", "$16.6B mkt cap", "$0-165/mes+fees", "USA/UK/Canada, $6.15B rev, 164K loc, no LatAm"],
+            ["Lightspeed (Canada)", "$4B+", "$69-399/mes", "Global pero no LatAm profundo"],
+            ["OlaClick (Peru, YC W21)", "$8M raised", "Digital menu", "45K restaurants, 1M+ orders/mo. Solo digital menu, no full-stack OS"],
+            ["InfoRest (Peru)", "Local", "Variable", "POS basico, sin delivery integration, sin IA"],
+            ["Nuestra Solucion", "Target $1B+", "$19-99/mes", "POS + inventario + delivery + SUNAT + Yape + WhatsApp + food cost IA"]
+        ],
+        revenueStreams: [
+            { name: "SaaS suscripcion", detail: "$19-99/mes segun tamano del restaurante." },
+            { name: "Payment processing", detail: "1.5-2.5% por transaccion Yape/tarjeta." },
+            { name: "Delivery integration", detail: "Comision por gestion multi-plataforma Rappi/PedidosYa." },
+            { name: "Restaurant Capital", detail: "Prestamos capital de trabajo basados en ventas." },
+            { name: "Marketplace proveedores", detail: "Comision por compras a proveedores via plataforma." }
+        ],
+        roi: [
+            { year: 1, users: "800", mrr: 48, arr: 0.58, expenses: 0.7, margin: -21 },
+            { year: 2, users: "5K", mrr: 350, arr: 4.2, expenses: 3, margin: 29 },
+            { year: 3, users: "25K", mrr: 1750, arr: 21, expenses: 10, margin: 52 },
+            { year: 4, users: "80K", mrr: 5600, arr: 67.2, expenses: 28, margin: 58 },
+            { year: 5, users: "200K", mrr: 15000, arr: 180, expenses: 72, margin: 60 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$45-80K", features: ["POS tablet/movil", "Facturacion SUNAT", "Pagos Yape/Plin/tarjeta", "Menu digital QR", "Reportes ventas basicos"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$100-180K", features: ["Integracion Rappi/PedidosYa", "Gestion inventario + food cost", "KDS (Kitchen Display)", "WhatsApp pedidos directos", "Gestion empleados basica"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$250-450K", features: ["Expansion provincias", "Restaurant Capital (prestamos)", "Marketplace proveedores", "Analytics avanzados", "Reservas online"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia, Mexico, Chile", "Adaptacion fiscal por pais", "Ghost kitchen management", "Programa fidelizacion", "API cadenas restaurantes"] },
+            { name: "Plataforma Completa", time: "Meses 31-48", cost: "$3-5M", features: ["Brasil, Espana", "IA prediccion demanda", "Payroll integrado", "Seguros para restaurantes", "White-label franquicias"] }
+        ]
+    },
+    {
+        id: 7, name: "LegalTech IA para Mercados Hispanohablantes", short: "LegalTech IA",
+        tagline: "El LegalZoom + Harvey AI del mundo hispano",
+        color: "#a855f7", gradient: "linear-gradient(135deg, #a855f7, #6c63ff)",
+        tam: "$3B LegalTech AI → $10.8B (2030)", sam: "$800M-1.5B LatAm", som: "$50-150M",
+        mvpCost: "$35-65K", timeToRevenue: "3 meses", arrY5: 120, marginY5: 72,
+        competitionLatam: "Muy Baja", techComplexity: "Alta", regulatoryComplexity: "Media",
+        unicornScore: 85,
+        problem: [
+            "500M+ hispanohablantes sin un LegalZoom o Harvey equivalente en espanol",
+            "Revision de contrato simple en Peru cuesta $130-530 y toma dias",
+            "Harvey AI ($11B val Mar 2026, $760M raised en 1 ano) prueba que legal AI = mega unicornio",
+            "Adopcion corporativa de AI legal: 23%→52% en 1 ano. Funding record $4.3B en 2025 (+54%)",
+            "Nada equivalente en espanol para civil law. Saga ($1.5M) es nascente"
+        ],
+        competitors: [
+            ["LegalZoom (USA)", "$2-3B", "$10-30/mes", "Ingles, common law, USA only"],
+            ["Harvey AI (USA)", "$11B, $190M ARR", "Enterprise", "IA legal ingles, $760M raised en 1 ano, solo ingles"],
+            ["Clio (Canada)", "$5B, $400M ARR", "$49-149/mes", "400K users, compro vLex (espanol) pero no LatAm workflow"],
+            ["Saga (Europa)", "1.5M raised", "SaaS", "Expandiendo a LatAm pero nascente"],
+            ["Nuestra Solucion", "Target $500M+", "$9-49/mes", "IA en espanol, civil law LatAm, generador contratos por pais, e-firma"]
+        ],
+        revenueStreams: [
+            { name: "SaaS suscripcion", detail: "$9 individual, $29 PYME, $49 profesional/mes." },
+            { name: "Pay per document", detail: "$3-15 por documento legal generado." },
+            { name: "AI contract review", detail: "$10-50 por revision IA de contrato." },
+            { name: "E-signature", detail: "$1-3 por firma electronica certificada." },
+            { name: "Marketplace abogados", detail: "Comision 15-20% por consulta legal." }
+        ],
+        roi: [
+            { year: 1, users: "3K", mrr: 45, arr: 0.54, expenses: 0.5, margin: 7 },
+            { year: 2, users: "20K", mrr: 400, arr: 4.8, expenses: 3, margin: 38 },
+            { year: 3, users: "80K", mrr: 1200, arr: 14.4, expenses: 7, margin: 51 },
+            { year: 4, users: "250K", mrr: 3750, arr: 45, expenses: 17, margin: 62 },
+            { year: 5, users: "600K", mrr: 10000, arr: 120, expenses: 34, margin: 72 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-3", cost: "$35-65K", features: ["Generador contratos Peru", "IA revision contratos espanol", "Templates: laboral, comercial, alquiler", "E-firma Ley 27269", "Dashboard usuario"] },
+            { name: "Product-Market Fit", time: "Meses 4-9", cost: "$80-150K", features: ["IA consultas legales NLP", "Modulo notarial digital", "Alertas vencimiento contratos", "Portal abogados", "Integracion SUNARP"] },
+            { name: "Escalar Peru", time: "Meses 10-16", cost: "$200-350K", features: ["Derecho societario", "Propiedad intelectual INDECOPI", "API para empresas", "Marketplace abogados", "Compliance laboral auto"] },
+            { name: "Expansion LatAm", time: "Meses 17-28", cost: "$600K-1.2M", features: ["Colombia, Mexico, Chile, Argentina", "Codigos civiles por pais", "Multi-jurisdiccion", "Notarizacion cross-border", "B2B enterprise"] },
+            { name: "Plataforma Legal IA", time: "Meses 29-48", cost: "$2-4M", features: ["Brasil (portugues), Espana", "IA litigacion asistida", "Integracion poder judicial", "Escrow de contratos", "Legal analytics big data"] }
+        ]
+    },
+    {
+        id: 8, name: "MiningTech SaaS - Software Minero", short: "MiningTech SaaS",
+        tagline: "El sistema operativo digital para la mineria de LatAm",
+        color: "#22d3ee", gradient: "linear-gradient(135deg, #22d3ee, #00d4aa)",
+        tam: "$19.75B Mining Software → $45B (2035)", sam: "$1.33B LatAm", som: "$100-400M",
+        mvpCost: "$65-120K", timeToRevenue: "4 meses", arrY5: 150, marginY5: 68,
+        competitionLatam: "Casi nula (nativa)", techComplexity: "Alta", regulatoryComplexity: "Media",
+        unicornScore: 82,
+        problem: [
+            "Peru es #2 mundial en cobre, #6 en oro. Pipeline: $6B+ en nuevos proyectos mineros",
+            "12,000+ operaciones mineras en Peru: grandes, medianas y artisanales, la mayoria sin software moderno",
+            "Incumbentes (SAP, Hexagon, Maptek) venden suites monoliticas carisimas ($100K+). No hay alternativa LatAm-nativa",
+            "Dispatch optimization redujo tiempo muerto solo 18% en minas peruanas de cobre - enorme espacio de mejora",
+            "Compliance ambiental OEFA y ESG son ahora obligatorios pero no hay software accesible en la region"
+        ],
+        competitors: [
+            ["SAP Mining", "Enterprise", "$100K+/ano", "Monolitico, caro, generico, no LatAm-first"],
+            ["Hexagon Mining", "Enterprise", "$80-200K/ano", "Mine planning, requiere consultores"],
+            ["Micromine", "Mid-market", "$30-100K/ano", "Geological modeling, Australia-first"],
+            ["Nuestra Solucion", "Target $1B+", "$2-15K/mes SaaS", "Cloud-native, IA predictiva, espanol, OEFA/SENACE integrado, pricing accesible"]
+        ],
+        revenueStreams: [
+            { name: "SaaS por operacion", detail: "$2K-15K/mes segun tamano de mina (artisanal a gran escala)." },
+            { name: "AI Optimization modules", detail: "$5K-30K/mes ore grade, dispatch, energy optimization." },
+            { name: "ESG/Compliance reporting", detail: "$1K-8K/mes reportes OEFA, SENACE, inversores." },
+            { name: "Predictive maintenance", detail: "$3K-20K/mes por flota de equipos monitoreados." },
+            { name: "Data marketplace", detail: "Inteligencia de mercado a traders de commodities." }
+        ],
+        roi: [
+            { year: 1, users: "30 minas", mrr: 120, arr: 1.44, expenses: 0.9, margin: -37 },
+            { year: 2, users: "150 minas", mrr: 600, arr: 7.2, expenses: 4, margin: 44 },
+            { year: 3, users: "500 operaciones", mrr: 2000, arr: 24, expenses: 11, margin: 54 },
+            { year: 4, users: "1.5K operaciones", mrr: 5500, arr: 66, expenses: 28, margin: 58 },
+            { year: 5, users: "3K+ operaciones", mrr: 12500, arr: 150, expenses: 48, margin: 68 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-5", cost: "$65-120K", features: ["Dashboard operaciones cloud", "Dispatch optimization basico", "Reportes produccion RT", "Compliance OEFA template", "Mobile app supervisores"] },
+            { name: "Product-Market Fit", time: "Meses 6-12", cost: "$150-280K", features: ["AI prediccion ore grade", "Energy consumption analytics", "Maintenance scheduling", "Integracion sensores existentes API", "Portal ambiental SENACE"] },
+            { name: "Escalar Peru", time: "Meses 13-20", cost: "$400-700K", features: ["Suite predictive maintenance", "ESG reporting inversores", "Modulo seguridad/incidentes", "API SAP/Oracle legacy", "Mid-tier mining package"] },
+            { name: "Expansion LatAm", time: "Meses 21-32", cost: "$1.5-3M", features: ["Chile (cobre/litio), Colombia, Mexico", "Digital twin mine planning", "Supply chain minerals", "Artisanal mining mobile suite", "Carbon footprint per-ton"] },
+            { name: "Plataforma Global", time: "Meses 33-48", cost: "$3-6M", features: ["Australia, Africa, Indonesia", "AI autonomous dispatch", "Mineral traceability blockchain", "Insurance/risk scoring", "IPO readiness"] }
+        ]
+    },
+    {
+        id: 9, name: "AgriExport Tech Platform", short: "AgriExport Tech",
+        tagline: "Plataforma tecnologica de exportacion agricola peruana",
+        color: "#3b82f6", gradient: "linear-gradient(135deg, #3b82f6, #22d3ee)",
+        tam: "$14B+ Peru agro-exports 2025", sam: "$3-5B", som: "$200-500M GMV",
+        mvpCost: "$55-95K", timeToRevenue: "4 meses", arrY5: 120, marginY5: 58,
+        competitionLatam: "Muy Baja", techComplexity: "Media", regulatoryComplexity: "Media",
+        unicornScore: 80,
+        problem: [
+            "Peru: record $14B+ agro-exports 2025 (+18% YoY). Solo 9% vende online",
+            "#1 exportador mundial arandanos (300K ton, $1.79B). Paltas: 877K ton, $1.6B (+42% vol)",
+            "Trazabilidad farm-to-table requerida por UE y USA pero no hay plataforma",
+            "Cadena fria y logistica fragmentada para perecibles de exportacion",
+            "Compliance SENASA (fitosanitario) es manual y complejo"
+        ],
+        competitors: [
+            ["FreshFro (Global)", "Early stage", "Commission", "Cross-border produce, no Peru-specific"],
+            ["Agrofy (Argentina)", "Growth", "Marketplace", "Inputs marketplace, no export-focused"],
+            ["TradeGlobal (USA)", "Mid stage", "SaaS+commission", "General trade, not agri-specific"],
+            ["Nuestra Solucion", "Target $500M+", "Commission+SaaS", "Peru agro-export first, SENASA integrated, cold chain, traceability blockchain"]
+        ],
+        revenueStreams: [
+            { name: "Comision transaccion", detail: "3-6% por venta de producto exportado via plataforma." },
+            { name: "SaaS trazabilidad", detail: "$49-199/mes por farm-to-table tracking." },
+            { name: "Logistics markup", detail: "8-15% sobre servicios de logistica/cold chain." },
+            { name: "Trade finance", detail: "Spread sobre financiamiento de exportaciones." },
+            { name: "Certificaciones", detail: "Facilitacion organic/fair trade a $500-2K." }
+        ],
+        roi: [
+            { year: 1, users: "100 exporters", mrr: 40, arr: 0.48, expenses: 0.7, margin: -31 },
+            { year: 2, users: "500 exporters", mrr: 250, arr: 3, expenses: 2.5, margin: 17 },
+            { year: 3, users: "2K clients", mrr: 900, arr: 10.8, expenses: 6, margin: 44 },
+            { year: 4, users: "5K clients", mrr: 3000, arr: 36, expenses: 15, margin: 58 },
+            { year: 5, users: "12K clients", mrr: 9167, arr: 110, expenses: 46, margin: 58 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$55-95K", features: ["Marketplace exportadores-compradores", "Catalogo productos + certificaciones", "Cotizacion logistica integrada", "Dashboard compliance SENASA", "Chat comprador-vendedor"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$120-200K", features: ["Trazabilidad blockchain QR", "Cold chain monitoring IoT", "Pre-clearance documental", "Trade finance basico", "Reviews compradores"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$300-500K", features: ["Integracion SUNAT/Aduanas", "IA prediccion calidad/demanda", "Programa certificacion organica", "API supermercados globales", "Expansion: cafe, cacao, quinoa"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia, Chile, Ecuador, Mexico", "Multi-origin sourcing", "Sustainability scoring", "Insurance cargo perecible", "White-label importadores"] },
+            { name: "Plataforma Global", time: "Meses 31-48", cost: "$2.5-5M", features: ["Africa, SE Asia origins", "Forward contracts platform", "Carbon footprint por shipment", "AI grade prediction (vision)", "IPO readiness"] }
+        ]
+    },
+    {
+        id: 10, name: "Cybersecurity MSSP para PYMEs LatAm", short: "CyberSec SMB",
+        tagline: "Proteccion cibernetica accesible para PYMEs latinoamericanas",
+        color: "#f43f5e", gradient: "linear-gradient(135deg, #f43f5e, #ff8a5c)",
+        tam: "$38.3B MSSP Global → $96.7B (2033)", sam: "$3-5B LatAm", som: "$100-300M",
+        mvpCost: "$60-110K", timeToRevenue: "3 meses", arrY5: 144, marginY5: 65,
+        competitionLatam: "Baja", techComplexity: "Alta", regulatoryComplexity: "Media",
+        unicornScore: 79,
+        problem: [
+            "1M+ ciberataques en Peru 2024. Brasil: 2,569 ataques/semana (+40% vs global)",
+            "Solo ~17 startups de cyberseg en Peru, solo 3 con funding",
+            "MSSP global: $38.3B→$96.7B 2033 (CAGR 10.8%). SMBs no pueden pagar CISO ($250K+/ano)",
+            "Nueva Ley Proteccion Datos Peru (Marzo 2025): DPOs obligatorios para todas las empresas",
+            "CrowdStrike $4.92B ARR, pero inaccesible para PYMEs LatAm. Gap enorme"
+        ],
+        competitors: [
+            ["CrowdStrike (USA)", "$4.92B ARR", "$$$", "Enterprise, caro para SMBs LatAm"],
+            ["Hackmetrix (Mexico)", "Early stage", "SaaS", "ISO/SOC2, Mexico-focused"],
+            ["Delta Protect (Mexico)", "Early stage", "SaaS 'Apolo'", "Endpoint+compliance, Mexico"],
+            ["Nuestra Solucion", "Target $500M+", "$29-149/mes", "All-in-one SMB LatAm: endpoint + email + compliance + training, espanol nativo"]
+        ],
+        revenueStreams: [
+            { name: "SaaS por empresa", detail: "$29 micro, $79 PYME, $149 mediana/mes." },
+            { name: "Per-endpoint fee", detail: "$3-8/dispositivo/mes adicional." },
+            { name: "Compliance certification", detail: "$500-3K por certificacion ISO/SOC2 asistida." },
+            { name: "Incident response", detail: "$150-500/hora respuesta a incidentes." },
+            { name: "Training platform", detail: "$5/empleado/mes phishing simulation + training." }
+        ],
+        roi: [
+            { year: 1, users: "500", mrr: 40, arr: 0.48, expenses: 0.65, margin: -26 },
+            { year: 2, users: "3K", mrr: 270, arr: 3.24, expenses: 2.5, margin: 23 },
+            { year: 3, users: "12K", mrr: 1200, arr: 14.4, expenses: 7, margin: 51 },
+            { year: 4, users: "40K", mrr: 4000, arr: 48, expenses: 20, margin: 58 },
+            { year: 5, users: "120K", mrr: 12000, arr: 144, expenses: 50, margin: 65 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$60-110K", features: ["Endpoint protection (wrapper)", "Email security gateway", "Dashboard amenazas RT", "Compliance checker basico", "Alertas WhatsApp"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$120-200K", features: ["Phishing simulation", "Security training empleados", "ISO 27001 gap analysis IA", "Vulnerability scanning", "Reportes ejecutivos auto"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$300-500K", features: ["SOC 24/7 (outsource)", "DPO-as-a-Service", "Ley Datos Peru compliance", "Integracion SEGDI", "Programa partners IT"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia, Mexico, Chile", "Multi-country compliance", "MDR (Managed Detection)", "Cyber insurance bundle", "API integraciones"] },
+            { name: "Plataforma Regional", time: "Meses 31-48", cost: "$3-5M", features: ["Brasil, Argentina, CA", "AI threat intelligence", "Automated remediation", "Marketplace security tools", "SOC propio regional"] }
+        ]
+    }
+];
+
+// ==================== RENDER FUNCTIONS ====================
+
+function renderContextCharts() {
+    // VC Sector Pie
+    new Chart(document.getElementById('vcSectorChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Fintech (61%)', 'Vertical SaaS (13%)', 'Climate/Energy (8%)', 'B2B Infra (7%)', 'Healthtech (5%)', 'Otros (6%)'],
+            datasets: [{
+                data: [61, 13, 8, 7, 5, 6],
+                backgroundColor: ['#6c63ff', '#00d4aa', '#22d3ee', '#ffd93d', '#ff6b6b', '#a855f7'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'right', labels: { color: '#a0a0cc', font: { size: 11 } } } }
+        }
+    });
+
+    // CAGR Comparison Chart
+    new Chart(document.getElementById('cagrChart'), {
+        type: 'bar',
+        data: {
+            labels: ['AI Agents', 'AI RegTech', 'Renewable\nEnergy Sw', 'RegTech', 'Digital Health\nLatAm', 'LegalTech AI', 'Vertical SaaS', 'Cross-Border\nPayments', 'Mining\nSoftware', 'MSSP\nGlobal'],
+            datasets: [{
+                label: 'CAGR %',
+                data: [46, 36.1, 27.1, 21.1, 20, 19.5, 16.3, 11.2, 8.6, 10.8],
+                backgroundColor: ['#ff6b6b', '#6c63ff', '#22d3ee', '#00d4aa', '#ff8a5c', '#a855f7', '#ffd93d', '#4ecdc4', '#3b82f6', '#f43f5e'],
+                borderWidth: 0,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+            scales: {
+                x: { ticks: { color: '#a0a0cc', callback: v => v + '%' }, grid: { color: 'rgba(42,42,94,0.3)' } },
+                y: { ticks: { color: '#a0a0cc', font: { size: 10 } }, grid: { display: false } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // Unicorn Validation Chart
+    new Chart(document.getElementById('unicornValidationChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Nubank\n(Fintech)', 'Deel\n(Compliance)', 'Toast\n(Restaurant)', 'Harvey AI\n(Legal)', 'ServiceTitan\n(Home Svc)', 'dLocal\n(Payments)', 'Vanta\n(Compliance)', 'Tul\n(B2B Constr)', 'Docplanner\n(Health)'],
+            datasets: [{
+                label: 'Valuacion ($B)',
+                data: [45, 17.3, 16.6, 11, 6.7, 5, 4.2, 0.8, 2.5],
+                backgroundColor: ['#00d4aa', '#00d4aa', '#ff8a5c', '#a855f7', '#6c63ff', '#4ecdc4', '#22d3ee', '#ffd93d', '#ff6b6b'],
+                borderWidth: 0,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: '#a0a0cc', font: { size: 9 }, maxRotation: 45 }, grid: { display: false } },
+                y: { ticks: { color: '#a0a0cc', callback: v => '$' + v + 'B' }, grid: { color: 'rgba(42,42,94,0.3)' } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // Market Growth Bar - Updated with validated 2025-2026 data
+    new Chart(document.getElementById('marketGrowthChart'), {
+        type: 'bar',
+        data: {
+            labels: ['SaaS\nLatAm', 'Vertical\nSaaS', 'Digital\nHealth', 'RegTech\nGlobal', 'Carbon\nLatAm', 'LegalTech\nAI', 'AI Agents\nGlobal'],
+            datasets: [
+                { label: '2025', data: [21.4, 106.5, 12.8, 24.3, 63, 3, 7.8], backgroundColor: 'rgba(108,99,255,0.7)' },
+                { label: '2030-33', data: [45.1, 369, 66.4, 112, 824, 10.8, 52.6], backgroundColor: 'rgba(0,212,170,0.7)' }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: '#a0a0cc', font: { size: 9 } }, grid: { display: false } },
+                y: { type: 'logarithmic', ticks: { color: '#a0a0cc', callback: v => '$' + v + 'B' }, grid: { color: 'rgba(42,42,94,0.5)' } }
+            },
+            plugins: { legend: { labels: { color: '#a0a0cc' } } }
+        }
+    });
+}
+
+function renderRanking() {
+    const sorted = [...IDEAS].sort((a, b) => b.unicornScore - a.unicornScore);
+    const container = document.getElementById('rankingBars');
+    container.innerHTML = sorted.map((idea, i) => `
+        <div class="ranking-bar">
+            <div class="rank-label"><strong>#${i + 1}</strong> ${idea.short}</div>
+            <div class="bar-track">
+                <div class="bar-fill" style="width: ${idea.unicornScore}%; background: ${idea.gradient};">
+                    ${idea.unicornScore}/100
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderRankingCharts() {
+    // ARR Year 5
+    new Chart(document.getElementById('arrChart'), {
+        type: 'bar',
+        data: {
+            labels: IDEAS.map(i => i.short),
+            datasets: [{
+                label: 'ARR Ano 5 ($M)',
+                data: IDEAS.map(i => i.arrY5),
+                backgroundColor: IDEAS.map(i => i.color + '99'),
+                borderColor: IDEAS.map(i => i.color),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+            scales: {
+                x: { ticks: { color: '#a0a0cc', callback: v => '$' + v + 'M' }, grid: { color: 'rgba(42,42,94,0.5)' } },
+                y: { ticks: { color: '#a0a0cc', font: { size: 10 } }, grid: { display: false } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // MVP Cost vs Time to Revenue (Bubble)
+    new Chart(document.getElementById('mvpChart'), {
+        type: 'scatter',
+        data: {
+            datasets: IDEAS.map(i => ({
+                label: i.short,
+                data: [{ x: parseInt(i.mvpCost.replace(/[^0-9]/g, '').slice(0, -3)) || 50, y: parseInt(i.timeToRevenue), r: i.unicornScore / 8 }],
+                backgroundColor: i.color + 'aa',
+                borderColor: i.color
+            }))
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { title: { display: true, text: 'MVP Cost ($K)', color: '#a0a0cc' }, ticks: { color: '#a0a0cc', callback: v => '$' + v + 'K' }, grid: { color: 'rgba(42,42,94,0.3)' } },
+                y: { title: { display: true, text: 'Time to Revenue (meses)', color: '#a0a0cc' }, ticks: { color: '#a0a0cc' }, grid: { color: 'rgba(42,42,94,0.3)' } }
+            },
+            plugins: { legend: { labels: { color: '#a0a0cc', font: { size: 10 } }, position: 'bottom' } }
+        }
+    });
+}
+
+function renderIdeas() {
+    const container = document.getElementById('ideasContainer');
+    container.innerHTML = IDEAS.map(idea => `
+        <section id="idea${idea.id}">
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-number" style="background: ${idea.gradient};">${idea.id}</div>
+                    <div class="idea-header-text">
+                        <h2>${idea.name}</h2>
+                        <div class="tagline">${idea.tagline}</div>
+                    </div>
+                </div>
+
+                <div class="idea-badges">
+                    <span class="badge badge-tam">TAM: ${idea.tam}</span>
+                    <span class="badge badge-growth">MVP: ${idea.mvpCost}</span>
+                    <span class="badge badge-competition">Competencia LatAm: ${idea.competitionLatam}</span>
+                    <span class="badge badge-difficulty">Revenue: ${idea.timeToRevenue}</span>
+                </div>
+
+                <div class="idea-problem">
+                    <h3>Problema que Resuelve</h3>
+                    <ul>${idea.problem.map(p => `<li>${p}</li>`).join('')}</ul>
+                </div>
+
+                <!-- Market Size -->
+                <h3 class="sub-header">Tamano de Mercado</h3>
+                <div class="market-grid">
+                    <div class="market-item">
+                        <div class="label">TAM Global</div>
+                        <div class="value" style="color: ${idea.color};">${idea.tam}</div>
+                        <div class="detail">Mercado total direccionable</div>
+                    </div>
+                    <div class="market-item">
+                        <div class="label">SAM LatAm</div>
+                        <div class="value" style="color: ${idea.color};">${idea.sam}</div>
+                        <div class="detail">Mercado serviceable</div>
+                    </div>
+                    <div class="market-item">
+                        <div class="label">SOM 3 anos</div>
+                        <div class="value" style="color: ${idea.color};">${idea.som}</div>
+                        <div class="detail">Mercado obtenible</div>
+                    </div>
+                    <div class="market-item">
+                        <div class="label">Score Unicornio</div>
+                        <div class="value" style="color: ${idea.color};">${idea.unicornScore}/100</div>
+                        <div class="detail">Potencial compuesto</div>
+                    </div>
+                </div>
+
+                <!-- Competitors -->
+                <h3 class="sub-header">Analisis Competitivo</h3>
+                <div style="overflow-x: auto;">
+                    <table class="comp-table">
+                        <tr><th>Empresa</th><th>Valuacion</th><th>Precio</th><th>Diferenciador</th></tr>
+                        ${idea.competitors.map(c => `<tr><td>${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td><td>${c[3]}</td></tr>`).join('')}
+                    </table>
+                </div>
+
+                <!-- Revenue Model -->
+                <h3 class="sub-header">Modelo de Ingresos</h3>
+                <div class="revenue-grid">
+                    ${idea.revenueStreams.map(r => `
+                        <div class="revenue-item">
+                            <div class="stream-name">${r.name}</div>
+                            <div class="stream-detail">${r.detail}</div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <!-- ROI Charts -->
+                <h3 class="sub-header">Proyecciones Financieras (5 Anos)</h3>
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h4>ARR Proyectado ($M)</h4>
+                        <div class="chart-wrapper"><canvas id="arrChart${idea.id}"></canvas></div>
+                    </div>
+                    <div class="chart-container">
+                        <h4>Margen Operativo (%)</h4>
+                        <div class="chart-wrapper"><canvas id="marginChart${idea.id}"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- ROI Table -->
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table class="comp-table">
+                        <tr><th>Ano</th><th>Usuarios</th><th>MRR ($K)</th><th>ARR ($M)</th><th>Gastos ($M)</th><th>Margen</th></tr>
+                        ${idea.roi.map(r => `
+                            <tr>
+                                <td>${r.year}</td><td>${r.users}</td><td>$${r.mrr.toLocaleString()}</td>
+                                <td>$${r.arr}M</td><td>$${r.expenses}M</td>
+                                <td style="color: ${r.margin >= 0 ? '#00d4aa' : '#ff6b6b'}; font-weight: 700;">${r.margin > 0 ? '+' : ''}${r.margin}%</td>
+                            </tr>
+                        `).join('')}
+                    </table>
+                </div>
+
+                <!-- Implementation Phases -->
+                <h3 class="sub-header">Fases de Implementacion</h3>
+                <div class="phases-container">
+                    ${idea.phases.map((p, i) => `
+                        <div class="phase">
+                            <div class="phase-marker">
+                                <div class="phase-dot" style="background: ${idea.gradient};">${i + 1}</div>
+                                ${i < idea.phases.length - 1 ? '<div class="phase-line"></div>' : ''}
+                            </div>
+                            <div class="phase-content">
+                                <h4>
+                                    <span>${p.name}</span>
+                                    <span><span class="phase-time">${p.time}</span> <span class="phase-cost">${p.cost}</span></span>
+                                </h4>
+                                <div class="phase-features">
+                                    ${p.features.map(f => `<span class="phase-feature">${f}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <!-- Total Investment -->
+                <div style="background: var(--bg-secondary); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem; text-align: center;">
+                    <div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Inversion Total (48 meses)</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: ${idea.color};">$${(
+                            idea.phases.reduce((sum, p) => {
+                                const nums = p.cost.match(/[\d.]+/g);
+                                return sum + (nums ? (parseFloat(nums[0]) + parseFloat(nums[1] || nums[0])) / 2 : 0);
+                            }, 0) / 1000
+                        ).toFixed(1)}M</div>
+                    </div>
+                    <div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">ARR Ano 5</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-2);">$${idea.arrY5}M</div>
+                    </div>
+                    <div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Margen Ano 5</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-2);">${idea.marginY5}%</div>
+                    </div>
+                    <div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">ROI Estimado</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-4);">${Math.round(idea.arrY5 / ((idea.phases.reduce((sum, p) => { const nums = p.cost.match(/[\d.]+/g); return sum + (nums ? (parseFloat(nums[0]) + parseFloat(nums[1] || nums[0])) / 2 : 0); }, 0) / 1000)))}x</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `).join('');
+
+    // Render individual charts
+    IDEAS.forEach(idea => {
+        const years = idea.roi.map(r => 'Ano ' + r.year);
+
+        new Chart(document.getElementById(`arrChart${idea.id}`), {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [
+                    { label: 'ARR ($M)', data: idea.roi.map(r => r.arr), backgroundColor: idea.color + '99', borderColor: idea.color, borderWidth: 1 },
+                    { label: 'Gastos ($M)', data: idea.roi.map(r => r.expenses), backgroundColor: '#ff6b6b44', borderColor: '#ff6b6b', borderWidth: 1 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#a0a0cc' }, grid: { display: false } },
+                    y: { ticks: { color: '#a0a0cc', callback: v => '$' + v + 'M' }, grid: { color: 'rgba(42,42,94,0.5)' } }
+                },
+                plugins: { legend: { labels: { color: '#a0a0cc' } } }
+            }
+        });
+
+        new Chart(document.getElementById(`marginChart${idea.id}`), {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Margen %',
+                    data: idea.roi.map(r => r.margin),
+                    borderColor: idea.color,
+                    backgroundColor: idea.color + '22',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: idea.color,
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#a0a0cc' }, grid: { display: false } },
+                    y: { ticks: { color: '#a0a0cc', callback: v => v + '%' }, grid: { color: 'rgba(42,42,94,0.5)' } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+    });
+}
+
+function renderComparison() {
+    const metrics = [
+        { name: 'Inversion MVP', key: 'mvpCost' },
+        { name: 'Time to Revenue', key: 'timeToRevenue' },
+        { name: 'ARR Ano 5', key: 'arrY5', fmt: v => '$' + v + 'M' },
+        { name: 'Margen Ano 5', key: 'marginY5', fmt: v => v + '%' },
+        { name: 'Competencia LatAm', key: 'competitionLatam' },
+        { name: 'Complejidad Tech', key: 'techComplexity' },
+        { name: 'Complejidad Regulatoria', key: 'regulatoryComplexity' },
+        { name: 'Score Unicornio', key: 'unicornScore', fmt: v => v + '/100' }
+    ];
+
+    const table = document.getElementById('comparisonTable');
+    let html = '<tr><th>Metrica</th>' + IDEAS.map(i => `<th style="color: ${i.color};">${i.short}</th>`).join('') + '</tr>';
+    metrics.forEach(m => {
+        html += '<tr><td>' + m.name + '</td>';
+        IDEAS.forEach(i => {
+            const val = i[m.key];
+            const display = m.fmt ? m.fmt(val) : val;
+            let cls = '';
+            if (m.key === 'unicornScore') cls = val >= 85 ? 'score-high' : val >= 75 ? 'score-mid' : 'score-low';
+            if (m.key === 'marginY5') cls = val >= 65 ? 'score-high' : val >= 55 ? 'score-mid' : 'score-low';
+            html += `<td class="${cls}">${display}</td>`;
+        });
+        html += '</tr>';
+    });
+    table.innerHTML = html;
+
+    // Margin comparison chart
+    new Chart(document.getElementById('marginChart'), {
+        type: 'bar',
+        data: {
+            labels: IDEAS.map(i => i.short),
+            datasets: [{
+                label: 'Margen Ano 5 (%)',
+                data: IDEAS.map(i => i.marginY5),
+                backgroundColor: IDEAS.map(i => i.color + '99'),
+                borderColor: IDEAS.map(i => i.color),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: '#a0a0cc', font: { size: 10 }, maxRotation: 45 }, grid: { display: false } },
+                y: { ticks: { color: '#a0a0cc', callback: v => v + '%' }, grid: { color: 'rgba(42,42,94,0.5)' } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // Radar chart (top 5)
+    const top5 = [...IDEAS].sort((a, b) => b.unicornScore - a.unicornScore).slice(0, 5);
+    new Chart(document.getElementById('radarChart'), {
+        type: 'radar',
+        data: {
+            labels: ['TAM Score', 'Facilidad Ejecucion', 'Baja Competencia', 'Network Effects', 'Margen', 'Time-to-Revenue'],
+            datasets: top5.map(i => ({
+                label: i.short,
+                data: [
+                    i.arrY5 / 5,
+                    i.techComplexity === 'Media' ? 80 : i.techComplexity === 'Baja' ? 90 : i.techComplexity === 'Media-Alta' ? 70 : 60,
+                    i.competitionLatam.includes('nula') || i.competitionLatam.includes('Muy Baja') ? 95 : i.competitionLatam.includes('Baja') ? 80 : 60,
+                    i.id === 3 || i.id === 5 ? 95 : i.id === 1 || i.id === 6 ? 85 : i.id === 2 || i.id === 8 ? 75 : 70,
+                    i.marginY5,
+                    100 - parseInt(i.timeToRevenue) * 15
+                ],
+                borderColor: i.color,
+                backgroundColor: i.color + '22',
+                pointBackgroundColor: i.color
+            }))
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: { color: 'rgba(42,42,94,0.5)' },
+                    grid: { color: 'rgba(42,42,94,0.5)' },
+                    pointLabels: { color: '#a0a0cc', font: { size: 10 } },
+                    ticks: { display: false }
+                }
+            },
+            plugins: { legend: { labels: { color: '#a0a0cc', font: { size: 10 } }, position: 'bottom' } }
+        }
+    });
+}
+
+// ==================== FEASIBILITY RENDER ====================
+function renderFeasibility() {
+    const sorted = [...IDEAS].sort((a, b) => (FEASIBILITY[b.id]?.soloScore || 0) - (FEASIBILITY[a.id]?.soloScore || 0));
+
+    // Feasibility comparison table
+    const table = document.getElementById('feasibilityTable');
+    const fMetrics = [
+        { name: 'Score Solo Fundador', key: 'soloScore', fmt: v => v + '/10' },
+        { name: 'Pureza Software', key: 'softwarePurity', fmt: v => v + '%' },
+        { name: 'Contactos Pre-Launch', key: 'contactsPreLaunch' },
+        { name: 'Equipo Minimo', key: 'minTeam', fmt: v => v === 1 ? '1 (tu)' : v + ' personas' },
+        { name: 'Costo 1ra Factura', key: 'minCostToRevenue', fmt: v => v < 1 ? '$' + (v * 1000) : '$' + v + 'K' },
+        { name: 'Tiempo 1ra Factura', key: 'timeToFirstInvoice' },
+        { name: 'Hardware', key: 'hardwareNeeded' },
+        { name: 'Licencias', key: 'licenses' },
+        { name: 'Go-to-Market', key: 'gtmModel', fmt: v => v === 'plg' ? 'PLG' : v === 'hybrid' ? 'Hibrido' : 'Outbound' }
+    ];
+
+    let html = '<tr><th>Metrica</th>' + IDEAS.map(i => `<th style="color: ${i.color};">${i.short}</th>`).join('') + '</tr>';
+    fMetrics.forEach(m => {
+        html += '<tr><td>' + m.name + '</td>';
+        IDEAS.forEach(i => {
+            const f = FEASIBILITY[i.id];
+            if (!f) { html += '<td>-</td>'; return; }
+            const val = f[m.key];
+            const display = m.fmt ? m.fmt(val) : val;
+            let cls = '';
+            if (m.key === 'soloScore') cls = val >= 8 ? 'score-high' : val >= 5 ? 'score-mid' : 'score-low';
+            if (m.key === 'softwarePurity') cls = val >= 80 ? 'score-high' : val >= 60 ? 'score-mid' : 'score-low';
+            if (m.key === 'contactsPreLaunch') cls = val <= 5 ? 'score-high' : val <= 10 ? 'score-mid' : 'score-low';
+            html += `<td class="${cls}">${display}</td>`;
+        });
+        html += '</tr>';
+    });
+    table.innerHTML = html;
+
+    // Software Purity Chart
+    new Chart(document.getElementById('softwarePurityChart'), {
+        type: 'bar',
+        data: {
+            labels: sorted.map(i => i.short),
+            datasets: [{
+                label: 'Pureza Software %',
+                data: sorted.map(i => FEASIBILITY[i.id]?.softwarePurity || 0),
+                backgroundColor: sorted.map(i => {
+                    const v = FEASIBILITY[i.id]?.softwarePurity || 0;
+                    return v >= 80 ? '#00d4aa99' : v >= 60 ? '#ffd93d99' : '#ff6b6b99';
+                }),
+                borderColor: sorted.map(i => {
+                    const v = FEASIBILITY[i.id]?.softwarePurity || 0;
+                    return v >= 80 ? '#00d4aa' : v >= 60 ? '#ffd93d' : '#ff6b6b';
+                }),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+            scales: {
+                x: { max: 100, ticks: { color: '#a0a0cc', callback: v => v + '%' }, grid: { color: 'rgba(42,42,94,0.3)' } },
+                y: { ticks: { color: '#a0a0cc', font: { size: 10 } }, grid: { display: false } }
+            },
+            plugins: {
+                legend: { display: false },
+                annotation: {
+                    annotations: {
+                        line1: { type: 'line', xMin: 80, xMax: 80, borderColor: '#00d4aa44', borderWidth: 1, borderDash: [5, 5] }
+                    }
+                }
+            }
+        }
+    });
+
+    // Min Cost Chart
+    new Chart(document.getElementById('minCostChart'), {
+        type: 'bar',
+        data: {
+            labels: sorted.map(i => i.short),
+            datasets: [{
+                label: 'Costo Minimo ($K)',
+                data: sorted.map(i => FEASIBILITY[i.id]?.minCostToRevenue || 0),
+                backgroundColor: sorted.map(i => {
+                    const v = FEASIBILITY[i.id]?.minCostToRevenue || 0;
+                    return v <= 5 ? '#00d4aa99' : v <= 20 ? '#ffd93d99' : '#ff6b6b99';
+                }),
+                borderColor: sorted.map(i => {
+                    const v = FEASIBILITY[i.id]?.minCostToRevenue || 0;
+                    return v <= 5 ? '#00d4aa' : v <= 20 ? '#ffd93d' : '#ff6b6b';
+                }),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+            scales: {
+                x: { type: 'logarithmic', ticks: { color: '#a0a0cc', callback: v => '$' + v + 'K' }, grid: { color: 'rgba(42,42,94,0.3)' } },
+                y: { ticks: { color: '#a0a0cc', font: { size: 10 } }, grid: { display: false } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // Contacts Chart
+    new Chart(document.getElementById('contactsChart'), {
+        type: 'bar',
+        data: {
+            labels: sorted.map(i => i.short),
+            datasets: [{
+                label: 'Contactos Necesarios',
+                data: sorted.map(i => FEASIBILITY[i.id]?.contactsPreLaunch || 0),
+                backgroundColor: sorted.map(i => {
+                    const v = FEASIBILITY[i.id]?.contactsPreLaunch || 0;
+                    return v <= 5 ? '#00d4aa99' : v <= 10 ? '#ffd93d99' : '#ff6b6b99';
+                }),
+                borderColor: sorted.map(i => {
+                    const v = FEASIBILITY[i.id]?.contactsPreLaunch || 0;
+                    return v <= 5 ? '#00d4aa' : v <= 10 ? '#ffd93d' : '#ff6b6b';
+                }),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+            scales: {
+                x: { ticks: { color: '#a0a0cc' }, grid: { color: 'rgba(42,42,94,0.3)' } },
+                y: { ticks: { color: '#a0a0cc', font: { size: 10 } }, grid: { display: false } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // Feasibility vs Unicorn Scatter
+    new Chart(document.getElementById('feasibilityVsUnicornChart'), {
+        type: 'scatter',
+        data: {
+            datasets: IDEAS.map(i => ({
+                label: i.short,
+                data: [{ x: i.unicornScore, y: FEASIBILITY[i.id]?.soloScore || 0 }],
+                backgroundColor: i.color,
+                borderColor: i.color,
+                pointRadius: 10,
+                pointHoverRadius: 14
+            }))
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: { display: true, text: 'Score Unicornio', color: '#a0a0cc' },
+                    min: 70, max: 100,
+                    ticks: { color: '#a0a0cc' }, grid: { color: 'rgba(42,42,94,0.3)' }
+                },
+                y: {
+                    title: { display: true, text: 'Score Solo Fundador', color: '#a0a0cc' },
+                    min: 0, max: 10,
+                    ticks: { color: '#a0a0cc' }, grid: { color: 'rgba(42,42,94,0.3)' }
+                }
+            },
+            plugins: {
+                legend: { labels: { color: '#a0a0cc', font: { size: 9 } }, position: 'bottom' },
+                tooltip: {
+                    callbacks: {
+                        label: ctx => ctx.dataset.label + ': Unicornio ' + ctx.parsed.x + ', Solo ' + ctx.parsed.y
+                    }
+                }
+            }
+        }
+    });
+
+    // Feasibility Cards
+    const cardsDiv = document.getElementById('feasibilityCards');
+    cardsDiv.innerHTML = sorted.map(idea => {
+        const f = FEASIBILITY[idea.id];
+        if (!f) return '';
+        const purityColor = f.softwarePurity >= 80 ? '#00d4aa' : f.softwarePurity >= 60 ? '#ffd93d' : '#ff6b6b';
+        const verdictClass = f.verdict === 'high' ? 'verdict-high' : f.verdict === 'medium' ? 'verdict-medium' : 'verdict-low';
+        const gtmClass = f.gtmModel === 'plg' ? 'gtm-plg' : f.gtmModel === 'hybrid' ? 'gtm-hybrid' : 'gtm-outbound';
+        const gtmLabel = f.gtmModel === 'plg' ? 'PLG (Product-Led)' : f.gtmModel === 'hybrid' ? 'Hibrido (PLG + Outbound)' : 'Outbound (Field Sales)';
+
+        return `
+        <div class="feasibility-card" style="margin-bottom: 1.5rem;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: ${idea.gradient};"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <h4 style="color: ${idea.color}; margin: 0;">#${sorted.indexOf(idea) + 1} ${idea.short}</h4>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span style="background: ${idea.color}22; color: ${idea.color}; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Solo: ${f.soloScore}/10</span>
+                    <span style="background: rgba(108,99,255,0.15); color: var(--accent-1); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Unicornio: ${idea.unicornScore}/100</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.2rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.3rem;">
+                    <span style="color: var(--text-secondary);">Pureza Software</span>
+                    <span style="color: ${purityColor}; font-weight: 700;">${f.softwarePurity}%</span>
+                </div>
+                <div class="feasibility-meter"><div class="fill" style="width: ${f.softwarePurity}%; background: ${purityColor};"></div></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 1rem;">
+                <div class="feasibility-stat"><span class="label">Contactos pre-launch</span><span class="value" style="color: ${f.contactsPreLaunch <= 5 ? '#00d4aa' : f.contactsPreLaunch <= 10 ? '#ffd93d' : '#ff6b6b'};">${f.contactsPreLaunch}</span></div>
+                <div class="feasibility-stat"><span class="label">Equipo minimo</span><span class="value" style="color: ${f.minTeam === 1 ? '#00d4aa' : f.minTeam <= 2 ? '#ffd93d' : '#ff6b6b'};">${f.minTeam === 1 ? '1 (tu solo)' : f.minTeam + ' personas'}</span></div>
+                <div class="feasibility-stat"><span class="label">Costo 1ra factura</span><span class="value" style="color: ${f.minCostToRevenue <= 5 ? '#00d4aa' : f.minCostToRevenue <= 20 ? '#ffd93d' : '#ff6b6b'};">${f.minCostToRevenue < 1 ? '$' + (f.minCostToRevenue * 1000) : '$' + f.minCostToRevenue + 'K'}</span></div>
+                <div class="feasibility-stat"><span class="label">Tiempo 1ra factura</span><span class="value">${f.timeToFirstInvoice}</span></div>
+                <div class="feasibility-stat"><span class="label">Hardware</span><span class="value">${f.hardwareNeeded}</span></div>
+                <div class="feasibility-stat"><span class="label">Licencias</span><span class="value" style="font-size: 0.82rem;">${f.licenses}</span></div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Go-to-Market</div>
+                <span class="gtm-tag ${gtmClass}">${gtmLabel}</span>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.4rem;">${f.gtmDetail}</p>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Cuellos de Botella Humanos</div>
+                ${f.bottlenecks.map(b => `<span class="bottleneck-tag">${b}</span>`).join('')}
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Comparable Real</div>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">${f.comparable}</p>
+            </div>
+
+            <div class="feasibility-verdict ${verdictClass}">${f.verdictText}</div>
+        </div>
+        `;
+    }).join('');
+}
+
+// ==================== INIT ====================
+document.addEventListener('DOMContentLoaded', () => {
+    renderContextCharts();
+    renderRanking();
+    renderRankingCharts();
+    renderIdeas();
+    renderComparison();
+    renderFeasibility();
+
+    // Smooth scroll for nav
+    document.querySelectorAll('.nav a').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Highlight active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        });
+        navLinks.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+        });
+    });
+});
+
+// LOGIN HANDLER
+function handleLogin(e) {
+    e.preventDefault();
+    const u = document.getElementById('loginUser').value.trim();
+    const p = document.getElementById('loginPass').value;
+    if (u === 'angel' && p === 'luisangel2895') {
+        sessionStorage.setItem('ideas_auth', '1');
+        showApp();
+    } else {
+        const err = document.getElementById('loginError');
+        err.textContent = 'Usuario o contraseña incorrectos';
+        document.getElementById('loginPass').value = '';
+        document.getElementById('loginPass').focus();
+    }
+    return false;
+}
+
+function showApp() {
+    const overlay = document.getElementById('loginOverlay');
+    const content = document.getElementById('app-content');
+    overlay.classList.add('hidden');
+    content.classList.add('visible');
+    setTimeout(() => overlay.remove(), 600);
+}
+
+// Auto-login if already authenticated in session
+if (sessionStorage.getItem('ideas_auth') === '1') {
+    document.addEventListener('DOMContentLoaded', showApp);
+}
+</script>
+
+</div><!-- /app-content -->
+
+</body>
+</html>
