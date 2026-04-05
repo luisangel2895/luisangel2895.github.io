@@ -4400,6 +4400,150 @@ const IDEAS = [
             { name: "Expansion LatAm", time: "Meses 17-28", cost: "$1-2M", desc: "Expandir a Mexico, Colombia, Chile y Argentina. Agregar portugues para Brasil, voice cloning de marca y omnichannel (voz + WhatsApp + email).", features: ["Mexico, Colombia, Chile, Argentina", "Portugues (Brasil)", "Voice cloning (marca)", "Omnichannel: voz + WhatsApp + email", "Enterprise SLA + on-prem option"] },
             { name: "Plataforma Voice AI", time: "Meses 29-48", cost: "$3-5M", desc: "Cubrir todo LatAm, Espana y USA hispano. Lanzar agentes autonomos full-cycle, traduccion en tiempo real y voice commerce para ventas por telefono.", features: ["Todo LatAm + Espana + USA hispano", "Agentes autonomos full-cycle", "Real-time translation", "Voice commerce (ventas por telefono IA)", "White-label para telecoms"] }
         ]
+    },
+    {
+        id: 21, name: "FitLatam: Gym & Coach Management IA", short: "FitLatam",
+        tagline: "El Mindbody de LatAm: gestion de gimnasios + coaching IA a precio SMB",
+        color: "#ff6b6b", gradient: "linear-gradient(135deg, #ff6b6b, #ffa500)",
+        tam: "$51B fitness tech global", sam: "$5.1B LatAm fitness clubs", som: "$15-25M",
+        mvpCost: "$3-5K", timeToRevenue: "3 meses", arrY5: 12, marginY5: 65,
+        competitionLatam: "Baja-Media", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 68,
+        productDescription: "Plataforma B2B SaaS para gimnasios independientes y entrenadores personales de LatAm: scheduling, gestion de miembros, cobros con Yape/Mercado Pago/PIX, engagement automatizado por WhatsApp, y generacion de planes de entrenamiento y nutricion con IA localizada para alimentos LatAm.",
+        targetClient: "Gimnasios independientes y estudios boutique (CrossFit, yoga, artes marciales, funcional) con 50-500 miembros en ciudades LatAm. Secundario: entrenadores personales independientes.",
+        revenueRecommendation: "SaaS tiered ($29-129/mes) + payment processing fee (1.5-2.5%). Mindbody cobra $469-699/mes — inaccesible para LatAm. El fee de pagos procesados es el revenue anchor: 2% sobre $5K/mes de facturacion del gym = $100/mes adicional.",
+        problem: [
+            "Mindbody/EGYM ($7.5B merger 2026) cobra $469-699/mes — inaccesible para gimnasios LatAm",
+            "ABC Evo (5,500 clubs, 15 paises) solo atiende cadenas. Precio enterprise excluye independientes",
+            "Wellhub ($2.4B val, $319M rev) es B2B2C corporativo — no es herramienta de gestion para el dueno del gym",
+            "Penetracion gym en LatAm solo 2.15% vs 20%+ USA. Mercado fitness apps LatAm crece 27.88% CAGR",
+            "Fitia (Peru, YC) alcanzo $3.5M revenue con 22 personas — prueba que fitness tech se puede construir desde Peru"
+        ],
+        competitors: [
+            ["Mindbody/EGYM (USA)", "$7.5B merger", "$469-699/mes", "Demasiado caro para LatAm SMB. No Spanish-first. Sin pagos locales."],
+            ["ClassPass (USA)", "Parte de $7.5B merger", "$19-249/mes consumer", "Marketplace consumer, no gestion gym. Comision alta para estudios."],
+            ["ABC Evo (LatAm)", "Adq. por ABC Fitness", "Enterprise custom", "Solo cadenas (23 de top 25 Brasil). NO independientes."],
+            ["Wellhub (Brasil)", "$2.4B val", "B2B2C corporativo", "Aggregador wellness. No herramienta de gestion para el dueno."],
+            ["CrossHero (LatAm)", "Privado", "Precio por pais", "Solo CrossFit/boutique. Sin IA coaching. Sin nutricion."],
+            ["Nuestra Solucion", "Target $500M+", "$29-129/mes", "Gestion gym + IA coaching + pagos locales + WhatsApp engagement"]
+        ],
+        revenueStreams: [
+            { name: "SaaS Suscripcion", detail: "Starter $29/mes (100 miembros), Pro $69 (300 miembros), Business $129 (ilimitado)." },
+            { name: "Payment processing", detail: "1.5-2.5% sobre pagos procesados (Yape, Mercado Pago, PIX)." },
+            { name: "IA Coaching premium", detail: "$10-20/mes add-on: planes entrenamiento y nutricion IA personalizados." },
+            { name: "White-label app", detail: "$50-100/mes por app branded para el gimnasio." },
+            { name: "Marketplace trainers", detail: "Comision 10-15% por reservas de entrenadores independientes." }
+        ],
+        roi: [
+            { year: 1, users: "200", mrr: 15, arr: 0.18, expenses: 0.15, margin: 5 },
+            { year: 2, users: "800", mrr: 65, arr: 0.78, expenses: 0.5, margin: 36 },
+            { year: 3, users: "2.5K", mrr: 220, arr: 2.6, expenses: 1.5, margin: 42 },
+            { year: 4, users: "6K", mrr: 550, arr: 6.6, expenses: 3.5, margin: 47 },
+            { year: 5, users: "12K", mrr: 1000, arr: 12, expenses: 4.2, margin: 65 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-3", cost: "$3-5K", desc: "Core gym management: base de miembros, scheduling clases, cobros con Mercado Pago. Dashboard web + PWA mobile. Deploy en Peru. 10 gyms beta.", features: ["Base de datos miembros", "Scheduling clases + reservas", "Cobros Mercado Pago", "Dashboard web responsive", "10 gyms beta Lima"] },
+            { name: "Product-Market Fit", time: "Meses 4-6", cost: "$2-4K", desc: "Integrar pagos locales (Yape, Plin, transferencias). Notificaciones automaticas WhatsApp (clases perdidas, pagos pendientes). Analytics basico. 50 clientes.", features: ["Pagos Yape/Plin", "WhatsApp Business API notificaciones", "Analytics dashboard", "Gestion cobros morosos", "50 gyms pagando"] },
+            { name: "IA Coaching Engine", time: "Meses 7-10", cost: "$3-6K", desc: "Motor IA para planes de entrenamiento personalizados. Tracking nutricion con base de datos alimentos LatAm. App white-label para miembros del gym.", features: ["IA planes entrenamiento (LLM)", "Nutricion con alimentos LatAm", "App white-label gyms", "Delivery planes trainer→cliente", "200 gyms pagando"] },
+            { name: "Expansion LatAm", time: "Meses 11-15", cost: "$5-10K", desc: "Expandir pagos (PIX Brasil, PSE Colombia). Portugues. Multi-locacion. Marketplace trainers independientes. 500-1000 clientes en 3+ paises.", features: ["PIX (Brasil), PSE (Colombia)", "Portugues localizacion", "Multi-locacion", "Marketplace trainers", "API integraciones"] },
+            { name: "Plataforma Completa", time: "Meses 16-24", cost: "$8-15K", desc: "Analytics avanzado (prediccion churn, forecast revenue). App consumer booking. B2B2C wellness corporativo para PYMEs. Comunidad. 2,000+ clientes.", features: ["Prediccion churn IA", "App booking consumer", "Wellness corporativo PYMEs", "Comunidad fitness", "2,000+ clientes"] }
+        ]
+    },
+    {
+        id: 22, name: "NutriLatAm: Nutricion IA para LatAm", short: "NutriLatAm",
+        tagline: "El nutricionista IA que habla la comida latinoamericana",
+        color: "#22c55e", gradient: "linear-gradient(135deg, #22c55e, #84cc16)",
+        tam: "$20.19B nutricion tech global", sam: "$350-500M LatAm nutricion apps", som: "$2-5M",
+        mvpCost: "$2-4K", timeToRevenue: "2 meses", arrY5: 8, marginY5: 70,
+        competitionLatam: "Baja", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 62,
+        productDescription: "Plataforma dual: B2B SaaS para nutricionistas (gestion de pacientes, planes alimentarios IA con alimentos peruanos/LatAm, seguimiento automatico) + app B2C consumer donde cualquier persona trackea su nutricion con la primera base de datos inteligente de comida latinoamericana (lomo saltado, ceviche, arepas).",
+        targetClient: "B2B: Nutricionistas y nutriologos con practica privada (5-50 pacientes activos). B2C: Adultos 25-45 preocupados por nutricion, clase media-alta en Lima y capitales LatAm.",
+        revenueRecommendation: "B2B SaaS para nutricionistas ($19-49/mes) es el revenue anchor estable. B2C freemium ($3-10/mes premium) genera volumen. La base de datos de alimentos LatAm es el moat — nadie mas la tiene.",
+        problem: [
+            "Noom ($3.7B val, $1B ARR) y MyFitnessPal (200M+ users) NO tienen base de datos de comida LatAm",
+            "67.5% de adultos en LatAm tienen sobrepeso/obesidad. Peru: 73%. Crisis de salud publica",
+            "Fitia (Peru, YC) llego a $3.5M rev con 22 personas — prueba el mercado pero es solo consumer, sin B2B",
+            "Nutrium ($19.8M raised) y Practice Better ($27M raised) prueban que SaaS para nutricionistas es venture-scale",
+            "Economia wellness LatAm crecio 13.1% (2022-23), la mas rapida del mundo, pero gasto per capita es una fraccion de USA"
+        ],
+        competitors: [
+            ["Noom (USA)", "$3.7B val", "$17-70/mes", "Sin comida LatAm. Sin espanol nativo. Sin B2B nutricionistas. Muy caro para LatAm."],
+            ["MyFitnessPal (USA)", "$790M est.", "Free/$80-100/ano", "Base datos comida US/Euro. Sin IA coaching espanol. Sin B2B. Revenue declinando."],
+            ["Lifesum (Suecia)", "$22M raised", "$7-15/mes", "Europeo. Sin alimentos LatAm. Sin herramientas profesionales."],
+            ["Fitia (Peru, YC)", "$125K seed, $3.5M rev", "Freemium", "Solo consumer. Sin B2B nutricionistas. Sin gestion practica profesional."],
+            ["Nutrium (Portugal)", "$19.8M raised", "$30-90/mes", "B2B nutricionistas. Pero NO tiene comida LatAm. Ingles/Europeo first."],
+            ["Nuestra Solucion", "Target $200M+", "B2B $19-49/mes + B2C $3-10/mes", "Comida LatAm nativa + B2B nutricionistas + B2C consumer. Dual engine."]
+        ],
+        revenueStreams: [
+            { name: "B2B SaaS nutricionistas", detail: "$19-49/mes. Gestion pacientes + planes IA + seguimiento." },
+            { name: "B2C Premium", detail: "$3-10/mes consumer. Tracking nutricion + IA coach personalizado." },
+            { name: "API base de datos", detail: "$200-1K/mes para apps fitness/salud que quieran datos alimentos LatAm." },
+            { name: "Partnerships", detail: "Seguros de salud, corporativos wellness. Per-employee fee." },
+            { name: "Marketplace", detail: "Comision por conexion paciente-nutricionista ($5-10/consulta)." }
+        ],
+        roi: [
+            { year: 1, users: "500", mrr: 8, arr: 0.1, expenses: 0.12, margin: -20 },
+            { year: 2, users: "3K", mrr: 40, arr: 0.48, expenses: 0.35, margin: 27 },
+            { year: 3, users: "12K", mrr: 120, arr: 1.44, expenses: 0.8, margin: 44 },
+            { year: 4, users: "35K", mrr: 350, arr: 4.2, expenses: 2, margin: 52 },
+            { year: 5, users: "80K", mrr: 650, arr: 8, expenses: 2.4, margin: 70 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-3", cost: "$2-4K", desc: "App B2C de tracking nutricion con base de datos de 500+ alimentos peruanos y LatAm. Barcode scanner + busqueda IA. Freemium. 500 usuarios beta.", features: ["Base datos 500+ alimentos LatAm", "Tracking calorias/macros", "Barcode scanner", "IA identifica plato por foto", "Freemium 500 usuarios"] },
+            { name: "B2B Nutricionistas", time: "Meses 4-6", cost: "$3-5K", desc: "Portal B2B para nutricionistas: gestion de pacientes, planes alimentarios IA con comida local, seguimiento adherencia. 30 nutricionistas pagando.", features: ["Portal gestion pacientes", "Planes alimentarios IA", "Seguimiento adherencia", "Recetas localizadas", "30 nutricionistas pagando"] },
+            { name: "IA + Escala", time: "Meses 7-10", cost: "$5-8K", desc: "IA coach nutricional conversacional en WhatsApp. Base de datos expandida a 2000+ alimentos. B2B2C: nutricionistas refieren pacientes a la app. 5K usuarios.", features: ["IA coach WhatsApp", "2000+ alimentos database", "B2B2C referral loop", "Premium tier launch", "5K usuarios totales"] },
+            { name: "Expansion LatAm", time: "Meses 11-16", cost: "$8-15K", desc: "Agregar comidas de Mexico, Colombia, Argentina, Brasil. Portugues. API de base de datos de alimentos para terceros. 20K usuarios.", features: ["Comida Mexico/Colombia/Argentina/Brasil", "Portugues", "API base datos alimentos", "Partnerships seguros salud", "20K usuarios"] },
+            { name: "Plataforma Nutricion", time: "Meses 17-24", cost: "$15-25K", desc: "Marketplace nutricionista-paciente. Integracion wearables. Corporate wellness programs. Expansion a USA hispano (62M). 80K+ usuarios.", features: ["Marketplace nutricionista-paciente", "Integracion wearables", "Corporate wellness", "USA hispano (62M)", "80K+ usuarios"] }
+        ]
+    },
+    {
+        id: 23, name: "CertifyLatAm: Micro-Credenciales IA", short: "CertifyLatAm",
+        tagline: "Micro-credenciales IA que cierran la brecha de habilidades de LatAm",
+        color: "#3b82f6", gradient: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
+        tam: "$445B corporate training global", sam: "$32.5B LatAm e-learning", som: "$2-5M",
+        mvpCost: "$3-5K", timeToRevenue: "7 meses", arrY5: 15, marginY5: 72,
+        competitionLatam: "Media", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 62,
+        productDescription: "Plataforma B2B SaaS que ayuda a empresas LatAm a evaluar, capacitar y certificar su fuerza laboral con IA. Diagnostico adaptativo de habilidades, rutas de micro-aprendizaje personalizadas en espanol/portugues, y micro-credenciales verificables en blockchain — creando un pasaporte de habilidades portable para la fuerza laboral latinoamericana.",
+        targetClient: "Directores de RRHH y L&D managers en empresas mid-market (150-2,000 empleados) en Peru, Colombia, Mexico, Chile. Secundario: agencias de staffing, BPOs, programas gubernamentales de empleo.",
+        revenueRecommendation: "SaaS B2B por empleado ($3.50-6/empleado/mes). El per-employee pricing escala con la empresa. API de verificacion de credenciales ($0.50/verificacion) crea network effect. Mas asequible que Coursera Enterprise ($399/user/ano) y LinkedIn Learning ($380/user/ano).",
+        problem: [
+            "84% de empleadores LatAm planean upskill su workforce (WEF 2025) — #1 estrategia workforce en Brasil, Colombia, Mexico",
+            "50% de trabajadores LatAm priorizan training en IA — el mas alto de cualquier region global. Enrollments GenAI +356%",
+            "47% de la fuerza laboral LatAm es informal (ILO 2025) — sin acceso a capacitacion formal",
+            "Coursera ($757M rev, $399/user/ano enterprise) y LinkedIn Learning ($380/user/ano) son demasiado caros para LatAm mid-market",
+            "Crehana (Peru, $95M raised) pivoteo a B2B HR pero se disperso. Platzi ($78M raised) es B2C con solo $15M ARR"
+        ],
+        competitors: [
+            ["Coursera (NYSE: COUR)", "$1.5B mkt cap", "$399+/user/ano enterprise", "No localizado LatAm. Mayoria ingles. Muy caro para mid-market."],
+            ["Udemy Business (NASDAQ: UDMY)", "$2B mkt cap", "$360/user/ano", "Calidad inconsistente. Sin micro-credenciales. Sin IA skills assessment."],
+            ["LinkedIn Learning", "Parte de Microsoft", "$380/user/ano", "Premium pricing. Sin verificacion skills. Contenido generalista. Sin HR local integrations."],
+            ["Platzi (Colombia)", "$314M val, $78M raised", "$69/mes individual", "B2C. Debil B2B corporate. Sin IA assessment. Sin micro-credenciales. $15M ARR."],
+            ["Crehana (Peru)", "$95M raised", "$94/user/ano enterprise", "Disperso en todo HR. No especializado en credenciales. IA basica. 1,200 clients."],
+            ["Nuestra Solucion", "Target $500M+", "$3.50-6/emp/mes", "IA skills assessment + micro-credenciales verificables + precio LatAm mid-market"]
+        ],
+        revenueStreams: [
+            { name: "SaaS B2B por empleado", detail: "Starter (50 emp): $6/emp/mes. Growth (500): $5/emp. Enterprise: $3.50/emp + custom." },
+            { name: "Credential verification API", detail: "$0.50 por verificacion para empleadores terceros." },
+            { name: "Content licensing", detail: "$500-2K/mes para empresas que quieren tracks custom." },
+            { name: "Government programs", detail: "$10-50K por programa de upskilling gubernamental." },
+            { name: "Premium analytics", detail: "$200-500/mes heatmaps de skills, ROI tracking, benchmarks industria." }
+        ],
+        roi: [
+            { year: 1, users: "30", mrr: 12, arr: 0.14, expenses: 0.2, margin: -30 },
+            { year: 2, users: "120", mrr: 60, arr: 0.72, expenses: 0.6, margin: 17 },
+            { year: 3, users: "350", mrr: 200, arr: 2.4, expenses: 1.3, margin: 46 },
+            { year: 4, users: "800", mrr: 500, arr: 6, expenses: 2.5, margin: 58 },
+            { year: 5, users: "1.5K", mrr: 1250, arr: 15, expenses: 4.2, margin: 72 }
+        ],
+        phases: [
+            { name: "MVP Skills Assessment", time: "Meses 1-3", cost: "$3-5K", desc: "Motor IA de diagnostico adaptativo de habilidades. Assessment de 15 minutos que mapea competencias vs frameworks estandar (SFIA, ESCO). Herramienta gratuita para generar leads. 500 assessments.", features: ["IA adaptive skills diagnostic", "LLM question generation", "Skills profile shareable", "Free tool lead magnet", "500 assessments meta"] },
+            { name: "Learning Paths + Content", time: "Meses 4-6", cost: "$5-8K", desc: "Motor de recomendacion de rutas de aprendizaje. Partnership con 3-5 content providers LatAm. Ejercicios y quizzes IA. Dashboard B2B para HR managers.", features: ["Rutas aprendizaje personalizadas", "3-5 content partners", "Ejercicios IA generados", "Dashboard B2B HR managers", "Skills gap reporting"] },
+            { name: "Micro-Credenciales + B2B Launch", time: "Meses 7-9", cost: "$5-10K", desc: "Sistema de emision de credenciales verificables (Open Badges + blockchain). Lanzar a primeras 10 empresas pagando. Portal verificacion para empleadores. Integracion LinkedIn.", features: ["Open Badges + blockchain", "10 empresas pagando", "Portal verificacion empleadores", "Integracion LinkedIn", "First revenue"] },
+            { name: "Escalar + Integraciones", time: "Meses 10-13", cost: "$10-15K", desc: "Integraciones con plataformas HR LatAm (Buk, Factorial). Analytics avanzado (heatmaps skills, ROI). 500+ micro-cursos en 10 dominios. 50+ empresas. Primer contractor.", features: ["Integracion Buk/Factorial", "Analytics avanzado", "500+ micro-cursos", "50+ empresas", "Primer contractor"] },
+            { name: "Expansion LatAm + IA 2.0", time: "Meses 14-18", cost: "$20-30K", desc: "Colombia y Mexico. API verificacion credenciales para terceros. IA career pathing. Tracks industria (fintech, cyber, data, ESG). 200+ empresas, $1M+ ARR.", features: ["Colombia, Mexico expansion", "API verificacion credenciales", "IA career pathing", "Industry-specific tracks", "200+ empresas, $1M+ ARR"] }
+        ]
     }
 ];
 
