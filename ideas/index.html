@@ -2089,6 +2089,39 @@ const FEASIBILITY = {
         bottlenecks: ["Latencia voz IA (debe ser <500ms)", "Calidad TTS en espanol con acentos", "Empresas confian en humanos para llamadas"],
         verdict: "high", verdictText: "Altamente factible. Voice AI madura en 2025. CERO competencia LatAm espanol. El demo se vende solo — llamas y hablas con la IA.",
         timeToFirstInvoice: "2-3 meses", comparable: "Bland AI: $65M raised. Vapi: YC, $20M+. Ambos solo ingles."
+    },
+    21: { // FitLatam
+        softwarePurity: 88, contactsPreLaunch: 5, contactsDetail: "3-5 gimnasios independientes para beta test. Mercado Pago API self-service. WhatsApp Business API self-service.",
+        minTeam: 1, minTeamDetail: "Solo dev puede construir MVP gym management (CRUD + scheduling + pagos) en 8-12 semanas. Fitia empezo con equipo pequeno desde Peru.",
+        minCostToRevenue: 3.0, minCostDetail: "Hosting $50/mes, Mercado Pago API gratis, WhatsApp Business $50/mes, LLM APIs $50/mes. Cash real: $3-5K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud SaaS. Gyms usan sus propios dispositivos.", licenses: "Ninguna",
+        soloScore: 7.5, gtmModel: "hybrid",
+        gtmDetail: "Semi-PLG: gym owners buscan soluciones en Google/Instagram. Primeros 10-20 clientes por outbound directo visitando gyms en Lima. Referral gym-a-gym funciona bien en comunidad fitness.",
+        bottlenecks: ["Onboarding presencial gyms (2-4h/gym)", "Integracion pagos locales variados", "Gym owners no son tech-savvy"],
+        verdict: "high", verdictText: "Altamente factible. Software puro, sin licencias. Mindbody cobra $469/mes — hay espacio enorme para solucion $29-129/mes. Fitia valida fitness tech desde Peru.",
+        timeToFirstInvoice: "3-4 meses", comparable: "Fitia (Peru, YC): $3.5M rev con 22 personas. Mindbody: $7.5B merger con EGYM."
+    },
+    22: { // NutriLatAm
+        softwarePurity: 90, contactsPreLaunch: 3, contactsDetail: "2-3 nutricionistas para beta test. APIs de LLM self-service. Base datos alimentos requiere investigacion propia.",
+        minTeam: 1, minTeamDetail: "Solo dev puede construir MVP consumer app (tracking + base datos alimentos) en 6-8 semanas. Fitia lo hizo desde Peru con equipo pequeno.",
+        minCostToRevenue: 2.0, minCostDetail: "Hosting $50/mes, LLM APIs $50-100/mes, barcode API $20/mes. Cash real: $2-4K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud. Usuarios usan smartphones.", licenses: "Ninguna",
+        soloScore: 8.0, gtmModel: "plg",
+        gtmDetail: "PLG puro: app consumer gratuita genera usuarios. Content marketing nutricion en Instagram/TikTok. B2B nutricionistas via LinkedIn y colegios profesionales.",
+        bottlenecks: ["Construir base datos alimentos LatAm (500+ items manual)", "Precision IA en identificacion platos", "Retention en apps consumer es baja"],
+        verdict: "high", verdictText: "Muy factible. Software puro, PLG, bajo costo. La base de datos de alimentos LatAm es trabajo manual pero es el moat. Fitia prueba el mercado.",
+        timeToFirstInvoice: "2-3 meses", comparable: "Fitia (Peru, YC): $3.5M rev. Noom: $3.7B val, $1B ARR. MyFitnessPal: 200M+ users."
+    },
+    23: { // CertifyLatAm
+        softwarePurity: 92, contactsPreLaunch: 5, contactsDetail: "3-5 directores RRHH en empresas mid-market para piloto. Content partners (2-3 providers LatAm). Sin partnerships obligatorias para MVP.",
+        minTeam: 1, minTeamDetail: "Solo dev puede construir MVP skills assessment (LLM + adaptive testing) en 8-12 semanas. El assessment gratuito es el lead magnet.",
+        minCostToRevenue: 5.0, minCostDetail: "LLM APIs $100-200/mes, hosting $50/mes, blockchain credenciales $50/mes. Cash real: $3-5K. Pero 7 meses a revenue.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud SaaS. Empresas usan sus propios dispositivos.", licenses: "Ninguna",
+        soloScore: 7.0, gtmModel: "outbound",
+        gtmDetail: "B2B enterprise requiere outbound sales. Free skills assessment como lead magnet genera pipeline. LinkedIn + eventos HR LatAm para awareness. Ciclo venta: 2-4 meses.",
+        bottlenecks: ["Ciclo de venta B2B largo (2-4 meses)", "Contenido educativo requiere partnerships", "Blockchain credenciales agrega complejidad tecnica"],
+        verdict: "medium", verdictText: "Factible tecnicamente pero ciclo B2B largo. El free assessment como lead magnet reduce friccion. Crehana ($95M raised) valida que hay mercado pero se disperso.",
+        timeToFirstInvoice: "7-9 meses", comparable: "Crehana (Peru): $95M raised, 1,200 clientes B2B. Platzi: $78M raised, $15M ARR. Coursera: $757M rev."
     }
 };
 
