@@ -4749,6 +4749,104 @@ const IDEAS = [
             { name: "Escalar + Integraciones", time: "Meses 10-13", cost: "$10-15K", desc: "Integraciones con plataformas HR LatAm (Buk, Factorial). Analytics avanzado (heatmaps skills, ROI). 500+ micro-cursos en 10 dominios. 50+ empresas. Primer contractor.", features: ["Integracion Buk/Factorial", "Analytics avanzado", "500+ micro-cursos", "50+ empresas", "Primer contractor"] },
             { name: "Expansion LatAm + IA 2.0", time: "Meses 14-18", cost: "$20-30K", desc: "Colombia y Mexico. API verificacion credenciales para terceros. IA career pathing. Tracks industria (fintech, cyber, data, ESG). 200+ empresas, $1M+ ARR.", features: ["Colombia, Mexico expansion", "API verificacion credenciales", "IA career pathing", "Industry-specific tracks", "200+ empresas, $1M+ ARR"] }
         ]
+    },
+    {
+        id: 24, name: "TalentLatAm: AI Recruiting LatAm Remoto", short: "TalentLatAm",
+        tagline: "El Mercor de LatAm: matching IA de talento remoto para empresas USA/EU",
+        color: "#f59e0b", gradient: "linear-gradient(135deg, #f59e0b, #ef4444)",
+        tam: "$650B staffing global", sam: "$18-20B LatAm IT outsourcing", som: "$50-100M",
+        mvpCost: "$3-5K", timeToRevenue: "2 meses", arrY5: 30, marginY5: 55,
+        competitionLatam: "Alta", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 68,
+        productDescription: "Plataforma de recruiting IA que conecta profesionales LatAm pre-vetados con empresas USA/EU buscando talento remoto. Assessment automatizado de 20 min (tecnico + ingles + soft skills via LLM), matching inteligente por skills/timezone/cultura, y herramientas de retencion IA. El Mercor de Latinoamerica.",
+        targetClient: "Empresas USA Series A a Fortune 500 que contratan talento tech remoto. VP Engineering o Head of Talent que necesita 3-10 developers remotos y quiere calidad Toptal a precio LatAm.",
+        revenueRecommendation: "Take-rate 25-35% sobre tarifa mensual del developer (modelo Mercor/Turing). Dev LatAm a $5K/mes + 30% = $1,500/mes recurring por placement. 10 placements = $15K/mes. Complementar con SaaS fee por ATS ($99-499/mes).",
+        problem: [
+            "Empresas USA aumentaron contratacion remota LatAm 250% YoY. Demanda explosiva de developers nearshore",
+            "Mercor ($10B val, $500M ARR) probo que IA recruiting escala masivamente — pero NO es nativo LatAm",
+            "BairesDev bootstrapped a $800M revenue — prueba que staffing LatAm funciona sin VC",
+            "Deel ($17.3B) hace PAYROLL no recruiting. Turing ($2.2B) es India-focused. Gap para plataforma LatAm-nativa",
+            "Salary arbitrage: devs LatAm ganan 43% del salario USA ($53-63K vs $130-160K). Ahorro 58-64%"
+        ],
+        competitors: [
+            ["Mercor (USA)", "$10B val, $486M raised", "30% take rate", "AI recruiting + AI training data. USA-focused, no LatAm-nativo."],
+            ["Turing (USA)", "$2.2B val, $247M raised", "50-55% markup", "AI matching. India-focused. 300K+ developers. Caro para clientes."],
+            ["Andela (Africa)", "$1.5B val, $381M raised", "$60-100/hr", "Africa-origin. 175K+ engineers. No LatAm-nativo."],
+            ["Toptal (USA)", "Bootstrapped, $167M rev", "$60-200+/hr", "Top 3% exclusivo. Sin IA assessment. Premium pricing."],
+            ["Revelo (LatAm)", "$85.8M raised", "All-in monthly", "400K+ devs LatAm. Mas cercano competidor. No IA-nativo."],
+            ["BairesDev (Argentina)", "Bootstrapped, $800M rev", "Premium hourly", "15 anos, 4,000+ ingenieros. No plataforma self-serve."],
+            ["Nuestra Solucion", "Target $1B+", "25-35% take rate", "IA-nativo LatAm. Assessment LLM. Matching + retencion. Desde Peru."]
+        ],
+        revenueStreams: [
+            { name: "Take-rate mensual", detail: "25-35% sobre tarifa del developer. Recurring mientras dure el placement." },
+            { name: "Success fee premium", detail: "15-20% del salario anual para placements ejecutivos/senior." },
+            { name: "SaaS ATS platform", detail: "$99-499/mes por acceso a la plataforma de hiring." },
+            { name: "Assessment-as-a-Service", detail: "$50-200 por assessment tecnico para empresas que quieren vetting sin placement." },
+            { name: "EOR partnership referral", detail: "Comision por referir a Deel/Remote/Oyster para compliance y payroll." }
+        ],
+        roi: [
+            { year: 1, users: "50", mrr: 25, arr: 0.3, expenses: 0.25, margin: 17 },
+            { year: 2, users: "200", mrr: 120, arr: 1.44, expenses: 0.8, margin: 44 },
+            { year: 3, users: "600", mrr: 400, arr: 4.8, expenses: 2.5, margin: 48 },
+            { year: 4, users: "1.5K", mrr: 1200, arr: 14.4, expenses: 7, margin: 51 },
+            { year: 5, users: "3K", mrr: 2500, arr: 30, expenses: 13.5, margin: 55 }
+        ],
+        phases: [
+            { name: "Concierge MVP", time: "Meses 1-3", cost: "$3-5K", desc: "Landing page + intake forms. Sourcing manual de 100-200 devs desde LinkedIn/GetOnBoard/comunidades. Vetting personal (ingles + tecnico). Primeros 3-5 placements manuales. Revenue: $5-10K/mes.", features: ["Landing page + intake", "100-200 devs pre-vetados manual", "Assessment personal ingles+tech", "3-5 placements manuales", "$5-10K/mes revenue"] },
+            { name: "Platform Alpha", time: "Meses 4-8", cost: "$5-10K", desc: "Web platform: perfiles candidatos, dashboard empresas, matching basico. Assessment IA con GPT-4 (entrevista tecnica + evaluacion ingles automatizada). ATS workflow. Partner con 1 EOR. 500+ candidatos, 20-30 placements.", features: ["Web platform completa", "Assessment IA (GPT-4 API)", "ATS workflow end-to-end", "EOR partner integration", "500+ candidatos vetados"] },
+            { name: "AI Matching Engine", time: "Meses 9-14", cost: "$15-25K", desc: "Algoritmo de matching propietario entrenado con data de placements. Video interview assessment automatizado. Herramientas de retencion (engagement surveys, churn prediction). Expandir mas alla de devs (designers, PMs, data).", features: ["Matching ML propietario", "Video interview IA", "Retencion: churn prediction", "Beyond devs: designers, PMs, data", "$75-150K/mes revenue"] },
+            { name: "Escalar + Fundraise", time: "Meses 15-24", cost: "$50-100K", desc: "Seed round ($500K-2M). Equipo de 2-3. Marketing engine (contenido, SEO, paid). Integraciones ATS (Greenhouse, Lever). 5,000+ candidatos. Revenue: $200-500K/mes.", features: ["Seed round $500K-2M", "Equipo 2-3 personas", "Integraciones Greenhouse/Lever", "5,000+ candidatos vetados", "$200-500K/mes revenue"] },
+            { name: "Category Leadership", time: "Meses 25-36", cost: "$500K-2M", desc: "Series A ($5-15M). Full platform con EOR capabilities o partnerships profundos. Enterprise sales. Todo LatAm + emerging markets. AI recruiting agents autonomos. $1M+/mes, path a $10M+ ARR.", features: ["Series A $5-15M", "Enterprise sales motion", "Todo LatAm expansion", "AI autonomous recruiter agents", "$10M+ ARR path"] }
+        ]
+    },
+    {
+        id: 25, name: "MicroSeguro API: Insurance Embedded LatAm", short: "MicroSeguro API",
+        tagline: "El Stripe de seguros para LatAm: API que embebe micro-seguros en cualquier app",
+        color: "#06b6d4", gradient: "linear-gradient(135deg, #06b6d4, #8b5cf6)",
+        tam: "$176B embedded insurance global", sam: "$38B LatAm embedded finance", som: "$10-30M",
+        mvpCost: "$8-12K", timeToRevenue: "9 meses", arrY5: 18, marginY5: 60,
+        competitionLatam: "Baja-Media", techComplexity: "Alta", regulatoryComplexity: "Alta",
+        unicornScore: 55,
+        productDescription: "Plataforma API-first de infraestructura de seguros embedded que permite a cualquier plataforma digital en LatAm (fintechs, apps gig, e-commerce, POS) ofrecer micro-seguros a sus usuarios. Orquestacion multi-aseguradora, motor de underwriting IA con data alternativa, y automatizacion de claims. El Stripe de los seguros para Latinoamerica.",
+        targetClient: "B2B: Plataformas digitales (fintechs, neobanks, gig apps, e-commerce) que quieren ofrecer seguros como nuevo revenue stream. Secundario: aseguradoras tradicionales que quieren distribucion digital.",
+        revenueRecommendation: "SaaS + API fee a plataformas ($500-5K/mes) + comision por poliza (10-20% de prima). Empezar como tech layer puro (sin licencia de seguros). A $1-5/mes por micro-poliza y 15% comision = $0.15-0.75/poliza/mes. Necesitas 100K+ polizas activas para revenue significativo.",
+        problem: [
+            "Penetracion seguros LatAm solo 3.1% vs 7%+ global. Peru: ~2%. Gap de proteccion: $267-300B (MAPFRE/IDB)",
+            "97%+ de PYMEs LatAm sin ningun seguro. Aseguradoras tradicionales no sirven micro/pequenos negocios",
+            "bolttech ($2.1B val) y Cover Genius ($245M raised) probaron el modelo embedded insurance — pero NO estan en LatAm",
+            "536 insurtechs en LatAm pero NINGUNA plataforma API dominante de seguros embedded para SMBs",
+            "50% de bancarizados en LatAm comprarian seguro desde su app financiera si se lo ofrecieran (McKinsey)"
+        ],
+        competitors: [
+            ["bolttech (Singapore)", "$2.1B val, $343M raised", "B2B API", "Mayor plataforma embedded global. $65B quoted premiums. NO enfocada en LatAm."],
+            ["Cover Genius (Australia)", "$245M raised", "B2B API", "120M+ polizas, 32+ paises. Amazon, Uber, eBay. LatAm limitado."],
+            ["Qover (Belgica)", "$100M+ raised", "B2B API", "Revolut, Mastercard, BMW. 15M protegidos. Europa-focused."],
+            ["Betterfly (Chile)", "$202M raised, $1B val", "B2B wellness+seguro", "Unicornio LatAm. Pero es wellness B2B, no API embedded."],
+            ["Azos (Brasil)", "$55M raised", "B2C vida IA", "Solo Brasil, solo vida. No embedded API. No micro-seguros SMB."],
+            ["Zuru Latam (Peru)", "$680K pre-seed", "Cargo insurance SME", "Peru/Mexico. Solo cargo. Muy early stage."],
+            ["Nuestra Solucion", "Target $500M+", "API + SaaS + comision", "API embedded multi-ramo, multi-aseguradora, LatAm-nativo, IA underwriting"]
+        ],
+        revenueStreams: [
+            { name: "SaaS platform fee", detail: "$500-5,000/mes por plataforma partner integrada." },
+            { name: "Per-policy API fee", detail: "$0.50-2.00 por poliza emitida via API." },
+            { name: "Comision broker", detail: "10-20% de la prima bruta por poliza (requiere licencia broker)." },
+            { name: "Underwriting data", detail: "Venta de insights de riesgo anonimizados a aseguradoras." },
+            { name: "Custom product design", detail: "$5-20K por diseno de producto de seguro custom para plataformas enterprise." }
+        ],
+        roi: [
+            { year: 1, users: "3", mrr: 5, arr: 0.06, expenses: 0.15, margin: -60 },
+            { year: 2, users: "12", mrr: 25, arr: 0.3, expenses: 0.35, margin: -14 },
+            { year: 3, users: "30", mrr: 80, arr: 0.96, expenses: 0.6, margin: 38 },
+            { year: 4, users: "80", mrr: 300, arr: 3.6, expenses: 1.8, margin: 50 },
+            { year: 5, users: "200", mrr: 1500, arr: 18, expenses: 7.2, margin: 60 }
+        ],
+        phases: [
+            { name: "MVP + Partnerships", time: "Meses 1-4", cost: "$8-12K", desc: "API platform MVP (quote engine, policy issuance flow, dashboard). Acercamiento a 3-5 aseguradoras. Contratar broker partner licenciado. Disenar 2-3 productos micro-seguro (accidente, dispositivo, cargo).", features: ["API quote + issuance MVP", "Acercamiento 3-5 aseguradoras", "Broker partner licenciado", "2-3 productos micro-seguro", "Compliance framework Peru"] },
+            { name: "Pilot + Integracion", time: "Meses 5-8", cost: "$10-15K", desc: "Firmar acuerdo con al menos 1 aseguradora. Integracion backend con sistema de polizas. Primer platform partner para piloto (fintech o delivery app peruana). Beta con 100-500 end users.", features: ["1 aseguradora firmada", "Backend integracion polizas", "1 platform partner piloto", "100-500 end users beta", "Claims flow automatizado"] },
+            { name: "Lanzamiento Peru", time: "Meses 9-14", cost: "$8-12K", desc: "Full launch con 2-3 platform partners. Segunda aseguradora para diversidad de productos. Claims automation y triggers parametricos. 1,000-5,000 polizas activas. Revenue: $2-8K/mes.", features: ["2-3 platform partners", "2 aseguradoras", "Claims automation", "1K-5K polizas activas", "$2-8K/mes revenue"] },
+            { name: "Expansion Productos", time: "Meses 15-22", cost: "$15-25K", desc: "10+ platform partners. Nuevos verticales (salud, propiedad, responsabilidad profesional). 20K-50K polizas activas. Groundwork regulatorio para Mexico o Colombia. Revenue: $10-30K/mes.", features: ["10+ platform partners", "Nuevos verticales seguro", "20K-50K polizas", "Groundwork Mexico/Colombia", "$10-30K/mes revenue"] },
+            { name: "Expansion Regional", time: "Meses 23-36", cost: "$30-60K", desc: "Lanzar en Mexico o Colombia. Partners regionales (Chubb, MAPFRE, HDI). 100K+ polizas activas. IA underwriting con data acumulada. Seed funding ($500K-2M). Revenue: $50-150K/mes.", features: ["Mexico o Colombia launch", "Partners Chubb/MAPFRE/HDI", "100K+ polizas activas", "IA underwriting propio", "Seed $500K-2M"] }
+        ]
     }
 ];
 
