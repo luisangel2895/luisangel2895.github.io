@@ -3451,6 +3451,69 @@ const COMPETITION = {
         opportunity: "LatAm contact center market $15B+. Reemplazar 30-50% de llamadas con IA = $5-7B oportunidad. First mover en espanol nativo con acentos locales (peruano, colombiano, mexicano) = moat real.",
         verdict: "Segunda mejor oportunidad nueva. Mercado masivo ($15B), timing perfecto (voice AI madura 2025-2026), CERO competencia LatAm. El riesgo es big tech pero acentos locales + integracion telecom local son defensas.",
         sources: ["Bland AI $65M total (TechCrunch)", "Vapi YC profile", "Retell AI Crunchbase", "GSMA LatAm BPO $15B market", "Teleperformance LatAm operations"]
+    },
+    21: { // FitLatam
+        viability: 7,
+        competitors: [
+            { name: "Mindbody/EGYM (USA)", funding: "$7.5B merger", pricing: "$469-699/mes", users: "Gyms USA/Europe", gap: "Demasiado caro para LatAm SMB. No Spanish-first. Sin pagos locales (Yape, PIX)." },
+            { name: "ClassPass (USA)", funding: "Parte de $7.5B merger", pricing: "$19-249/mes consumer", users: "Marketplace consumer", gap: "Marketplace consumer, no gestion gym. Comision alta (hasta 50%) para estudios." },
+            { name: "ABC Evo (LatAm)", funding: "Adq. por ABC Fitness", pricing: "Enterprise custom", users: "5,500 clubs, 15 paises", gap: "Solo cadenas grandes (23 de top 25 Brasil). NO sirve independientes." },
+            { name: "Wellhub (Brasil)", funding: "$2.4B val, $319M rev", pricing: "B2B2C corporativo", users: "Corporate wellness", gap: "Aggregador wellness. No herramienta de gestion para el dueno del gym." },
+            { name: "CrossHero (LatAm)", funding: "Privado", pricing: "Precio por pais", users: "CrossFit/boutique", gap: "Solo CrossFit/boutique. Sin IA coaching. Sin nutricion. Sin pagos locales." }
+        ],
+        gaps: [
+            "Mindbody cobra $469-699/mes — 10-20x el presupuesto de un gym independiente LatAm",
+            "ABC Evo solo atiende cadenas. 90%+ de gyms LatAm son independientes",
+            "Penetracion gym en LatAm solo 2.15% vs 20%+ USA — mercado en explosion (27.88% CAGR)",
+            "CERO solucion con IA coaching + pagos locales (Yape/PIX) + WhatsApp engagement",
+            "Fitia (Peru, YC) alcanzo $3.5M rev — prueba fitness tech desde Peru"
+        ],
+        risk: "Mindbody/EGYM podrian lanzar tier barato para LatAm. ABC Evo podria moverse downmarket. Gym owners en LatAm tienen baja disposicion a pagar por software. Churn alto si no demuestras ROI rapido.",
+        opportunity: "LatAm tiene 200K+ gimnasios independientes sin software. $29-129/mes + 2% payment processing = $100-230/mes ARPU. Si capturas 5% = 10K gyms x $150/mes = $18M ARR. Payment processing fee es el revenue anchor.",
+        verdict: "Buena oportunidad. Mercado grande ($51B global), pricing gap enorme vs Mindbody, Fitia valida fitness tech desde Peru. El riesgo es churn y baja disposicion a pagar. Payment processing fee mitiga el riesgo de ARPU bajo.",
+        sources: ["Mindbody/EGYM $7.5B merger (TechCrunch 2026)", "Wellhub $2.4B valuation (Crunchbase)", "ABC Evo acquisition (ABC Fitness)", "Fitia YC profile $3.5M rev", "IHRSA LatAm fitness penetration 2.15%"]
+    },
+    22: { // NutriLatAm
+        viability: 7,
+        competitors: [
+            { name: "Noom (USA)", funding: "$3.7B val, $1B ARR", pricing: "$17-70/mes", users: "Millions consumer", gap: "Sin comida LatAm. Sin espanol nativo. Sin B2B nutricionistas. Muy caro para LatAm." },
+            { name: "MyFitnessPal (USA)", funding: "$790M est.", pricing: "Free/$80-100/ano", users: "200M+ users", gap: "Base datos comida US/Euro. Sin IA coaching espanol. Sin B2B. Revenue declinando." },
+            { name: "Fitia (Peru, YC)", funding: "$125K seed, $3.5M rev", pricing: "Freemium", users: "Consumer Peru", gap: "Solo consumer. Sin B2B nutricionistas. Sin gestion practica profesional." },
+            { name: "Nutrium (Portugal)", funding: "$19.8M raised", pricing: "$30-90/mes", users: "B2B nutricionistas Europa", gap: "B2B nutricionistas pero NO tiene comida LatAm. Ingles/Europeo first." },
+            { name: "Lifesum (Suecia)", funding: "$22M raised", pricing: "$7-15/mes", users: "Consumer Europe", gap: "Europeo. Sin alimentos LatAm. Sin herramientas profesionales." }
+        ],
+        gaps: [
+            "NINGUNA app tiene base de datos completa de comida LatAm (lomo saltado, ceviche, arepas, feijoada)",
+            "67.5% de adultos LatAm con sobrepeso/obesidad — crisis de salud publica creciente",
+            "Fitia es solo consumer — sin B2B para nutricionistas profesionales",
+            "Nutrium es B2B pero europeo — sin comida LatAm ni espanol nativo",
+            "Economia wellness LatAm crece 13.1% anual — la mas rapida del mundo"
+        ],
+        risk: "Fitia podria agregar B2B. Noom/MyFitnessPal podrian localizar para LatAm. Retention en apps consumer de nutricion es historicamente baja (20-30% mes 3). Construir base datos alimentos es intensivo en trabajo manual.",
+        opportunity: "Dual engine B2B ($19-49/mes nutricionistas) + B2C ($3-10/mes consumer) = diversificacion revenue. La base de datos de alimentos LatAm es el moat. 67.5% sobrepeso = demanda masiva. API de datos de alimentos para terceros crea network effect.",
+        verdict: "Buena oportunidad con moat defensible (base datos alimentos LatAm). Riesgo principal es retention consumer. B2B nutricionistas como anchor revenue mitiga el riesgo. Fitia prueba el mercado desde Peru.",
+        sources: ["Noom $3.7B valuation (Forbes)", "Fitia YC profile $3.5M rev", "Nutrium Crunchbase $19.8M", "OMS LatAm obesity 67.5%", "Global Wellness Institute LatAm 13.1% growth"]
+    },
+    23: { // CertifyLatAm
+        viability: 7,
+        competitors: [
+            { name: "Coursera (NYSE: COUR)", funding: "$1.5B mkt cap, $757M rev", pricing: "$399+/user/ano enterprise", users: "148M+ learners", gap: "No localizado LatAm. Mayoria ingles. Muy caro para mid-market LatAm." },
+            { name: "Udemy Business (NASDAQ: UDMY)", funding: "$2B mkt cap", pricing: "$360/user/ano", users: "Enterprise global", gap: "Calidad inconsistente. Sin micro-credenciales verificables. Sin IA skills assessment." },
+            { name: "Platzi (Colombia)", funding: "$314M val, $78M raised", pricing: "$69/mes individual", users: "4M+ estudiantes B2C", gap: "B2C. Debil B2B corporate. Sin IA assessment. Sin micro-credenciales. $15M ARR." },
+            { name: "Crehana (Peru)", funding: "$95M raised", pricing: "$94/user/ano enterprise", users: "1,200 clientes B2B", gap: "Disperso en todo HR. No especializado en credenciales. IA basica." },
+            { name: "LinkedIn Learning", funding: "Parte de Microsoft", pricing: "$380/user/ano", users: "Enterprise global", gap: "Premium pricing. Sin verificacion skills. Contenido generalista." }
+        ],
+        gaps: [
+            "Coursera y LinkedIn Learning cuestan $380-399/user/ano — inaccesible para mid-market LatAm",
+            "NINGUNA plataforma ofrece micro-credenciales verificables con IA skills assessment integrado",
+            "84% empleadores LatAm planean upskill workforce (WEF 2025) — demanda masiva",
+            "Crehana levanto $95M pero se disperso en todo HR — oportunidad para especialista en credenciales",
+            "47% fuerza laboral LatAm es informal — sin acceso a capacitacion formal ni credenciales"
+        ],
+        risk: "Crehana podria re-enfocarse en credenciales. Coursera podria lanzar tier LatAm barato. Ciclo de venta B2B largo (2-4 meses). Contenido educativo requiere partnerships y curation constante. Blockchain credenciales puede ser over-engineering para el mercado.",
+        opportunity: "Corporate training global es $445B. LatAm e-learning $32.5B. Per-employee pricing ($3.50-6/emp/mes) es 5-10x mas barato que Coursera/LinkedIn. API verificacion credenciales crea network effect. Government programs (upskilling) son revenue adicional significativo.",
+        verdict: "Oportunidad solida pero ciclo B2B largo. El free skills assessment como lead magnet reduce friccion. Crehana ($95M raised) valida mercado pero se disperso. Especializacion en micro-credenciales + IA assessment es diferenciador claro. Necesita paciencia.",
+        sources: ["Coursera 10-K FY2024 $757M rev", "Crehana Crunchbase $95M raised", "Platzi Crunchbase $78M raised", "WEF Future of Jobs 2025 LatAm", "ILO 2025 LatAm informal 47%"]
     }
 };
 
