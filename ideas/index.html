@@ -1957,6 +1957,114 @@ const FEASIBILITY = {
         verdictText: "Solo viable como SaaS compliance (Ley Datos Peru Mar 2025). MSSP 24/7 imposible solo. Pivotear a compliance automation.",
         timeToFirstInvoice: "4-7 meses",
         comparable: "CrowdStrike: $25M funding, 2 anos para primer producto. Hackmetrix/Delta Protect (Mexico): early stage."
+    },
+    11: {
+        softwarePurity: 95, contactsPreLaunch: 2, contactsDetail: "1-2 negocios para beta test. WhatsApp Business API es self-service. Zero partnerships obligatorias.",
+        minTeam: 1, minTeamDetail: "Solo dev con LLM APIs + WhatsApp Business API. MVP en 2-4 semanas. Meta Business verificacion es automatica.",
+        minCostToRevenue: 0.5, minCostDetail: "LLM APIs $20-50/mes, WhatsApp API $0.05/msg, hosting $30/mes. Cash real: $200-500.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud. Negocios usan su celular existente.", licenses: "Ninguna",
+        soloScore: 9.5, gtmModel: "plg", gtmDetail: "Vendes POR WhatsApp el producto que AUTOMATIZA WhatsApp. Viral loops: duenos de negocio recomiendan a otros. Demo en 2 minutos.",
+        bottlenecks: ["WhatsApp API rate limits", "Alucinaciones IA en contexto comercial", "Meta puede cambiar reglas API"],
+        verdict: "high", verdictText: "MAXIMA FACTIBILIDAD. $200 para empezar, MVP en semanas, PLG puro, software 95%. La mejor relacion esfuerzo/retorno de las 20 ideas.",
+        timeToFirstInvoice: "2-4 semanas", comparable: "Manychat: 1M+ cuentas, $100M+ ARR. Pero es chatbot basado en reglas, no IA."
+    },
+    12: {
+        softwarePurity: 92, contactsPreLaunch: 3, contactsDetail: "2-3 familias/estudiantes beta testers. 1 profesor consultor para validar curriculo.",
+        minTeam: 1, minTeamDetail: "Solo dev con LLM APIs + RAG sobre curriculo CNEB. MVP en 6-8 semanas.",
+        minCostToRevenue: 2.0, minCostDetail: "LLM APIs $100-300/mes, hosting $50/mes, contenido curriculo (gratis, CNEB es publico). Cash: $500-2K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% web/movil. Estudiantes usan smartphone.", licenses: "Ninguna",
+        soloScore: 8.0, gtmModel: "plg", gtmDetail: "Freemium masivo. TikTok/Instagram marketing a estudiantes. Referral student-to-student. WhatsApp grupos de padres.",
+        bottlenecks: ["Alucinaciones IA en explicaciones matematicas", "Curriculo cambia por pais", "Monetizacion en mercados low-income"],
+        verdict: "high", verdictText: "Muy factible tecnicamente. El reto es monetizacion — ARPU bajo requiere millones de usuarios. Freemium + school B2B es el camino.",
+        timeToFirstInvoice: "2-4 meses", comparable: "Duolingo: 80M MAU, $531M revenue, freemium. Khanmigo: AI tutor con GPT-4."
+    },
+    13: {
+        softwarePurity: 70, contactsPreLaunch: 5, contactsDetail: "3-5 distribuidores para piloto. GPS tracking requiere instalacion en vehiculos.",
+        minTeam: 1, minTeamDetail: "Solo dev puede hacer MVP con smartphone GPS (sin hardware). Hardware OBD-II es fase 2.",
+        minCostToRevenue: 3.0, minCostDetail: "Google Maps API $200/mes, hosting $50/mes, demos a distribuidores $500. Cash: $1-3K.",
+        hardwareNeeded: "Opcional GPS OBD-II ($15-30/unidad)", hardwareDetail: "MVP usa smartphone GPS (gratis). Hardware GPS es upgrade premium.",
+        licenses: "Ninguna", soloScore: 7.5, gtmModel: "outbound",
+        gtmDetail: "Visitar distribuidoras en zona industrial Lima. Demo in-situ. ROI calculable: 15-20% ahorro combustible. CAC: $100-500.",
+        bottlenecks: ["Hardware GPS instalacion", "Cobertura celular en zonas rurales", "Adopcion conductores (low-tech)"],
+        verdict: "high", verdictText: "Factible MVP solo con smartphone GPS. Hardware es opcional. Pain point claro con ROI demostrable. SimpliRoute valida modelo.",
+        timeToFirstInvoice: "2-3 meses", comparable: "SimpliRoute (Chile): $7M raised, 500+ clientes. Samsara: $24B pero enterprise."
+    },
+    14: {
+        softwarePurity: 80, contactsPreLaunch: 3, contactsDetail: "2-3 PYMEs piloto. SUNAT API publica. Nubefact como referencia tecnica.",
+        minTeam: 1, minTeamDetail: "Solo dev con SUNAT API + LLM para contabilidad automatica. MVP facturacion en 4-6 semanas.",
+        minCostToRevenue: 1.5, minCostDetail: "SUNAT API gratis, LLM APIs $50-100/mes, hosting $50/mes. Cash: $500-1.5K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud SaaS.", licenses: "Ninguna (no eres PSE inicialmente)",
+        soloScore: 8.5, gtmModel: "plg",
+        gtmDetail: "Facturacion GRATIS como wedge. PYMEs buscan 'facturacion electronica SUNAT' en Google = SEO play. Upsell a contabilidad/credito.",
+        bottlenecks: ["Conocimiento contable profundo", "Integracion bancaria (screen scraping inicialmente)", "Competir con gratis de SUNAT"],
+        verdict: "high", verdictText: "Excelente factibilidad. Facturacion gratis como wedge es brillante. SUNAT API es publica. El path de Xepelin ($200M+) es replicable.",
+        timeToFirstInvoice: "2-3 meses", comparable: "Xepelin: $200M+ raised, facturacion gratis → factoring. Nubank: tarjeta gratis → $45B."
+    },
+    15: {
+        softwarePurity: 88, contactsPreLaunch: 5, contactsDetail: "2-3 municipios piloto + 1 contacto MEF/PCM. Alianza AMPE deseable.",
+        minTeam: 1, minTeamDetail: "Solo dev puede hacer MVP portal de cobranza + tramites. Pero gobierno requiere credibilidad (advisor senior ayuda).",
+        minCostToRevenue: 8.0, minCostDetail: "Hosting $50/mes, pero sales cycle 6-12 meses. Viajes a municipios $500-1K. Cash: $3-8K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud. Municipios usan PCs existentes.", licenses: "Ninguna (vendor de software)",
+        soloScore: 6.0, gtmModel: "outbound",
+        gtmDetail: "B2G puro. Piloto gratis en 2-3 municipios → case study → escalar. BID/World Bank como canal alternativo. AMPE como multiplicador.",
+        bottlenecks: ["Sales cycle gobierno 6-18 meses", "Pagos gobierno lentos/irregulares", "Cambio politico cada 4 anos", "Riesgo corrupcion en procurement"],
+        verdict: "medium", verdictText: "Factible como producto pero el GTM es MUY lento (gobierno). Necesitas paciencia de 12-18 meses. Ideal con conexiones gobierno o funding BID.",
+        timeToFirstInvoice: "6-12 meses", comparable: "Munidigital (Argentina): 100+ municipios, revenue-funded. OpenGov: vendido $1.8B."
+    },
+    16: {
+        softwarePurity: 85, contactsPreLaunch: 3, contactsDetail: "2-3 landlords con 5-20 propiedades. Facil encontrar en Lima.",
+        minTeam: 1, minTeamDetail: "Solo dev. CRUD basico: propiedades + inquilinos + pagos. MVP en 4-6 semanas.",
+        minCostToRevenue: 1.5, minCostDetail: "Hosting $50/mes, Yape API gratuita (manual inicialmente). Cash: $300-1.5K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% web/movil SaaS.", licenses: "Ninguna",
+        soloScore: 8.0, gtmModel: "hybrid",
+        gtmDetail: "SEO: 'gestion alquileres Peru'. Facebook groups landlords. Referral inquilino→landlord. Inmobiliarias como canal.",
+        bottlenecks: ["Landlords conservadores resistentes a software", "Willingness-to-pay baja", "Integracion pagos compleja"],
+        verdict: "high", verdictText: "Muy factible. Baja complejidad tecnica. El reto no es construir sino convencer landlords conservadores. Cobro Yape como wedge.",
+        timeToFirstInvoice: "2-4 meses", comparable: "AppFolio: $7B mkt cap. 8M+ unidades. Modelo SaaS por unidad."
+    },
+    17: {
+        softwarePurity: 75, contactsPreLaunch: 4, contactsDetail: "2-3 desarrolladoras inmobiliarias + 1 ingeniero civil consultor.",
+        minTeam: 1, minTeamDetail: "Solo dev puede hacer MVP (tracking fotos + presupuesto). Pero necesita domain knowledge construccion.",
+        minCostToRevenue: 5.0, minCostDetail: "Hosting $50/mes, visitas a obras $500, demo equipment $200. Cash: $2-5K.",
+        hardwareNeeded: "Ninguno (drones opcionales fase 3)", hardwareDetail: "MVP puro software. Fotos desde smartphone. Drones son premium futuro.",
+        licenses: "Ninguna", soloScore: 6.5, gtmModel: "outbound",
+        gtmDetail: "Conferencias CAPECO, visitas a desarrolladoras. Demo in-situ en obra. Sales cycle 2-4 meses.",
+        bottlenecks: ["Domain knowledge construccion obligatorio", "Offline capability en obras", "Sales cycle enterprise 2-4 meses"],
+        verdict: "medium", verdictText: "Factible pero requiere conocimiento del sector. MVP simple (fotos+presupuesto) es viable solo. Escalar requiere equipo.",
+        timeToFirstInvoice: "4-6 meses", comparable: "Procore: $10B+ mkt cap. PlanGrid: vendido $875M a Autodesk."
+    },
+    18: {
+        softwarePurity: 85, contactsPreLaunch: 5, contactsDetail: "2-3 exportadores + 1 consultor ambiental + 1 contacto OEFA.",
+        minTeam: 1, minTeamDetail: "Solo dev con APIs datos ambientales + LLM para reportes. Pero necesita expertise ambiental.",
+        minCostToRevenue: 6.0, minCostDetail: "LLM APIs $100-300/mes, hosting $50, consulting $1-2K. Cash: $3-6K.",
+        hardwareNeeded: "Ninguno (IoT sensores opcionales)", hardwareDetail: "Core es SaaS puro. IoT es add-on futuro premium.",
+        licenses: "Ninguna (no certificas, automatizas reportes)", soloScore: 6.0, gtmModel: "outbound",
+        gtmDetail: "Conferencias PERUMIN, CADE. Acercarse a gremios mineros/exportadores. CBAM deadline 2026 como urgencia.",
+        bottlenecks: ["Expertise ambiental profundo requerido", "Sales cycle enterprise minero 6-12 meses", "Data ambiental fragmentada"],
+        verdict: "medium", verdictText: "Factible tecnicamente pero enterprise sales. CBAM 2026 es el trigger perfecto. Ideal con background ambiental/minero.",
+        timeToFirstInvoice: "5-9 meses", comparable: "Watershed: $1.8B val. Persefoni: $500M val. Enterprise carbon accounting."
+    },
+    19: {
+        softwarePurity: 90, contactsPreLaunch: 4, contactsDetail: "3-5 micro-empresas piloto. 1 abogado laboral como advisor.",
+        minTeam: 1, minTeamDetail: "Solo dev con deep knowledge de nomina Peru. SUNAT T-Registro API disponible. MVP calculo nomina en 6-8 semanas.",
+        minCostToRevenue: 2.5, minCostDetail: "SUNAT API gratis, hosting $50/mes, abogado laboral $500. Cash: $1-2.5K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud SaaS.", licenses: "Ninguna (software de calculo, no outsourcing regulado)",
+        soloScore: 7.0, gtmModel: "hybrid",
+        gtmDetail: "SEO: 'calculo nomina Peru'. Referral contador→clientes. Comunidades emprendedores. Free trial 30 dias.",
+        bottlenecks: ["Conocimiento laboral profundo (10+ regimenes)", "Errores nomina = multas SUNAFIL", "Buk podria moverse downmarket"],
+        verdict: "high", verdictText: "Factible como fundador solo si dominas nomina peruana. Buk no sirve micro-empresas (1-20). Regulatory moat fuerte.",
+        timeToFirstInvoice: "3-4 meses", comparable: "Gusto: $10B val, USA micro-business. Buk: $50M+, Chile mid-market."
+    },
+    20: {
+        softwarePurity: 92, contactsPreLaunch: 3, contactsDetail: "2-3 empresas con call center para piloto. Twilio/Vonage APIs self-service.",
+        minTeam: 1, minTeamDetail: "Solo dev con LLM + TTS/STT APIs (ElevenLabs, Deepgram). MVP voice agent en 4-6 semanas.",
+        minCostToRevenue: 2.0, minCostDetail: "Voice APIs $100-300/mes, Twilio $50/mes, LLM APIs $100/mes. Cash: $500-2K.",
+        hardwareNeeded: "Ninguno", hardwareDetail: "100% cloud. Empresas usan su infra telefonica existente.", licenses: "Ninguna",
+        soloScore: 8.5, gtmModel: "hybrid",
+        gtmDetail: "Demo live: llamas al AI agent y hablas con el. Impacto inmediato. Outbound a BPOs + direct enterprise. PLG via developer API.",
+        bottlenecks: ["Latencia voz IA (debe ser <500ms)", "Calidad TTS en espanol con acentos", "Empresas confian en humanos para llamadas"],
+        verdict: "high", verdictText: "Altamente factible. Voice AI madura en 2025. CERO competencia LatAm espanol. El demo se vende solo — llamas y hablas con la IA.",
+        timeToFirstInvoice: "2-3 meses", comparable: "Bland AI: $22M raised. Vapi: YC, $20M+. Ambos solo ingles."
     }
 };
 
