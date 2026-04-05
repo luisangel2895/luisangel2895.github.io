@@ -2737,6 +2737,211 @@ const COMPETITION = {
         opportunity: "SBS 504-2021 OBLIGA compliance para fintechs/financieras. Enfoque laser en sector financiero regulado (cajas, cooperativas, fintechs) donde compliance es mandatorio, no opcional. Mercado mas pequeno pero revenue predecible.",
         verdict: "Viable como compliance-first MSSP para sector financiero regulado. NO viable como 'cybersec para todas las PYMEs'. Stack open-source (Wazuh) hace unit economics funcionales a $200-500/mes.",
         sources: ["Peru Cybersecurity Market $170M (Mordor Intelligence)", "Hackmetrix $1.3M (LatamList)", "SBS Resolucion 504-2021", "Ley 29733 Datos Personales Peru", "Wazuh open-source SIEM", "Delta Protect/Google Accelerator"]
+    },
+    11: {
+        viability: 9,
+        competitors: [
+            { name: "Yalo (Mexico)", funding: "$87M raised (Serie C)", pricing: "$500-5K/mes", users: "Enterprise: Coca-Cola, Unilever", gap: "Solo enterprise. NUNCA servira a la peluqueria de Lima." },
+            { name: "Truora (Colombia)", funding: "$15M raised", pricing: "Custom", users: "Identity verification", gap: "Chatbots basicos, no agentes IA verdaderos." },
+            { name: "Botmaker (Argentina)", funding: "~$3M", pricing: "$49-199/mes", users: "WhatsApp chatbots", gap: "Chatbot basado en reglas, NO IA generativa." },
+            { name: "Treble.ai (Colombia)", funding: "Adquirido por Insider (2023)", pricing: "Custom", users: "WhatsApp marketing", gap: "Marketing automation, no agente conversacional." },
+            { name: "11x.ai (USA)", funding: "$50M+ raised", pricing: "$5K+/mes", users: "AI SDR ingles", gap: "Solo ingles, solo USA, solo enterprise." }
+        ],
+        gaps: [
+            "CERO agente IA WhatsApp asequible ($30-100/mes) para SMBs LatAm",
+            "Yalo ($87M) y 11x ($50M) solo sirven enterprise — base piramide completamente desatendida",
+            "Chatbots existentes son basados en reglas, NO agentes IA con razonamiento",
+            "85% de negocios LatAm usan WhatsApp como canal principal — canal masivo",
+            "LLM APIs (Claude, GPT-4) hacen posible agentes sofisticados a <$0.01/conversacion"
+        ],
+        risk: "Meta podria integrar IA nativa en WhatsApp Business y eliminar el mercado. Ademas, baja barrera de entrada = muchos copycats. La ventana de oportunidad es 12-18 meses.",
+        opportunity: "12M+ negocios de servicio en LatAm sin automatizacion. A $50/mes ARPU, 170K clientes = $100M ARR. Vender via el mismo canal que automatizas (WhatsApp). Expansion natural a toda LatAm sin localizacion.",
+        verdict: "MEJOR OPORTUNIDAD ENTRE LAS 20 IDEAS. Maximo score en feasibilidad, velocidad, y gap de mercado. MVP en semanas. Revenue inmediato. El riesgo Meta es real pero la ventana esta abierta AHORA.",
+        sources: ["Yalo Crunchbase ($87M)", "Meta WhatsApp Business API docs", "Truora Crunchbase", "MarketsandMarkets AI Agent Market $47B (2030)", "11x.ai TechCrunch $50M"]
+    },
+    12: {
+        viability: 7,
+        competitors: [
+            { name: "Duolingo (NASDAQ: DUOL)", funding: "$8.5B mkt cap", pricing: "$7.99/mes Super", users: "80M+ MAU", gap: "Solo idiomas. NO STEM. NO curriculo LatAm." },
+            { name: "Khan Academy (Khanmigo)", funding: "Nonprofit $80M+/ano", pricing: "$44/ano", users: "Global pero ingles-first", gap: "Espanol limitado. Curriculo USA, no CNEB Peru ni ICFES Colombia." },
+            { name: "Platzi (Colombia)", funding: "$62M raised (a16z)", pricing: "$24-49/mes", users: "5M+ estudiantes", gap: "Cursos tech/business. NO K-12, NO tutoria IA adaptativa." },
+            { name: "Crehana (Peru)", funding: "$75M raised", pricing: "Pivoto B2B", users: "Layoffs 2023", gap: "Pivoto de B2C a B2B HR. Ya NO es EdTech consumer." },
+            { name: "Descomplica (Brasil)", funding: "$160M raised (SoftBank)", pricing: "Suscripcion", users: "Solo Brasil, portugues", gap: "Vestibular prep Brasil. CERO presencia hispanohablante." }
+        ],
+        gaps: [
+            "CERO plataforma IA tutoria STEM alineada a curriculos LatAm (CNEB Peru, ICFES Colombia, etc.)",
+            "Khanmigo es ingles-first y $44/ano — LatAm necesita $3-10/mes en espanol nativo",
+            "100M+ estudiantes hispanohablantes sin tutor IA accesible",
+            "Peru PISA puesto 59/81 — crisis educativa que padres quieren resolver",
+            "Tutoria presencial cuesta S/200-600/mes — IA reduce 90% del costo"
+        ],
+        risk: "OpenAI o Google podrian lanzar tutor IA gratuito en espanol manana. Estas corriendo contra big tech localizando. Ademas, ARPU bajo ($3-8/mes) requiere millones de usuarios para unicornio.",
+        opportunity: "100M+ estudiantes LatAm. Padres YA pagan $55-165/mes en tutoria presencial. IA a $5/mes es 95% mas barato. WhatsApp distribution. Alianzas con ministerios educacion = escala masiva.",
+        verdict: "Gran oportunidad si ejecutas rapido. El mercado es enorme y la necesidad probada. El riesgo es big tech, pero curriculo local + espanol nativo + precio LatAm son defensas reales.",
+        sources: ["PISA 2022 Results (OECD)", "Duolingo 10-K (NASDAQ: DUOL)", "Khan Academy Khanmigo launch", "Platzi Crunchbase $62M", "HolonIQ EdTech $142B"]
+    },
+    13: {
+        viability: 8,
+        competitors: [
+            { name: "Samsara (NYSE: IOT)", funding: "$24B mkt cap", pricing: "$30-50/vehiculo/mes", users: "Enterprise global", gap: "Demasiado caro para LatAm SMBs. Solo enterprise." },
+            { name: "SimpliRoute (Chile)", funding: "$7M raised", pricing: "$20-40/mes base", users: "500+ clientes LatAm", gap: "Solo route optimization. NO fleet management completo." },
+            { name: "Skydropx (Mexico)", funding: "$22M raised (a16z)", pricing: "Por envio", users: "E-commerce shipping", gap: "Multi-carrier agregador. NO fleet management." },
+            { name: "Liftit (Colombia)", funding: "$35M raised", pricing: "Custom", users: "Colombia, Mexico, Brasil", gap: "Trucking marketplace enterprise. NO SMB." },
+            { name: "Chazki (Peru)", funding: "~$7M raised", pricing: "Por envio", users: "Peru, Chile, Colombia", gap: "Last-mile OPERADOR. No es SaaS de gestion." }
+        ],
+        gaps: [
+            "70-75% de camiones en Peru sin GPS tracking — mercado masivo desatendido",
+            "SimpliRoute solo hace rutas, NO fleet management completo (mantenimiento, fuel, compliance)",
+            "Samsara a $30-50/vehiculo es inaccesible para distribuidor peruano con 10 camiones",
+            "Costos logisticos Peru 30-35% del producto — reducir 15-20% con software es ROI inmediato",
+            "Offline capability necesaria para zonas rurales — nadie la ofrece"
+        ],
+        risk: "SimpliRoute o Samsara podrian lanzar tier affordable para LatAm. Hardware GPS agrega complejidad. SMB churn LatAm es brutal (30-40% anual). Precio bajo = necesitas escala masiva.",
+        opportunity: "20,000+ distribuidores SMB en Peru, 500,000+ en LatAm. A $5/vehiculo/mes x 1.5M vehiculos = $90M ARR. Plan Nacional Competitividad Peru empuja reduccion costos logisticos. Samsara ($24B) valida la categoria.",
+        verdict: "Oportunidad solida con pain point claro y ROI demostrable. SimpliRoute es el unico comp serio pero incompleto. El moat esta en precio + offline + fleet completo. Expansible a toda LatAm.",
+        sources: ["Samsara 10-K (NYSE: IOT)", "SimpliRoute Crunchbase $7M", "MTC Peru estadisticas flota 120K+ camiones", "Skydropx a16z $22M", "Plan Nacional Competitividad Peru"]
+    },
+    14: {
+        viability: 8,
+        competitors: [
+            { name: "Xepelin (Chile/Mexico)", funding: "$200M+ raised", pricing: "Free invoicing, factoring 1-3%", users: "Chile, Mexico", gap: "NO en Peru. Modelo validado pero no ha cruzado." },
+            { name: "Konfio (Mexico)", funding: "$425M raised (SoftBank)", pricing: "SMB lending", users: "$3B+ loans, Mexico", gap: "Solo Mexico. Lending puro, no OS financiero completo." },
+            { name: "Nubefact (Peru)", funding: "Bootstrapped", pricing: "S/50-200/mes", users: "Peru facturacion", gap: "Solo facturacion XML. Sin IA, sin contabilidad, sin credito." },
+            { name: "Alegra (Colombia)", funding: "$20M+ raised", pricing: "$10-50/mes", users: "500K+ usuarios", gap: "Facturacion general, no especializado en Peru, sin factoring." },
+            { name: "Facturedo (Peru)", funding: "~$2-3M", pricing: "Custom", users: "Factoring Peru", gap: "Solo factoring. Pequeno. Sin plataforma integral." }
+        ],
+        gaps: [
+            "NINGUN OS financiero integra facturacion + contabilidad + credito para PYMEs Peru",
+            "Xepelin ($200M+) valida el modelo pero NO opera en Peru — oportunidad abierta",
+            "Nubefact es solo XML; Alegra es general; NADIE tiene IA contable + factoring",
+            "SUNAT e-invoicing obligatorio crea wedge natural de adquisicion de clientes GRATIS",
+            "60% peruanos sin credito formal — data tributaria es la llave para scoring alternativo"
+        ],
+        risk: "Xepelin o Konfio podrian entrar a Peru con cientos de millones. Bancos (BCP/Yape Business) podrian lanzar herramientas financieras para PYMEs. Factoring requiere capital o partners de lending.",
+        opportunity: "2.3M+ PYMEs formales en Peru SIN herramienta financiera integrada. Facturacion gratis como wedge → captura data → scoring crediticio → factoring → OS financiero. Es el playbook de Nubank (tarjeta gratis → $45B). Peru es small enough para moverse rapido.",
+        verdict: "Tercera mejor oportunidad. Modelo probado por Xepelin ($200M+) y Konfio ($425M). Peru es mercado abierto. El riesgo es que un player grande entre, pero first-mover local + data moat = defensible.",
+        sources: ["Xepelin Crunchbase $200M+", "Konfio SoftBank $425M", "Nubefact Peru pricing", "SUNAT facturacion electronica mandatorio", "SBS Peru inclusion financiera 60% sin credito"]
+    },
+    15: {
+        viability: 7,
+        competitors: [
+            { name: "OpenGov (USA)", funding: "Vendido $1.8B a Cox", pricing: "$50-200K/ano", users: "Solo USA, 1,800+ govs", gap: "CERO presencia LatAm. Solo ingles." },
+            { name: "Tyler Technologies (USA)", funding: "$20B mkt cap", pricing: "Enterprise", users: "Mayor GovTech USA", gap: "NO LatAm. Solo USA/Canada." },
+            { name: "Munidigital (Argentina)", funding: "~$3-5M revenue", pricing: "Custom", users: "100+ municipios Argentina", gap: "Solo Argentina. No Peru, no Andes." },
+            { name: "Prometea (Argentina)", funding: "IDB funded, ~$2-5M", pricing: "Custom", users: "Judiciary AI", gap: "Solo judicial. No municipal." }
+        ],
+        gaps: [
+            "1,874 municipalidades Peru — 70-80% sin software. MERCADO COMPLETAMENTE VACIO",
+            "OpenGov ($1.8B) y Tyler ($20B) prueban categoria pero NO estan en LatAm",
+            "Recaudacion tributaria 30-50% = municipios pierden mitad de ingresos",
+            "DL 1412 Gobierno Digital OBLIGA digitalizacion — tailwind regulatorio",
+            "BID/World Bank financian $500M+ en gobierno digital LatAm — funding alternativo"
+        ],
+        risk: "Sales cycles gobierno 6-18 meses. Municipios pagan tarde o no pagan. Politica: cada 4 anos cambian alcaldes. Corrupcion: pueden pedir sobornos. Solo founder lucha con credibilidad ante gobierno.",
+        opportunity: "Si capturas 10% de municipios Peru (187) a $1K/mes = $2.2M ARR solo Peru. 16,000 municipios en LatAm = $200M+ TAM. Switching costs altisimos (5-10 anos). BID/World Bank como canal de distribucion.",
+        verdict: "Alto potencial defensivo (contratos gobierno = moat). Pero sales cycle mata a fundadores sin paciencia. Ideal si tienes conexiones gobierno o logras piloto BID. High risk, high reward.",
+        sources: ["OpenGov acquisition $1.8B (Cox Enterprises)", "Tyler Technologies NYSE: TYL", "INEI Peru 1,874 municipalidades", "DL 1412 Gobierno Digital Peru", "BID gobierno digital LatAm $500M+"]
+    },
+    16: {
+        viability: 7,
+        competitors: [
+            { name: "AppFolio (USA)", funding: "$7B mkt cap (NASDAQ)", pricing: "$1.40/unidad/mes", users: "8M+ unidades USA", gap: "Solo USA. NO LatAm." },
+            { name: "Buildium (RealPage)", funding: "RealPage $10B", pricing: "$55-375/mes", users: "USA/Canada", gap: "Solo USA/Canada. Enterprise." },
+            { name: "Aptuno (Colombia)", funding: "$5-8M raised", pricing: "Custom", users: "Colombia rental mgmt", gap: "Pequeno. Solo Colombia. Aun early stage." },
+            { name: "Urbania/Adondevivir (Peru)", funding: "Navent Group", pricing: "Classifieds", users: "Portales listado Peru", gap: "Solo listados. CERO gestion operativa." }
+        ],
+        gaps: [
+            "800K-1M unidades alquiler solo en Lima — CERO software de gestion para landlords",
+            "AppFolio ($7B) prueba categoria pero NO opera fuera de USA",
+            "Aptuno (Colombia) es el unico intento LatAm y es pequeno",
+            "Landlords peruanos gestionan con WhatsApp + recibos papel + Excel",
+            "Cobro alquileres via Yape/Plin podria automatizarse completamente"
+        ],
+        risk: "Landlords peruanos son conservadores y resistentes a pagar por software. Mercado Peru solo es pequeno (~$20-40M TAM). DEBES expandir a LatAm para venture-scale. Rent defaults son comunes — credit check es critico.",
+        opportunity: "Si capturas 10% de unidades Lima (80-100K) a $8/unidad = $7.7-9.6M ARR. LatAm tiene 50M+ unidades alquiler. AppFolio ($7B) valida la categoria. Embedded financial services (seguros, credit) son el upsell real.",
+        verdict: "Mercado vacio en Peru/LatAm. Baja complejidad tecnica. El reto es distribucion y willingness-to-pay. Cobro de alquileres via Yape como wedge es inteligente. Necesita expansion LatAm rapida.",
+        sources: ["AppFolio NASDAQ: APPF $7B", "INEI Peru viviendas alquiler Lima", "Aptuno Crunchbase $5-8M", "CAPECO mercado inmobiliario Peru", "Navent Group (Urbania)"]
+    },
+    17: {
+        viability: 6,
+        competitors: [
+            { name: "Procore (NYSE: PCOR)", funding: "$10B+ mkt cap", pricing: "$375+/mes", users: "16K+ clientes enterprise", gap: "Solo USA/UK/AU/CA. NO LatAm." },
+            { name: "PlanGrid (Autodesk)", funding: "Adquirido $875M", pricing: "$39-59/mes", users: "Global construction docs", gap: "Solo documentos. No gestion integral." },
+            { name: "Obra360 (Mexico)", funding: "Bootstrapped", pricing: "Custom", users: "Mexico solo", gap: "Pequeno. Solo Mexico." },
+            { name: "Construex (Ecuador)", funding: "$4.6M seed", pricing: "Marketplace", users: "Ecuador/Mexico", gap: "Marketplace proveedores, NO project management." }
+        ],
+        gaps: [
+            "Procore ($10B) NO opera en LatAm — mercado completamente abierto",
+            "Desarrolladores Peru gestionan obras con Excel y WhatsApp de fotos",
+            "Sobrecostos 15-30% por falta de tracking real-time de avance y presupuesto",
+            "40,000-60,000 viviendas/ano en Peru. Sector DEBE crecer (deficit 1.8M viviendas)",
+            "Portal comprador (ver avance de su departamento) no existe en LatAm"
+        ],
+        risk: "Enterprise sales a desarrolladoras es lento (3-6 meses ciclo). Procore podria eventualmente entrar a LatAm. El mercado Peru solo es limitado. Requiere deep domain knowledge de construccion.",
+        opportunity: "Peru invierte $20B+/ano en construccion (CAPECO). Procore ($10B) valida que construction SaaS es venture-scale. Portal comprador es killer feature que nadie tiene. Expansion natural a Colombia/Chile/Mexico.",
+        verdict: "Oportunidad real pero enterprise-heavy. Ideal si tienes experiencia en construccion o conexiones con desarrolladoras. No es la opcion mas rapida pero tiene moat alto una vez dentro.",
+        sources: ["Procore NYSE: PCOR $10B", "CAPECO Peru inversion construccion", "Autodesk/PlanGrid $875M acquisition", "MVCS deficit habitacional 1.8M", "Obra360 Mexico"]
+    },
+    18: {
+        viability: 6,
+        competitors: [
+            { name: "Watershed (USA)", funding: "$1.8B val, $100M Serie B", pricing: "Enterprise custom", users: "Stripe, Airbnb, Shopify", gap: "Solo Fortune 500. Ingles. NO LatAm mid-market." },
+            { name: "Persefoni (USA)", funding: "$500M val, $101M raised", pricing: "Enterprise", users: "S&P partner", gap: "Enterprise only. Ingles." },
+            { name: "Pachama (Argentina/USA)", funding: "$79M raised", pricing: "Custom", users: "Forest carbon verification", gap: "Verificacion satelital. NO compliance SaaS." },
+            { name: "Plan A (Alemania)", funding: "$27M raised", pricing: "SMB/mid-market", users: "Europa", gap: "Solo Europa. CSRD compliance." },
+            { name: "Carbonext (Brasil)", funding: "$30M+", pricing: "Project-based", users: "Amazon REDD+ credits", gap: "Genera creditos. NO es plataforma SaaS de compliance." }
+        ],
+        gaps: [
+            "EU CBAM 2026 OBLIGA a exportadores LatAm reportar emisiones — demanda forzada inminente",
+            "Watershed/Persefoni solo sirven Fortune 500 en ingles — CERO solucion mid-market LatAm",
+            "50,000+ empresas LatAm necesitaran ESG reporting por nuevas regulaciones",
+            "OEFA Peru emitio 2,700+ sanciones ambientales 2022-2023 — compliance pain es real",
+            "Peru: mineria 55-60% exportaciones, TODA operacion minera necesita compliance ambiental"
+        ],
+        risk: "Mercado ESG/carbon puede ser volatil (crash creditos 2023). Enterprise sales son lentas (6-12 meses). Requiere expertise ambiental profundo. Watershed/Persefoni podrian lanzar tier LatAm.",
+        opportunity: "CBAM 2026 crea deadline real — exportadores DEBEN tener carbon accounting. Peru es 3er productor cobre mundial. First mover en compliance ambiental LatAm = posicion privilegiada cuando regulacion apriete mas.",
+        verdict: "Oportunidad timing-dependent. CBAM 2026 es el trigger. Si llegas antes del deadline con producto funcional, capturas mercado mandatorio. Alto riesgo si regulacion se retrasa.",
+        sources: ["EU CBAM regulation 2023/956", "Watershed $1.8B (Greenoaks)", "Persefoni $101M (Series B)", "Pachama $79M", "OEFA Peru sanciones ambientales"]
+    },
+    19: {
+        viability: 6,
+        competitors: [
+            { name: "Buk (Chile)", funding: "$50M+ raised (SoftBank LatAm)", pricing: "$1.5-6/empleado/mes", users: "5,000+ empresas, 4 paises", gap: "Mid-market 50-500 empleados. NO micro-empresas (1-20)." },
+            { name: "Factorial (Espana)", funding: "$120M raised (Tiger Global)", pricing: "~$4.5/empleado/mes", users: "Espana, LatAm expandiendo", gap: "No deeply localized para Peru. Mid-market." },
+            { name: "Runa HR (Mexico)", funding: "$31M raised", pricing: "$1/empleado/mes", users: "Mexico solo", gap: "Solo Mexico. Solo payroll mexicano." },
+            { name: "Nomina Pro (Peru)", funding: "Bootstrapped", pricing: "Variable", users: "Legacy, Peru", gap: "Desktop, legacy, UX terrible." }
+        ],
+        gaps: [
+            "Buk sirve 50-500 empleados. 2.3M micro-empresas (1-20) NO TIENEN NADA",
+            "Peru tiene 10+ obligaciones laborales mensuales — Excel + contador = errores + multas",
+            "Regimen REMYPE es mas simple pero 60%+ de empleadores lo calculan mal",
+            "Gusto ($10B USA) prueba que payroll micro-business es venture-scale",
+            "Contadores cobran $100-300/mes por nomina manual que IA puede hacer por $15"
+        ],
+        risk: "Buk podria moverse downmarket en cualquier momento con su capital ($50M+). Errores en nomina = multas SUNAFIL = churn alto. Regulacion laboral Peru cambia frecuentemente. Margenes thin a $15-30/mes.",
+        opportunity: "2.3M micro-empresas x $20/mes = $552M ARR TAM solo Peru. Si reemplazas al contador para nomina, captas data para cross-sell (seguros, credito, contabilidad). Cada pais LatAm tiene el mismo pain = expansion natural.",
+        verdict: "Mercado grande pero Buk es riesgo real. Defensible si te especializas en micro (1-20) que Buk no quiere servir. Regulatory moat es fuerte pero requiere perfeccion. Viable pero no la opcion mas rapida.",
+        sources: ["Buk Crunchbase $50M+ (SoftBank LatAm)", "Factorial $120M (Tiger Global)", "MTPE Peru regimen REMYPE", "SUNAFIL fiscalizacion laboral", "Gusto $10B valuation"]
+    },
+    20: {
+        viability: 8,
+        competitors: [
+            { name: "Bland AI (USA)", funding: "$22M raised", pricing: "$0.09/min", users: "USA developers", gap: "Solo ingles. API para developers. NO espanol nativo." },
+            { name: "Vapi (YC)", funding: "$20M+ raised", pricing: "$0.05-0.15/min", users: "Voice AI platform", gap: "Ingles-first. Acentos LatAm no soportados." },
+            { name: "Retell AI (USA)", funding: "$10M+ raised", pricing: "$0.07-0.12/min", users: "Conversational voice", gap: "Ingles primary. Sin soporte LatAm." },
+            { name: "Yalo (Mexico)", funding: "$87M raised", pricing: "Enterprise", users: "WhatsApp commerce enterprise", gap: "Texto, NO voz. Enterprise only." }
+        ],
+        gaps: [
+            "CERO voice AI nativa en espanol para contact centers LatAm",
+            "Bland/Vapi/Retell todos son ingles-first — acentos LatAm no soportados nativamente",
+            "LatAm BPO industry vale $15B+/ano (Colombia + Peru + Mexico) — masivo",
+            "Agente call center Peru cuesta $400-600/mes. Voice IA cuesta $0.05-0.15/min = 90% ahorro",
+            "40-60% rotacion anual en call centers — empresas desesperadas por alternativa"
+        ],
+        risk: "OpenAI/Google lanzan voice AI multilingue asequible. Los BPOs existentes (Teleperformance, Atento) construyen in-house. Calidad de voz IA en espanol aun no es perfecta para contextos formales.",
+        opportunity: "LatAm contact center market $15B+. Reemplazar 30-50% de llamadas con IA = $5-7B oportunidad. First mover en espanol nativo con acentos locales (peruano, colombiano, mexicano) = moat real.",
+        verdict: "Segunda mejor oportunidad nueva. Mercado masivo ($15B), timing perfecto (voice AI madura 2025-2026), CERO competencia LatAm. El riesgo es big tech pero acentos locales + integracion telecom local son defensas.",
+        sources: ["Bland AI $22M (TechCrunch)", "Vapi YC profile", "Retell AI Crunchbase", "GSMA LatAm BPO $15B market", "Teleperformance LatAm operations"]
     }
 };
 
