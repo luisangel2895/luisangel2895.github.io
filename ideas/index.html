@@ -4699,7 +4699,7 @@ function renderComparison() {
                     i.arrY5 / 5,
                     i.techComplexity === 'Media' ? 80 : i.techComplexity === 'Baja' ? 90 : i.techComplexity === 'Media-Alta' ? 70 : 60,
                     i.competitionLatam.includes('nula') || i.competitionLatam.includes('Muy Baja') ? 95 : i.competitionLatam.includes('Baja') ? 80 : 60,
-                    i.id === 3 || i.id === 5 ? 95 : i.id === 1 || i.id === 6 ? 85 : i.id === 2 || i.id === 8 ? 75 : 70,
+                    [3,5,11].includes(i.id) ? 95 : [1,6,20].includes(i.id) ? 85 : [2,8,14,19].includes(i.id) ? 75 : [12,13,16].includes(i.id) ? 65 : 70,
                     i.marginY5,
                     100 - parseInt(i.timeToRevenue) * 15
                 ],
