@@ -3572,6 +3572,46 @@ const COMPETITION = {
         opportunity: "Corporate training global es $445B. LatAm e-learning $32.5B. Per-employee pricing ($3.50-6/emp/mes) es 5-10x mas barato que Coursera/LinkedIn. API verificacion credenciales crea network effect. Government programs (upskilling) son revenue adicional significativo.",
         verdict: "Oportunidad solida pero ciclo B2B largo. El free skills assessment como lead magnet reduce friccion. Crehana ($95M raised) valida mercado pero se disperso. Especializacion en micro-credenciales + IA assessment es diferenciador claro. Necesita paciencia.",
         sources: ["Coursera 10-K FY2024 $757M rev", "Crehana Crunchbase $95M raised", "Platzi Crunchbase $78M raised", "WEF Future of Jobs 2025 LatAm", "ILO 2025 LatAm informal 47%"]
+    },
+    24: { // TalentLatAm
+        viability: 7,
+        competitors: [
+            { name: "Mercor (USA)", funding: "$10B val, $486M raised", pricing: "30% take rate", users: "$500M ARR run rate", gap: "USA-based. No LatAm-nativo. Enfoque en AI training data, no solo staffing." },
+            { name: "Turing (USA)", funding: "$2.2B val, $247M raised", pricing: "50-55% markup", users: "300K+ developers", gap: "India-focused. Take rate muy alto. No LatAm-nativo." },
+            { name: "Revelo (LatAm)", funding: "$85.8M raised", pricing: "All-in monthly", users: "400K+ devs", gap: "Mas cercano competidor. No IA-nativo. No assessment automatizado." },
+            { name: "BairesDev (Argentina)", funding: "Bootstrapped", pricing: "Premium hourly", users: "$800M revenue, 4,000+ engineers", gap: "No plataforma self-serve. No IA matching. Premium pricing." },
+            { name: "Torre.ai (Colombia)", funding: "$19M raised", pricing: "Freemium", users: "1M+ users", gap: "Freemium struggling to monetize. No placement revenue model." }
+        ],
+        insights: [
+            "Contratacion USA→LatAm crecio 250% YoY. Nearshoring paso de 42% a 56% de decisiones outsourcing",
+            "Salary arbitrage: devs LatAm ganan 43% del salario USA. Ahorro 58-64% para empresas",
+            "Mercor paso de $35M a $500M ARR en ~1 ano con 30% take rate — modelo economico probado",
+            "84% de placements LatAm en 2025 fueron mid-level o senior. Un tercio VP/director level",
+            "BairesDev bootstrapped a $800M rev prueba que no necesitas VC para construir grande en staffing LatAm"
+        ],
+        risk: "Competencia INTENSA: 15+ players funded. Mercor a $10B, Turing $2.2B, Andela $1.5B. Salary inflation LatAm (15-25% 2024-2025) erosiona arbitrage. Plataformas desintermediables (empresa contrata directo despues del primer placement).",
+        verdict: "Mercado masivo y probado. Revenue rapido y recurring. BairesDev probo bootstrapping a $800M. Pero competencia es la mas alta de todas las 25 ideas. Diferenciacion requiere wedge unico (IA assessment propietario, nicho vertical, o expansion a AI training data como Mercor).",
+        sources: ["Mercor $10B (TechCrunch Oct 2025)", "Turing $2.2B (TechCrunch Mar 2025)", "Revelo $85.8M (Crunchbase)", "BairesDev $800M rev (GetLatka)", "Howdy LatAm salary benchmarks 2026", "Alcor LatAm IT market"]
+    },
+    25: { // MicroSeguro API
+        viability: 5,
+        competitors: [
+            { name: "bolttech (Singapore)", funding: "$2.1B val, $343M raised", pricing: "B2B API", users: "$65B quoted premiums", gap: "Mayor plataforma embedded. NO enfocada en LatAm. Revenue real bajo (~$5M)." },
+            { name: "Cover Genius (Australia)", funding: "$245M raised", pricing: "B2B API", users: "120M+ polizas, 32+ paises", gap: "Amazon, Uber, eBay. LatAm presencia limitada." },
+            { name: "Betterfly (Chile)", funding: "$202M raised, $1B val", pricing: "B2B wellness", users: "Unicornio LatAm", gap: "Wellness + seguro vida. No API embedded. No micro-seguros SMB." },
+            { name: "Azos (Brasil)", funding: "$55M raised", pricing: "B2C vida IA", users: "Brasil, expandiendo LatAm", gap: "Solo vida. Solo Brasil. No embedded API multi-ramo." },
+            { name: "Zuru Latam (Peru)", funding: "$680K pre-seed", pricing: "Cargo SME", users: "Peru/Mexico", gap: "Solo cargo/logistica. Muy early stage. No API platform." }
+        ],
+        insights: [
+            "Gap de proteccion LatAm: $267-300B (MAPFRE/IDB). Penetracion solo 3.1% vs 7%+ global",
+            "97%+ de PYMEs LatAm sin seguro. <10% de elegibles para microseguros lo usan",
+            "Embedded insurance global crece 30%+ CAGR. API-first = 76% del mercado embedded (2025)",
+            "536 insurtechs en LatAm pero NINGUN API player dominante para embedded micro-seguros",
+            "Inversion insurtech LatAm +117% en 2025 ($199M). Peru lidero crecimiento primas Q2 2025 (+13.7%)"
+        ],
+        risk: "Regulacion SBS pesada (5 anos exp para broker). Dependencia de aseguradoras para capacity/productos. Ciclos venta 6-12 meses con aseguradoras. Revenue por unidad minimo ($0.10-1/poliza/mes) — necesitas 100K+ polizas. Rimac ya construye canales digitales propios.",
+        verdict: "Mercado ENORME ($267B gap) pero regulacion de seguros es la mas compleja de las 25 ideas. Solo factible empezando como tech layer puro (sin licencia) con broker partner. Necesita 100K+ polizas para revenue significativo. bolttech/Cover Genius podrian entrar a LatAm. Mejor con co-founder con exp en seguros.",
+        sources: ["MAPFRE LatAm InsurTech 2025-2026", "IDB Invest $267B opportunity", "bolttech $2.1B (TechCrunch Jun 2025)", "Cover Genius $245M (Series E)", "SBS Peru broker requirements", "McKinsey LatAm insurance growth"]
     }
 };
 
