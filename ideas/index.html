@@ -2620,6 +2620,269 @@ const TEAMS = {
         monthlyBurn: "$4,600-7,700",
         burnPEN: "S/ 17,000-29,000",
         keyLesson: "SOC 24/7 con 2 personas es IMPOSIBLE (168h/sem, 2 personas = 80h). Modelo correcto: compliance SaaS + pentesting + CISO-as-a-Service. Regulacion Peru 2025 = trigger de demanda."
+    },
+    11: { comparable: "Manychat: 1M+ cuentas, $100M+ ARR, chatbots. Yalo: $87M, enterprise. Tu: IA generativa + SMB.",
+        members: [
+            { role: "Fundador/Full-Stack + AI", type: "tu", icon: "🤖", salary: "$0", tasks: ["LLM integration + WhatsApp API", "Prompt engineering por vertical", "Dashboard + billing", "Primeros 100 clientes via WhatsApp"] }
+        ],
+        stages: [
+            { name: "Solo", time: "Meses 0-6", focus: "MVP + 100 clientes pagando. Iterar prompts por vertical." },
+            { name: "Traccion", time: "Meses 6-12", focus: "1,000 clientes. Contratar primer dev. API para integradores." },
+            { name: "Escala", time: "Meses 12-24", focus: "10,000+ clientes. Equipo 5-8. Expansion Colombia/Mexico." }
+        ],
+        hires: [
+            { num: 1, role: "Backend Developer", trigger: "500 clientes o $15K MRR", cost: "S/ 4,000-6,000" },
+            { num: 2, role: "Growth / Sales", trigger: "1,000 clientes o $30K MRR", cost: "S/ 3,000-5,000" },
+            { num: 3, role: "AI/ML Engineer", trigger: "3,000 clientes o $100K MRR", cost: "S/ 5,000-8,000" },
+            { num: 4, role: "Customer Success", trigger: "5,000 clientes", cost: "S/ 2,500-4,000" }
+        ],
+        aiTasks: [
+            { task: "Atencion al cliente (el producto ES IA)", pct: 95 },
+            { task: "Desarrollo codigo", pct: 45 },
+            { task: "Onboarding clientes", pct: 80 },
+            { task: "Marketing contenido", pct: 70 },
+            { task: "Analytics/reportes", pct: 85 },
+            { task: "Ventas outbound", pct: 30 }
+        ],
+        monthlyBurn: "$0-2,500", burnPEN: "S/ 0-9,500",
+        keyLesson: "El producto SE VENDE via el canal que automatiza (WhatsApp). Tu demo ES tu marketing. Manychat llego a $100M+ ARR con chatbots basicos — IA generativa es 10x mejor."
+    },
+    12: { comparable: "Duolingo: 80M MAU, $531M revenue, freemium con IA. Khan Academy: $80M+ budget, Khanmigo AI.",
+        members: [
+            { role: "Fundador/Full-Stack + IA", type: "tu", icon: "📚", salary: "$0", tasks: ["RAG sobre curriculo CNEB", "Tutor IA conversacional", "App web/movil", "Growth hacking estudiantes"] }
+        ],
+        stages: [
+            { name: "Solo", time: "Meses 0-8", focus: "MVP matematicas secundaria. 50K free users. Validar conversion a paid." },
+            { name: "Traccion", time: "Meses 8-14", focus: "500K users, 50K paid. Agregar ciencias. B2B escuelas piloto." },
+            { name: "Escala", time: "Meses 14-24", focus: "2M+ users. Equipo 5-10. Colombia + Mexico." }
+        ],
+        hires: [
+            { num: 1, role: "Content/Curriculum Specialist", trigger: "50K users o producto validado", cost: "S/ 3,000-5,000" },
+            { num: 2, role: "Mobile Developer", trigger: "100K users", cost: "S/ 4,000-6,000" },
+            { num: 3, role: "Growth Marketer", trigger: "200K users o $10K MRR", cost: "S/ 3,000-5,000" },
+            { num: 4, role: "AI/ML Engineer", trigger: "500K users", cost: "S/ 5,000-8,000" }
+        ],
+        aiTasks: [
+            { task: "Tutoria personalizada (el producto ES IA)", pct: 95 },
+            { task: "Generacion ejercicios", pct: 90 },
+            { task: "Evaluacion respuestas", pct: 85 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Contenido marketing", pct: 65 },
+            { task: "Soporte usuarios", pct: 60 }
+        ],
+        monthlyBurn: "$0-3,000", burnPEN: "S/ 0-11,000",
+        keyLesson: "Duolingo probo que freemium EdTech funciona en LatAm. Pero Byju's ($22B→$0) probo que growth sin unit economics mata. Enfocate en retention, no vanity metrics."
+    },
+    13: { comparable: "SimpliRoute: $7M, 500+ clientes. Samsara: $24B enterprise. Tu: price point SMB LatAm.",
+        members: [
+            { role: "Fundador/Full-Stack + Mobile", type: "tu", icon: "🚛", salary: "$0", tasks: ["App conductor (GPS tracking)", "Dashboard gerente de flota", "Route optimization engine", "Ventas a distribuidoras"] }
+        ],
+        stages: [
+            { name: "Solo", time: "Meses 0-6", focus: "MVP smartphone GPS. 50 flotas pagando. Lima zona industrial." },
+            { name: "Traccion", time: "Meses 6-12", focus: "500 flotas. Hardware GPS opcional. Primer hire." },
+            { name: "Escala", time: "Meses 12-24", focus: "3,000+ flotas. Equipo 5-8. Colombia/Chile." }
+        ],
+        hires: [
+            { num: 1, role: "Sales / Field Rep", trigger: "100 flotas o $10K MRR", cost: "S/ 2,500-4,000" },
+            { num: 2, role: "Mobile Developer", trigger: "300 flotas", cost: "S/ 4,000-6,000" },
+            { num: 3, role: "Hardware/IoT Engineer", trigger: "500 flotas (GPS hardware)", cost: "S/ 4,000-7,000" },
+            { num: 4, role: "Customer Success", trigger: "1,000 flotas", cost: "S/ 2,500-4,000" }
+        ],
+        aiTasks: [
+            { task: "Route optimization", pct: 80 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Predictive maintenance alerts", pct: 70 },
+            { task: "Fuel analytics", pct: 75 },
+            { task: "Customer support", pct: 40 },
+            { task: "Sales outbound", pct: 15 }
+        ],
+        monthlyBurn: "$0-2,000", burnPEN: "S/ 0-7,500",
+        keyLesson: "Samsara empezo con dashcams baratas ($30) como wedge, luego vendio software. Tu wedge: smartphone GPS gratis → upgrade a hardware premium. No compitas en features, compite en precio."
+    },
+    14: { comparable: "Xepelin: $200M+ raised, facturacion gratis → factoring. Nubank: tarjeta gratis → $45B.",
+        members: [
+            { role: "Fundador/Full-Stack + FinTech", type: "tu", icon: "💰", salary: "$0", tasks: ["Facturacion SUNAT API", "Dashboard financiero PYME", "IA contabilidad automatica", "Primeros 500 PYMEs"] }
+        ],
+        stages: [
+            { name: "Solo", time: "Meses 0-6", focus: "Facturacion gratis. 5K PYMEs registradas. Validar conversion a paid." },
+            { name: "Traccion", time: "Meses 6-14", focus: "30K PYMEs. Contabilidad IA. Factoring marketplace. Primer hire." },
+            { name: "Escala", time: "Meses 14-24", focus: "100K+ PYMEs. Credito. Equipo 8-12. Colombia." }
+        ],
+        hires: [
+            { num: 1, role: "Backend Developer", trigger: "5K users o $15K MRR", cost: "S/ 4,000-6,000" },
+            { num: 2, role: "Contador Senior (domain)", trigger: "10K users", cost: "S/ 3,500-5,000" },
+            { num: 3, role: "Growth / Partnerships", trigger: "30K users o $50K MRR", cost: "S/ 3,000-5,000" },
+            { num: 4, role: "Risk/Credit Analyst", trigger: "Lanzamiento factoring", cost: "S/ 4,000-6,000" }
+        ],
+        aiTasks: [
+            { task: "Contabilidad automatica", pct: 85 },
+            { task: "Generacion facturas", pct: 90 },
+            { task: "Credit scoring", pct: 75 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Soporte PYMEs", pct: 60 },
+            { task: "Compliance tributario", pct: 70 }
+        ],
+        monthlyBurn: "$0-2,500", burnPEN: "S/ 0-9,500",
+        keyLesson: "Xepelin probo que facturacion GRATIS es el mejor wedge para captar PYMEs. Una vez tienes la data financiera, puedes vender credito, seguros, pagos. La data ES el moat."
+    },
+    15: { comparable: "OpenGov: vendido $1.8B. Munidigital: 100+ municipios Argentina. Tu: Peru + Andes.",
+        members: [
+            { role: "Fundador/Full-Stack", type: "tu", icon: "🏛️", salary: "$0", tasks: ["Portal cobranza tributaria", "Sistema tramites ciudadanos", "Dashboard alcalde", "Ventas a municipios piloto"] },
+            { role: "Advisor Gobierno", type: "advisor", icon: "📋", salary: "$0-500", tasks: ["Conexiones gobierno", "Procurement guidance", "BID/World Bank intros"] }
+        ],
+        stages: [
+            { name: "Solo+Advisor", time: "Meses 0-12", focus: "3-5 municipios piloto gratis. Case study con resultados de cobranza." },
+            { name: "Traccion", time: "Meses 12-18", focus: "20-50 municipios pagando. Primer hire. Revenue $5-10K MRR." },
+            { name: "Escala", time: "Meses 18-30", focus: "200+ municipios. Equipo 5-8. BID project funding." }
+        ],
+        hires: [
+            { num: 1, role: "Account Manager Gobierno", trigger: "10 municipios o primer revenue", cost: "S/ 3,000-5,000" },
+            { num: 2, role: "Backend Developer", trigger: "30 municipios", cost: "S/ 4,000-6,000" },
+            { num: 3, role: "Implementation Specialist", trigger: "50 municipios", cost: "S/ 2,500-4,000" },
+            { num: 4, role: "Business Development", trigger: "$30K MRR", cost: "S/ 3,500-5,000" }
+        ],
+        aiTasks: [
+            { task: "Prediccion morosidad tributaria", pct: 70 },
+            { task: "Generacion notificaciones", pct: 85 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Reportes automaticos MEF", pct: 80 },
+            { task: "Atencion ciudadano (chatbot)", pct: 60 },
+            { task: "Sales gobierno", pct: 0 }
+        ],
+        monthlyBurn: "$0-2,000", burnPEN: "S/ 0-7,500",
+        keyLesson: "GovTech tiene el sales cycle mas largo pero el switching cost mas alto. Una vez dentro de un municipio, te quedas 5-10 anos. Piloto GRATIS es la unica forma de entrar. BID como atajo."
+    },
+    16: { comparable: "AppFolio: $7B, 8M+ unidades USA. Aptuno: $5-8M Colombia. Tu: primer PropTech rental Peru.",
+        members: [
+            { role: "Fundador/Full-Stack", type: "tu", icon: "🏠", salary: "$0", tasks: ["Portal landlord + inquilino", "Cobro alquileres Yape", "Contratos digitales", "Primeros 50 landlords"] }
+        ],
+        stages: [
+            { name: "Solo", time: "Meses 0-6", focus: "MVP cobro alquileres. 100 landlords, 500 unidades." },
+            { name: "Traccion", time: "Meses 6-14", focus: "1,000 landlords. Mantenimiento + credit check. Primer hire." },
+            { name: "Escala", time: "Meses 14-24", focus: "5,000+ landlords. Seguros embedded. Colombia." }
+        ],
+        hires: [
+            { num: 1, role: "Sales / Growth", trigger: "200 landlords o $5K MRR", cost: "S/ 2,500-4,000" },
+            { num: 2, role: "Mobile Developer", trigger: "500 landlords", cost: "S/ 4,000-6,000" },
+            { num: 3, role: "Customer Success", trigger: "1,000 landlords", cost: "S/ 2,500-4,000" },
+            { num: 4, role: "Partnerships (inmobiliarias)", trigger: "$20K MRR", cost: "S/ 3,000-5,000" }
+        ],
+        aiTasks: [
+            { task: "Recordatorios pago automaticos", pct: 90 },
+            { task: "Generacion contratos", pct: 80 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Soporte landlords/inquilinos", pct: 55 },
+            { task: "Valoracion propiedades", pct: 50 },
+            { task: "Marketing contenido", pct: 65 }
+        ],
+        monthlyBurn: "$0-1,500", burnPEN: "S/ 0-5,700",
+        keyLesson: "AppFolio empezo como herramienta simple de cobro de rentas y se convirtio en OS de property management $7B. El wedge correcto es el COBRO — todo landlord quiere cobrar a tiempo."
+    },
+    17: { comparable: "Procore: $10B+, 16K clientes. PlanGrid: $875M acquisition. Tu: LatAm construction PM.",
+        members: [
+            { role: "Fundador/Full-Stack + Mobile", type: "tu", icon: "🏗️", salary: "$0", tasks: ["App campo (fotos, avance)", "Dashboard presupuesto", "Portal comprador", "Ventas a desarrolladoras"] },
+            { role: "Advisor Construccion", type: "advisor", icon: "👷", salary: "$0-500", tasks: ["Domain expertise", "Intros a desarrolladoras", "Validacion product-market fit"] }
+        ],
+        stages: [
+            { name: "Solo+Advisor", time: "Meses 0-8", focus: "MVP con 2-3 desarrolladoras piloto. Tracking fotos + presupuesto." },
+            { name: "Traccion", time: "Meses 8-16", focus: "20-30 proyectos. Portal comprador. Revenue $5K+ MRR." },
+            { name: "Escala", time: "Meses 16-28", focus: "200+ proyectos. Equipo 5-8. Colombia/Chile." }
+        ],
+        hires: [
+            { num: 1, role: "Sales Engineer", trigger: "10 proyectos o $5K MRR", cost: "S/ 3,500-5,000" },
+            { num: 2, role: "Frontend Developer", trigger: "30 proyectos", cost: "S/ 4,000-6,000" },
+            { num: 3, role: "Field Support", trigger: "50 proyectos", cost: "S/ 2,500-4,000" },
+            { num: 4, role: "BIM Specialist", trigger: "$30K MRR premium tier", cost: "S/ 4,000-6,000" }
+        ],
+        aiTasks: [
+            { task: "Deteccion desviaciones presupuesto", pct: 70 },
+            { task: "Generacion reportes obra", pct: 85 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Clasificacion fotos avance", pct: 75 },
+            { task: "Estimacion tiempos", pct: 50 },
+            { task: "Sales enterprise", pct: 10 }
+        ],
+        monthlyBurn: "$0-2,000", burnPEN: "S/ 0-7,500",
+        keyLesson: "Procore tardo 10 anos en llegar a $1B ARR — construction software es lento pero sticky. El portal comprador (ver avance de tu depto en tiempo real) es el feature que cierra ventas."
+    },
+    18: { comparable: "Watershed: $1.8B val. Persefoni: $500M. Plan A: $27M EU SMBs. Tu: LatAm mid-market.",
+        members: [
+            { role: "Fundador/Full-Stack + Data", type: "tu", icon: "🌱", salary: "$0", tasks: ["Carbon calculator + dashboard", "Generador reportes CBAM", "Compliance tracker OEFA", "Ventas a exportadores"] },
+            { role: "Advisor Ambiental", type: "advisor", icon: "🔬", salary: "$0-500", tasks: ["Expertise regulatorio", "Validacion metodologias", "Intros a gremios mineros/exportadores"] }
+        ],
+        stages: [
+            { name: "Solo+Advisor", time: "Meses 0-8", focus: "MVP carbon calculator. 10-20 exportadores piloto. Validar con deadline CBAM." },
+            { name: "Traccion", time: "Meses 8-16", focus: "100 empresas. Compliance OEFA modulo. Revenue $10K+ MRR." },
+            { name: "Escala", time: "Meses 16-28", focus: "500+ empresas. Equipo 5-8. Colombia/Chile." }
+        ],
+        hires: [
+            { num: 1, role: "Environmental Scientist", trigger: "30 clientes o validacion CBAM", cost: "S/ 3,500-5,000" },
+            { num: 2, role: "Backend Developer", trigger: "50 clientes", cost: "S/ 4,000-6,000" },
+            { num: 3, role: "Sales / BD", trigger: "100 clientes o $20K MRR", cost: "S/ 3,000-5,000" },
+            { num: 4, role: "Data Engineer", trigger: "$40K MRR", cost: "S/ 4,000-6,000" }
+        ],
+        aiTasks: [
+            { task: "Carbon footprint calculation", pct: 80 },
+            { task: "Generacion reportes ESG/CBAM", pct: 85 },
+            { task: "Analisis data ambiental", pct: 70 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Compliance monitoring", pct: 65 },
+            { task: "Enterprise sales", pct: 5 }
+        ],
+        monthlyBurn: "$0-2,500", burnPEN: "S/ 0-9,500",
+        keyLesson: "CBAM 2026 es un deadline duro — los exportadores DEBEN cumplir. Vende urgencia, no features. El consulting puede subsidiar el SaaS al inicio."
+    },
+    19: { comparable: "Gusto: $10B val, USA micro-business. Buk: $50M+, Chile mid-market. Tu: Peru micro (1-20).",
+        members: [
+            { role: "Fundador/Full-Stack", type: "tu", icon: "📊", salary: "$0", tasks: ["Motor calculo nomina Peru", "T-Registro + PLAME auto", "App empleado basica", "Ventas a micro-empresas"] }
+        ],
+        stages: [
+            { name: "Solo", time: "Meses 0-8", focus: "MVP nomina REMYPE. 100 empresas. Validar accuracy vs contador." },
+            { name: "Traccion", time: "Meses 8-16", focus: "1,000 empresas. CTS/Gratificaciones. Revenue $10K+ MRR." },
+            { name: "Escala", time: "Meses 16-28", focus: "10,000+ empresas. Equipo 5-8. Multi-regimen. Colombia/Ecuador." }
+        ],
+        hires: [
+            { num: 1, role: "Abogado Laboral Part-time", trigger: "50 empresas (validacion)", cost: "S/ 2,000-3,000" },
+            { num: 2, role: "Backend Developer", trigger: "500 empresas o $10K MRR", cost: "S/ 4,000-6,000" },
+            { num: 3, role: "Customer Success", trigger: "1,000 empresas", cost: "S/ 2,500-4,000" },
+            { num: 4, role: "Growth / Marketing", trigger: "3,000 empresas", cost: "S/ 3,000-5,000" }
+        ],
+        aiTasks: [
+            { task: "Calculo nomina automatico", pct: 90 },
+            { task: "Generacion boletas", pct: 95 },
+            { task: "T-Registro actualizaciones", pct: 80 },
+            { task: "Desarrollo codigo", pct: 40 },
+            { task: "Consultas laborales IA", pct: 65 },
+            { task: "Soporte cliente", pct: 50 }
+        ],
+        monthlyBurn: "$0-2,000", burnPEN: "S/ 0-7,500",
+        keyLesson: "Gusto probo que payroll para micro-business es un $10B+ market. Buk NO quiere servir empresas de 3 personas — tu si. El moat es regulatorio: Peru es tan complejo que nadie lo copia facil."
+    },
+    20: { comparable: "Bland AI: $22M, voice API USA. Vapi: YC, $20M+. Tu: espanol nativo LatAm.",
+        members: [
+            { role: "Fundador/AI + Voice", type: "tu", icon: "🎙️", salary: "$0", tasks: ["Voice AI engine espanol", "Integracion Twilio/telephony", "Dashboard llamadas", "Demos a empresas"] }
+        ],
+        stages: [
+            { name: "Solo", time: "Meses 0-6", focus: "MVP 3 use cases (cobranzas, soporte, agendamiento). 30-50 empresas." },
+            { name: "Traccion", time: "Meses 6-12", focus: "300 empresas. Multi-acento. API para developers. $50K+ MRR." },
+            { name: "Escala", time: "Meses 12-24", focus: "1,500+ empresas. Equipo 8-12. Colombia, Mexico." }
+        ],
+        hires: [
+            { num: 1, role: "ML/Voice Engineer", trigger: "50 empresas o $15K MRR", cost: "S/ 5,000-8,000" },
+            { num: 2, role: "Sales / Enterprise BD", trigger: "100 empresas o $30K MRR", cost: "S/ 3,500-5,000" },
+            { num: 3, role: "Backend Developer", trigger: "200 empresas", cost: "S/ 4,000-6,000" },
+            { num: 4, role: "Solutions Engineer", trigger: "500 empresas", cost: "S/ 4,000-6,000" }
+        ],
+        aiTasks: [
+            { task: "Voice agent (el producto ES IA)", pct: 95 },
+            { task: "Desarrollo codigo", pct: 45 },
+            { task: "Quality monitoring llamadas", pct: 80 },
+            { task: "Generacion scripts/prompts", pct: 85 },
+            { task: "Analytics sentimiento", pct: 90 },
+            { task: "Enterprise sales", pct: 10 }
+        ],
+        monthlyBurn: "$0-3,500", burnPEN: "S/ 0-13,000",
+        keyLesson: "Bland AI llego a $1M+ ARR en meses vendiendo voice AI en ingles. El espanol tiene CERO cobertura. La demo se vende sola: llama al numero, habla con la IA, cierra el trato."
     }
 };
 
