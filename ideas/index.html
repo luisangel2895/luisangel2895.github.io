@@ -3322,55 +3322,7 @@ function renderIdeas() {
             </div>
         </section>
     `).join('');
-
-    // Render individual charts
-    IDEAS.forEach(idea => {
-        const years = idea.roi.map(r => 'Ano ' + r.year);
-
-        new Chart(document.getElementById(`arrChart${idea.id}`), {
-            type: 'bar',
-            data: {
-                labels: years,
-                datasets: [
-                    { label: 'ARR ($M)', data: idea.roi.map(r => r.arr), backgroundColor: idea.color + '99', borderColor: idea.color, borderWidth: 1 },
-                    { label: 'Gastos ($M)', data: idea.roi.map(r => r.expenses), backgroundColor: '#ff6b6b44', borderColor: '#ff6b6b', borderWidth: 1 }
-                ]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    x: { ticks: { color: '#a0a0cc' }, grid: { display: false } },
-                    y: { ticks: { color: '#a0a0cc', callback: v => '$' + v + 'M' }, grid: { color: 'rgba(42,42,94,0.5)' } }
-                },
-                plugins: { legend: { labels: { color: '#a0a0cc' } } }
-            }
-        });
-
-        new Chart(document.getElementById(`marginChart${idea.id}`), {
-            type: 'line',
-            data: {
-                labels: years,
-                datasets: [{
-                    label: 'Margen %',
-                    data: idea.roi.map(r => r.margin),
-                    borderColor: idea.color,
-                    backgroundColor: idea.color + '22',
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: idea.color,
-                    pointRadius: 5
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    x: { ticks: { color: '#a0a0cc' }, grid: { display: false } },
-                    y: { ticks: { color: '#a0a0cc', callback: v => v + '%' }, grid: { color: 'rgba(42,42,94,0.5)' } }
-                },
-                plugins: { legend: { display: false } }
-            }
-        });
-    });
+    // Charts are rendered lazily by renderIdeaCharts() when each tab opens
 }
 
 function renderComparison() {
