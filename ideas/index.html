@@ -4493,6 +4493,44 @@ function renderIdeaCharts(ideaId) {
         }
     });
 
+    // Radar chart for Final Verdict
+    const radarCanvas = document.getElementById('radarChart' + ideaId);
+    const vScore = computeFinalScore(ideaId);
+    if (radarCanvas && vScore) {
+        new Chart(radarCanvas, {
+            type: 'radar',
+            data: {
+                labels: FINAL_VERDICT.dimensions.map(d => d.label),
+                datasets: [{
+                    label: idea.short,
+                    data: FINAL_VERDICT.dimensions.map(d => vScore.scores[d.key]),
+                    backgroundColor: idea.color + '22',
+                    borderColor: idea.color,
+                    borderWidth: 2,
+                    pointBackgroundColor: idea.color,
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { stepSize: 20, color: '#a0a0cc', backdropColor: 'transparent', font: { size: 9 } },
+                        grid: { color: 'rgba(160,160,204,0.15)' },
+                        angleLines: { color: 'rgba(160,160,204,0.15)' },
+                        pointLabels: { color: '#a0a0cc', font: { size: 10 } }
+                    }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
     _ideaChartsRendered[ideaId] = true;
 }
 
