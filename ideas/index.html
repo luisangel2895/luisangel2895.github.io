@@ -2365,6 +2365,231 @@ const TEAMS = {
     }
 };
 
+// ==================== COMPETITION & VIABILITY RESEARCH ====================
+const COMPETITION = {
+    1: { // Servicios Hogar
+        viability: 7,
+        competitors: [
+            { name: "ServiceTitan (USA)", funding: "$9B val, IPO NASDAQ TTAN", pricing: "$245-398/mes", users: "100K+ contratistas", gap: "Solo ingles, solo USA. $685M ARR FY2026." },
+            { name: "Jobber (Canada)", funding: "$100M+ ARR", pricing: "$39-199/mes", users: "200K+ service pros", gap: "Solo ingles, North America." },
+            { name: "Housecall Pro (USA)", funding: "$1B+ val", pricing: "$65-169/mes", users: "35K+ businesses", gap: "Solo ingles, USA focus." },
+            { name: "GetNinjas (Brasil)", funding: "IPO B3 (NINJ3)", pricing: "Marketplace (comision)", users: "650K proveedores", gap: "Marketplace consumidor, NO es SaaS para proveedor. Solo Brasil." },
+            { name: "IguanaFix (Argentina)", funding: "$28M raised", pricing: "Marketplace", users: "Adquirido por MadeiraMadeira 2022", gap: "ADQUIRIDO. Ya no opera independiente." },
+            { name: "Zolvers (Argentina)", funding: "$5M+", pricing: "Marketplace", users: "Nicho limpieza", gap: "Solo limpieza domestica, 3 paises." }
+        ],
+        gaps: [
+            "CERO SaaS para el proveedor de servicios en LatAm — todos son marketplaces consumidor",
+            "WhatsApp-native workflow: asi se hacen negocios en Peru (71% informal)",
+            "Bundle financiero: facturacion, pagos, microcreditos para herramientas",
+            "Precio LatAm: $10-20/mes vs $245/mes de ServiceTitan",
+            "Ninguna solucion existente tiene espanol nativo + Yape/Plin + SUNAT"
+        ],
+        risk: "Adopcion: 71% trabajadores informales que nunca han usado software de negocio y pueden resistir pagar mensualidades. El ARPU bajo ($15-50/mes) requiere volumen masivo.",
+        opportunity: "Ser el PRIMER vertical SaaS para servicios del hogar en LatAm, region con CERO competencia, donde ServiceTitan ($9B) ya valido la categoria en USA.",
+        verdict: "Mercado enorme sin competidor directo. El reto no es competencia sino adopcion. WhatsApp-first es el wedge correcto. Modelo: freemium → cobrar por features premium.",
+        sources: ["ServiceTitan IPO S-1 (NASDAQ: TTAN)", "GetNinjas B3 (NINJ3)", "INEI Peru 71% informalidad", "Crunchbase: IguanaFix, Zolvers, ManoRapido"]
+    },
+    2: { // Compliance IA
+        viability: 9,
+        competitors: [
+            { name: "CONCAR (Peru)", funding: "Bootstrapped, 30+ anos", pricing: "S/200-800/mes licencia", users: "#1 Peru, 10K+ empresas", gap: "100% DESKTOP, sin cloud, sin IA. Interfaz de 1990s." },
+            { name: "Cifrato (YC W25, Colombia)", funding: "YC W25, ~$500K+", pricing: "~$30-80/mes", users: "13 empleados, early stage", gap: "Solo Colombia. NO cubre Peru ni SUNAT. 98.7% accuracy." },
+            { name: "Alegra (Colombia)", funding: "$20M+ raised", pricing: "$10-50/mes", users: "500K+ usuarios, 12 paises", gap: "Facturacion general, NO especializado en compliance tributario IA." },
+            { name: "Defontana (Chile)", funding: "$10M+ raised", pricing: "$20-80/mes", users: "Chile/LatAm", gap: "ERP general, no IA-nativo, no enfocado Peru." },
+            { name: "Nubox (Chile)", funding: "Parte de The Sage Group", pricing: "$15-60/mes", users: "Chile focused", gap: "Solo Chile. Contabilidad basica." },
+            { name: "Xero/QuickBooks", funding: "Globales, $B+", pricing: "$20-70/mes", users: "Millones global", gap: "NO cubren SUNAT, SIRE, PLE, ni regulacion peruana." }
+        ],
+        gaps: [
+            "CERO software IA-nativo para contabilidad/compliance en Peru",
+            "CONCAR (#1 Peru) es desktop sin cloud — gap generacional masivo",
+            "SUNAT APIs gratuitas (SIRE 59+ endpoints) pero nadie las aprovecha con IA",
+            "Cifrato (unico comp IA en LatAm) no opera en Peru y tiene solo 13 personas",
+            "1 contador = 20-100 PYMEs clientes — efecto multiplicador enorme",
+            "Regulacion cambia constantemente (SUNAT actualiza >50 normas/ano) — IA resuelve esto"
+        ],
+        risk: "Conocimiento tributario profundo requerido. Errores en declaraciones SUNAT generan multas reales. Confianza del contador es critica.",
+        opportunity: "Peru tiene 2.3M+ PYMEs, 45K+ contadores, CERO herramienta IA. CONCAR (el #1) no tiene cloud. Cifrato no esta en Peru. El mercado es COMPLETAMENTE abierto para un software IA-nativo de compliance tributario.",
+        verdict: "MEJOR OPORTUNIDAD DE LAS 10. Mercado abierto, sin competencia IA, SUNAT APIs gratuitas, software puro al 85%, solo fundador viable. Estrategia: vender a contadores (multiplicador), empezar con PDT 621/SIRE.",
+        sources: ["SUNAT Portal Desarrolladores (api.sunat.gob.pe)", "Cifrato YC W25 Profile", "CONCAR Peru website", "Alegra Crunchbase", "INEI registro PYMEs Peru"]
+    },
+    3: { // Marketplace B2B
+        viability: 4,
+        competitors: [
+            { name: "Tul (Colombia)", funding: "$256M total ($181M Serie B)", pricing: "Marketplace (comision)", users: "30K productos, 500 marcas", gap: "RETROCEDIENDO: despidio 100+ empleados, salio de Peru, solo Colombia+Mexico." },
+            { name: "Progresol (UNACEM, Peru)", funding: "Backed por UNACEM (monopolio cemento)", pricing: "Red franquicia", users: "1,000+ ferreterias", gap: "Red fisica, no digital. Pero tiene la distribucion." },
+            { name: "Construex (Ecuador)", funding: "$4.6M seed", pricing: "Marketplace", users: "74K+ proveedores Mexico", gap: "Ecuador/Mexico focus. No en Peru." },
+            { name: "Licify (Colombia)", funding: "$3.4M seed", pricing: "Marketplace", users: "17K clientes, $2B+ GMV", gap: "Colombia/Mexico. Procurement, no ferreteria." },
+            { name: "Promart/Sodimac (Peru)", funding: "Intercorp/Falabella", pricing: "Retail", users: "37+ tiendas", gap: "Retail, no B2B puro. No atiende ferreterias pequenas." }
+        ],
+        gaps: [
+            "Tul salio de Peru — oportunidad temporal, pero razon: unit economics no funcionaron",
+            "88% del mercado controlado por ferreterias pequenas — fragmentacion extrema",
+            "Solo 1% de transacciones B2B en materiales es e-commerce",
+            "Credito/financiamiento para ferreterias (capital de trabajo) es gap real",
+            "Logistica de materiales pesados (cemento, acero) es el cuello de botella real"
+        ],
+        risk: "Capital intensivo. Tul quemo $256M y tuvo que retroceder. Logistica de materiales pesados NO es SaaS — requiere warehouses, camiones, capital de trabajo. Progresol (UNACEM) ya tiene 1,000+ ferreterias.",
+        opportunity: "PIVOT: en vez de marketplace, hacer SaaS de gestion para ferreterias (inventario, POS, procurement). 8,000+ ferreterias formales sin software. Evita la trampa logistica.",
+        verdict: "Como marketplace: NO VIABLE para startup pequena. Tul probo que requiere cientos de millones. PIVOT a SaaS ferretero: viable y sin competencia directa.",
+        sources: ["Tul layoffs (SunsetHQ)", "UNACEM/Progresol red 1,000+ tiendas", "Construex $4.6M (PYMNTS)", "ADIPERU autoconstruccion 4.1% PBI"]
+    },
+    4: { // Salud Digital
+        viability: 3,
+        competitors: [
+            { name: "Doctoralia (Docplanner)", funding: "$2.5B val global", pricing: "Premium (no publico)", users: "29K+ especialistas en PERU", gap: "Ya domina Peru. 13 paises." },
+            { name: "Nimbo", funding: "Venture-backed", pricing: "$9.49-23.05/mes", users: "16K+ doctores, 25 paises", gap: "Ya en Peru, precio bajo, multipaís." },
+            { name: "Medlink (Peru)", funding: "No publico", pricing: "Custom", users: "Peru/LatAm", gap: "Teleconsulta, historia clinica, AWS." },
+            { name: "Smart Doctor (Peru)", funding: "$1.5M invertido", pricing: "Custom", users: "Telemedicina Peru", gap: "Fundado en Peru, telemedicina." },
+            { name: "EsSalud (EsSI)", funding: "Estatal", pricing: "Gratuito", users: "11M+ asegurados", gap: "Sistema propio, 1.19M teleconsultas en 9 meses." },
+            { name: "Ninsaude Apolo (Brasil)", funding: "Venture-backed", pricing: "Freemium", users: "Brasil/LatAm creciendo", gap: "Full practice mgmt, EHR, facturacion." }
+        ],
+        gaps: [
+            "Integracion EsSalud/MINSA ↔ clinicas privadas no existe",
+            "IA para soporte diagnostico es escasa en soluciones locales",
+            "Integracion farmacia/laboratorio end-to-end falta",
+            "Telemedicina rural masivamente desatendida fuera de Lima"
+        ],
+        risk: "MERCADO SATURADO. Doctoralia tiene 29K especialistas solo en Peru. Nimbo en 25 paises a $9/mes. Smart Doctor ya levanto $1.5M. EsSalud construye su propio sistema. Diferenciar es extremadamente dificil.",
+        opportunity: "NICHO vertical: dental, psicologia, veterinaria. O resolver el gap de interoperabilidad EsSalud/MINSA ↔ sector privado (mandato SIHCE RM 553-2025).",
+        verdict: "NO RECOMENDADO como plataforma general. Mercado tiene 8+ competidores activos en Peru. Solo viable si hiperespecializas en un nicho que nadie cubre.",
+        sources: ["Doctoralia Peru (29K especialistas)", "Nimbo pricing (Capterra)", "EsSalud EsSI lanzamiento", "MINSA RM 553-2025 SIHCE", "Smart Doctor Peru $1.5M"]
+    },
+    5: { // Infra Pagos
+        viability: 1,
+        competitors: [
+            { name: "dLocal (NASDAQ: DLO)", funding: "$3.74B market cap", pricing: "% transaccion", users: "$41B TPV, $1.09B revenue", gap: "YA en Peru, integrado con Yape." },
+            { name: "EBANX", funding: "$460M raised", pricing: "% transaccion", users: "Integrado Yape cross-border", gap: "YA en Peru." },
+            { name: "Kushki (Ecuador)", funding: "$200M, $1.5B val", pricing: "% transaccion", users: "Activo en Peru", gap: "YA en Peru." },
+            { name: "Niubiz (Peru)", funding: "Owned by BCP+BBVA+Visa", pricing: "3.45-3.98% comision", users: "#1 acquirer Peru", gap: "Monopolio de los bancos mas grandes." },
+            { name: "Yape (BCP)", funding: "Backed by BCP", pricing: "Gratis P2P", users: "14M usuarios activos, 69% PEA", gap: "Wallet dominante Peru." },
+            { name: "Payoneer (NASDAQ: PAYO)", funding: "$3B market cap", pricing: "% + fees", users: "$900M+ revenue global", gap: "YA en Peru." }
+        ],
+        gaps: [
+            "Practicamente ninguno. Los gigantes cubren todo.",
+            "Posible nicho: corredores especificos (Peru-Japon, Peru-Italia diaspora)",
+            "Crypto-to-fiat bridges (pero Pomelo/Bybit ya entran)",
+            "Herramientas para SMEs exportadores/importadores"
+        ],
+        risk: "IMPOSIBLE. dLocal ($1B revenue), EBANX ($460M raised), Kushki ($1.5B val), Niubiz (4 bancos mas grandes) TODOS ya en Peru. Licencia SBS requiere $800K+ capital. 12-24 meses sin revenue.",
+        opportunity: "UNICA via: capa de valor encima de infraestructura existente — reconciliacion, compliance, analytics para empresas que USAN estos rails. Vender palas a los mineros.",
+        verdict: "DESCARTADO. El espacio mas competitivo de todo el fintech LatAm. Incluso Palla (YC-backed) levanto $14.5M solo para un corredor nicho. No hay camino realista.",
+        sources: ["dLocal 10-K ($41B TPV)", "EBANX-Yape integracion", "Kushki $1.5B (TechCrunch)", "SBS Peru licensing requirements", "Yape 14M users (BIS report)"]
+    },
+    6: { // Restaurant OS
+        viability: 7,
+        competitors: [
+            { name: "OlaClick (YC W21)", funding: "$8.03M (Google, Delivery Hero)", pricing: "Free-$8/mes", users: "120K+ negocios, 27 paises", gap: "Menu digital + WhatsApp. NO es restaurant OS completo (sin cocina, inventario, mesas)." },
+            { name: "PANCA (Peru)", funding: "Bootstrapped", pricing: "S/99-119/mes", users: "Peru, creciendo", gap: "POS + SUNAT + inventario. Pero sin delivery integration, UX basica." },
+            { name: "Zak (Brasil)", funding: "$38.1M (Tiger Global)", pricing: "Custom", users: "Brasil-focused", gap: "Full OS pero SOLO Brasil. No ha expandido a LatAm hispanohablante." },
+            { name: "OKFAC (Peru)", funding: "Bootstrapped", pricing: "Custom", users: "Peru", gap: "POS + Rappi/PedidosYa. Pequeno." },
+            { name: "Inforest (Peru)", funding: "Legacy", pricing: "Premium", users: "Hoteles, alta gastronomia", gap: "Software instalable, UI retro, curva de aprendizaje alta." },
+            { name: "Poster POS", funding: "No publico", pricing: "$29+/mes", users: "27K negocios, 110 paises", gap: "Generico, no especializado Peru/SUNAT." }
+        ],
+        gaps: [
+            "NO existe restaurant OS dominante en Peru — mercado fragmentado entre 10+ vendors pequenos",
+            "Integracion delivery (Rappi/PedidosYa/Uber Eats) es debil — la mayoria requiere re-ingreso manual",
+            "SUNAT facturacion electronica obligatoria pero muchos restaurantes luchan con compliance",
+            "OlaClick (el mejor financiado en LatAm) es solo menu digital, NO operaciones",
+            "Zak ($38M) es Brasil-only, no ha cruzado al mercado hispanohablante",
+            "220,000 establecimientos de comida en Peru, 90% MYPEs sin software"
+        ],
+        risk: "OlaClick pivotea a restaurant OS completo con $8M y backing de Google/Delivery Hero. Ya tienen 120K negocios. Unit economics a S/99-119/mes requieren escala masiva.",
+        opportunity: "Integracion delivery como wedge: ser el unico panel donde Rappi + PedidosYa + Uber Eats fluyen a un POS con facturacion SUNAT automatica. Resuelves el #1 dolor operativo.",
+        verdict: "Oportunidad real en un mercado fragmentado. 220K establecimientos, ningun dominante. APIs de Rappi y Uber Eats disponibles. El reto es field sales (Toast: 80% ventas presenciales).",
+        sources: ["OlaClick Crunchbase ($8M, YC W21)", "PANCA.pe pricing", "Zak $38M (Bloomberg Linea)", "Uber Eats Marketplace APIs", "Rappi Developer Portal", "SUNAT facturacion electronica"]
+    },
+    7: { // LegalTech IA
+        viability: 5,
+        competitors: [
+            { name: "Harvey AI (USA)", funding: "$11B val (Mar 2026)", pricing: "$500-2000+/user/mes", users: "80+ equipos en 13 paises LatAm", gap: "EXPANDIENDO ACTIVAMENTE en LatAm. Mexico-based team. Partnership Cuatrecasas." },
+            { name: "Legora (Suecia)", funding: "$5.55B val (Mar 2026)", pricing: "Enterprise", users: "800 firmas legales", gap: "Partnership con Tirant lo Blanch para datos LatAm/Iberia." },
+            { name: "Juztina (Peru)", funding: "Bootstrapped/angel", pricing: "Creditos, suscripcion", users: "100K+ usuarios registrados", gap: "First mover Peru. ~$500K-1M revenue. 3M+ documentos." },
+            { name: "vLex (Global)", funding: "Establecido", pricing: "Enterprise custom", users: "Global, mejor data legal espanol", gap: "Base de datos, no IA generativa." },
+            { name: "Tirant lo Blanch", funding: "Institucional", pricing: "Custom", users: "22 paises LatAm + Espana", gap: "Legislation/jurisprudencia. Ahora partner de Legora para IA." },
+            { name: "Westlaw/Thomson Reuters", funding: "Fortune 500", pricing: "$175-566/mes", users: "Global enterprise", gap: "Cobertura Mexico, Argentina, Chile. Enterprise pricing." }
+        ],
+        gaps: [
+            "Harvey/Legora targettean Big Law ($500-2000/mes) — base de piramide desatendida",
+            "Juztina tiene first mover pero es pequena (~$500K-1M rev) y generalista",
+            "Automatizacion documentos legales LatAm (contratos, demandas) apenas existe",
+            "Datos legales publicos en Peru accesibles (SPIJ, El Peruano, datosabiertos.gob.pe)"
+        ],
+        risk: "MERCADO CONSOLIDANDOSE RAPIDO. Harvey ($11B) y Legora ($5.55B) entran agresivamente a LatAm con billones en recursos. Juztina tiene 100K usuarios en Peru. La ventana se cierra.",
+        opportunity: "Base de piramide: herramienta $20-50/mes para abogados individuales y estudios pequenos que nunca pagaran Harvey. O hiperespecializacion: solo laboral, solo tributario, solo minero.",
+        verdict: "RIESGO ALTO por timing. Hace 2 anos era ideal, hoy Harvey+Legora+Juztina comprimen el espacio. Solo viable con nicho ultra-especifico o enfoque SMB radical.",
+        sources: ["Harvey AI $11B (CNBC Mar 2026)", "Legora $5.55B (TechCrunch Mar 2026)", "Juztina Peru (El Comercio, Gestion)", "IMRC LatAm Legal Tech $1.7B→$4.8B", "SPIJ Peru"]
+    },
+    8: { // MiningTech SaaS
+        viability: 3,
+        competitors: [
+            { name: "Maptek Vulcan (Australia)", funding: "Independiente, 30+ anos", pricing: "$50K-200K+/ano/sitio", users: "2,500+ sitios, 90 paises", gap: "Dominante. Suscripcion desde 2024. Solo enterprise." },
+            { name: "Deswik (Sandvik)", funding: "Adquirido por Sandvik", pricing: "$50K+/ano/sitio", users: "20%+ minas globales", gap: "Open pit + underground. Respaldo Sandvik." },
+            { name: "Hexagon Mining", funding: "Hexagon AB (publica)", pricing: "Enterprise custom", users: "20%+ minas globales", gap: "Fleet mgmt, safety, autonomous drilling. Tiene oficina Peru (Lima)." },
+            { name: "TIMining (Chile)", funding: "$10M+ raised", pricing: "Custom", users: "50 minas (BHP, Anglo, Codelco)", gap: "Digital Twin, 3D simulacion. LatAm-nativo. Solo 50 clientes en anos." },
+            { name: "Datamine", funding: "Independiente", pricing: "$50K+/ano", users: "Global", gap: "Geological modeling, mine planning." },
+            { name: "RPMGlobal (ASX)", funding: "Publica ASX", pricing: "Enterprise", users: "Global", gap: "Mine planning, scheduling, financial modeling." }
+        ],
+        gaps: [
+            "TODOS los jugadores son extranjeros — no hay software minero peruano",
+            "Pricing enterprise ($50K-200K/ano) excluye minas pequenas/medianas",
+            "Software legacy con UX anticuada y curvas de aprendizaje meses",
+            "OSINERGMIN compliance reporting no tiene software dedicado",
+            "Cloud adoption es baja — oportunidad cloud-native",
+            "Mineria artesanal (sector enorme en Peru) tiene CERO software"
+        ],
+        risk: "2-3 anos construyendo un producto y descubrir que minas no cambian de Maptek/Deswik. Switching costs incluyen reentrenar equipos enteros de geologia/ingenieria. Errores en software minero = peligro fisico + millones en recursos mal asignados.",
+        opportunity: "NICHO: compliance OSINERGMIN/ambiental SaaS. 'Vanta for mining' — automatizacion de reportes regulatorios sin competir con Maptek en planificacion. Cada mina en Peru DEBE cumplir.",
+        verdict: "NO RECOMENDADO como plataforma general. TIMining ($10M, Chile) tiene solo 50 clientes despues de anos. Solo viable como nicho compliance/safety, no mine planning.",
+        sources: ["Maptek Vulcan purchasing page", "Deswik/Sandvik products", "TIMining $10M (Mining.com)", "Peru mining $6.23B inversion 2025", "OSINERGMIN supervision minera"]
+    },
+    9: { // AgriExport Tech
+        viability: 8,
+        competitors: [
+            { name: "Hispatec ERPagro (Espana)", funding: "Privado, 30+ anos", pricing: "$30K-100K+/ano", users: "1,000+ agroindustrias", gap: "Enterprise caro, implementacion meses. Top 100 espanolas." },
+            { name: "iSiore GO (Peru)", funding: "Bootstrapped", pricing: "$500-2,000/mes est.", users: "Peru focused", gap: "ERP agro PERO debil en export compliance, shipping, multi-mercado." },
+            { name: "CropIn (India)", funding: "$35M+ (Google)", pricing: "$2-5/ha/mes", users: "Global F&V", gap: "Farm monitoring, NO export compliance ni shipping integration." },
+            { name: "Agrosoft LATAM (Ecuador)", funding: "Bootstrapped, 30+ anos", pricing: "$15K-50K+/ano", users: "1,000+ en 7 paises", gap: "ERP general agro, no purpose-built export." },
+            { name: "SAP GTS (usado por Camposol)", funding: "Enterprise", pricing: "$200K-1M+ implementacion", users: "Top 10-20 exportadores", gap: "Solo para los mas grandes. Inaccesible para 2,500+ mid-tier." },
+            { name: "VUCE Peru (gobierno)", funding: "Estatal + BID $62.7M", pricing: "Gratis", users: "Todos exportadores", gap: "Portal de tramites, NO gestion. Sin dashboard, analytics, automatizacion." }
+        ],
+        gaps: [
+            "GAP MASIVO: 2,500+ exportadores mid-tier ($1M-50M) usando Excel y email",
+            "Top 20 usan SAP ($200K+), el resto NO tiene software de export management",
+            "NINGUN software integra FDA FSMA + EU + China GACC + SENASA + GlobalG.A.P. simultaneamente",
+            "APIs de shipping disponibles: Maersk (booking, tracking, rates), Hapag-Lloyd (Track&Trace, pricing)",
+            "VUCE tiene web services para automatizar — nadie ha construido una capa encima",
+            "Puerto Chancay (abre 2025) reduce 10 dias a Asia — nuevos requisitos GACC China = demanda"
+        ],
+        risk: "Adopcion lenta en industria tradicional y conservadora. Exportadores agricolas confian en su broker de aduanas y Excel mas que en un startup. Ciclo de ventas puede ser 1-3 meses.",
+        opportunity: "Peru rompe $14B en agroexportaciones con 18% crecimiento. Chancay abre mercados asiaticos con nuevos requisitos compliance. 2,500+ exportadores SIN software. Si te conviertes en el 'OS' del mid-market, son $50M+ ARR con expansion a Chile, Colombia, Ecuador.",
+        verdict: "SEGUNDA MEJOR OPORTUNIDAD. Mercado grande ($14B+), sin competidor directo para mid-market, APIs disponibles (Maersk, VUCE, SUNAT). Requiere visitar Ica/La Libertad pero el producto es viable.",
+        sources: ["Peru agroexportaciones $14B+ (FreshFruitPortal)", "VUCE 2.0 BID $62.7M", "Maersk Developer Portal APIs", "Hapag-Lloyd API Portal", "SENASA/VUCE integracion", "iSiore GO website", "Hispatec.com"]
+    },
+    10: { // CyberSec SMB
+        viability: 6,
+        competitors: [
+            { name: "Hackmetrix (Chile)", funding: "$2.8M (3 rondas)", pricing: "~$500-2000/mes est.", users: "Chile, Argentina, Mexico", gap: "Compliance + security. NO en Peru aun. LatAm-nativo." },
+            { name: "Delta Protect (Mexico)", funding: "Google-backed", pricing: "$1,000-5,000/mes est.", users: "Mexico startups/SMEs", gap: "Suite completa (pentesting, SOC, CISO-as-a-Service). Mexico-centrico." },
+            { name: "NovaSec LATAM (Colombia)", funding: "Bootstrapped", pricing: "Desde $2,000/mes", users: "Colombia, Peru, Mexico, Chile", gap: "Solo GRC software. NO SOC, NO pentesting, NO managed detection." },
+            { name: "Vanta (USA)", funding: "$10B+ val", pricing: "$7,500-50,000/ano", users: "Global enterprise", gap: "SOC 2/ISO 27001 automation. Solo ingles, NO regulacion Peru." },
+            { name: "Secure Soft (Peru)", funding: "Establecido", pricing: "Enterprise custom", users: "Grandes empresas Peru", gap: "Enterprise-only, consulting tradicional." },
+            { name: "Movistar Cybersecurity (Peru)", funding: "Telefonica", pricing: "Bundled con telecom", users: "Empresas Peru", gap: "Bundled, no especializado compliance." }
+        ],
+        gaps: [
+            "NINGUN plataforma automatiza compliance Peru: Ley 29733, SBS 504-2021, nueva ley ciberseguridad",
+            "Vanta/Drata solo cubren frameworks US/EU — no regulacion peruana",
+            "Hackmetrix y Delta Protect aun NO en Peru (oportunidad temporal)",
+            "Menos del 25% de PYMEs asigna presupuesto a ciberseguridad",
+            "30% vacancy rate en ciberseguridad Peru = demanda de servicios managed",
+            "SBS 504-2021 OBLIGA programa ciberseguridad para entidades financieras supervisadas"
+        ],
+        risk: "PYMEs peruanas NO pagaran. 88% dice que ciberseguridad es importante pero menos del 25% gasta dinero. El gap awareness→presupuesto es donde mueren startups de cybersec en mercados emergentes.",
+        opportunity: "SBS 504-2021 OBLIGA compliance para fintechs/financieras. Enfoque laser en sector financiero regulado (cajas, cooperativas, fintechs) donde compliance es mandatorio, no opcional. Mercado mas pequeno pero revenue predecible.",
+        verdict: "Viable como compliance-first MSSP para sector financiero regulado. NO viable como 'cybersec para todas las PYMEs'. Stack open-source (Wazuh) hace unit economics funcionales a $200-500/mes.",
+        sources: ["Peru Cybersecurity Market $170M (Mordor Intelligence)", "Hackmetrix $1.3M (LatamList)", "SBS Resolucion 504-2021", "Ley 29733 Datos Personales Peru", "Wazuh open-source SIEM", "Delta Protect/Google Accelerator"]
+    }
+};
+
 // ==================== DATA ====================
 const IDEAS = [
     {
