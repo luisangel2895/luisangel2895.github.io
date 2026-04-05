@@ -4369,6 +4369,72 @@ function renderIdeaTabs() {
             </div>
         </section>
         ` : ''}
+
+        <!-- VEREDICTO FINAL -->
+        ${(() => {
+            const v = computeFinalScore(idea.id);
+            const vt = FINAL_VERDICT.texts[idea.id];
+            if (!v || !vt) return '';
+            const scoreColor = v.total >= 80 ? '#00d4aa' : v.total >= 65 ? '#ffd93d' : v.total >= 50 ? '#ffa500' : v.total >= 30 ? '#ff6b6b' : '#ff3232';
+            return `
+        <section style="margin-top:2rem;">
+            <h2 class="section-title" style="font-size:1.4rem;">Veredicto Final: Decision de Negocio</h2>
+            <div class="final-verdict-card" style="border-color:${scoreColor}44;">
+                <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,${scoreColor},${idea.color});"></div>
+
+                <!-- Score + Recommendation Header -->
+                <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;">
+                    <div class="final-verdict-score-ring" style="background:${scoreColor}15;border:3px solid ${scoreColor};">
+                        <span class="score-num" style="color:${scoreColor};">${v.total}</span>
+                        <span class="score-label" style="color:${scoreColor};">/ 100</span>
+                    </div>
+                    <div style="flex:1;min-width:200px;">
+                        <span class="verdict-recommendation ${v.tierClass}">${v.tierLabel}</span>
+                        <p style="color:var(--text-secondary);font-size:0.88rem;margin:0.8rem 0 0;line-height:1.6;">${vt.recommendation}</p>
+                    </div>
+                </div>
+
+                <!-- 7 Dimension Scores -->
+                <div style="margin-bottom:2rem;">
+                    <h4 style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;">Desglose por Dimension (7 variables ponderadas)</h4>
+                    ${FINAL_VERDICT.dimensions.map(d => {
+                        const s = v.scores[d.key];
+                        const barColor = s >= 70 ? '#00d4aa' : s >= 50 ? '#ffd93d' : s >= 30 ? '#ffa500' : '#ff6b6b';
+                        return `<div class="dimension-row">
+                            <span class="dimension-label">${d.label}</span>
+                            <div class="dimension-bar-bg"><div class="dimension-bar-fill" style="width:${s}%;background:${barColor};"></div></div>
+                            <span class="dimension-score" style="color:${barColor};">${s}</span>
+                            <span class="dimension-weight">${Math.round(d.weight*100)}%</span>
+                        </div>`;
+                    }).join('')}
+                </div>
+
+                <!-- Radar Chart + Pros/Cons Grid -->
+                <div style="display:grid;grid-template-columns:320px 1fr;gap:2rem;align-items:start;">
+                    <div>
+                        <h4 style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.8rem;text-align:center;">Perfil Multidimensional</h4>
+                        <div class="verdict-radar-wrapper"><canvas id="radarChart${idea.id}"></canvas></div>
+                    </div>
+                    <div class="verdict-pros-cons" style="grid-template-columns:1fr;gap:0.8rem;">
+                        <div style="background:rgba(0,212,170,0.06);border:1px solid rgba(0,212,170,0.15);border-radius:10px;padding:1rem 1.2rem;">
+                            <h4 style="color:#00d4aa;font-size:0.85rem;margin:0 0 0.6rem;">A Favor</h4>
+                            <ul style="margin:0;padding-left:1.2rem;">${vt.pros.map(p => `<li style="color:var(--text-secondary);font-size:0.82rem;padding:0.2rem 0;">${p}</li>`).join('')}</ul>
+                        </div>
+                        <div style="background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.15);border-radius:10px;padding:1rem 1.2rem;">
+                            <h4 style="color:#ff6b6b;font-size:0.85rem;margin:0 0 0.6rem;">En Contra</h4>
+                            <ul style="margin:0;padding-left:1.2rem;">${vt.cons.map(c2 => `<li style="color:var(--text-secondary);font-size:0.82rem;padding:0.2rem 0;">${c2}</li>`).join('')}</ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GO / NO-GO Decision -->
+                <div class="verdict-bottom-text" style="border-color:${scoreColor}33;background:${scoreColor}08;">
+                    <h4 style="color:${scoreColor};">Decision GO / NO-GO</h4>
+                    <p>${vt.goNoGo}</p>
+                </div>
+            </div>
+        </section>`;
+        })()}
         `;
     });
 }
