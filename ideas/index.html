@@ -4043,6 +4043,65 @@ function renderTeams() {
     }).join('');
 }
 
+// ==================== FINAL SCORE ENGINE ====================
+function computeFinalScore(ideaId) {
+    const idea = IDEAS.find(i => i.id === ideaId);
+    const f = FEASIBILITY[ideaId];
+    const c = COMPETITION[ideaId];
+    const t = TEAMS[ideaId];
+    if (!idea || !f || !c) return null;
+
+    // Dimension 1: Viabilidad Competitiva (from COMPETITION.viability 1-10)
+    const competitive = c.viability * 10;
+
+    // Dimension 2: Factibilidad Solo Fundador (from FEASIBILITY.soloScore 1-10)
+    const feasibility = f.soloScore * 10;
+
+    // Dimension 3: Potencial de Mercado (from IDEAS.unicornScore 0-100)
+    const market = idea.unicornScore;
+
+    // Dimension 4: Pureza Software (from FEASIBILITY.softwarePurity 0-100)
+    const software = f.softwarePurity;
+
+    // Dimension 5: Velocidad al Revenue (inverse of minCostToRevenue in $K)
+    // $0.3K → 97, $1K → 93, $5.5K → 75, $12K → 55, $55K → 20, $250K → 2
+    const costK = f.minCostToRevenue;
+    const speed = Math.max(2, Math.min(98, Math.round(100 - (Math.log(costK + 0.1) / Math.log(300)) * 100)));
+
+    // Dimension 6: Escalabilidad 5Y (composite of marginY5 + normalized arrY5)
+    // arrY5: normalize where $500M = 100, $0 = 0
+    const arrNorm = Math.min(100, (idea.arrY5 / 500) * 100);
+    const scalability = Math.round(idea.marginY5 * 0.5 + arrNorm * 0.5);
+
+    // Dimension 7: Baja Barrera de Entrada (inverse of barriers)
+    // Composite: minTeam, licenses, regulatory complexity, hardware
+    let barrierScore = 100;
+    if (f.minTeam > 1) barrierScore -= (f.minTeam - 1) * 15;
+    if (f.licenses !== 'Ninguna' && f.licenses !== 'Ninguna directa' && f.licenses !== 'Ninguna de software' && f.licenses !== 'Ninguna (no necesitas ser PSE para empezar)' && f.licenses !== 'Ninguna (herramienta de investigacion, no ejercicio legal)' && f.licenses !== 'Ninguna (eres proveedor de software, no de salud)' && f.licenses !== 'Ninguna de software (pagos via procesadores licenciados)' && f.licenses !== 'Ninguna (no emites certificados, SENASA lo hace)') barrierScore -= 35;
+    if (idea.regulatoryComplexity === 'Alta') barrierScore -= 20;
+    else if (idea.regulatoryComplexity === 'Media') barrierScore -= 8;
+    if (f.hardwareNeeded !== 'Ninguno' && f.hardwareNeeded !== 'Ninguno (marketplace puro)' && f.hardwareNeeded !== 'Ninguno (APIs)' && f.hardwareNeeded !== 'Ninguno (sensores cold chain opcionales)') barrierScore -= 15;
+    const barrier = Math.max(5, Math.min(98, barrierScore));
+
+    const scores = { competitive, feasibility, market, software, speed, scalability, barrier };
+
+    // Weighted total
+    const dims = FINAL_VERDICT.dimensions;
+    let total = 0;
+    dims.forEach(d => { total += scores[d.key] * d.weight; });
+    total = Math.round(total);
+
+    // Recommendation tier
+    let tier, tierClass, tierLabel;
+    if (total >= 80) { tier = 'go'; tierClass = 'verdict-rec-go'; tierLabel = 'ALTAMENTE RECOMENDADO'; }
+    else if (total >= 65) { tier = 'caution'; tierClass = 'verdict-rec-caution'; tierLabel = 'RECOMENDADO CON RESERVAS'; }
+    else if (total >= 50) { tier = 'warn'; tierClass = 'verdict-rec-warn'; tierLabel = 'PROCEDER CON CAUTELA'; }
+    else if (total >= 30) { tier = 'no'; tierClass = 'verdict-rec-no'; tierLabel = 'NO RECOMENDADO'; }
+    else { tier = 'stop'; tierClass = 'verdict-rec-stop'; tierLabel = 'DESCARTADO'; }
+
+    return { scores, total, tier, tierClass, tierLabel };
+}
+
 // ==================== RENDER IDEA TABS ====================
 const _ideaChartsRendered = {};
 
