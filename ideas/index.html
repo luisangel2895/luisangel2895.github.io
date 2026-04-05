@@ -3250,6 +3250,436 @@ const IDEAS = [
             { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia, Mexico, Chile", "Multi-country compliance", "MDR (Managed Detection)", "Cyber insurance bundle", "API integraciones"] },
             { name: "Plataforma Regional", time: "Meses 31-48", cost: "$3-5M", features: ["Brasil, Argentina, CA", "AI threat intelligence", "Automated remediation", "Marketplace security tools", "SOC propio regional"] }
         ]
+    },
+    {
+        id: 11, name: "Agentes IA WhatsApp para Negocios", short: "IA WhatsApp",
+        tagline: "El empleado IA que atiende 24/7 por WhatsApp para cada negocio LatAm",
+        color: "#7c3aed", gradient: "linear-gradient(135deg, #7c3aed, #06b6d4)",
+        tam: "$47-65B AI Agents (2030)", sam: "$5-10B LatAm SMB", som: "$500M-1.5B",
+        mvpCost: "$15-30K", timeToRevenue: "1 mes", arrY5: 300, marginY5: 78,
+        competitionLatam: "Muy baja", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 94,
+        problem: [
+            "SMBs LatAm reciben 50-200+ mensajes WhatsApp/dia y los responden manualmente",
+            "85% de negocios usan WhatsApp como canal principal de ventas — no CRM, no chatbot inteligente",
+            "Contratar recepcionista cuesta $300-500/mes; un AI agent cuesta $30-100/mes con atencion 24/7",
+            "Yalo ($87M raised) solo atiende enterprise. Cliengo/Botmaker son chatbots basicos, no agentes IA",
+            "30M+ SMBs en LatAm, 12M+ son negocios de servicio (clinicas, salones, restaurantes, talleres)"
+        ],
+        competitors: [
+            ["Yalo (Mexico)", "$87M raised", "$500-5K/mes", "Enterprise-only, Coca-Cola level. NO SMB."],
+            ["Truora (Colombia)", "$15M raised", "Custom", "Identity verification + chatbots basicos"],
+            ["11x.ai (USA)", "$50M+ raised", "$5K+/mes", "AI SDR ingles, USA-only, enterprise"],
+            ["Nuestra Solucion", "Target $1B+", "$30-100/mes", "IA WhatsApp nativa, espanol, SMB LatAm, booking+ventas+FAQ"]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion SaaS", detail: "$30-100/mes por negocio. Planes por volumen de mensajes." },
+            { name: "Pay-per-conversation", detail: "$0.05-0.15 por conversacion IA adicional." },
+            { name: "Premium vertical", detail: "$150-300/mes con integraciones especificas (dental, salon, restaurante)." },
+            { name: "Comision transacciones", detail: "1-3% en pagos procesados via WhatsApp (Yape/Plin)." },
+            { name: "White-label", detail: "Agencias y SaaS integran tu motor IA via API." }
+        ],
+        roi: [
+            { year: 1, users: "3K", mrr: 120, arr: 1.44, expenses: 0.5, margin: 65 },
+            { year: 2, users: "25K", mrr: 1250, arr: 15, expenses: 5, margin: 67 },
+            { year: 3, users: "120K", mrr: 6000, arr: 72, expenses: 22, margin: 69 },
+            { year: 4, users: "350K", mrr: 17500, arr: 210, expenses: 55, margin: 74 },
+            { year: 5, users: "600K", mrr: 25000, arr: 300, expenses: 66, margin: 78 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-3", cost: "$15-30K", features: ["WhatsApp Business API integration", "IA responde FAQs + agenda citas", "Dashboard basico para dueno", "3 verticales: dental, salon, restaurante", "Onboarding 10 min via WhatsApp"] },
+            { name: "Product-Market Fit", time: "Meses 4-8", cost: "$80-150K", features: ["IA aprende de conversaciones previas", "Integracion Google Calendar/Sheets", "Pagos via Yape/Plin en chat", "Templates por industria", "Metricas: conversion, response time"] },
+            { name: "Escalar Peru", time: "Meses 9-15", cost: "$200-400K", features: ["10+ verticales industriales", "Multi-idioma (quechua basico)", "API para integradores", "Campanas outbound WhatsApp IA", "CRM nativo en WhatsApp"] },
+            { name: "Expansion LatAm", time: "Meses 16-28", cost: "$800K-1.5M", features: ["Colombia, Mexico, Chile, Argentina", "Voice AI (llamadas)", "Integracion MercadoLibre/Rappi", "AI que negocia precios", "Marketplace de agentes verticales"] },
+            { name: "Plataforma Agentes", time: "Meses 29-48", cost: "$2-4M", features: ["Brasil (portugues)", "Multi-canal (Instagram, Telegram)", "Agentes autonomos full-cycle", "Fintech embebido (credito, seguros)", "White-label enterprise"] }
+        ]
+    },
+    {
+        id: 12, name: "Tutor IA STEM Adaptativo para LatAm", short: "EdTech IA",
+        tagline: "El Khanmigo de Latinoamerica: IA que ensena matematicas y ciencias en espanol",
+        color: "#f59e0b", gradient: "linear-gradient(135deg, #f59e0b, #ef4444)",
+        tam: "$30B+ AI Education (2030)", sam: "$3.5-4B LatAm EdTech", som: "$200-500M",
+        mvpCost: "$30-50K", timeToRevenue: "3 meses", arrY5: 180, marginY5: 72,
+        competitionLatam: "Baja", techComplexity: "Media-Alta", regulatoryComplexity: "Baja",
+        unicornScore: 85,
+        problem: [
+            "Peru PISA 2022: puesto 59/81 paises. Matematicas: 391 (promedio OECD: 472) — crisis educativa",
+            "100M+ estudiantes hispanohablantes en LatAm sin acceso a tutoria personalizada",
+            "Tutoria presencial cuesta S/200-600/mes ($55-165). Familias clase media SI pagan",
+            "Khanmigo (Khan Academy) es ingles-first, $44/ano, NO alineado a curriculos LatAm",
+            "Chegg colapso 99% por ChatGPT. Byju's ($22B) insolvente. El modelo viejo murio — IA adaptativa es el futuro"
+        ],
+        competitors: [
+            ["Duolingo (NASDAQ: DUOL)", "$8.5B mkt cap", "$7.99/mes", "Solo idiomas. $531M revenue. Prueba modelo freemium LatAm."],
+            ["Khan Academy (Khanmigo)", "Nonprofit $80M+/ano", "$44/ano", "IA tutor con OpenAI. Ingles-first, curriculo USA."],
+            ["Platzi (Colombia)", "$62M raised", "$24-49/mes", "Cursos tech/business. NO tutoria IA, NO K-12."],
+            ["Nuestra Solucion", "Target $1B+", "$3-10/mes", "IA STEM adaptativa, curriculo CNEB Peru/LatAm, espanol nativo, WhatsApp-first"]
+        ],
+        revenueStreams: [
+            { name: "Freemium familiar", detail: "$3-10/mes por estudiante. Free tier limitado, premium ilimitado." },
+            { name: "Plan escuela", detail: "$1-3/estudiante/mes para colegios (B2B2C)." },
+            { name: "Prep examenes", detail: "$15-25 por curso de preparacion (admision universidad)." },
+            { name: "Certificaciones", detail: "$5-15 por certificado de competencia." },
+            { name: "Data & insights", detail: "Analytics agregados para ministerios de educacion." }
+        ],
+        roi: [
+            { year: 1, users: "50K free, 5K paid", mrr: 30, arr: 0.36, expenses: 0.4, margin: -11 },
+            { year: 2, users: "500K free, 50K paid", mrr: 350, arr: 4.2, expenses: 3, margin: 29 },
+            { year: 3, users: "2M free, 200K paid", mrr: 1400, arr: 16.8, expenses: 8, margin: 52 },
+            { year: 4, users: "8M free, 800K paid", mrr: 5600, arr: 67.2, expenses: 25, margin: 63 },
+            { year: 5, users: "20M free, 2.5M paid", mrr: 15000, arr: 180, expenses: 50, margin: 72 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$30-50K", features: ["Tutor IA matematicas (CNEB Peru)", "WhatsApp + web app", "Explicaciones paso a paso con IA", "Ejercicios adaptativos nivel 1-5", "Gamificacion basica (streaks, puntos)"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$100-180K", features: ["Ciencias (fisica, quimica, biologia)", "App movil nativa", "Dashboard padres: progreso hijo", "Prep examen admision (UNI, San Marcos)", "IA que detecta gaps de conocimiento"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$250-450K", features: ["Todos los grados (1ro-5to secundaria)", "Alianza MINEDU piloto", "Offline mode zonas rurales", "Comunidad estudiantes", "Revenue: escuelas B2B"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia (ICFES), Mexico (CENEVAL)", "Curriculo por pais automatico", "AI conversation tutor (voz)", "Marketplace profesores", "Alianzas ministerios educacion"] },
+            { name: "Plataforma Regional", time: "Meses 31-48", cost: "$3-5M", features: ["Brasil (ENEM)", "Espana, USA hispano", "University-level STEM", "Corporate upskilling IA", "Contenido generado por comunidad"] }
+        ]
+    },
+    {
+        id: 13, name: "Fleet Management & Route Optimization SaaS", short: "Fleet SaaS",
+        tagline: "El Samsara de LatAm para flotas de distribucion SMB",
+        color: "#06b6d4", gradient: "linear-gradient(135deg, #06b6d4, #3b82f6)",
+        tam: "$25B Fleet Management (2024)", sam: "$3-5B LatAm", som: "$300-600M",
+        mvpCost: "$20-40K", timeToRevenue: "2 meses", arrY5: 150, marginY5: 68,
+        competitionLatam: "Baja-Media", techComplexity: "Media", regulatoryComplexity: "Baja",
+        unicornScore: 82,
+        problem: [
+            "Costos logisticos en Peru son 30-35% del costo del producto (vs 8-12% en USA/EU)",
+            "Solo 25-30% de la flota de carga peruana tiene GPS tracking",
+            "20,000+ distribuidores SMB (5-50 camiones) planifican rutas manualmente con Excel",
+            "Samsara ($24B mkt cap) y Geotab solo sirven enterprise a $30-50/vehiculo/mes",
+            "SimpliRoute (Chile, $7M) es el unico LatAm pero no tiene fleet management completo"
+        ],
+        competitors: [
+            ["Samsara (NYSE: IOT)", "$24B mkt cap", "$30-50/vehiculo/mes", "Enterprise USA. Demasiado caro para LatAm SMBs."],
+            ["SimpliRoute (Chile)", "$7M raised", "$20-40/mes base", "Route optimization solo. NO fleet management completo."],
+            ["Skydropx (Mexico)", "$22M raised (a16z)", "Por envio", "Multi-carrier shipping. E-commerce, NO distribucion."],
+            ["Nuestra Solucion", "Target $500M+", "$3-10/vehiculo/mes", "GPS + rutas + proof of delivery + fuel analytics. SMB LatAm price."]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion por vehiculo", detail: "$3-10/vehiculo/mes. Plan basico a premium." },
+            { name: "Hardware GPS", detail: "$15-30 por dispositivo (one-time) + instalacion." },
+            { name: "Analytics premium", detail: "$50-200/mes por dashboard de eficiencia avanzado." },
+            { name: "Fuel management", detail: "Descuentos gasolina via alianzas (comision 1-2%)." },
+            { name: "Insurance telematics", detail: "Data de conduccion para seguros usage-based (comision)." }
+        ],
+        roi: [
+            { year: 1, users: "500 flotas, 5K vehiculos", mrr: 35, arr: 0.42, expenses: 0.3, margin: 29 },
+            { year: 2, users: "3K flotas, 30K vehiculos", mrr: 210, arr: 2.52, expenses: 1.5, margin: 40 },
+            { year: 3, users: "12K flotas, 120K vehiculos", mrr: 960, arr: 11.5, expenses: 5, margin: 57 },
+            { year: 4, users: "35K flotas, 350K vehiculos", mrr: 2800, arr: 33.6, expenses: 12, margin: 64 },
+            { year: 5, users: "100K flotas, 1.5M vehiculos", mrr: 12500, arr: 150, expenses: 48, margin: 68 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-3", cost: "$20-40K", features: ["GPS tracking RT (smartphone)", "Route optimization (Google Maps API)", "Proof of delivery (foto + firma)", "Dashboard flota basico", "Alertas: exceso velocidad, desvio ruta"] },
+            { name: "Product-Market Fit", time: "Meses 4-9", cost: "$80-150K", features: ["Hardware GPS OBD-II ($15/unidad)", "Fuel consumption analytics", "App conductor + app gerente", "Reportes automaticos diarios", "Integracion facturacion SUNAT"] },
+            { name: "Escalar Peru", time: "Meses 10-16", cost: "$200-350K", features: ["Mantenimiento predictivo vehiculos", "Cold chain monitoring (temperatura)", "Multi-almacen gestion", "API para ERPs", "Programa distribuidores certificados"] },
+            { name: "Expansion LatAm", time: "Meses 17-28", cost: "$800K-1.5M", features: ["Colombia, Chile, Ecuador", "Marketplace de transporte", "Insurance telematics partnerships", "IoT sensores avanzados", "AI prediccion demanda"] },
+            { name: "Plataforma Logistica", time: "Meses 29-48", cost: "$2-4M", features: ["Mexico, Brasil, Argentina", "Autonomous fleet management", "Digital freight brokerage", "Fintech: factoring transportistas", "Supply chain visibility enterprise"] }
+        ]
+    },
+    {
+        id: 14, name: "OS Financiero para PYMEs LatAm", short: "FinOS PYME",
+        tagline: "El Xepelin/Brex de Peru: facturacion electronica → credito → OS financiero",
+        color: "#10b981", gradient: "linear-gradient(135deg, #10b981, #3b82f6)",
+        tam: "$20B+ SMB Financial Services LatAm", sam: "$5-8B", som: "$300-800M",
+        mvpCost: "$30-60K", timeToRevenue: "2 meses", arrY5: 200, marginY5: 65,
+        competitionLatam: "Baja-Media", techComplexity: "Media-Alta", regulatoryComplexity: "Media",
+        unicornScore: 88,
+        problem: [
+            "2.3M+ PYMEs en Peru. 99.5% de empresas. Usan Excel + WhatsApp + contador externo",
+            "Facturacion electronica SUNAT obligatoria pero herramientas existentes son basicas (Nubefact = solo XML)",
+            "60% de peruanos sin acceso a credito formal. PYMEs pagan 15-30% anual en factoring informal",
+            "Xepelin (Chile/Mexico, $200M+ raised) valida el modelo: facturacion como wedge → credito",
+            "Konfio (Mexico, $425M raised) prueba que SMB lending LatAm es venture-scale"
+        ],
+        competitors: [
+            ["Xepelin (Chile/Mexico)", "$200M+ raised", "Free facturacion, factoring 1-3%", "NO en Peru. Chile y Mexico solamente."],
+            ["Konfio (Mexico)", "$425M raised, SoftBank", "SMB lending", "Solo Mexico. $3B+ loans disbursed."],
+            ["Nubefact (Peru)", "Bootstrapped", "S/50-200/mes", "Solo facturacion XML. Sin IA, sin credito, sin contabilidad."],
+            ["Nuestra Solucion", "Target $1B+", "Free-$99/mes", "Facturacion SUNAT gratis → contabilidad IA → factoring → OS financiero"]
+        ],
+        revenueStreams: [
+            { name: "Facturacion freemium", detail: "Gratis hasta 50 facturas/mes. Premium $29-99/mes." },
+            { name: "Factoring/credito", detail: "Comision 1-3% por adelanto de facturas (no eres el lender, conectas)." },
+            { name: "Contabilidad IA", detail: "$49-149/mes por reconciliacion automatica y libros electronicos." },
+            { name: "Pagos B2B", detail: "Comision 0.5-1.5% en pagos a proveedores." },
+            { name: "Data scoring", detail: "Venta de credit scores a bancos/fintechs (agregado, anonimizado)." }
+        ],
+        roi: [
+            { year: 1, users: "5K", mrr: 80, arr: 0.96, expenses: 0.6, margin: 38 },
+            { year: 2, users: "30K", mrr: 600, arr: 7.2, expenses: 3.5, margin: 51 },
+            { year: 3, users: "100K", mrr: 2500, arr: 30, expenses: 12, margin: 60 },
+            { year: 4, users: "250K", mrr: 6500, arr: 78, expenses: 30, margin: 62 },
+            { year: 5, users: "500K", mrr: 16700, arr: 200, expenses: 70, margin: 65 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$30-60K", features: ["Facturacion electronica SUNAT (gratis)", "Dashboard ingresos/gastos RT", "Integracion bancos (BCP, BBVA, Interbank)", "Reportes contables basicos", "App movil + web"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$120-200K", features: ["Contabilidad IA automatica", "Libros electronicos PLE auto", "Factoring marketplace (conecta con fondos)", "Multi-RUC para contadores", "API abierta para ERPs"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$300-500K", features: ["Credit scoring alternativo", "Pagos B2B entre PYMEs", "Nomina basica integrada", "Alianzas cajas/cooperativas", "Revenue-based financing"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$1-2M", features: ["Colombia DIAN, Ecuador SRI", "Multi-pais facturacion", "Lineas de credito propias (partner)", "Insurance embebido", "Carbon accounting para exportadores"] },
+            { name: "Plataforma Financiera", time: "Meses 31-48", cost: "$3-6M", features: ["Mexico SAT, Chile SII, Brasil", "Cuenta digital PYME", "Tarjeta corporativa", "Treasury management", "IPO path / Banking license"] }
+        ]
+    },
+    {
+        id: 15, name: "GovTech: OS Municipal Digital", short: "GovTech Municipal",
+        tagline: "El OpenGov de LatAm: cobranza tributaria + servicios ciudadanos para municipios",
+        color: "#8b5cf6", gradient: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+        tam: "$30B+ GovTech (2024)", sam: "$1.5-2B LatAm", som: "$100-300M",
+        mvpCost: "$30-70K", timeToRevenue: "6 meses", arrY5: 120, marginY5: 70,
+        competitionLatam: "Muy baja", techComplexity: "Media", regulatoryComplexity: "Media",
+        unicornScore: 78,
+        problem: [
+            "1,874 municipalidades en Peru — 70-80% sin software de gestion dedicado (usan Excel o papel)",
+            "Recaudacion tributaria municipal: 30-50% nacional, tan bajo como 10-15% en municipios rurales",
+            "Ciudadanos deben ir FISICAMENTE a tramitar certificados, licencias, quejas — sin tracking digital",
+            "OpenGov (vendido por $1.8B) resolvio esto en USA. Munidigital lo hace en Argentina. NADIE en Peru",
+            "MEF Peru mandato Gobierno Digital (DL 1412) + BID invierte $500M+ en gobierno digital LatAm"
+        ],
+        competitors: [
+            ["OpenGov (USA)", "Vendido $1.8B", "$50-200K/ano", "Solo USA. Cloud ERP municipal. NO LatAm."],
+            ["Munidigital (Argentina)", "~$3-5M revenue", "Custom", "100+ municipios Argentina. NO Peru."],
+            ["Tyler Technologies (USA)", "$20B mkt cap", "Enterprise", "Mayor GovTech USA. NO LatAm."],
+            ["Nuestra Solucion", "Target $500M+", "$500-5K/mes", "Cobranza tributaria IA + tramites digitales + transparencia. Peru-first."]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion municipal", detail: "$500-2K/mes municipio pequeno, $2-10K/mes provincial." },
+            { name: "Success fee cobranza", detail: "5-10% de incremento en recaudacion tributaria atribuible." },
+            { name: "Transacciones ciudadanas", detail: "$0.50-2 por tramite digital procesado." },
+            { name: "Modulos premium", detail: "$200-500/mes por modulos adicionales (catastro, obras, presupuesto)." },
+            { name: "BID/World Bank projects", detail: "Contratos de implementacion $50-500K por proyecto." }
+        ],
+        roi: [
+            { year: 1, users: "15 municipios", mrr: 25, arr: 0.3, expenses: 0.35, margin: -17 },
+            { year: 2, users: "80 municipios", mrr: 200, arr: 2.4, expenses: 1.5, margin: 38 },
+            { year: 3, users: "300 municipios", mrr: 900, arr: 10.8, expenses: 5, margin: 54 },
+            { year: 4, users: "800 municipios", mrr: 3200, arr: 38.4, expenses: 15, margin: 61 },
+            { year: 5, users: "2000 municipios (LatAm)", mrr: 10000, arr: 120, expenses: 36, margin: 70 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-5", cost: "$30-70K", features: ["Portal cobranza tributaria online", "Pagos digitales (Yape, PagoEfectivo)", "Sistema tramites ciudadanos", "Dashboard alcalde/gerente", "Transparencia presupuestal"] },
+            { name: "Product-Market Fit", time: "Meses 6-12", cost: "$120-200K", features: ["Catastro digital basico", "Notificaciones SMS/WhatsApp deudas", "App ciudadano (tramites + pagos)", "Reportes MEF automaticos", "5 piloto municipios Lima metropolitana"] },
+            { name: "Escalar Peru", time: "Meses 13-20", cost: "$300-500K", features: ["IA prediccion morosidad tributaria", "Modulo licencias y permisos", "Integracion RENIEC/SUNARP", "Presupuesto participativo digital", "Alianza AMPE (Asoc. Municipalidades)"] },
+            { name: "Expansion LatAm", time: "Meses 21-32", cost: "$1-2M", features: ["Colombia (1,122 municipios)", "Ecuador, Bolivia", "Multi-pais configuracion", "BID/World Bank partnerships", "Modulo electoral/participacion"] },
+            { name: "Plataforma Regional", time: "Meses 33-48", cost: "$3-5M", features: ["Mexico (2,469 municipios)", "Chile, Argentina", "IA asistente gobierno", "Smart city IoT integracion", "Open data platform"] }
+        ]
+    },
+    {
+        id: 16, name: "PropTech: Gestion de Alquileres LatAm", short: "PropTech Rental",
+        tagline: "El AppFolio de LatAm: gestion de propiedades y alquileres para landlords",
+        color: "#ec4899", gradient: "linear-gradient(135deg, #ec4899, #f59e0b)",
+        tam: "$86-90B PropTech (2030)", sam: "$2-4B LatAm rental mgmt", som: "$150-400M",
+        mvpCost: "$25-45K", timeToRevenue: "3 meses", arrY5: 100, marginY5: 72,
+        competitionLatam: "Muy baja", techComplexity: "Baja-Media", regulatoryComplexity: "Baja",
+        unicornScore: 76,
+        problem: [
+            "800K-1M unidades de alquiler solo en Lima. Landlords gestionan con WhatsApp y papel",
+            "Cobro de alquileres, mantenimiento, contratos, inquilinos morosos — todo manual",
+            "AppFolio ($7B mkt cap USA), Buildium y Rent Manager NO operan en LatAm",
+            "Loft ($2.9B) y Habi ($1B) colapsaron con modelo iBuyer. El futuro es SaaS, no inventario",
+            "Aptuno (Colombia, $5-8M) es el unico intento pero pequeno y no en Peru"
+        ],
+        competitors: [
+            ["AppFolio (USA)", "$7B mkt cap", "$1.40/unidad/mes", "Solo USA. 8M+ unidades. NO LatAm."],
+            ["Buildium (USA)", "RealPage ($10B)", "$55-375/mes", "Solo USA/Canada. Enterprise."],
+            ["Aptuno (Colombia)", "$5-8M raised", "Custom", "Rental management Colombia. Pequeno."],
+            ["Nuestra Solucion", "Target $500M+", "$5-15/unidad/mes", "Cobro alquileres Yape + mantenimiento + contratos digitales. Peru-first."]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion por unidad", detail: "$5-15/unidad/mes. Free hasta 3 unidades." },
+            { name: "Procesamiento pagos", detail: "1-2% comision en cobro de alquileres via Yape/transferencia." },
+            { name: "Seguros embedded", detail: "Seguro de alquiler, seguro propiedad — comision 15-20%." },
+            { name: "Credit check inquilinos", detail: "$5-15 por verificacion crediticia/antecedentes." },
+            { name: "Contratos digitales", detail: "$3-8 por contrato firmado digitalmente." }
+        ],
+        roi: [
+            { year: 1, users: "500 landlords, 3K units", mrr: 25, arr: 0.3, expenses: 0.25, margin: 17 },
+            { year: 2, users: "3K landlords, 20K units", mrr: 180, arr: 2.16, expenses: 1.2, margin: 44 },
+            { year: 3, users: "15K landlords, 100K units", mrr: 900, arr: 10.8, expenses: 4.5, margin: 58 },
+            { year: 4, users: "50K landlords, 400K units", mrr: 3600, arr: 43.2, expenses: 15, margin: 65 },
+            { year: 5, users: "120K landlords, 1.2M units", mrr: 8300, arr: 100, expenses: 28, margin: 72 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$25-45K", features: ["Portal landlord: inmuebles + inquilinos", "Cobro alquileres via Yape/Plin", "Recordatorios automaticos de pago", "Registro gastos/ingresos por propiedad", "Contratos digitales basicos"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$80-150K", features: ["App inquilino (pagos + solicitudes)", "Mantenimiento: tickets + tracking", "Dashboard financiero landlord", "Verificacion crediticia inquilinos", "Multi-propiedad gestion"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$200-350K", features: ["Seguro de alquiler embedded", "Contabilidad SUNAT automatica", "Marketplace inquilinos verificados", "Integracion Urbania/Adondevivir", "Financiamiento mejoras propiedad"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$800K-1.5M", features: ["Colombia, Chile, Mexico", "Regulatory compliance por pais", "Property valuation IA", "Multifamily management", "Pagos cross-border (expats)"] },
+            { name: "Plataforma Inmobiliaria", time: "Meses 31-48", cost: "$2-4M", features: ["Brasil, Argentina, Ecuador", "Real estate investment tools", "Tokenizacion propiedades", "Smart leases (blockchain)", "White-label para inmobiliarias"] }
+        ]
+    },
+    {
+        id: 17, name: "ConstructionTech: Gestion Proyectos LatAm", short: "ConstructionTech",
+        tagline: "El Procore de LatAm: gestion de obras y proyectos inmobiliarios",
+        color: "#f97316", gradient: "linear-gradient(135deg, #f97316, #ffd93d)",
+        tam: "$15.2B Construction Software (2030)", sam: "$1.5-3B LatAm", som: "$100-300M",
+        mvpCost: "$40-70K", timeToRevenue: "4 meses", arrY5: 90, marginY5: 65,
+        competitionLatam: "Baja", techComplexity: "Media-Alta", regulatoryComplexity: "Media",
+        unicornScore: 75,
+        problem: [
+            "Peru construye 40,000-60,000 viviendas/ano. Developers gestionan proyectos con Excel y WhatsApp fotos",
+            "Procore ($10B+ USA) no opera en LatAm. PlanGrid (Autodesk) tampoco. Mercado completamente vacio",
+            "Sobrecostos en construccion Peru: 15-30% por mala gestion de avance, cambios no documentados",
+            "Deficit habitacional Peru: 1.8M viviendas (MVCS). El sector DEBE crecer",
+            "CAPECO Peru estima inversion en construccion >$20B anuales"
+        ],
+        competitors: [
+            ["Procore (NYSE: PCOR)", "$10B+ mkt cap", "$375+/mes", "Solo USA/UK/AU/CA. NO LatAm."],
+            ["PlanGrid (Autodesk)", "Adquirido $875M", "$39-59/mes", "Construction docs. NO operaciones LatAm."],
+            ["Obra360 (Mexico)", "Bootstrapped", "Custom", "Pequeno, Mexico-only. Gestion obras."],
+            ["Nuestra Solucion", "Target $500M+", "$50-200/mes", "Avance obra RT + presupuesto + compradores + SUNAT. Peru-first."]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion por proyecto", detail: "$50-200/mes por proyecto activo." },
+            { name: "Plan empresa", detail: "$500-2K/mes para desarrolladoras con multiples proyectos." },
+            { name: "Marketplace subcontratistas", detail: "Comision 2-5% por contratacion via plataforma." },
+            { name: "Post-venta", detail: "$20-50/unidad por gestion de garantias y entrega." },
+            { name: "Integracion BIM", detail: "Premium $200-500/mes para integracion BIM/3D." }
+        ],
+        roi: [
+            { year: 1, users: "30 proyectos", mrr: 15, arr: 0.18, expenses: 0.3, margin: -67 },
+            { year: 2, users: "200 proyectos", mrr: 120, arr: 1.44, expenses: 1, margin: 31 },
+            { year: 3, users: "800 proyectos", mrr: 560, arr: 6.72, expenses: 3, margin: 55 },
+            { year: 4, users: "2500 proyectos", mrr: 2000, arr: 24, expenses: 10, margin: 58 },
+            { year: 5, users: "6000 proyectos (LatAm)", mrr: 7500, arr: 90, expenses: 31.5, margin: 65 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-5", cost: "$40-70K", features: ["Avance de obra con fotos/videos", "Presupuesto vs real por partida", "Timeline Gantt visual", "App campo (offline-capable)", "Reportes semanales automaticos"] },
+            { name: "Product-Market Fit", time: "Meses 6-12", cost: "$120-200K", features: ["Portal comprador (avance su depto)", "Gestion documentos (planos, RFIs)", "Subcontratistas: contratos + pagos", "Quality checklists digitales", "Integracion facturacion SUNAT"] },
+            { name: "Escalar Peru", time: "Meses 13-20", cost: "$300-500K", features: ["IA deteccion desviaciones presupuesto", "BIM viewer integrado", "Safety compliance tracking", "Dashboard ejecutivo multi-proyecto", "API ERPs contables"] },
+            { name: "Expansion LatAm", time: "Meses 21-32", cost: "$1-2M", features: ["Colombia, Chile, Mexico", "Regulatory compliance por pais", "Drone integration (avance aereo)", "Material procurement optimization", "Insurance + warranty management"] },
+            { name: "Plataforma Regional", time: "Meses 33-48", cost: "$3-5M", features: ["Brasil, Argentina", "AI project forecasting", "Smart contracts pagos automaticos", "Marketplace materiales integrado", "ESG/sustainability tracking obras"] }
+        ]
+    },
+    {
+        id: 18, name: "ESG & Compliance Ambiental SaaS", short: "ESG Compliance",
+        tagline: "El Watershed de LatAm: compliance ambiental y carbon accounting para exportadores",
+        color: "#14b8a6", gradient: "linear-gradient(135deg, #14b8a6, #22c55e)",
+        tam: "$4B ESG Software (2030)", sam: "$500M-1B LatAm", som: "$50-150M",
+        mvpCost: "$40-80K", timeToRevenue: "5 meses", arrY5: 80, marginY5: 68,
+        competitionLatam: "Muy baja", techComplexity: "Alta", regulatoryComplexity: "Alta",
+        unicornScore: 72,
+        problem: [
+            "EU CBAM (Carbon Border Adjustment Mechanism) 2026 OBLIGA a exportadores LatAm reportar emisiones",
+            "Watershed ($1.8B) y Persefoni ($500M) solo sirven Fortune 500 en ingles. NADIE cubre LatAm mid-market",
+            "Peru: mineria = 55-60% exportaciones. OEFA emitio 2,700+ sanciones ambientales en 2022-2023",
+            "50,000+ empresas LatAm necesitaran ESG reporting por regulacion (Brazil CVM 193, Colombia, Peru SMV)",
+            "Cada EIA (Estudio Impacto Ambiental) cuesta $50-200K y toma 6-18 meses — automatizable con IA"
+        ],
+        competitors: [
+            ["Watershed (USA)", "$1.8B val", "Enterprise custom", "Fortune 500 only. Stripe, Airbnb. NO LatAm."],
+            ["Persefoni (USA)", "$500M val", "Enterprise", "Carbon accounting. S&P partner. NO LatAm mid-market."],
+            ["Pachama (Argentina/USA)", "$79M raised", "Custom", "Forest carbon verification via satellite. NO compliance SaaS."],
+            ["Nuestra Solucion", "Target $300M+", "$200-2K/mes", "ESG reporting + carbon accounting + compliance OEFA/SENACE. LatAm-first."]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion SaaS", detail: "$200-2K/mes segun tamano empresa y complejidad." },
+            { name: "Reportes regulatorios", detail: "$500-5K por reporte CBAM/ESG generado." },
+            { name: "Carbon offset marketplace", detail: "Comision 5-15% en compra/venta de creditos carbono." },
+            { name: "Consulting automatizado", detail: "$2-10K por EIA simplificado con IA." },
+            { name: "Certificacion readiness", detail: "$1-5K por preparacion ISO 14001/ESG." }
+        ],
+        roi: [
+            { year: 1, users: "50 empresas", mrr: 40, arr: 0.48, expenses: 0.4, margin: 17 },
+            { year: 2, users: "300 empresas", mrr: 270, arr: 3.24, expenses: 2, margin: 38 },
+            { year: 3, users: "1200 empresas", mrr: 1200, arr: 14.4, expenses: 6, margin: 58 },
+            { year: 4, users: "3500 empresas", mrr: 3500, arr: 42, expenses: 16, margin: 62 },
+            { year: 5, users: "8000 empresas (LatAm)", mrr: 6700, arr: 80, expenses: 25.6, margin: 68 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-5", cost: "$40-80K", features: ["Carbon footprint calculator (Scope 1+2)", "Dashboard emisiones por operacion", "Generador reportes CBAM EU", "Compliance tracker OEFA/SENACE", "Integracion datos energia (OSINERGMIN)"] },
+            { name: "Product-Market Fit", time: "Meses 6-12", cost: "$120-220K", features: ["Scope 3 emissions (supply chain)", "ESG scorecard automatico", "Benchmarking industria", "Alertas regulatorias RT", "API datos ambientales publicos Peru"] },
+            { name: "Escalar Peru", time: "Meses 13-20", cost: "$300-500K", features: ["IA para EIA simplificados", "Water footprint + biodiversidad", "Supply chain ESG mapping", "Alianza OEFA/SENACE pilots", "Carbon credit marketplace"] },
+            { name: "Expansion LatAm", time: "Meses 21-32", cost: "$1-2M", features: ["Colombia, Chile, Brazil", "Multi-regulatory (CVM 193, etc.)", "Mining specific module", "Agriculture carbon credits", "EU taxonomy alignment tool"] },
+            { name: "Plataforma Regional", time: "Meses 33-48", cost: "$3-5M", features: ["Mexico, Argentina, Ecuador", "AI-driven decarbonization plans", "Nature-based solutions marketplace", "Climate risk assessment", "ESG ratings provider"] }
+        ]
+    },
+    {
+        id: 19, name: "HR/Payroll IA para Micro-Empresas", short: "HR Micro IA",
+        tagline: "El Gusto de Peru: nomina automatizada con IA para empresas de 1-20 empleados",
+        color: "#6366f1", gradient: "linear-gradient(135deg, #6366f1, #a855f7)",
+        tam: "$76B HR Tech (2031)", sam: "$2-3B LatAm SMB HR", som: "$100-250M",
+        mvpCost: "$35-65K", timeToRevenue: "3 meses", arrY5: 85, marginY5: 66,
+        competitionLatam: "Media", techComplexity: "Media-Alta", regulatoryComplexity: "Alta",
+        unicornScore: 74,
+        problem: [
+            "Peru: 10+ obligaciones laborales mensuales (T-Registro, PLAME, AFP, CTS, Gratificaciones, EsSalud, Utilidades)",
+            "Buk ($50M+ raised, Chile) sirve empresas 50-500 empleados. Micro-empresas (1-20) NO tienen nada",
+            "2.3M micro/pequenas empresas formales. Pagan $100-300/mes a un contador para nomina manual",
+            "Gusto ($10B val USA) resolvio esto para USA. NADIE lo ha hecho para Peru/LatAm micro-empresas",
+            "Regimen MYPE/REMYPE simplifica beneficios pero 60%+ de empleadores calculan mal → multas SUNAFIL"
+        ],
+        competitors: [
+            ["Buk (Chile)", "$50M+ raised", "$1.5-6/empleado/mes", "Chile, Peru, Colombia, Mexico. Mid-market 50-500. NO micro."],
+            ["Gusto (USA)", "$10B val", "$40/mes + $6/empleado", "Solo USA. Gold standard UX. Nunca entrara a Peru."],
+            ["Runa HR (Mexico)", "$31M raised", "$1/empleado/mes", "Solo Mexico. Nomina mexicana."],
+            ["Nuestra Solucion", "Target $300M+", "$15-30/mes", "Nomina IA automatica, T-Registro/PLAME auto, REMYPE compliance. 1-20 empleados."]
+        ],
+        revenueStreams: [
+            { name: "Suscripcion", detail: "$15-30/mes flat para 1-20 empleados. Sin cobro por empleado." },
+            { name: "Declaraciones PLAME", detail: "$5-10 por declaracion mensual SUNAT automatica." },
+            { name: "CTS/Gratificaciones", detail: "$3-8 por calculo y deposito automatizado semestral." },
+            { name: "Contratos laborales", detail: "$5-15 por contrato generado y registrado." },
+            { name: "Outsourcing nomina", detail: "$50-100/mes para empresas que quieren 100% delegado." }
+        ],
+        roi: [
+            { year: 1, users: "2K empresas", mrr: 40, arr: 0.48, expenses: 0.4, margin: 17 },
+            { year: 2, users: "15K empresas", mrr: 300, arr: 3.6, expenses: 2, margin: 44 },
+            { year: 3, users: "60K empresas", mrr: 1200, arr: 14.4, expenses: 6, margin: 58 },
+            { year: 4, users: "150K empresas", mrr: 3000, arr: 36, expenses: 14, margin: 61 },
+            { year: 5, users: "350K empresas (LatAm)", mrr: 7100, arr: 85, expenses: 29, margin: 66 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-4", cost: "$35-65K", features: ["Calculo nomina REMYPE automatico", "Boletas de pago digitales", "T-Registro SUNAT integracion", "PLAME declaracion automatica", "Calendario obligaciones con alertas"] },
+            { name: "Product-Market Fit", time: "Meses 5-10", cost: "$100-180K", features: ["CTS, gratificaciones, vacaciones auto", "AFP: calculo + archivos por AFP", "Contratos laborales templates", "App empleado (boletas, vacaciones)", "Reportes SUNAFIL compliance"] },
+            { name: "Escalar Peru", time: "Meses 11-18", cost: "$250-400K", features: ["IA responde consultas laborales", "EsSalud subsidios automaticos", "Multi-regimen (general, MYPE, agrario)", "Utilidades calculo automatico", "Integracion contadores (multi-empresa)"] },
+            { name: "Expansion LatAm", time: "Meses 19-30", cost: "$800K-1.5M", features: ["Colombia, Chile, Ecuador", "Motor reglas laborales por pais", "Employee self-service portal", "Benefits marketplace", "Recruiting basico integrado"] },
+            { name: "Plataforma HR", time: "Meses 31-48", cost: "$2-4M", features: ["Mexico, Argentina, Brasil", "AI HR advisor", "Performance management", "Payroll financing (adelanto sueldos)", "White-label para contadores"] }
+        ]
+    },
+    {
+        id: 20, name: "AI Voice Agents para Contact Centers LatAm", short: "AI Voice LatAm",
+        tagline: "El Bland.ai/Vapi de LatAm: agentes de voz IA en espanol para empresas",
+        color: "#ef4444", gradient: "linear-gradient(135deg, #ef4444, #7c3aed)",
+        tam: "$50B+ Conversational AI (2032)", sam: "$5-8B LatAm contact centers", som: "$300-800M",
+        mvpCost: "$25-50K", timeToRevenue: "2 meses", arrY5: 250, marginY5: 75,
+        competitionLatam: "Muy baja", techComplexity: "Alta", regulatoryComplexity: "Baja",
+        unicornScore: 88,
+        problem: [
+            "LatAm tiene la mayor industria de BPO/call centers fuera de Asia. Colombia + Peru + Mexico = $15B+ anuales",
+            "Bland AI, Vapi, Retell AI — todos en ingles, USA-focused. NADIE hace voice AI en espanol nativo",
+            "Un agente de call center en Peru cuesta $400-600/mes. Un AI voice agent cuesta $0.05-0.15/minuto",
+            "Call centers tienen 40-60% rotacion anual de personal — pain constante de contratacion y training",
+            "Empresas LatAm (bancos, telecom, utilities) gastan $2-10M/ano en contact centers tercerizados"
+        ],
+        competitors: [
+            ["Bland AI (USA)", "$22M raised", "$0.09/min", "Ingles only. Voice API for developers. NO espanol nativo."],
+            ["Vapi (YC)", "$20M+ raised", "$0.05-0.15/min", "Voice AI platform. Ingles-first. SDK para developers."],
+            ["Retell AI (USA)", "$10M+ raised", "$0.07-0.12/min", "Conversational voice AI. Ingles primary."],
+            ["Nuestra Solucion", "Target $1B+", "$0.04-0.10/min", "Voice AI espanol nativo, acentos LatAm, integracion telecom local, compliance ley datos."]
+        ],
+        revenueStreams: [
+            { name: "Pay-per-minute", detail: "$0.04-0.10/minuto de conversacion IA." },
+            { name: "Suscripcion enterprise", detail: "$2-10K/mes por lineas dedicadas + SLA." },
+            { name: "Setup + customization", detail: "$1-5K por configuracion inicial y entrenamiento." },
+            { name: "API/Platform", detail: "$500-2K/mes para developers que integran tu voice AI." },
+            { name: "Analytics", detail: "$200-500/mes por analisis de sentimiento y quality scoring." }
+        ],
+        roi: [
+            { year: 1, users: "50 empresas", mrr: 100, arr: 1.2, expenses: 0.6, margin: 50 },
+            { year: 2, users: "300 empresas", mrr: 900, arr: 10.8, expenses: 4, margin: 63 },
+            { year: 3, users: "1200 empresas", mrr: 4000, arr: 48, expenses: 15, margin: 69 },
+            { year: 4, users: "3500 empresas", mrr: 12000, arr: 144, expenses: 40, margin: 72 },
+            { year: 5, users: "7000 empresas (LatAm)", mrr: 20800, arr: 250, expenses: 62.5, margin: 75 }
+        ],
+        phases: [
+            { name: "MVP", time: "Meses 1-3", cost: "$25-50K", features: ["Voice AI espanol Peru/Colombia", "Inbound call handling (FAQ + routing)", "Integracion Twilio/Vonage", "Dashboard llamadas RT", "3 use cases: cobranzas, soporte, agendamiento"] },
+            { name: "Product-Market Fit", time: "Meses 4-9", cost: "$100-180K", features: ["Outbound calling (cobranzas, encuestas)", "Multi-acento (Peru, Mexico, Colombia, Argentina)", "CRM integracion (HubSpot, Salesforce)", "Sentiment analysis RT", "Transfer inteligente a humano"] },
+            { name: "Escalar Peru", time: "Meses 10-16", cost: "$250-400K", features: ["Voice AI bilingue (espanol/quechua basico)", "IVR inteligente reemplaza arboles telefono", "Quality scoring automatico", "Compliance grabacion (Ley 29733)", "API para BPOs existentes"] },
+            { name: "Expansion LatAm", time: "Meses 17-28", cost: "$1-2M", features: ["Mexico, Colombia, Chile, Argentina", "Portugues (Brasil)", "Voice cloning (marca)", "Omnichannel: voz + WhatsApp + email", "Enterprise SLA + on-prem option"] },
+            { name: "Plataforma Voice AI", time: "Meses 29-48", cost: "$3-5M", features: ["Todo LatAm + Espana + USA hispano", "Agentes autonomos full-cycle", "Real-time translation", "Voice commerce (ventas por telefono IA)", "White-label para telecoms"] }
+        ]
     }
 ];
 
