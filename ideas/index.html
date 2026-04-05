@@ -3825,6 +3825,334 @@ function renderTeams() {
     }).join('');
 }
 
+// ==================== RENDER IDEA TABS ====================
+const _ideaChartsRendered = {};
+
+function renderIdeaTabs() {
+    IDEAS.forEach(idea => {
+        const panel = document.getElementById('ideaPanel' + idea.id);
+        if (!panel) return;
+        const f = FEASIBILITY[idea.id];
+        const t = TEAMS[idea.id];
+        const c = COMPETITION[idea.id];
+        const avgAI = t ? Math.round(t.aiTasks.reduce((s,a) => s + a.pct, 0) / t.aiTasks.length) : 0;
+        const purityColor = f ? (f.softwarePurity >= 80 ? '#00d4aa' : f.softwarePurity >= 60 ? '#ffd93d' : '#ff6b6b') : '#666';
+        const verdictClass = f ? (f.verdict === 'high' ? 'verdict-high' : f.verdict === 'medium' ? 'verdict-medium' : 'verdict-low') : '';
+        const viabilityColor = c ? (c.viability >= 7 ? '#00d4aa' : c.viability >= 5 ? '#ffd93d' : '#ff6b6b') : '#666';
+
+        panel.innerHTML = `
+        <!-- IDEA CARD -->
+        <section>
+            <div class="idea-card">
+                <div class="idea-header">
+                    <div class="idea-number" style="background: ${idea.gradient};">${idea.id}</div>
+                    <div class="idea-header-text">
+                        <h2>${idea.name}</h2>
+                        <div class="tagline">${idea.tagline}</div>
+                    </div>
+                </div>
+
+                <div class="idea-badges">
+                    <span class="badge badge-tam">TAM: ${idea.tam}</span>
+                    <span class="badge badge-growth">MVP: ${idea.mvpCost}</span>
+                    <span class="badge badge-competition">Competencia LatAm: ${idea.competitionLatam}</span>
+                    <span class="badge badge-difficulty">Revenue: ${idea.timeToRevenue}</span>
+                    ${c ? `<span class="badge" style="background:${viabilityColor}22;color:${viabilityColor};border:1px solid ${viabilityColor}44;">Viabilidad Real: ${c.viability}/10</span>` : ''}
+                </div>
+
+                <div class="idea-problem">
+                    <h3>Problema que Resuelve</h3>
+                    <ul>${idea.problem.map(p => `<li>${p}</li>`).join('')}</ul>
+                </div>
+
+                <!-- Market Size -->
+                <h3 class="sub-header">Tamano de Mercado</h3>
+                <div class="market-grid">
+                    <div class="market-item"><div class="label">TAM Global</div><div class="value" style="color: ${idea.color};">${idea.tam}</div><div class="detail">Mercado total direccionable</div></div>
+                    <div class="market-item"><div class="label">SAM LatAm</div><div class="value" style="color: ${idea.color};">${idea.sam}</div><div class="detail">Mercado serviceable</div></div>
+                    <div class="market-item"><div class="label">SOM 3 anos</div><div class="value" style="color: ${idea.color};">${idea.som}</div><div class="detail">Mercado obtenible</div></div>
+                    <div class="market-item"><div class="label">Score Unicornio</div><div class="value" style="color: ${idea.color};">${idea.unicornScore}/100</div><div class="detail">Potencial compuesto</div></div>
+                </div>
+
+                <!-- Original Competitors -->
+                <h3 class="sub-header">Analisis Competitivo (Referencia Global)</h3>
+                <div style="overflow-x: auto;"><table class="comp-table">
+                    <tr><th>Empresa</th><th>Valuacion</th><th>Precio</th><th>Diferenciador</th></tr>
+                    ${idea.competitors.map(comp => `<tr><td>${comp[0]}</td><td>${comp[1]}</td><td>${comp[2]}</td><td>${comp[3]}</td></tr>`).join('')}
+                </table></div>
+
+                ${c ? `
+                <!-- COMPETITION DEEP DIVE -->
+                <h3 class="sub-header" style="color:${viabilityColor};">Investigacion Competitiva Real (Viabilidad: ${c.viability}/10)</h3>
+
+                <div style="overflow-x: auto; margin-bottom: 1.5rem;"><table class="comp-table">
+                    <tr><th>Competidor Real</th><th>Financiamiento</th><th>Pricing</th><th>Usuarios/Escala</th><th>Gap/Debilidad</th></tr>
+                    ${c.competitors.map(comp => `<tr>
+                        <td style="font-weight:700;white-space:nowrap">${comp.name}</td>
+                        <td style="font-size:0.78rem">${comp.funding}</td>
+                        <td style="font-size:0.78rem">${comp.pricing}</td>
+                        <td style="font-size:0.78rem">${comp.users}</td>
+                        <td style="font-size:0.78rem;max-width:250px">${comp.gap}</td>
+                    </tr>`).join('')}
+                </table></div>
+
+                <!-- Market Gaps -->
+                <div style="background:var(--bg-secondary);border-radius:12px;padding:1.2rem 1.5rem;margin-bottom:1.5rem;">
+                    <h4 style="color:var(--accent-2);margin-bottom:0.8rem;font-size:0.9rem;">Gaps de Mercado Identificados</h4>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        ${c.gaps.map(g => `<li style="padding:0.3rem 0;font-size:0.85rem;color:var(--text-secondary);border-bottom:1px solid var(--border);">
+                            <span style="color:var(--accent-2);margin-right:0.5rem;">▸</span>${g}
+                        </li>`).join('')}
+                    </ul>
+                </div>
+
+                <!-- Risk & Opportunity -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+                    <div style="background:rgba(255,107,107,0.08);border:1px solid rgba(255,107,107,0.2);border-radius:12px;padding:1rem 1.2rem;">
+                        <h4 style="color:#ff6b6b;font-size:0.85rem;margin-bottom:0.5rem;">Mayor Riesgo</h4>
+                        <p style="color:var(--text-secondary);font-size:0.82rem;margin:0;">${c.risk}</p>
+                    </div>
+                    <div style="background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.2);border-radius:12px;padding:1rem 1.2rem;">
+                        <h4 style="color:#00d4aa;font-size:0.85rem;margin-bottom:0.5rem;">Mayor Oportunidad</h4>
+                        <p style="color:var(--text-secondary);font-size:0.82rem;margin:0;">${c.opportunity}</p>
+                    </div>
+                </div>
+
+                <!-- Verdict -->
+                <div style="background:${viabilityColor}11;border:1px solid ${viabilityColor}33;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;">
+                        <span style="background:${viabilityColor};color:#000;font-weight:800;padding:0.3rem 0.8rem;border-radius:20px;font-size:0.85rem;">${c.viability}/10</span>
+                        <h4 style="color:${viabilityColor};font-size:0.9rem;margin:0;">Veredicto Competitivo</h4>
+                    </div>
+                    <p style="color:var(--text-secondary);font-size:0.85rem;margin:0;">${c.verdict}</p>
+                </div>
+
+                <!-- Sources -->
+                <details style="margin-bottom:1.5rem;">
+                    <summary style="color:var(--text-muted);font-size:0.75rem;cursor:pointer;">Fuentes de investigacion (${c.sources.length})</summary>
+                    <ul style="margin-top:0.5rem;padding-left:1.2rem;">
+                        ${c.sources.map(s => `<li style="color:var(--text-muted);font-size:0.72rem;padding:0.1rem 0;">${s}</li>`).join('')}
+                    </ul>
+                </details>
+                ` : ''}
+
+                <!-- Revenue Model -->
+                <h3 class="sub-header">Modelo de Ingresos</h3>
+                <div class="revenue-grid">
+                    ${idea.revenueStreams.map(r => `<div class="revenue-item"><div class="stream-name">${r.name}</div><div class="stream-detail">${r.detail}</div></div>`).join('')}
+                </div>
+
+                <!-- ROI Charts -->
+                <h3 class="sub-header">Proyecciones Financieras (5 Anos)</h3>
+                <div class="charts-grid">
+                    <div class="chart-container"><h4>ARR Proyectado ($M)</h4><div class="chart-wrapper"><canvas id="tabArrChart${idea.id}"></canvas></div></div>
+                    <div class="chart-container"><h4>Margen Operativo (%)</h4><div class="chart-wrapper"><canvas id="tabMarginChart${idea.id}"></canvas></div></div>
+                </div>
+
+                <!-- ROI Table -->
+                <div style="overflow-x: auto; margin: 1rem 0;"><table class="comp-table">
+                    <tr><th>Ano</th><th>Usuarios</th><th>MRR ($K)</th><th>ARR ($M)</th><th>Gastos ($M)</th><th>Margen</th></tr>
+                    ${idea.roi.map(r => `<tr>
+                        <td>${r.year}</td><td>${r.users}</td><td>$${r.mrr.toLocaleString()}</td>
+                        <td>$${r.arr}M</td><td>$${r.expenses}M</td>
+                        <td style="color: ${r.margin >= 0 ? '#00d4aa' : '#ff6b6b'}; font-weight: 700;">${r.margin > 0 ? '+' : ''}${r.margin}%</td>
+                    </tr>`).join('')}
+                </table></div>
+
+                <!-- Implementation Phases -->
+                <h3 class="sub-header">Fases de Implementacion</h3>
+                <div class="phases-container">
+                    ${idea.phases.map((p, i) => `<div class="phase">
+                        <div class="phase-marker">
+                            <div class="phase-dot" style="background: ${idea.gradient};">${i + 1}</div>
+                            ${i < idea.phases.length - 1 ? '<div class="phase-line"></div>' : ''}
+                        </div>
+                        <div class="phase-content">
+                            <h4><span>${p.name}</span><span><span class="phase-time">${p.time}</span> <span class="phase-cost">${p.cost}</span></span></h4>
+                            <div class="phase-features">${p.features.map(feat => `<span class="phase-feature">${feat}</span>`).join('')}</div>
+                        </div>
+                    </div>`).join('')}
+                </div>
+
+                <!-- Total Investment -->
+                <div style="background: var(--bg-secondary); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem; text-align: center;">
+                    <div><div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Inversion Total (48m)</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: ${idea.color};">$${(idea.phases.reduce((sum, p) => { const nums = p.cost.match(/[\d.]+/g); return sum + (nums ? (parseFloat(nums[0]) + parseFloat(nums[1] || nums[0])) / 2 : 0); }, 0) / 1000).toFixed(1)}M</div></div>
+                    <div><div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">ARR Ano 5</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-2);">$${idea.arrY5}M</div></div>
+                    <div><div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Margen Ano 5</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-2);">${idea.marginY5}%</div></div>
+                    <div><div style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">ROI Estimado</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-4);">${Math.round(idea.arrY5 / ((idea.phases.reduce((sum, p) => { const nums = p.cost.match(/[\d.]+/g); return sum + (nums ? (parseFloat(nums[0]) + parseFloat(nums[1] || nums[0])) / 2 : 0); }, 0) / 1000)))}x</div></div>
+                </div>
+            </div>
+        </section>
+
+        ${f ? `
+        <!-- FEASIBILITY -->
+        <section style="margin-top:2rem;">
+            <h2 class="section-title" style="font-size:1.4rem;">Factibilidad: Solo Fundador</h2>
+            <div class="feasibility-card" style="margin-bottom: 1.5rem;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: ${idea.gradient};"></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <h4 style="color: ${idea.color}; margin: 0;">${idea.short}</h4>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span style="background: ${idea.color}22; color: ${idea.color}; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Solo: ${f.soloScore}/10</span>
+                        <span style="background: rgba(108,99,255,0.15); color: var(--accent-1); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Unicornio: ${idea.unicornScore}/100</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1.2rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.3rem;">
+                        <span style="color: var(--text-secondary);">Pureza Software</span>
+                        <span style="color: ${purityColor}; font-weight: 700;">${f.softwarePurity}%</span>
+                    </div>
+                    <div class="feasibility-meter"><div class="fill" style="width: ${f.softwarePurity}%; background: ${purityColor};"></div></div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 1rem;">
+                    <div class="feasibility-stat"><span class="label">Contactos pre-launch</span><span class="value" style="color: ${f.contactsPreLaunch <= 5 ? '#00d4aa' : f.contactsPreLaunch <= 10 ? '#ffd93d' : '#ff6b6b'};">${f.contactsPreLaunch}</span></div>
+                    <div class="feasibility-stat"><span class="label">Equipo minimo</span><span class="value" style="color: ${f.minTeam === 1 ? '#00d4aa' : f.minTeam <= 2 ? '#ffd93d' : '#ff6b6b'};">${f.minTeam === 1 ? '1 (tu solo)' : f.minTeam + ' personas'}</span></div>
+                    <div class="feasibility-stat"><span class="label">Costo 1ra factura</span><span class="value" style="color: ${f.minCostToRevenue <= 5 ? '#00d4aa' : f.minCostToRevenue <= 20 ? '#ffd93d' : '#ff6b6b'};">${f.minCostToRevenue < 1 ? '$' + (f.minCostToRevenue * 1000) : '$' + f.minCostToRevenue + 'K'}</span></div>
+                    <div class="feasibility-stat"><span class="label">Tiempo 1ra factura</span><span class="value">${f.timeToFirstInvoice}</span></div>
+                    <div class="feasibility-stat"><span class="label">Hardware</span><span class="value">${f.hardwareNeeded}</span></div>
+                    <div class="feasibility-stat"><span class="label">Licencias</span><span class="value" style="font-size: 0.82rem;">${f.licenses}</span></div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Go-to-Market</div>
+                    <span class="gtm-tag ${f.gtmModel === 'plg' ? 'gtm-plg' : f.gtmModel === 'hybrid' ? 'gtm-hybrid' : 'gtm-outbound'}">${f.gtmModel === 'plg' ? 'PLG (Product-Led)' : f.gtmModel === 'hybrid' ? 'Hibrido (PLG + Outbound)' : 'Outbound (Field Sales)'}</span>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.4rem;">${f.gtmDetail}</p>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Cuellos de Botella Humanos</div>
+                    ${f.bottlenecks.map(b => `<span class="bottleneck-tag">${b}</span>`).join('')}
+                </div>
+                <div style="margin-top: 1rem;">
+                    <div style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Comparable Real</div>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">${f.comparable}</p>
+                </div>
+                <div class="feasibility-verdict ${verdictClass}">${f.verdictText}</div>
+            </div>
+        </section>
+        ` : ''}
+
+        ${t ? `
+        <!-- TEAM -->
+        <section style="margin-top:2rem;">
+            <h2 class="section-title" style="font-size:1.4rem;">Equipo Minimo: Roles y Etapas</h2>
+            <div class="team-idea-block">
+                <div class="top-bar" style="background: ${idea.gradient}"></div>
+                <div class="team-idea-header">
+                    <h3 style="color: ${idea.color}">${idea.short}</h3>
+                    <div class="team-badges">
+                        <span class="team-badge" style="background:${idea.color}22;color:${idea.color}">${t.members.length} persona${t.members.length > 1 ? 's' : ''}</span>
+                        <span class="team-badge" style="background:rgba(0,212,170,0.12);color:#00d4aa">${t.monthlyBurn}/mes</span>
+                        <span class="team-badge" style="background:rgba(108,99,255,0.12);color:#6c63ff">IA: ${avgAI}%</span>
+                    </div>
+                </div>
+                <div style="background:var(--bg-secondary);border-radius:10px;padding:0.8rem 1rem;margin-bottom:1.2rem;font-size:0.8rem;color:var(--text-secondary);border-left:3px solid ${idea.color}">
+                    <strong style="color:var(--text-primary)">Referencia real:</strong> ${t.comparable}
+                </div>
+                <h4 style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.8rem">Miembros del Equipo</h4>
+                <div class="team-members-grid">
+                    ${t.members.map(m => `<div class="team-member-card">
+                        <div class="member-header">
+                            <div class="member-avatar" style="background:${m.type === 'tu' ? 'var(--gradient-1)' : m.type === 'advisor' ? 'rgba(255,217,61,0.2)' : 'rgba(108,99,255,0.2)'}">${m.icon}</div>
+                            <div><div class="member-title">${m.role}</div><div class="member-subtitle">${m.type === 'tu' ? 'Tu (fundador)' : m.type === 'advisor' ? 'Asesor externo' : 'Cofundador/contratacion'} · ${m.salary}/mes</div></div>
+                        </div>
+                        <ul class="member-tasks">${m.tasks.map(task => `<li>${task}</li>`).join('')}</ul>
+                    </div>`).join('')}
+                </div>
+                <h4 style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.8rem">Etapas de Ejecucion</h4>
+                <div class="stage-timeline">
+                    ${t.stages.map((s, idx) => {
+                        const colors = ['#6c63ff','#00d4aa','#ffd93d','#4ecdc4','#a855f7'];
+                        return `<div class="stage-item"><span class="stage-num" style="background:${colors[idx%5]}22;color:${colors[idx%5]}">${s.name}</span><h5 style="color:${colors[idx%5]}">${s.time}</h5><p>${s.focus}</p></div>`;
+                    }).join('')}
+                </div>
+                <h4 style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin:1.5rem 0 0.8rem">Cuando Contratar</h4>
+                <div class="hiring-timeline">
+                    ${t.hires.map((h, idx) => {
+                        const c2 = ['#6c63ff','#00d4aa','#ffd93d','#4ecdc4','#a855f7','#ff6b6b'][idx%6];
+                        return `<div class="hire-row"><div class="hire-num" style="background:${c2}22;color:${c2}">#${h.num}</div><div class="hire-info"><div class="hire-role">${h.role}</div><div class="hire-trigger">${h.trigger}</div></div><div class="hire-cost" style="color:${c2}">${h.cost}</div></div>`;
+                    }).join('')}
+                </div>
+                <h4 style="font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin:1.5rem 0 0.8rem">Automatizacion con IA</h4>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.5rem">
+                    ${t.aiTasks.map(a => {
+                        const ac = a.pct >= 70 ? '#00d4aa' : a.pct >= 40 ? '#ffd93d' : '#ff6b6b';
+                        return `<div style="display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;padding:0.3rem 0">
+                            <span style="color:var(--text-secondary);flex:1;min-width:0">${a.task}</span>
+                            <div class="ai-auto-bar" style="width:60px;flex-shrink:0"><div class="fill" style="width:${a.pct}%;background:${ac}"></div></div>
+                            <span style="font-weight:700;color:${ac};width:32px;text-align:right">${a.pct}%</span>
+                        </div>`;
+                    }).join('')}
+                </div>
+                <div style="margin-top:1.2rem;padding:0.8rem 1rem;border-radius:10px;background:rgba(108,99,255,0.08);border:1px solid rgba(108,99,255,0.2);font-size:0.82rem">
+                    <strong style="color:var(--accent-1)">Leccion clave:</strong> <span style="color:var(--text-secondary)">${t.keyLesson}</span>
+                </div>
+            </div>
+        </section>
+        ` : ''}
+        `;
+    });
+}
+
+// ==================== LAZY CHART RENDERING ====================
+function renderIdeaCharts(ideaId) {
+    if (_ideaChartsRendered[ideaId]) return;
+    const idea = IDEAS.find(i => i.id === ideaId);
+    if (!idea) return;
+
+    const arrCanvas = document.getElementById('tabArrChart' + ideaId);
+    const marginCanvas = document.getElementById('tabMarginChart' + ideaId);
+    if (!arrCanvas || !marginCanvas) return;
+
+    const years = idea.roi.map(r => 'Ano ' + r.year);
+
+    new Chart(arrCanvas, {
+        type: 'bar',
+        data: {
+            labels: years,
+            datasets: [
+                { label: 'ARR ($M)', data: idea.roi.map(r => r.arr), backgroundColor: idea.color + '99', borderColor: idea.color, borderWidth: 1 },
+                { label: 'Gastos ($M)', data: idea.roi.map(r => r.expenses), backgroundColor: '#ff6b6b44', borderColor: '#ff6b6b', borderWidth: 1 }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: '#a0a0cc' }, grid: { display: false } },
+                y: { ticks: { color: '#a0a0cc', callback: v => '$' + v + 'M' }, grid: { color: 'rgba(42,42,94,0.5)' } }
+            },
+            plugins: { legend: { labels: { color: '#a0a0cc' } } }
+        }
+    });
+
+    new Chart(marginCanvas, {
+        type: 'line',
+        data: {
+            labels: years,
+            datasets: [{
+                label: 'Margen %',
+                data: idea.roi.map(r => r.margin),
+                borderColor: idea.color,
+                backgroundColor: idea.color + '22',
+                fill: true, tension: 0.4,
+                pointBackgroundColor: idea.color, pointRadius: 5
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: '#a0a0cc' }, grid: { display: false } },
+                y: { ticks: { color: '#a0a0cc', callback: v => v + '%' }, grid: { color: 'rgba(42,42,94,0.5)' } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    _ideaChartsRendered[ideaId] = true;
+}
+
 // ==================== INIT ====================
 document.addEventListener('DOMContentLoaded', () => {
     renderContextCharts();
