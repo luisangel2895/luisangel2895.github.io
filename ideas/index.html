@@ -5238,6 +5238,23 @@ function renderIdeaTabs() {
                     ${c ? `<span class="badge" style="background:${viabilityColor}22;color:${viabilityColor};border:1px solid ${viabilityColor}44;">Viabilidad Real: ${c.viability}/10</span>` : ''}
                 </div>
 
+                ${idea.productDescription ? `
+                <div style="background: linear-gradient(135deg, ${idea.color}15, ${idea.color}08); border-left: 4px solid ${idea.color}; border-radius: 8px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem;">
+                    <h3 style="color: ${idea.color}; margin-bottom: 0.5rem; font-size: 1rem;">Que es el Producto</h3>
+                    <p style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">${idea.productDescription}</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;">
+                        <div style="background: var(--bg-card); padding: 0.8rem; border-radius: 6px;">
+                            <div style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Cliente Objetivo</div>
+                            <div style="color: var(--text-primary); font-size: 0.9rem; margin-top: 0.3rem;">${idea.targetClient || ''}</div>
+                        </div>
+                        <div style="background: var(--bg-card); padding: 0.8rem; border-radius: 6px;">
+                            <div style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Modelo de Ingreso Recomendado</div>
+                            <div style="color: var(--accent-2); font-size: 0.9rem; margin-top: 0.3rem;">${idea.revenueRecommendation || ''}</div>
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
+
                 <div class="idea-problem">
                     <h3>Problema que Resuelve</h3>
                     <ul>${idea.problem.map(p => `<li>${p}</li>`).join('')}</ul>
