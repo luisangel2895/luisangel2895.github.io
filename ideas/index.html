@@ -2733,6 +2733,81 @@ const COMPETITION = {
     }
 };
 
+// ==================== FINAL VERDICT DATA ====================
+const FINAL_VERDICT = {
+    dimensions: [
+        { key: 'competitive', label: 'Viabilidad Competitiva', weight: 0.25, icon: '&#9876;' },
+        { key: 'feasibility', label: 'Factibilidad Fundador', weight: 0.20, icon: '&#9889;' },
+        { key: 'market',      label: 'Potencial de Mercado',  weight: 0.15, icon: '&#9650;' },
+        { key: 'software',    label: 'Pureza Software',       weight: 0.10, icon: '&#9000;' },
+        { key: 'speed',       label: 'Velocidad al Revenue',  weight: 0.10, icon: '&#9201;' },
+        { key: 'scalability', label: 'Escalabilidad 5Y',      weight: 0.10, icon: '&#9651;' },
+        { key: 'barrier',     label: 'Baja Barrera Entrada',  weight: 0.10, icon: '&#9888;' }
+    ],
+    texts: {
+        1: {
+            recommendation: "Mercado validado por ServiceTitan ($9B) con CERO competencia en LatAm. El reto real no es construir el producto sino conquistar usuarios informales que nunca han pagado por software. WhatsApp-first + freemium es el unico camino viable. Empezar con 1 vertical (gasfiteros) en 1 ciudad (Lima) y expandir solo cuando haya retention >60%.",
+            pros: ["Categoria validada globalmente ($30B+ TAM)", "Cero competencia SaaS en LatAm", "MVP viable en 3-4 meses como fundador solo"],
+            cons: ["ARPU muy bajo ($15-50/mes) requiere volumen masivo", "71% informalidad = resistencia a pagar", "GTM high-touch, no PLG"],
+            goNoGo: "GO con cautela — producto viable, mercado enorme, pero el camino a $1M ARR requiere paciencia y field sales intensivo."
+        },
+        2: {
+            recommendation: "LA MEJOR OPORTUNIDAD ABSOLUTA. Convergencia perfecta: mercado abierto (CONCAR es desktop), regulacion que OBLIGA adopcion (SUNAT SIRE 2026), software puro al 85%, fundador solo viable, $300 para empezar. Cifrato (YC W25) valida el modelo pero NO esta en Peru. La ventana esta abierta AHORA — SUNAT digitaliza agresivamente y ningun player IA cubre Peru.",
+            pros: ["Sin competencia IA en Peru — mercado completamente abierto", "SUNAT SIRE obligatorio = demanda forzada", "1 contador = 20-100 PYMEs (multiplicador)", "Software puro, $300 para empezar, solo fundador viable"],
+            cons: ["Conocimiento tributario profundo requerido", "Errores en declaraciones = multas reales", "Regulacion cambia constantemente"],
+            goNoGo: "GO DEFINITIVO — maxima prioridad. Empezar con PDT 621 + SIRE. Vender a 5 contadores y escalar via multiplicador."
+        },
+        3: {
+            recommendation: "Tul quemo $210M+ y retrocede. El modelo marketplace para materiales de construccion requiere capital masivo para logistica, warehouses y credito. PIVOT a SaaS de gestion para ferreterias (inventario + POS + procurement) es viable y sin competencia directa, pero el marketplace puro es una trampa de capital.",
+            pros: ["Mercado gigante ($120-180B TAM)", "8,000+ ferreterias sin software", "Datos de precios son valiosos"],
+            cons: ["Tul ($210M+) fracaso en escalar — unit economics no funcionan", "Requiere equipo de 3+, capital $5-20K minimo", "Logistica materiales pesados destruye margenes"],
+            goNoGo: "NO-GO como marketplace. PIVOT a SaaS ferretero podria funcionar pero requiere equipo y capital significativo."
+        },
+        4: {
+            recommendation: "Mercado saturado con 8+ competidores activos en Peru. Doctoralia (29K especialistas), Nimbo ($7.99/mes en 25 paises), Smart Doctor ($1.5M raised), EsSalud con sistema propio. Diferenciarse es extremadamente dificil. UNICA via: hiperespecializacion en un nicho vertical (dental, psicologia, veterinaria) o resolver interoperabilidad EsSalud-privado.",
+            pros: ["Factible tecnicamente (software puro, solo fundador)", "Digital health crece 20% CAGR", "Regulacion SIHCE RM 553-2025 empuja digitalizacion"],
+            cons: ["Doctoralia DOMINA con 29K especialistas en Peru", "Nimbo a $7.99/mes hace race-to-bottom", "8+ competidores activos — diferenciacion costosa"],
+            goNoGo: "NO-GO como plataforma general. Solo viable hiperespecializado en nicho sin cobertura actual."
+        },
+        5: {
+            recommendation: "El espacio mas competitivo de todo el fintech LatAm. dLocal ($1B revenue), EBANX ($460M raised), Kushki ($1.5B), Niubiz (monopolio bancario) TODOS operan en Peru. Licencia SBS requiere $800K+ capital. 12-24 meses sin revenue. No existe camino realista para un startup pequeno.",
+            pros: ["Pagos digitales crecen 25%+ anual en LatAm", "Peru tiene gaps en corredores nicho"],
+            cons: ["$800K+ capital regulatorio solo para empezar", "12-24 meses sin revenue", "Competencia de empresas con $B+ en recursos", "Requiere equipo senior de 4+ personas"],
+            goNoGo: "DESCARTADO — barrera de entrada insalvable para startup sin capital institucional."
+        },
+        6: {
+            recommendation: "Mercado fragmentado con 220K establecimientos y ningun dominante en Peru. La oportunidad real es integracion delivery (Rappi + PedidosYa + Uber Eats) como wedge hacia POS + facturacion SUNAT. OlaClick ($8M, YC) es solo menu digital. PANCA existe pero es basico. Toast ($16.6B) valida la categoria globalmente. El reto: 80% de ventas requieren field sales presencial.",
+            pros: ["220K establecimientos, ningun software dominante", "APIs de delivery disponibles (Rappi, Uber Eats)", "Toast ($16.6B) valida categoria", "Facturacion SUNAT obligatoria = pain real"],
+            cons: ["Hardware requerido ($500-1,500/restaurante)", "Field sales obligatorio (Toast: 80% presencial)", "Rotacion staff 60-80%/ano complica adoption"],
+            goNoGo: "GO con plan de field sales — MVP viable solo pero escalar requiere equipo comercial. Delivery integration es el wedge correcto."
+        },
+        7: {
+            recommendation: "Ventana cerrandose rapido. Harvey ($11B) y Legora ($5.55B) entran agresivamente a LatAm. Juztina tiene 100K usuarios en Peru. Hace 2 anos era ideal, hoy el timing es critico. Software puro al 92% y factible como fundador solo, PERO solo viable con nicho ultra-especifico (solo laboral, solo tributario, solo minero) o enfoque radical en SMB a $20-50/mes.",
+            pros: ["92% software puro — minimo capital requerido", "Datos legales publicos (SPIJ, El Peruano)", "Base piramide desatendida por Harvey/Legora"],
+            cons: ["Harvey $11B + Legora $5.55B entran a LatAm", "Juztina ya tiene 100K usuarios Peru", "Alucinaciones IA en contexto legal = riesgo reputacional"],
+            goNoGo: "GO CONDICIONAL — solo si puedes lanzar en <3 meses con nicho ultra-especifico. Cada mes que pasa, la ventana se cierra mas."
+        },
+        8: {
+            recommendation: "Enterprise mining software es dominio de Maptek (2,500 sites, 90 paises) y Deswik (Sandvik). TIMining ($10M, Chile) tiene solo 50 clientes despues de anos. Ciclo venta 6-18 meses, requiere co-founder ingeniero minero, y errores en software tienen implicaciones de seguridad fisica. UNICO nicho viable: compliance OSINERGMIN/ambiental ('Vanta for mining').",
+            pros: ["Peru es 3er productor cobre mundial — mercado enorme", "1,300+ unidades mineras sin software local", "Compliance OSINERGMIN es mandatorio"],
+            cons: ["Maptek/Deswik entrenched con 30+ anos", "Requiere co-founder ingeniero minero", "Ciclo venta 6-18 meses, sites remotos", "Errores = riesgo fisico + liability"],
+            goNoGo: "NO-GO sin co-founder minero y capital. Nicho compliance podria funcionar pero es empresa de servicios, no startup unicornio."
+        },
+        9: {
+            recommendation: "SEGUNDA MEJOR OPORTUNIDAD. 2,500+ exportadores mid-tier ($1-50M revenue) usando Excel. Top 20 usan SAP ($200K+), el resto NO tiene nada. Puerto Chancay (2025) abre Asia con nuevos requisitos GACC China. APIs de Maersk y VUCE disponibles. Peru #1 arandanos mundial, $15B+ en agroexportaciones. Requiere visitar zonas agricolas pero el producto es 82% software puro.",
+            pros: ["2,500+ exportadores SIN software", "APIs disponibles (Maersk, VUCE, SUNAT)", "Peru $15B+ agroexportaciones, 18% crecimiento", "Chancay abre Asia = nuevos requisitos = demanda"],
+            cons: ["Industria tradicional y conservadora", "Requiere visitas a Ica/La Libertad", "Cada exportador tiene workflows distintos"],
+            goNoGo: "GO — segunda prioridad despues de Compliance IA. Mercado grande, sin competencia mid-market, APIs listas. Empezar con arandanos/uvas (Ica)."
+        },
+        10: {
+            recommendation: "Viable SOLO como compliance-first MSSP para sector financiero regulado. SBS 504-2021 OBLIGA programa de ciberseguridad para fintechs y financieras. Stack open-source (Wazuh + OSSEC) hace unit economics viables a $200-500/mes. NO viable como 'cybersec para todas las PYMEs' — 75% de PYMEs no pagan por seguridad. Hackmetrix y Delta Protect aun no estan en Peru = ventana temporal.",
+            pros: ["SBS 504-2021 obliga compliance = demanda mandatoria", "Hackmetrix/Delta Protect NO en Peru (aun)", "Stack open-source reduce costos 70%"],
+            cons: ["PYMEs no reguladas no pagaran", "Requiere equipo minimo de 2", "Hackmetrix/Delta Protect pueden entrar en 12-18 meses"],
+            goNoGo: "GO CONDICIONAL — solo enfocado en sector financiero regulado (cajas, cooperativas, fintechs). No intentar servir a todo el mercado SMB."
+        }
+    }
+};
+
 // ==================== DATA ====================
 const IDEAS = [
     {
