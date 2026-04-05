@@ -5364,6 +5364,7 @@ function renderIdeaTabs() {
                         </div>
                         <div class="phase-content">
                             <h4><span>${p.name}</span><span><span class="phase-time">${p.time}</span> <span class="phase-cost">${p.cost}</span></span></h4>
+                            ${p.desc ? `<p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.5rem; line-height: 1.5;">${p.desc}</p>` : ''}
                             <div class="phase-features">${p.features.map(feat => `<span class="phase-feature">${feat}</span>`).join('')}</div>
                         </div>
                     </div>`).join('')}
