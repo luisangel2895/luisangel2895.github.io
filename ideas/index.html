@@ -845,19 +845,15 @@
             z-index: 1000;
             background: var(--bg-primary);
             border-bottom: 2px solid var(--border);
-            padding: 0;
+            padding: 0.25rem 0;
             display: flex;
-            overflow-x: auto;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent-1) var(--bg-secondary);
-            -webkit-overflow-scrolling: touch;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
         }
-        .tab-nav::-webkit-scrollbar { height: 4px; }
-        .tab-nav::-webkit-scrollbar-track { background: var(--bg-secondary); }
-        .tab-nav::-webkit-scrollbar-thumb { background: var(--accent-1); border-radius: 2px; }
         .tab-btn {
             flex-shrink: 0;
-            padding: 0.75rem 1.1rem;
+            padding: 0.65rem 1rem;
             background: none;
             border: none;
             color: var(--text-muted);
@@ -865,18 +861,36 @@
             font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
-            transition: color 0.2s, border-bottom 0.2s;
+            transition: color 0.2s, background 0.2s, border-bottom 0.2s;
             border-bottom: 3px solid transparent;
+            border-radius: 6px 6px 0 0;
             font-family: inherit;
         }
-        .tab-btn:hover { color: var(--text-primary); }
+        .tab-btn:hover { color: var(--text-primary); background: rgba(108,99,255,0.08); }
         .tab-btn.active {
             color: var(--accent-1);
             border-bottom-color: var(--accent-1);
+            background: rgba(108,99,255,0.06);
         }
         .tab-btn.tab-idea { font-size: 0.72rem; }
         .tab-panel { display: none; padding: 1rem 0; }
         .tab-panel.active { display: block; }
+        @media (max-width: 768px) {
+            .tab-nav {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: var(--accent-1) var(--bg-secondary);
+                padding: 0;
+            }
+            .tab-nav::-webkit-scrollbar { height: 4px; }
+            .tab-nav::-webkit-scrollbar-track { background: var(--bg-secondary); }
+            .tab-nav::-webkit-scrollbar-thumb { background: var(--accent-1); border-radius: 2px; }
+            .tab-btn { padding: 0.6rem 0.8rem; font-size: 0.72rem; border-radius: 0; }
+            .tab-btn.tab-idea { font-size: 0.68rem; }
+        }
 
         /* TEAM SECTION */
         .team-idea-block {
