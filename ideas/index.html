@@ -6879,7 +6879,7 @@ function computeFinalScore(ideaId) {
     // Composite: minTeam, licenses, regulatory complexity, hardware
     let barrierScore = 100;
     if (f.minTeam > 1) barrierScore -= (f.minTeam - 1) * 15;
-    if (f.licenses !== 'Ninguna' && f.licenses !== 'Ninguna directa' && f.licenses !== 'Ninguna de software' && f.licenses !== 'Ninguna (no necesitas ser PSE para empezar)' && f.licenses !== 'Ninguna (herramienta de investigacion, no ejercicio legal)' && f.licenses !== 'Ninguna (eres proveedor de software, no de salud)' && f.licenses !== 'Ninguna de software (pagos via procesadores licenciados)' && f.licenses !== 'Ninguna (no emites certificados, SENASA lo hace)') barrierScore -= 35;
+    if (!f.licenses.startsWith('Ninguna')) barrierScore -= 35;
     if (idea.regulatoryComplexity === 'Muy Alta') barrierScore -= 30;
     else if (idea.regulatoryComplexity === 'Alta') barrierScore -= 20;
     else if (idea.regulatoryComplexity === 'Media') barrierScore -= 8;
