@@ -7013,6 +7013,47 @@ function renderIdeaTabs() {
             </div>
         </section>
 
+        ${COST_BREAKDOWN[idea.id] ? `
+        <!-- COST BREAKDOWN -->
+        <section style="margin-top:2rem;">
+            <h2 class="section-title" style="font-size:1.4rem;">Desglose Detallado de Inversion</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">Costos investigados con precios reales 2026. Haz click en cada fase para ver el detalle.</p>
+            <div style="background: linear-gradient(135deg, rgba(0,242,96,0.1), rgba(5,117,230,0.1)); border: 1px solid rgba(0,242,96,0.3); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="font-weight: 700; color: var(--text-primary);">Inversion Total Estimada</span>
+                <span style="font-size: 1.3rem; font-weight: 800; background: linear-gradient(135deg, #00f260, #0575e6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${COST_BREAKDOWN[idea.id].grandTotal}</span>
+            </div>
+            <div class="cost-breakdown">
+                ${COST_BREAKDOWN[idea.id].phases.map((phase, pi) => `
+                    <div class="cost-phase">
+                        <div class="cost-phase-header" onclick="this.querySelector('.toggle-icon').classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+                            <h4><span style="color: ${idea.color};">${phase.name}</span> <span style="color: var(--text-muted); font-weight: 400; font-size: 0.82rem;">(${phase.period})</span></h4>
+                            <div style="display:flex;align-items:center;gap:1rem;">
+                                <span class="phase-total">${phase.total}</span>
+                                <span class="toggle-icon">&#9660;</span>
+                            </div>
+                        </div>
+                        <div class="cost-phase-body">
+                            ${phase.categories.map(cat => `
+                                <div class="cost-category">
+                                    <div class="cost-category-title">${cat.name} — ${cat.total}</div>
+                                    <div class="cost-items">
+                                        ${cat.items.map(item => `
+                                            <span class="cost-item-name">${item[0]}</span>
+                                            <span class="cost-item-value">${item[1]}</span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            `).join('')}
+                            <div class="cost-burn">
+                                <span>Burn rate: <strong>${phase.burn}</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </section>
+        ` : ''}
+
         ${f ? `
         <!-- FEASIBILITY -->
         <section style="margin-top:2rem;">
