@@ -6924,7 +6924,7 @@ function renderIdeaTabs() {
                 <div style="background:var(--bg-secondary);border-radius:12px;padding:1.2rem 1.5rem;margin-bottom:1.5rem;">
                     <h4 style="color:var(--accent-2);margin-bottom:0.8rem;font-size:0.9rem;">Gaps de Mercado Identificados</h4>
                     <ul style="list-style:none;padding:0;margin:0;">
-                        ${c.gaps.map(g => `<li style="padding:0.3rem 0;font-size:0.85rem;color:var(--text-secondary);border-bottom:1px solid var(--border);">
+                        ${(c.gaps || []).map(g => `<li style="padding:0.3rem 0;font-size:0.85rem;color:var(--text-secondary);border-bottom:1px solid var(--border);">
                             <span style="color:var(--accent-2);margin-right:0.5rem;">▸</span>${g}
                         </li>`).join('')}
                     </ul>
