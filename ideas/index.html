@@ -6883,7 +6883,7 @@ function computeFinalScore(ideaId) {
     if (idea.regulatoryComplexity === 'Muy Alta') barrierScore -= 30;
     else if (idea.regulatoryComplexity === 'Alta') barrierScore -= 20;
     else if (idea.regulatoryComplexity === 'Media') barrierScore -= 8;
-    if (f.hardwareNeeded !== 'Ninguno' && f.hardwareNeeded !== 'Ninguno (marketplace puro)' && f.hardwareNeeded !== 'Ninguno (APIs)' && f.hardwareNeeded !== 'Ninguno (sensores cold chain opcionales)') barrierScore -= 15;
+    if (!f.hardwareNeeded.startsWith('Ninguno')) barrierScore -= 15;
     const barrier = Math.max(5, Math.min(98, barrierScore));
 
     const scores = { competitive, feasibility, market, software, speed, scalability, barrier };
