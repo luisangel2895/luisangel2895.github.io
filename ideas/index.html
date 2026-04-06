@@ -1024,6 +1024,31 @@
             box-shadow: 0 0 16px rgba(0,242,96,0.6);
             border-bottom: none;
         }
+        /* COST BREAKDOWN SECTION */
+        .cost-breakdown { margin-top: 2rem; }
+        .cost-phase { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; }
+        .cost-phase-header { padding: 1rem 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background 0.2s; }
+        .cost-phase-header:hover { background: var(--bg-secondary); }
+        .cost-phase-header h4 { margin: 0; font-size: 0.95rem; }
+        .cost-phase-header .phase-total { font-weight: 700; font-size: 1rem; color: var(--accent-2); }
+        .cost-phase-header .toggle-icon { transition: transform 0.3s; font-size: 0.8rem; color: var(--text-muted); }
+        .cost-phase-header .toggle-icon.open { transform: rotate(180deg); }
+        .cost-phase-body { display: none; padding: 0 1.2rem 1rem; }
+        .cost-phase-body.open { display: block; }
+        .cost-category { margin-bottom: 0.8rem; }
+        .cost-category-title { font-size: 0.82rem; font-weight: 700; color: var(--accent-1); margin-bottom: 0.4rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+        .cost-items { display: grid; grid-template-columns: 1fr auto; gap: 0.15rem 1rem; font-size: 0.78rem; }
+        .cost-item-name { color: var(--text-secondary); }
+        .cost-item-value { color: var(--text-primary); font-weight: 500; text-align: right; font-family: 'SF Mono', monospace; }
+        .cost-subtotal { font-weight: 700; color: var(--text-primary); border-top: 1px solid var(--border); padding-top: 0.3rem; margin-top: 0.3rem; }
+        .cost-grand-total { background: var(--bg-secondary); border-radius: 8px; padding: 0.8rem 1rem; margin-top: 0.5rem; display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem; }
+        .cost-burn { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.5rem; padding: 0.6rem 1rem; background: rgba(108,99,255,0.06); border-radius: 8px; font-size: 0.78rem; }
+        .cost-burn span { color: var(--text-secondary); }
+        .cost-burn strong { color: var(--accent-1); }
+        @media (max-width: 768px) {
+            .cost-items { font-size: 0.72rem; }
+            .cost-phase-header h4 { font-size: 0.85rem; }
+        }
         .tab-panel { display: none; padding: 1rem 0; }
         .tab-panel.active { display: block; }
         @media (max-width: 768px) {
