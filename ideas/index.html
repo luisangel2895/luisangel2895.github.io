@@ -3820,6 +3820,992 @@ const FINAL_VERDICT = {
     }
 };
 
+const COST_BREAKDOWN = {
+    2: {
+        title: "Compliance y Gestion Tributaria IA",
+        grandTotal: "$2.9M (36 meses)",
+        phases: [
+            {
+                name: "Fase 1: MVP",
+                period: "Meses 1-4",
+                total: "$45K-65K",
+                burn: "$12,500/mes",
+                categories: [
+                    { name: "Infraestructura Cloud", total: "$436", items: [
+                        ["AWS EC2 t3.small (App Server)", "$15/mo"],
+                        ["AWS RDS PostgreSQL db.t3.micro", "$13/mo"],
+                        ["ElastiCache Redis t3.micro", "$12/mo"],
+                        ["S3 + CloudFront + Route53", "$7/mo"],
+                        ["Vercel Pro + GitHub Team", "$52/mo"]
+                    ]},
+                    { name: "APIs e IA", total: "$142", items: [
+                        ["OpenAI GPT-4o (2M in + 500K out tokens)", "$10/mo"],
+                        ["GPT-4o-mini (clasificacion masiva)", "$2/mo"],
+                        ["AWS Textract OCR (1K facturas)", "$10/mo"],
+                        ["SUNAT API (apisunat.pe Plan 05)", "$8/mo"],
+                        ["Claude Haiku 4.5 (backup)", "$2.50/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$36,300", items: [
+                        ["Full-Stack Developer Sr (Peru)", "$4,000/mo x 4m = $16,000"],
+                        ["Backend Developer Mid", "$3,000/mo x 4m = $12,000"],
+                        ["UI/UX Designer freelance (80hrs)", "$3,600"],
+                        ["Consultor tributario (40hrs)", "$2,600"],
+                        ["DevOps setup CI/CD (30hrs)", "$2,100"]
+                    ]},
+                    { name: "Legal y Compliance", total: "$5,100", items: [
+                        ["Incorporacion SAC Peru (SUNARP)", "$2,500"],
+                        ["Terms of Service + Privacy Policy", "$1,000"],
+                        ["Evaluacion LPDP datos personales", "$650"],
+                        ["Registro marca INDECOPI", "$550"],
+                        ["Certificado digital SUNAT", "$115"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$1,308", items: [
+                        ["Google Ads Peru (CPC $0.80-1.50)", "$300/mo"],
+                        ["Google Workspace (3 users)", "$22/mo"],
+                        ["Dominio .com + .pe", "$5/mo"]
+                    ]},
+                    { name: "Herramientas", total: "$160", items: [
+                        ["Cursor Pro IDE", "$20/mo"],
+                        ["1Password team", "$20/mo"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 2: Growth",
+                period: "Meses 5-10",
+                total: "$130K-170K",
+                burn: "$24,600/mes",
+                categories: [
+                    { name: "Infraestructura Cloud", total: "$1,698", items: [
+                        ["AWS EC2 t3.medium + Worker + Staging", "$61/mo"],
+                        ["RDS PostgreSQL t3.small Multi-AZ + Replica", "$48/mo"],
+                        ["ElastiCache Redis t3.small", "$25/mo"],
+                        ["S3 200GB + CloudFront + WAF", "$32/mo"],
+                        ["Vercel Pro (4) + GitHub Team (5)", "$100/mo"]
+                    ]},
+                    { name: "APIs e IA", total: "$1,128", items: [
+                        ["GPT-4o (10M in + 3M out tokens)", "$55/mo"],
+                        ["Claude Sonnet 4.6 (analisis complejo)", "$24/mo"],
+                        ["AWS Textract (5K facturas)", "$65/mo"],
+                        ["APIs SUNAT + proveedores backup", "$35/mo"],
+                        ["GPT-4o-mini + Embeddings", "$9/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$87,450", items: [
+                        ["Full-Stack Sr", "$4,500/mo x 6m = $27,000"],
+                        ["Backend Mid", "$3,000/mo x 6m = $18,000"],
+                        ["Frontend Mid", "$3,000/mo x 6m = $18,000"],
+                        ["Junior Dev QA", "$1,500/mo x 6m = $9,000"],
+                        ["DevOps SRE (60hrs)", "$4,200"],
+                        ["Pen testing seguridad", "$4,000"],
+                        ["Consultor tributario (60hrs)", "$3,750"],
+                        ["UI/UX Designer (100hrs)", "$4,500"]
+                    ]},
+                    { name: "Legal", total: "$7,500", items: [
+                        ["Compliance LPDP implementacion", "$2,500"],
+                        ["Contrato SaaS Peru", "$1,500"],
+                        ["Contabilidad mensual", "$200/mo x 6m = $1,200"],
+                        ["Certificacion OSE/PSE", "$1,500"],
+                        ["Actualizacion ToS multi-pais", "$800"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$28,552", items: [
+                        ["Google Ads Peru", "$1,500/mo"],
+                        ["LinkedIn Ads B2B (CPC $1.70)", "$800/mo"],
+                        ["Content marketing + SEO", "$529/mo"],
+                        ["BDR ventas (Peru)", "$1,200/mo"],
+                        ["Eventos contables (2)", "$1,000"]
+                    ]},
+                    { name: "Herramientas", total: "$1,560", items: [
+                        ["Figma Pro + Linear + Notion", "$126/mo"],
+                        ["Cursor Pro (2 devs)", "$40/mo"],
+                        ["1Password + Slack + Loom", "$94/mo"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 3: Expansion",
+                period: "Meses 11-22",
+                total: "$700K-900K",
+                burn: "$66,000/mes",
+                categories: [
+                    { name: "Infraestructura Cloud", total: "$9,540", items: [
+                        ["EC2 cluster (2x t3.large + workers)", "$213/mo"],
+                        ["RDS Multi-AZ t3.medium + 2 replicas", "$176/mo"],
+                        ["ElastiCache Redis t3.medium Multi-AZ", "$99/mo"],
+                        ["S3 1TB + CloudFront + WAF + SQS", "$55/mo"],
+                        ["Vercel (6) + GitHub (8) + CloudWatch", "$192/mo"]
+                    ]},
+                    { name: "APIs e IA", total: "$14,928", items: [
+                        ["GPT-4o (50M in + 15M out tokens)", "$275/mo"],
+                        ["Claude Sonnet 4.6 (regulatorio)", "$120/mo"],
+                        ["AWS Textract (25K facturas)", "$325/mo"],
+                        ["APIs tributarias 4 paises (SUNAT/DIAN/SII/SAT)", "$330/mo"],
+                        ["Fine-tuning + Embeddings + GPT-4o-mini", "$144/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$352,000", items: [
+                        ["Tech Lead Sr Full-Stack", "$5,000/mo x 12m = $60,000"],
+                        ["Backend Devs x2 (Sr + Mid)", "$7,000/mo x 12m = $84,000"],
+                        ["Frontend Devs x2 Mid", "$6,000/mo x 12m = $72,000"],
+                        ["DevOps/SRE", "$3,500/mo x 12m = $42,000"],
+                        ["Mobile Dev React Native", "$3,500/mo x 12m = $42,000"],
+                        ["QA Engineer", "$2,000/mo x 12m = $24,000"],
+                        ["Auditorias seguridad (2x)", "$8,000"],
+                        ["Consultores tributarios (4 paises)", "$15,000"],
+                        ["Legal/regulatorio", "$5,000"]
+                    ]},
+                    { name: "Legal Multi-Pais", total: "$63,200", items: [
+                        ["Incorporacion Colombia SAS", "$3,000"],
+                        ["Incorporacion Chile SpA", "$2,500"],
+                        ["Incorporacion Mexico SAPI", "$3,500"],
+                        ["Compliance privacidad multi-pais", "$8,000"],
+                        ["Preparacion SOC 2 Type I", "$20,000"],
+                        ["Contratos SaaS internacionales", "$4,000"],
+                        ["Propiedad intelectual multi-pais", "$3,000"],
+                        ["Contabilidad 4 entidades", "$400/mo x 4 x 12m = $19,200"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$230,988", items: [
+                        ["Google Ads 4 paises", "$5,000/mo"],
+                        ["LinkedIn Ads B2B", "$3,000/mo"],
+                        ["Meta Ads awareness", "$1,000/mo"],
+                        ["Content + SEO + PR", "$3,108/mo"],
+                        ["Equipo ventas (2 BDR + Sales Mgr)", "$5,500/mo"],
+                        ["HubSpot CRM + Zoom", "$33/mo"],
+                        ["Conferencias LatAm (4/ano)", "$1,000/mo avg"]
+                    ]},
+                    { name: "Herramientas", total: "$10,560", items: [
+                        ["Figma (5) + Linear (10) + Notion (12)", "$380/mo"],
+                        ["Cursor (4) + 1Password (12)", "$176/mo"],
+                        ["Slack Pro (15) + Loom (8)", "$209/mo"],
+                        ["Datadog monitoring (5 hosts)", "$115/mo"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 4: Scale",
+                period: "Meses 23-36",
+                total: "$1.7M-2.2M",
+                burn: "$160,000/mes",
+                categories: [
+                    { name: "Infraestructura Cloud", total: "$45,996", items: [
+                        ["ECS/EKS cluster 6-10 nodos", "$1,000/mo"],
+                        ["RDS r6g.large Multi-AZ + replicas", "$700/mo"],
+                        ["ElastiCache Redis r6g.large cluster", "$400/mo"],
+                        ["S3 5TB + CloudFront + WAF + Shield", "$415/mo"],
+                        ["Lambda + SQS + Step Functions", "$100/mo"],
+                        ["CloudWatch + X-Ray + OpenSearch", "$150/mo"],
+                        ["Vercel Enterprise + GitHub Enterprise", "$1,058/mo"]
+                    ]},
+                    { name: "APIs e IA", total: "$55,620", items: [
+                        ["GPT-4o (200M in + 60M out tokens)", "$1,100/mo"],
+                        ["Claude Sonnet 4.6 (50M in + 20M out)", "$450/mo"],
+                        ["Custom fine-tuned models hosting", "$750/mo"],
+                        ["AWS Textract 200K paginas", "$800/mo"],
+                        ["APIs tributarias 8+ paises enterprise", "$1,000/mo"],
+                        ["Pinecone Vector DB + Embeddings", "$90/mo"]
+                    ]},
+                    { name: "Desarrollo (15-20 personas)", total: "$785,200", items: [
+                        ["VP Engineering", "$7,000/mo x 12m = $84,000"],
+                        ["Senior Devs x3", "$15,000/mo x 12m = $180,000"],
+                        ["Mid Devs x4", "$14,000/mo x 12m = $168,000"],
+                        ["Junior Devs x2", "$3,600/mo x 12m = $43,200"],
+                        ["DevOps/SRE + QA Lead", "$6,500/mo x 12m = $78,000"],
+                        ["Product Manager + Designer", "$7,000/mo x 12m = $84,000"],
+                        ["Data Scientist/ML Engineer", "$5,000/mo x 12m = $60,000"],
+                        ["SOC 2 Type II audit + pen tests", "$62,000"],
+                        ["Consultores + Advisory Board", "$36,000"]
+                    ]},
+                    { name: "Legal y Compliance", total: "$158,500", items: [
+                        ["SOC 2 Type II certificacion", "$40,000"],
+                        ["ISO 27001 preparacion", "$20,000"],
+                        ["Legal counsel multi-pais retainer", "$24,000"],
+                        ["Compliance privacidad LatAm", "$12,000"],
+                        ["Contabilidad 6+ entidades", "$36,000"],
+                        ["Seguro corporativo (E&O, Cyber)", "$11,500"],
+                        ["Patentes AI/tax-tech", "$15,000"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$591,600", items: [
+                        ["Google Ads 6+ paises", "$10,000/mo"],
+                        ["LinkedIn Ads ABM + enterprise", "$5,000/mo"],
+                        ["Content Team (Head + 2 writers)", "$5,000/mo"],
+                        ["PR Agency LatAm", "$3,000/mo"],
+                        ["Equipo ventas (4 AE + 2 BDR + Mgr)", "$15,500/mo"],
+                        ["Customer Success Manager", "$2,500/mo"],
+                        ["HubSpot Professional", "$800/mo"],
+                        ["Eventos/conferencias 8-10/ano", "$3,500/mo avg"]
+                    ]},
+                    { name: "Herramientas", total: "$25,008", items: [
+                        ["Figma Org (10) + Linear (20) + Notion (20)", "$720/mo"],
+                        ["Cursor (8) + 1Password (20)", "$320/mo"],
+                        ["Slack Business+ (20) + Zoom (20)", "$470/mo"],
+                        ["Datadog Enterprise + Confluence", "$578/mo"]
+                    ]}
+                ]
+            }
+        ]
+    },
+    11: {
+        title: "Agentes IA WhatsApp para Negocios",
+        grandTotal: "$231K-449K (25 meses)",
+        phases: [
+            {
+                name: "Fase 1: MVP",
+                period: "Meses 1-3",
+                total: "$18.5K-32K",
+                burn: "$7,500/mes",
+                categories: [
+                    { name: "Infraestructura Cloud", total: "$540-$1,050", items: [
+                        ["AWS EC2 t3.small (App Server)", "$15/mo"],
+                        ["RDS PostgreSQL db.t3.micro", "$22/mo"],
+                        ["ElastiCache Redis t3.micro", "$18/mo"],
+                        ["S3 + SES + CloudWatch", "$2/mo"]
+                    ]},
+                    { name: "WhatsApp Business API", total: "$300-$1,200", items: [
+                        ["360dialog BSP (1 numero)", "$49/mo"],
+                        ["Meta: Service msgs (3K) — GRATIS", "$0"],
+                        ["Meta: Utility msgs (1K) Peru/Col", "$10/mo"],
+                        ["Meta: Marketing msgs (500)", "$21/mo"],
+                        ["Meta: Auth msgs (200)", "$2/mo"]
+                    ]},
+                    { name: "IA / LLM", total: "$90-$360", items: [
+                        ["GPT-4o-mini (2,500 convos) $0.0009/convo", "$2.25/mo"],
+                        ["GPT-4.1-nano clasificacion (3K)", "$0.50/mo"],
+                        ["Embeddings knowledge base", "$0.50/mo"],
+                        ["GPT-4o escalaciones complejas (100)", "$2.50/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$12K-22K", items: [
+                        ["Full-Stack Dev Sr (Peru/Colombia)", "$4,000/mo x 3m = $12,000"],
+                        ["AI/NLP Specialist freelance (80hrs)", "$4,000-$6,400"],
+                        ["UI/UX Designer freelance (40hrs)", "$1,000-$1,600"]
+                    ]},
+                    { name: "Legal y Compliance", total: "$1,500-$3,500", items: [
+                        ["Incorporacion SAC Peru o SAS Colombia", "$800-$1,500"],
+                        ["WhatsApp Business Verification", "GRATIS"],
+                        ["Privacy Policy + Terms of Service", "$500-$1,300"],
+                        ["Data Processing Agreement", "$200-$400"]
+                    ]},
+                    { name: "Marketing", total: "$500-$1,500", items: [
+                        ["Google Ads test (CPC $0.30-0.80)", "$200-$500"],
+                        ["Logo + branding basico", "$100-$500"],
+                        ["Dominio + contenido", "$162-$315"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 2: Growth",
+                period: "Meses 4-7",
+                total: "$35K-62K",
+                burn: "$10,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$1K-$2.2K", items: [
+                        ["EC2 t3.medium + Worker t3.small", "$46/mo"],
+                        ["RDS t3.small Multi-AZ", "$53/mo"],
+                        ["ElastiCache t3.small + SQS", "$37/mo"],
+                        ["S3 + CloudFront + CloudWatch + Sentry", "$40/mo"]
+                    ]},
+                    { name: "WhatsApp API (50-100 clientes)", total: "$1.2K-$4.8K", items: [
+                        ["360dialog (3-5 numeros multi-pais)", "$147-$245/mo"],
+                        ["Service msgs (15K) — GRATIS", "$0"],
+                        ["Utility msgs (8K)", "$50-$160/mo"],
+                        ["Marketing msgs (3K)", "$37-$210/mo"]
+                    ]},
+                    { name: "IA / LLM (15K convos/mes)", total: "$200-$1K", items: [
+                        ["GPT-4o-mini (12K convos)", "$10.80/mo"],
+                        ["GPT-4.1-nano routing", "$3/mo"],
+                        ["GPT-4o complex (500 convos)", "$12.50/mo"],
+                        ["Claude Haiku 4.5 fallback", "$4.50/mo"],
+                        ["Fine-tuning GPT-4o-mini", "$50-$100 one-time"]
+                    ]},
+                    { name: "Desarrollo", total: "$22K-38K", items: [
+                        ["Full-Stack Sr", "$4,000/mo x 4m = $16,000"],
+                        ["Full-Stack Mid", "$3,000/mo x 4m = $12,000"],
+                        ["AI/NLP Specialist (240hrs)", "$4,200-$7,200"],
+                        ["UI/UX Designer (60hrs)", "$1,500-$2,400"]
+                    ]},
+                    { name: "Legal", total: "$2K-$5K", items: [
+                        ["Data processing agreements multi-pais", "$500-$1,000"],
+                        ["Privacy policies Colombia/Mexico", "$300-$600"],
+                        ["SaaS service agreement", "$500-$1,000"],
+                        ["Trademark + contabilidad", "$700-$1,400"]
+                    ]},
+                    { name: "Marketing", total: "$3K-$8K", items: [
+                        ["Google Ads Click-to-WhatsApp", "$500-$1,000/mo"],
+                        ["Content + SEO freelance", "$500-$800/mo"],
+                        ["LinkedIn Sales Navigator", "$80/mo"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 3: Expansion",
+                period: "Meses 8-13",
+                total: "$58K-105K",
+                burn: "$12,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$3.6K-$7.2K", items: [
+                        ["EC2 2x t3.large + Workers behind ALB", "$205/mo"],
+                        ["RDS t3.medium Multi-AZ", "$161/mo"],
+                        ["ElastiCache t3.medium cluster + SQS", "$102/mo"],
+                        ["S3 + CloudFront + CloudWatch + Datadog", "$75/mo"]
+                    ]},
+                    { name: "WhatsApp API (300-500 clientes)", total: "$6K-$24K", items: [
+                        ["360dialog (8-15 numeros)", "$392-$735/mo"],
+                        ["Service msgs (80K) — GRATIS", "$0"],
+                        ["Utility msgs (40K)", "$320-$800/mo"],
+                        ["Marketing msgs (15K)", "$188-$1,334/mo"]
+                    ]},
+                    { name: "IA / LLM (80K convos/mes)", total: "$1.2K-$4.8K", items: [
+                        ["GPT-4o-mini (60K convos)", "$54/mo"],
+                        ["GPT-4o complex (3K convos)", "$75/mo"],
+                        ["Claude Sonnet 4.6 enterprise (2K)", "$48/mo"],
+                        ["GPT-4.1-nano routing + Embeddings", "$20/mo"],
+                        ["Fine-tuned models + Whisper API", "$36/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$35K-$55K", items: [
+                        ["Lead Full-Stack Dev", "$5,000/mo x 6m = $30,000"],
+                        ["Full-Stack Mid", "$3,000/mo x 6m = $18,000"],
+                        ["AI/ML Engineer (480hrs)", "$8,400-$14,400"],
+                        ["DevOps contractor (80hrs)", "$4,000-$6,400"],
+                        ["QA Engineer (3m)", "$4,500-$7,500"]
+                    ]},
+                    { name: "Legal", total: "$3K-$8K", items: [
+                        ["Legal review 5 paises", "$1,500-$3,000"],
+                        ["LGPD Brasil compliance", "$500-$1,500"],
+                        ["DPO fraccionado + trademarks", "$1,000-$3,500"]
+                    ]},
+                    { name: "Marketing", total: "$6K-$15K", items: [
+                        ["Google Ads escalado", "$1,000-$2,000/mo"],
+                        ["Content + Social + PR", "$800-$1,300/mo"],
+                        ["Customer Success Mgr (part-time)", "$1,500-$2,500/mo"],
+                        ["Conferencia sponsorship (1)", "$1,000-$2,000"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 4: Scale",
+                period: "Meses 14-25",
+                total: "$120K-250K",
+                burn: "$18,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$24K-$60K", items: [
+                        ["ECS/EKS Fargate containers", "$400-$800/mo"],
+                        ["RDS r6g.large Multi-AZ (16GB)", "$450-$600/mo"],
+                        ["ElastiCache r6g.large cluster", "$300-$400/mo"],
+                        ["Full stack (S3/CDN/WAF/X-Ray)", "$295-$520/mo"],
+                        ["Datadog Full Stack", "$200-$500/mo"]
+                    ]},
+                    { name: "WhatsApp API (1K-5K clientes)", total: "$48K-$180K", items: [
+                        ["BSP enterprise (30-80 numeros)", "$1,470-$3,920/mo"],
+                        ["Service msgs (500K) — GRATIS", "$0"],
+                        ["Utility msgs (200K)", "$1,600-$4,000/mo"],
+                        ["Marketing msgs (80K)", "$1,000-$7,100/mo"],
+                        ["Nota: costos pasados al cliente", "pass-through"]
+                    ]},
+                    { name: "IA / LLM (400K convos/mes)", total: "$9.6K-$36K", items: [
+                        ["GPT-4o-mini primary (300K)", "$270/mo"],
+                        ["GPT-4o complex (15K)", "$375/mo"],
+                        ["Claude Sonnet 4.6 enterprise (10K)", "$240/mo"],
+                        ["Claude Opus 4.6 premium (2K)", "$150/mo"],
+                        ["GPT-4.1-nano + Embeddings + Whisper + TTS", "$215/mo"]
+                    ]},
+                    { name: "Desarrollo (net new investment)", total: "$55K-$110K", items: [
+                        ["VP Engineering + Tech Lead", "$7,000/mo"],
+                        ["Full-Stack Sr x2", "$9,500/mo"],
+                        ["AI/ML Engineer + DevOps", "$7,500/mo"],
+                        ["Mobile Dev + QA", "$5,000/mo"],
+                        ["60-80% cubierto por revenue", "offset"]
+                    ]},
+                    { name: "Legal", total: "$8K-$20K", items: [
+                        ["SOC 2 Type I preparacion", "$5,000-$10,000"],
+                        ["Compliance 8 jurisdicciones", "$3,000-$6,000"],
+                        ["DPO ongoing + IP", "$1,500-$4,000"]
+                    ]},
+                    { name: "Marketing (net investment)", total: "$15K-$40K", items: [
+                        ["Google Ads multi-pais", "$2,000-$4,000/mo"],
+                        ["Content + PR + Community", "$1,800-$3,500/mo"],
+                        ["Conferencias (3-4 eventos)", "$6,000-$20,000"],
+                        ["Customer Success (2 personas)", "$4,000-$6,000/mo"],
+                        ["Nota: 60-80% cubierto por revenue", "offset"]
+                    ]}
+                ]
+            }
+        ]
+    },
+    20: {
+        title: "AI Voice Agents para Contact Centers",
+        grandTotal: "$1.2M-2.1M (37 meses)",
+        phases: [
+            {
+                name: "Fase 1: MVP",
+                period: "Meses 1-4",
+                total: "$32.5K-46K",
+                burn: "$10,000/mes",
+                categories: [
+                    { name: "Infraestructura Cloud", total: "$430-$725", items: [
+                        ["AWS EC2 t3.medium (App)", "$30/mo"],
+                        ["EC2 c5.large (media/WebSocket)", "$62/mo"],
+                        ["RDS PostgreSQL + Redis (free tier)", "$0-$25/mo"],
+                        ["S3 recordings 50GB + monitoring", "$11/mo"]
+                    ]},
+                    { name: "Telefonia (Twilio Voice)", total: "$2,086", items: [
+                        ["Peru Toll-Free number", "$135/mo"],
+                        ["Peru Mobile outbound ($0.074/min)", "2K min/mo = $592"],
+                        ["Peru TF inbound ($0.399/min)", "500 min/mo = $797"],
+                        ["Mexico/Colombia test calls", "$54"],
+                        ["Platform fees", "$50"]
+                    ]},
+                    { name: "IA: STT + LLM + TTS", total: "$358-$450", items: [
+                        ["Deepgram Nova-2 STT ($0.008/min)", "$23-$28/mo"],
+                        ["GPT-4o-mini ($0.006-0.012/min)", "$18-$36/mo"],
+                        ["Deepgram Aura-2 TTS ($0.016/min)", "$49/mo"],
+                        ["Costo total por minuto AI: $0.030/min", ""],
+                        ["Costo total con telefonia: $0.104/min", ""]
+                    ]},
+                    { name: "Desarrollo", total: "$26.5K-$37.5K", items: [
+                        ["Voice AI / Full-Stack Lead", "$5,000/mo x 4m = $20,000"],
+                        ["Telephony/SIP Specialist (3m)", "$3,000/mo x 3m = $9,000"],
+                        ["Conversation Designer (2m)", "$2,000/mo x 2m = $4,000"]
+                    ]},
+                    { name: "Legal", total: "$2,500-$4,300", items: [
+                        ["Incorporacion SAC Peru", "$1,500-$2,500"],
+                        ["Terms + Privacy + datos Peru", "$1,000-$1,800"]
+                    ]},
+                    { name: "Misc", total: "$584-$784", items: [
+                        ["Landing page + dominio", "$300-$500"],
+                        ["Google Workspace (3 users)", "$84"],
+                        ["Herramientas SaaS", "$200"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 2: Growth",
+                period: "Meses 5-10",
+                total: "$90K-140K",
+                burn: "$18,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$7.4K-$8.9K", items: [
+                        ["EC2 cluster 2x c5.xlarge + media", "$500-$750/mo"],
+                        ["ElastiCache r6g.large HA (13GB)", "$219/mo"],
+                        ["RDS r6g.large Multi-AZ", "$350/mo"],
+                        ["S3 500GB + ALB + Datadog", "$127/mo"]
+                    ]},
+                    { name: "Telefonia (75K min/mes)", total: "$31,789", items: [
+                        ["Peru Mobile ($0.074/min) 25K min", "$1,850/mo"],
+                        ["Peru TF inbound ($0.399/min) 3K min", "$1,197/mo"],
+                        ["Mexico Mobile ($0.047/min) 15K min", "$710/mo"],
+                        ["Colombia Mobile ($0.026/min) 10K min", "$260/mo"],
+                        ["Chile Mobile ($0.067/min) 5K min", "$335/mo"],
+                        ["Phone numbers 12 (Peru/Mex/Col/Chi)", "$357/mo"]
+                    ]},
+                    { name: "IA (75K min/mes)", total: "$13,725", items: [
+                        ["Deepgram Nova-3 STT ($0.006/min)", "$443/mo"],
+                        ["GPT-4o-mini ($0.008/min)", "$600/mo"],
+                        ["Deepgram Aura-2 TTS ($0.016/min)", "$1,200/mo"],
+                        ["Claude Haiku fallback (5%)", "$45/mo"],
+                        ["Costo blended AI: $0.030/min", ""]
+                    ]},
+                    { name: "Desarrollo", total: "$85K-$123K", items: [
+                        ["Sr Voice AI Engineer", "$6,000/mo x 6m = $36,000"],
+                        ["Backend Engineer", "$4,000/mo x 6m = $24,000"],
+                        ["Frontend/Dashboard Dev", "$3,500/mo x 6m = $21,000"],
+                        ["DevOps/Infra (4m)", "$3,000/mo x 4m = $12,000"],
+                        ["QA/Test Engineer (4m)", "$2,000/mo x 4m = $8,000"]
+                    ]},
+                    { name: "Integraciones CRM", total: "$10,620", items: [
+                        ["HubSpot API connector", "$4,000"],
+                        ["Salesforce API connector", "$6,500"],
+                        ["HubSpot CRM Starter", "$20/mo"]
+                    ]},
+                    { name: "Legal Multi-Pais", total: "$8K-$13.5K", items: [
+                        ["Mexico privacidad LFPDPPP", "$2,500"],
+                        ["Colombia Ley 1581", "$2,000"],
+                        ["Chile data protection", "$1,750"],
+                        ["Regulacion telecom 4 paises", "$3,000"],
+                        ["SLA contratos enterprise", "$1,500"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$33.8K-$38.8K", items: [
+                        ["LinkedIn Ads contact center mgrs", "$1,000/mo"],
+                        ["Google Ads 'voice AI'", "$800/mo"],
+                        ["Sales enterprise (part-time)", "$2,000/mo"],
+                        ["ExpoContact / America Digital expo", "$4,000-$7,500"],
+                        ["Website + demos + case studies", "$3,500-$5,500"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 3: Expansion",
+                period: "Meses 11-19",
+                total: "$250K-390K",
+                burn: "$32,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$35K-$48K", items: [
+                        ["EKS cluster 3-5 nodos c5.2xlarge", "$1,600/mo"],
+                        ["Media servers 5-10x c5.xlarge", "$900/mo"],
+                        ["RDS r6g.xlarge + Redis r6g.xlarge", "$1,300/mo"],
+                        ["S3 5TB+ + CDN + ALB + WAF + Datadog", "$385/mo"]
+                    ]},
+                    { name: "Telefonia (500K min/mes)", total: "$198,000", items: [
+                        ["Peru Mobile (Telnyx $0.050/min) 150K", "$7,500/mo"],
+                        ["Mexico ($0.030/min) 120K min", "$3,600/mo"],
+                        ["Colombia ($0.019/min) 80K min", "$1,600/mo"],
+                        ["Chile ($0.045/min) 40K min", "$1,800/mo"],
+                        ["Brasil ($0.070/min) 50K min", "$3,500/mo"],
+                        ["Argentina ($0.035/min) 30K min", "$1,050/mo"],
+                        ["Landline + inbound + numeros", "$2,950/mo"]
+                    ]},
+                    { name: "IA (500K min/mes)", total: "$125,370", items: [
+                        ["Deepgram Nova-3 Enterprise STT ($0.005/min)", "$2,250/mo"],
+                        ["GPT-4o-mini ($0.007/min)", "$3,500/mo"],
+                        ["Deepgram Aura-2 Enterprise TTS ($0.014/min)", "$6,750/mo"],
+                        ["Self-hosted Whisper GPU (A10G)", "$1,080/mo"],
+                        ["Claude Haiku escalation", "$350/mo"],
+                        ["Costo blended AI: $0.026/min", ""]
+                    ]},
+                    { name: "Desarrollo", total: "$250K-$350K", items: [
+                        ["VP Eng / Tech Lead", "$8,500/mo x 9m = $76,500"],
+                        ["Sr Voice AI Engineers x2", "$6,500/mo x 2 x 9m = $117,000"],
+                        ["Backend Engineers x2", "$4,250/mo x 2 x 9m = $76,500"],
+                        ["Frontend + ML Engineer + DevOps/SRE", "$13,000/mo x 9m = $117,000"],
+                        ["Product Manager", "$5,000/mo x 9m = $45,000"]
+                    ]},
+                    { name: "Legal", total: "$50K-$72K", items: [
+                        ["Brasil LGPD + entidad legal", "$6,500"],
+                        ["Argentina data protection", "$2,500"],
+                        ["SOC 2 Type I preparacion", "$20,000"],
+                        ["Compliance telecom 6 paises", "$6,500"],
+                        ["IP / patentes", "$7,500"],
+                        ["Legal counsel retainer", "$2,000/mo x 9m = $18,000"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$152K-$169K", items: [
+                        ["Head of Sales", "$4,500/mo x 9m = $40,500"],
+                        ["SDR x2", "$2,000/mo x 2 x 9m = $36,000"],
+                        ["LinkedIn + Google Ads", "$3,000/mo x 9m = $27,000"],
+                        ["Expos: ExpoContact, ICMI, America Digital", "$18,000-$33,000"],
+                        ["PR + media LatAm tech", "$9,000"],
+                        ["Enterprise sales travel", "$18,000"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 4: Scale",
+                period: "Meses 20-37",
+                total: "$800K-1.5M",
+                burn: "$55,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$276K-$366K", items: [
+                        ["EKS prod cluster 15-25 nodos", "$6,500/mo"],
+                        ["GPU media servers (self-hosted STT/TTS)", "$4,000/mo"],
+                        ["Redis cluster HA + RDS large", "$2,700/mo"],
+                        ["S3 20TB + CDN + WAF + DDoS + DR", "$1,660/mo"],
+                        ["Datadog Enterprise + monitoring", "$1,000/mo"]
+                    ]},
+                    { name: "Telefonia (2M min/mes)", total: "$1.1M", items: [
+                        ["Wholesale SIP all LatAm ($0.033/min)", "$54,000/mo"],
+                        ["Inbound calls ($0.030/min) 200K min", "$6,000/mo"],
+                        ["100+ numeros 8 paises", "$1,200/mo"],
+                        ["Unit economics: $0.033/min telecom", ""]
+                    ]},
+                    { name: "IA (2M min/mes, self-hosted)", total: "$576K", items: [
+                        ["STT self-hosted Whisper + Deepgram", "$6,000/mo ($0.003/min)"],
+                        ["LLM GPT-4o-mini + Claude batched", "$10,000/mo ($0.005/min)"],
+                        ["TTS self-hosted + Deepgram Enterprise", "$16,000/mo ($0.008/min)"],
+                        ["COGS total por minuto: $0.053/min", ""],
+                        ["Precio venta target: $0.12-0.18/min", "60-70% margen bruto"]
+                    ]},
+                    { name: "Equipo (~24 personas)", total: "$1.8M", items: [
+                        ["Engineering (10)", "$55,000/mo"],
+                        ["Product (2)", "$10,000/mo"],
+                        ["Sales & BD (5)", "$17,500/mo"],
+                        ["Marketing (2)", "$6,000/mo"],
+                        ["Customer Success (3)", "$7,500/mo"],
+                        ["Operations / Finance (2)", "$5,000/mo"]
+                    ]},
+                    { name: "Legal y Compliance", total: "$136K-$192K", items: [
+                        ["SOC 2 Type II audit", "$40,000"],
+                        ["ISO 27001 certificacion", "$30,000"],
+                        ["Entidades legales 3 paises", "$20,000"],
+                        ["Legal counsel retainer", "$54,000"],
+                        ["IP portfolio expansion", "$12,500"],
+                        ["Insurance E&O + Cyber", "$7,500"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$398K-$418K", items: [
+                        ["VP Sales", "$8,000/mo x 18m = $144,000"],
+                        ["Trade shows 3-4/ano LatAm", "$70,000"],
+                        ["Digital marketing scaled", "$90,000"],
+                        ["PR agency LatAm", "$54,000"],
+                        ["Partner program BPO", "$30,000"],
+                        ["Customer events", "$20,000"]
+                    ]}
+                ]
+            }
+        ]
+    },
+    13: {
+        title: "Fleet Management & Route Optimization",
+        grandTotal: "$850K-1.6M (30 meses)",
+        phases: [
+            {
+                name: "Fase 1: MVP",
+                period: "Meses 1-3",
+                total: "$20K-40K",
+                burn: "$9,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$600-$900", items: [
+                        ["AWS EC2 t3.medium (API + real-time)", "$30/mo"],
+                        ["RDS PostgreSQL + PostGIS", "$25/mo"],
+                        ["ElastiCache Redis (live positions)", "$18/mo"],
+                        ["S3 + CloudWatch + SQS telemetry", "$8/mo"]
+                    ]},
+                    { name: "Maps y Geolocalizacion", total: "$300-$600", items: [
+                        ["Google Maps Platform $200 credito gratis", "$0 initial"],
+                        ["Directions API ($5/1K requests)", "$25-$50/mo"],
+                        ["Distance Matrix API ($5/1K elements)", "$25-$50/mo"],
+                        ["Maps SDK (mobile) — gratis", "$0"],
+                        ["OSRM self-hosted (backup)", "$0 (included in EC2)"]
+                    ]},
+                    { name: "Hardware GPS/IoT (piloto 20 vehiculos)", total: "$1,500-$2,500", items: [
+                        ["OBD-II GPS trackers wholesale ($35-45/u)", "$700-$900"],
+                        ["IoT SIM cards (Hologram $0.40/MB)", "$5-$8/mo/device = $100-$160"],
+                        ["Instalacion ($15/vehiculo)", "$300"],
+                        ["Plataforma IoT (1NCE $0.50/SIM/mo alt)", "$10/mo x 20"]
+                    ]},
+                    { name: "Desarrollo", total: "$14K-$24K", items: [
+                        ["Full-Stack Dev Sr (Peru)", "$4,000/mo x 3m = $12,000"],
+                        ["Mobile Dev React Native (part-time)", "$2,500/mo x 3m = $7,500"],
+                        ["UI/UX Designer freelance (30hrs)", "$1,200"]
+                    ]},
+                    { name: "Legal", total: "$2K-$3.5K", items: [
+                        ["Incorporacion SAC Peru", "$1,500-$2,500"],
+                        ["Consentimiento GPS laboral", "$500-$1,000"]
+                    ]},
+                    { name: "Marketing", total: "$500-$1K", items: [
+                        ["Landing page + dominio", "$200"],
+                        ["Google Ads test 'gestion flotas'", "$200-$500/mo"],
+                        ["Visitas a empresas logisticas", "$100-$300"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 2: Growth",
+                period: "Meses 4-8",
+                total: "$60K-110K",
+                burn: "$15,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$3K-$6K", items: [
+                        ["EC2 cluster (API + WebSocket real-time)", "$120/mo"],
+                        ["RDS PostgreSQL + PostGIS Multi-AZ", "$80/mo"],
+                        ["ElastiCache Redis cluster", "$50/mo"],
+                        ["Kinesis Data Streams (telemetry)", "$30/mo"],
+                        ["S3 + CloudFront + monitoring", "$40/mo"]
+                    ]},
+                    { name: "Maps y APIs (200 vehiculos)", total: "$3K-$6K", items: [
+                        ["Google Directions API (50K req/mo)", "$250/mo"],
+                        ["Google Distance Matrix (100K elem/mo)", "$500/mo"],
+                        ["Geocoding API", "$25/mo"],
+                        ["OR-Tools optimization (self-hosted)", "$0 (compute in EC2)"],
+                        ["Fuel price API", "$20/mo"]
+                    ]},
+                    { name: "Hardware IoT (200 vehiculos)", total: "$8K-$14K", items: [
+                        ["GPS trackers bulk ($30-40/u x 180)", "$5,400-$7,200"],
+                        ["IoT SIM cards ($3-5/mo/device)", "$600-$1,000/mo"],
+                        ["Instalacion + logistica", "$2,700"],
+                        ["Reemplazos + soporte (5%)", "$400-$700"]
+                    ]},
+                    { name: "Desarrollo", total: "$35K-$55K", items: [
+                        ["Full-Stack Sr", "$5,000/mo x 5m = $25,000"],
+                        ["Mobile Dev React Native", "$3,500/mo x 5m = $17,500"],
+                        ["GIS/Geospatial Specialist (contract)", "$60/hr x 80hrs = $4,800"],
+                        ["IoT Engineer (contract)", "$50/hr x 60hrs = $3,000"],
+                        ["QA (part-time)", "$1,500/mo x 3m = $4,500"]
+                    ]},
+                    { name: "Legal", total: "$3K-$5K", items: [
+                        ["Regulacion transporte/logistica", "$1,500"],
+                        ["Contratos B2B enterprise", "$1,000"],
+                        ["Compliance datos GPS laboral", "$1,000"],
+                        ["Contabilidad", "$150/mo x 5m = $750"]
+                    ]},
+                    { name: "Marketing", total: "$5K-$12K", items: [
+                        ["Google Ads 'flota GPS tracking'", "$800/mo"],
+                        ["LinkedIn Ads logistics", "$500/mo"],
+                        ["Expo logistica Lima/Bogota", "$2,000-$3,000"],
+                        ["Sales rep (part-time)", "$1,500/mo"],
+                        ["Demo fleet setup", "$500"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 3: Expansion",
+                period: "Meses 9-16",
+                total: "$180K-350K",
+                burn: "$28,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$15K-$25K", items: [
+                        ["EKS cluster 3-5 nodos", "$800/mo"],
+                        ["RDS r6g.large Multi-AZ + replicas", "$500/mo"],
+                        ["ElastiCache r6g.large + Kinesis", "$400/mo"],
+                        ["S3 + CDN + WAF + monitoring", "$200/mo"],
+                        ["IoT Core / MQTT broker", "$100/mo"]
+                    ]},
+                    { name: "Maps APIs (2K vehiculos)", total: "$18K-$30K", items: [
+                        ["Google Directions API high volume", "$1,000/mo"],
+                        ["Distance Matrix API", "$800/mo"],
+                        ["HERE Maps Fleet (enterprise)", "$500/mo"],
+                        ["Custom route optimization engine", "$0 (self-hosted)"]
+                    ]},
+                    { name: "Hardware IoT (2K vehiculos)", total: "$50K-$80K", items: [
+                        ["GPS trackers bulk ($25-35/u x 1800)", "$45,000-$63,000"],
+                        ["IoT SIMs ($2-3/mo/device)", "$4,000-$6,000/mo"],
+                        ["Instalacion + soporte + reemplazos", "$5,000-$8,000"]
+                    ]},
+                    { name: "Desarrollo", total: "$180K-$250K", items: [
+                        ["Tech Lead + Sr Devs x2", "$14,000/mo x 8m = $112,000"],
+                        ["Mobile Dev + Backend x2", "$10,000/mo x 8m = $80,000"],
+                        ["GIS Specialist + IoT Engineer", "$7,000/mo x 8m = $56,000"],
+                        ["DevOps/SRE + QA", "$5,000/mo x 8m = $40,000"]
+                    ]},
+                    { name: "Legal Multi-Pais", total: "$15K-$25K", items: [
+                        ["Incorporacion Colombia + Mexico", "$6,000"],
+                        ["Regulacion transporte multi-pais", "$4,000"],
+                        ["SOC 2 prep", "$10,000"],
+                        ["IP / patentes algoritmo rutas", "$5,000"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$40K-$60K", items: [
+                        ["Sales team (2 reps)", "$3,000/mo x 2 x 8m = $48,000"],
+                        ["Google + LinkedIn Ads", "$2,000/mo x 8m = $16,000"],
+                        ["Ferias logistica LatAm (3)", "$9,000-$15,000"],
+                        ["Partnership trucking associations", "$3,000"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 4: Scale",
+                period: "Meses 17-30",
+                total: "$500K-1M",
+                burn: "$45,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$50K-$80K", items: [
+                        ["EKS prod 10-15 nodos", "$3,000/mo"],
+                        ["RDS + Redis enterprise cluster", "$1,500/mo"],
+                        ["Real-time telemetry pipeline", "$500/mo"],
+                        ["S3 + CDN + WAF + DR multi-region", "$500/mo"]
+                    ]},
+                    { name: "Maps + Optimization (10K vehiculos)", total: "$40K-$70K", items: [
+                        ["Google Maps enterprise license", "$2,500/mo"],
+                        ["HERE Fleet Telematics enterprise", "$1,000/mo"],
+                        ["Custom ML route optimization GPU", "$500/mo"]
+                    ]},
+                    { name: "Hardware IoT (10K vehiculos)", total: "$180K-$300K", items: [
+                        ["GPS trackers ($22-30/u x 8K new)", "$176K-$240K"],
+                        ["IoT SIMs bulk ($1.50-2/mo/device)", "$15K-$20K/mo"],
+                        ["Instalacion + soporte + logistics", "$20K-$40K"]
+                    ]},
+                    { name: "Equipo (~18 personas)", total: "$700K-$1M", items: [
+                        ["Engineering (8)", "$40,000/mo"],
+                        ["Product (2)", "$8,000/mo"],
+                        ["Sales (4)", "$12,000/mo"],
+                        ["Customer Success (2)", "$5,000/mo"],
+                        ["Operations (2)", "$4,000/mo"]
+                    ]},
+                    { name: "Legal y Compliance", total: "$30K-$50K", items: [
+                        ["SOC 2 Type II", "$35,000"],
+                        ["Multi-country legal", "$10,000"],
+                        ["IP portfolio", "$5,000"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$80K-$120K", items: [
+                        ["VP Sales", "$6,000/mo x 14m = $84,000"],
+                        ["Digital marketing scaled", "$2,000/mo x 14m = $28,000"],
+                        ["Trade shows (4-5/yr)", "$20,000"],
+                        ["Channel partners", "$10,000"]
+                    ]}
+                ]
+            }
+        ]
+    },
+    14: {
+        title: "OS Financiero para PYMEs LatAm",
+        grandTotal: "$1.5M-2.8M (36 meses)",
+        phases: [
+            {
+                name: "Fase 1: MVP",
+                period: "Meses 1-4",
+                total: "$30K-60K",
+                burn: "$10,000/mes",
+                categories: [
+                    { name: "Infraestructura Cloud", total: "$500-$800", items: [
+                        ["AWS EC2 t3.small (App)", "$15/mo"],
+                        ["RDS PostgreSQL db.t3.micro", "$21/mo"],
+                        ["ElastiCache Redis t3.micro", "$18/mo"],
+                        ["S3 (facturas/recibos) + monitoring", "$5/mo"]
+                    ]},
+                    { name: "Banking APIs (Open Banking)", total: "$2K-$4K", items: [
+                        ["Belvo API ($0.10-0.50/conexion)", "$500/mo min"],
+                        ["Fintoc Chile (alternativa)", "$300/mo"],
+                        ["Prometeo API (multi-pais)", "$200/mo"],
+                        ["SUNAT facturacion electronica API", "$8/mo"]
+                    ]},
+                    { name: "IA / OCR", total: "$200-$400", items: [
+                        ["AWS Textract (recibos, $1.50/1K)", "$15/mo"],
+                        ["Google Vision OCR (alt)", "$1.50/1K pages"],
+                        ["GPT-4o-mini categorizacion gastos", "$5/mo"],
+                        ["GPT-4o cash flow predictions", "$10/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$20K-$36K", items: [
+                        ["Full-Stack Sr (Peru)", "$4,500/mo x 4m = $18,000"],
+                        ["Backend Dev Mid (fintech exp)", "$3,000/mo x 4m = $12,000"],
+                        ["UI/UX Designer freelance (60hrs)", "$2,400"],
+                        ["Fintech domain consultant (30hrs)", "$2,250"]
+                    ]},
+                    { name: "Legal y Compliance", total: "$4K-$7K", items: [
+                        ["Incorporacion SAC Peru", "$2,500"],
+                        ["Evaluacion regulatoria fintech", "$1,500-$2,500"],
+                        ["LPDP compliance datos financieros", "$800-$1,200"],
+                        ["Terms + Privacy Policy", "$700-$1,000"]
+                    ]},
+                    { name: "Marketing", total: "$800-$1.5K", items: [
+                        ["Google Ads 'contabilidad PYME'", "$300/mo"],
+                        ["Landing page + contenido", "$200"],
+                        ["Google Workspace", "$22/mo"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 2: Growth",
+                period: "Meses 5-10",
+                total: "$100K-170K",
+                burn: "$22,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$2.5K-$4K", items: [
+                        ["EC2 t3.medium + Worker + Staging", "$62/mo"],
+                        ["RDS t3.small Multi-AZ + replica", "$65/mo"],
+                        ["ElastiCache t3.small", "$25/mo"],
+                        ["S3 + CDN + WAF + CloudWatch", "$50/mo"]
+                    ]},
+                    { name: "Banking + Billing APIs", total: "$6K-$12K", items: [
+                        ["Belvo API scaled (500+ conexiones)", "$800/mo"],
+                        ["Stripe Billing (subscriptions)", "2.9% + $0.30/tx"],
+                        ["MercadoPago Peru", "3.99% + S/1.00/tx"],
+                        ["SUNAT/SAT facturacion providers", "$50/mo"],
+                        ["Lago/Chargebee billing alt", "$250/mo"]
+                    ]},
+                    { name: "IA / OCR escalado", total: "$800-$1.5K", items: [
+                        ["AWS Textract (5K pages)", "$50/mo"],
+                        ["GPT-4o analisis financiero", "$40/mo"],
+                        ["GPT-4o-mini clasificacion masiva", "$8/mo"],
+                        ["Embeddings + RAG", "$5/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$70K-$110K", items: [
+                        ["Full-Stack Sr", "$5,000/mo x 6m = $30,000"],
+                        ["Backend Dev Sr (fintech)", "$4,500/mo x 6m = $27,000"],
+                        ["Frontend Dev Mid", "$3,000/mo x 6m = $18,000"],
+                        ["Mobile Dev React Native", "$3,500/mo x 6m = $21,000"],
+                        ["QA Engineer", "$2,000/mo x 6m = $12,000"],
+                        ["Security audit", "$4,000"]
+                    ]},
+                    { name: "Legal y Compliance", total: "$8K-$15K", items: [
+                        ["Licencias fintech Peru (SBS eval)", "$3,000-$5,000"],
+                        ["SOC 2 readiness assessment", "$5,000"],
+                        ["Penetration testing", "$3,000-$5,000"],
+                        ["Contabilidad + legal ongoing", "$300/mo x 6m"]
+                    ]},
+                    { name: "Marketing", total: "$10K-$20K", items: [
+                        ["Google Ads 'facturacion' 'contabilidad'", "$1,500/mo"],
+                        ["LinkedIn Ads B2B CFOs/contadores", "$800/mo"],
+                        ["Content + SEO", "$500/mo"],
+                        ["Partnership contadores", "$500/mo"],
+                        ["Sales hire (part-time)", "$1,500/mo"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 3: Expansion",
+                period: "Meses 11-19",
+                total: "$400K-700K",
+                burn: "$55,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$15K-$25K", items: [
+                        ["EKS cluster 4-6 nodos", "$1,000/mo"],
+                        ["RDS r6g.large Multi-AZ + replicas", "$600/mo"],
+                        ["ElastiCache r6g.large + SQS", "$400/mo"],
+                        ["S3 1TB + CDN + WAF + monitoring", "$200/mo"]
+                    ]},
+                    { name: "Banking APIs Multi-Pais", total: "$20K-$35K", items: [
+                        ["Belvo enterprise (multi-pais)", "$1,500/mo"],
+                        ["Plaid LatAm expansion", "$500/mo"],
+                        ["Facturacion electronica 4 paises", "$200/mo"],
+                        ["FX rates + payment processors", "$100/mo"]
+                    ]},
+                    { name: "IA / ML", total: "$5K-$10K", items: [
+                        ["AWS Textract high volume", "$200/mo"],
+                        ["GPT-4o + Claude financial analysis", "$250/mo"],
+                        ["Custom ML cash flow models", "$150/mo (compute)"],
+                        ["Fine-tuned categorization", "$50/mo"]
+                    ]},
+                    { name: "Desarrollo", total: "$280K-$400K", items: [
+                        ["Tech Lead + Sr Devs x3", "$17,000/mo x 9m = $153,000"],
+                        ["Mid Devs x3 (Back/Front/Mobile)", "$9,000/mo x 9m = $81,000"],
+                        ["DevOps + QA + Data Engineer", "$8,500/mo x 9m = $76,500"],
+                        ["Security audits x2", "$8,000"],
+                        ["Fintech consultants (multi-country)", "$12,000"]
+                    ]},
+                    { name: "Legal Multi-Pais", total: "$40K-$65K", items: [
+                        ["Incorporaciones Colombia/Chile/Mexico", "$9,000"],
+                        ["Licencias fintech multi-pais", "$10,000-$15,000"],
+                        ["SOC 2 Type I prep", "$15,000-$25,000"],
+                        ["PCI-DSS assessment (si card data)", "$5,000"],
+                        ["Contabilidad multi-entidad", "$500/mo x 4 x 9m = $18,000"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$80K-$140K", items: [
+                        ["Sales team (3 AE + Mgr)", "$8,000/mo x 9m = $72,000"],
+                        ["Google + LinkedIn Ads 4 paises", "$3,500/mo x 9m = $31,500"],
+                        ["Content + PR + partnerships", "$2,000/mo x 9m = $18,000"],
+                        ["Fintech conferences LatAm (3-4)", "$12,000-$20,000"]
+                    ]}
+                ]
+            },
+            {
+                name: "Fase 4: Scale",
+                period: "Meses 20-36",
+                total: "$800K-1.5M",
+                burn: "$60,000/mes",
+                categories: [
+                    { name: "Infraestructura", total: "$60K-$100K", items: [
+                        ["EKS prod 8-12 nodos", "$4,000/mo"],
+                        ["RDS r6g.xlarge Multi-AZ + DR", "$1,200/mo"],
+                        ["Full monitoring stack", "$800/mo"],
+                        ["Multi-region + CDN + WAF", "$500/mo"]
+                    ]},
+                    { name: "Banking + Billing", total: "$50K-$80K", items: [
+                        ["Belvo/Plaid enterprise multi-pais", "$3,000/mo"],
+                        ["Facturacion electronica 8 paises", "$500/mo"],
+                        ["Payment processing integrations", "$200/mo"]
+                    ]},
+                    { name: "IA / ML", total: "$20K-$35K", items: [
+                        ["OCR high volume", "$500/mo"],
+                        ["LLM financial analysis suite", "$600/mo"],
+                        ["Custom ML models (GPU)", "$400/mo"]
+                    ]},
+                    { name: "Equipo (~20 personas)", total: "$900K-$1.3M", items: [
+                        ["Engineering (10)", "$48,000/mo"],
+                        ["Product (2)", "$9,000/mo"],
+                        ["Sales & BD (4)", "$14,000/mo"],
+                        ["Customer Success (2)", "$5,000/mo"],
+                        ["Finance/Ops (2)", "$4,000/mo"]
+                    ]},
+                    { name: "Legal", total: "$60K-$100K", items: [
+                        ["SOC 2 Type II", "$40,000"],
+                        ["Multi-country fintech licenses", "$15,000"],
+                        ["Legal retainer + IP", "$20,000"],
+                        ["Contabilidad 6+ entidades", "$30,000"]
+                    ]},
+                    { name: "Marketing y Ventas", total: "$120K-$200K", items: [
+                        ["VP Sales + expanded team", "$10,000/mo x 16m"],
+                        ["Digital marketing scaled", "$4,000/mo x 16m"],
+                        ["Conferences + partnerships", "$30,000"],
+                        ["Customer events + webinars", "$15,000"]
+                    ]}
+                ]
+            }
+        ]
+    }
+};
+
 // ==================== DATA ====================
 const IDEAS = [
     {
