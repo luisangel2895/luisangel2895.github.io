@@ -3095,6 +3095,35 @@ const TEAMS = {
         keyLesson: "Crehana levanto $95M pero se disperso en todo HR. Platzi es B2C con $15M ARR. La oportunidad es B2B especializado en skills + credenciales a precio LatAm mid-market. El free assessment genera pipeline sin costo de acquisition."
     },
     24: { // TalentLatAm
+        comparable: "Mercor: 2 fundadores Stanford, $10B val en 3 anos con 30% take rate. BairesDev: bootstrapped a $800M rev, 4,000+ engineers. Toptal: $1.4M seed → $167M rev.",
+        members: [
+            {
+                role: "Fundador Tecnico / CEO",
+                icon: "👨‍💻",
+                type: "tu",
+                salary: "S/ 3,000-5,000",
+                tasks: [
+                    "Construir plataforma matching: perfil candidato, assessment IA, dashboard empresa",
+                    "Sourcing manual inicial: LinkedIn, comunidades dev LatAm, referrals",
+                    "Vetting manual primeros 50 candidatos: entrevistas, coding tests, ingles",
+                    "Outbound a VPs Engineering USA via LinkedIn (20-30 msgs/dia)",
+                    "Concierge placement: matching manual, seguimiento, cobro"
+                ]
+            }
+        ],
+        stages: [
+            { name: "Concierge", time: "Sem 1-8", focus: "Sourcing manual, vetting con GPT-4, primeros 3-5 placements manuales" },
+            { name: "Plataforma", time: "Sem 9-16", focus: "Dashboard empresa + candidato, AI assessment automatizado, matching algorithm" },
+            { name: "Revenue", time: "Mes 4-8", focus: "10-20 placements, 15-20% take rate, $3K-8K/placement/mes recurring" },
+            { name: "Scale", time: "Mes 8-15", focus: "50+ placements activos, contratar recruiter + sales. $30K+ MRR" }
+        ],
+        hires: [
+            { num: 2, role: "Recruiter/Sourcer", trigger: "20+ placements o $15K MRR", cost: "S/ 3,000-4,500" },
+            { num: 3, role: "Sales/Account Manager", trigger: "30+ placements o $25K MRR", cost: "S/ 4,000-6,000" },
+            { num: 4, role: "Junior Developer", trigger: "50+ placements", cost: "S/ 3,500-5,000" }
+        ],
+        monthlyBurn: "$1,200-2,500",
+        burnPEN: "S/ 4,500-9,500",
         hiring: [
             { role: "Solo Fundador (Full-stack + BD)", when: "Mes 1", why: "Concierge MVP: sourcing manual + vetting + plataforma basica + ventas" },
             { role: "Recruiter/Sourcer", when: "Mes 10-12", why: "Escalar supply side. Sourcing y vetting de candidatos LatAm" },
