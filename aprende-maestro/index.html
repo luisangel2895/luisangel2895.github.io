@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Maestro | Plan de Negocio Digital para Capacitacion Docente</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #050a18;
+            --bg-secondary: #0c1528;
+            --bg-card: #111d38;
+            --bg-card-hover: #162545;
+            --accent-1: #2563eb;
+            --accent-2: #f59e0b;
+            --accent-3: #10b981;
+            --accent-4: #ef4444;
+            --accent-5: #8b5cf6;
+            --accent-6: #ec4899;
+            --accent-7: #06b6d4;
+            --accent-8: #f97316;
+            --text-primary: #e8ecf4;
+            --text-secondary: #94a3c0;
+            --text-muted: #5b6b8a;
+            --border: #1e2d4a;
+            --gradient-blue: linear-gradient(135deg, #2563eb, #06b6d4);
+            --gradient-gold: linear-gradient(135deg, #f59e0b, #f97316);
+            --gradient-green: linear-gradient(135deg, #10b981, #06b6d4);
+            --gradient-purple: linear-gradient(135deg, #8b5cf6, #ec4899);
+            --gradient-red: linear-gradient(135deg, #ef4444, #f97316);
+            --gradient-cyan: linear-gradient(135deg, #06b6d4, #2563eb);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-1); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(ellipse at 30% 20%, rgba(37,99,235,0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(245,158,11,0.08) 0%, transparent 50%),
+                        var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(37,99,235,0.08), transparent 70%);
+            top: -300px;
+            right: -300px;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(245,158,11,0.06), transparent 70%);
+            bottom: -200px;
+            left: -200px;
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.3);
+            color: var(--accent-2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.2); }
+            50% { box-shadow: 0 0 20px 5px rgba(245,158,11,0.1); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+            font-weight: 800;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.2vw, 1.5rem);
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .stats-row {
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .stat-item { text-align: center; }
+
+        .hero .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 1;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-12px); }
+        }
+
+        .scroll-indicator svg { width: 28px; height: 28px; fill: var(--text-muted); }
+
+        /* Nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(5,10,24,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0.7rem 1.5rem;
+            display: flex;
+            gap: 0.3rem;
+            overflow-x: auto;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .nav a:hover, .nav a.active {
+            background: var(--bg-card);
+            color: var(--accent-2);
+            border-color: rgba(245,158,11,0.2);
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .gradient-text-blue { background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text-gold { background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text-green { background: var(--gradient-green); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text-purple { background: var(--gradient-purple); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text-red { background: var(--gradient-red); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text-cyan { background: var(--gradient-cyan); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-blue { background: rgba(37,99,235,0.15); color: #60a5fa; }
+        .tag-gold { background: rgba(245,158,11,0.15); color: #fbbf24; }
+        .tag-green { background: rgba(16,185,129,0.15); color: #34d399; }
+        .tag-red { background: rgba(239,68,68,0.15); color: #f87171; }
+        .tag-purple { background: rgba(139,92,246,0.15); color: #a78bfa; }
+        .tag-cyan { background: rgba(6,182,212,0.15); color: #22d3ee; }
+
+        /* Market Grid */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .market-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .market-card:hover {
+            border-color: rgba(37,99,235,0.3);
+            transform: translateY(-3px);
+        }
+
+        .market-number { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.3rem; }
+        .market-label { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .market-detail { font-size: 0.78rem; color: var(--text-muted); }
+
+        /* Ideas */
+        .idea-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            margin-bottom: 2rem;
+        }
+
+        .idea-card:hover {
+            border-color: rgba(37,99,235,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .idea-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+
+        .idea-card.border-gold::before { background: var(--gradient-gold); }
+        .idea-card.border-blue::before { background: var(--gradient-blue); }
+        .idea-card.border-green::before { background: var(--gradient-green); }
+        .idea-card.border-purple::before { background: var(--gradient-purple); }
+        .idea-card.border-red::before { background: var(--gradient-red); }
+        .idea-card.border-cyan::before { background: var(--gradient-cyan); }
+
+        .idea-rank {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 5rem;
+            font-weight: 900;
+            opacity: 0.06;
+            line-height: 1;
+        }
+
+        .idea-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .idea-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .idea-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .idea-meta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+        .idea-body { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+        .idea-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .product-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-name { font-size: 0.85rem; color: var(--text-secondary); }
+        .product-price { font-weight: 700; font-size: 0.9rem; color: var(--accent-2); }
+
+        .idea-projection {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .projection-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .projection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .projection-item { text-align: center; }
+        .projection-year { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+        .projection-value { font-size: 1.3rem; font-weight: 800; }
+        .projection-detail { font-size: 0.75rem; color: var(--text-muted); }
+
+        /* Software features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature-item {
+            background: rgba(6,182,212,0.05);
+            border: 1px solid rgba(6,182,212,0.15);
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .feature-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text h5 { font-size: 0.9rem; margin-bottom: 0.2rem; }
+        .feature-text p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Tech stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(139,92,246,0.1);
+            border: 1px solid rgba(139,92,246,0.2);
+            color: #a78bfa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 1.5rem 0;
+        }
+
+        table { width: 100%; border-collapse: collapse; }
+        thead { background: rgba(37,99,235,0.08); }
+
+        th {
+            padding: 0.9rem 1.2rem;
+            text-align: left;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 0.85rem 1.2rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(30,45,74,0.5);
+        }
+
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+        .escala-highlight { background: rgba(245,158,11,0.08) !important; }
+
+        /* Calendar */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .calendar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .calendar-card:hover { border-color: rgba(245,158,11,0.3); }
+
+        .calendar-header {
+            padding: 1.2rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .calendar-card:nth-child(1) .calendar-header { background: rgba(245,158,11,0.08); border-bottom: 1px solid rgba(245,158,11,0.15); }
+        .calendar-card:nth-child(2) .calendar-header { background: rgba(37,99,235,0.08); border-bottom: 1px solid rgba(37,99,235,0.15); }
+        .calendar-card:nth-child(3) .calendar-header { background: rgba(139,92,246,0.08); border-bottom: 1px solid rgba(139,92,246,0.15); }
+
+        .calendar-body { padding: 1.2rem 1.5rem; }
+
+        .calendar-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(30,45,74,0.4);
+        }
+
+        .calendar-item:last-child { border-bottom: none; }
+        .calendar-event { font-size: 0.85rem; color: var(--text-secondary); }
+
+        .calendar-date {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--accent-2);
+            white-space: nowrap;
+        }
+
+        .calendar-date.urgent {
+            color: var(--accent-4);
+            animation: pulse-text 1.5s infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Ventajas */
+        .ventajas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ventaja-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .ventaja-card:hover { transform: translateY(-4px); border-color: rgba(245,158,11,0.3); }
+
+        .ventaja-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            background: rgba(245,158,11,0.1);
+        }
+
+        .ventaja-card h4 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+        .ventaja-card p { font-size: 0.85rem; color: var(--text-secondary); }
+
+        /* Social */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .social-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .social-card:hover { transform: translateY(-3px); border-color: rgba(37,99,235,0.3); }
+
+        .social-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+
+        .social-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .social-name { font-size: 1.15rem; font-weight: 700; }
+        .social-priority { font-size: 0.75rem; color: var(--text-muted); }
+
+        .social-content { list-style: none; }
+
+        .social-content li {
+            padding: 0.4rem 0;
+            padding-left: 1.3rem;
+            position: relative;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .social-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent-2);
+        }
+
+        /* Funnel */
+        .funnel-container { max-width: 700px; margin: 0 auto; }
+
+        .funnel-step {
+            position: relative;
+            padding: 1.5rem 2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            transition: all 0.3s;
+        }
+
+        .funnel-step:hover { transform: scale(1.02); }
+
+        .funnel-step::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 12px;
+            background: var(--border);
+        }
+
+        .funnel-step:last-child::after { display: none; }
+
+        .funnel-step:nth-child(1) { border-left: 3px solid #60a5fa; }
+        .funnel-step:nth-child(2) { border-left: 3px solid #fbbf24; margin-left: 2%; margin-right: 2%; }
+        .funnel-step:nth-child(3) { border-left: 3px solid #34d399; margin-left: 4%; margin-right: 4%; }
+        .funnel-step:nth-child(4) { border-left: 3px solid #a78bfa; margin-left: 6%; margin-right: 6%; }
+        .funnel-step:nth-child(5) { border-left: 3px solid #f97316; margin-left: 8%; margin-right: 8%; }
+
+        .funnel-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.3rem; }
+        .funnel-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem; }
+        .funnel-desc { font-size: 0.85rem; color: var(--text-secondary); }
+
+        /* Escalera */
+        .escalera { max-width: 600px; margin: 0 auto; }
+
+        .escalera-step {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .escalera-step:hover { transform: translateX(8px); border-color: rgba(245,158,11,0.3); }
+
+        .escalera-price { font-size: 1.1rem; font-weight: 800; min-width: 110px; text-align: center; }
+        .escalera-info h4 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+        .escalera-info p { font-size: 0.8rem; color: var(--text-muted); }
+        .escalera-arrow { text-align: center; color: var(--text-muted); font-size: 1.2rem; margin: 0.2rem 0; }
+
+        /* Competencia */
+        .competencia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .comp-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .comp-card:hover { border-color: rgba(37,99,235,0.3); }
+        .comp-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem; }
+        .comp-type { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.8rem; }
+        .comp-price { font-weight: 700; color: var(--accent-2); margin-bottom: 0.5rem; }
+        .comp-detail { font-size: 0.82rem; color: var(--text-secondary); }
+
+        /* Urgency banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(245,158,11,0.15));
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-red); }
+        .urgency-banner h3 { font-size: 1.6rem; margin-bottom: 1rem; color: #f87171; }
+        .urgency-banner p { color: var(--text-secondary); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Charts */
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chart-container h4 { text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Roadmap */
+        .roadmap { position: relative; padding-left: 3rem; }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-4), var(--accent-2), var(--accent-3), var(--accent-5));
+        }
+
+        .roadmap-phase { position: relative; margin-bottom: 3rem; }
+
+        .roadmap-phase::before {
+            content: '';
+            position: absolute;
+            left: -2.55rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+
+        .roadmap-phase:nth-child(1)::before { border-color: var(--accent-4); background: rgba(239,68,68,0.3); }
+        .roadmap-phase:nth-child(2)::before { border-color: var(--accent-2); background: rgba(245,158,11,0.3); }
+        .roadmap-phase:nth-child(3)::before { border-color: var(--accent-3); background: rgba(16,185,129,0.3); }
+        .roadmap-phase:nth-child(4)::before { border-color: var(--accent-5); background: rgba(139,92,246,0.3); }
+        .roadmap-phase:nth-child(5)::before { border-color: var(--accent-7); background: rgba(6,182,212,0.3); }
+
+        .phase-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .phase-title { font-size: 1.3rem; font-weight: 700; }
+
+        .phase-date {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.8rem;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-muted);
+        }
+
+        .phase-tasks {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+        }
+
+        .phase-task {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(30,45,74,0.4);
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .phase-task:last-child { border-bottom: none; }
+
+        .task-check {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Action */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .action-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+        .action-card:nth-child(1)::before { background: var(--gradient-red); }
+        .action-card:nth-child(2)::before { background: var(--gradient-gold); }
+        .action-card:nth-child(3)::before { background: var(--gradient-green); }
+
+        .action-day { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
+        .action-card:nth-child(1) .action-day { color: #f87171; }
+        .action-card:nth-child(2) .action-day { color: #fbbf24; }
+        .action-card:nth-child(3) .action-day { color: #34d399; }
+
+        .action-date { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+
+        .action-list { list-style: none; }
+
+        .action-list li {
+            padding: 0.45rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .action-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.65rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            border: 2px solid var(--accent-2);
+        }
+
+        /* Software section special */
+        .sw-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .sw-card:hover {
+            border-color: rgba(6,182,212,0.4);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(6,182,212,0.05);
+        }
+
+        .sw-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--gradient-cyan);
+        }
+
+        .sw-card.alt::before { background: var(--gradient-purple); }
+        .sw-card.alt:hover { border-color: rgba(139,92,246,0.4); }
+
+        .sw-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sw-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            background: rgba(6,182,212,0.12);
+        }
+
+        .sw-card.alt .sw-icon { background: rgba(139,92,246,0.12); }
+
+        .sw-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .sw-subtitle { color: var(--text-secondary); font-size: 0.95rem; }
+        .sw-body { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+        .sw-rank {
+            position: absolute;
+            top: 1rem; right: 2rem;
+            font-size: 5rem;
+            font-weight: 900;
+            opacity: 0.05;
+            line-height: 1;
+        }
+
+        /* Mockup */
+        .mockup-container {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .mockup-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mockup-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .mockup-screen {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 1rem;
+            min-height: 180px;
+        }
+
+        .mockup-sidebar {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 0.8rem;
+        }
+
+        .mockup-sidebar-item {
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+
+        .mockup-sidebar-item.active {
+            background: rgba(6,182,212,0.15);
+            color: #22d3ee;
+        }
+
+        .mockup-main {
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .mockup-stat-row {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .mockup-stat {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            padding: 0.6rem;
+            text-align: center;
+        }
+
+        .mockup-stat-value { font-size: 1.1rem; font-weight: 800; }
+        .mockup-stat-label { font-size: 0.65rem; color: var(--text-muted); }
+
+        .mockup-progress-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
+            margin: 0.5rem 0;
+            overflow: hidden;
+        }
+
+        .mockup-progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: var(--gradient-cyan);
+        }
+
+        /* Card generic */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,0.3); }
+
+        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 16px 16px 0 0; }
+        .card.blue::before { background: var(--gradient-blue); }
+        .card.gold::before { background: var(--gradient-gold); }
+        .card.green::before { background: var(--gradient-green); }
+        .card.purple::before { background: var(--gradient-purple); }
+        .card.cyan::before { background: var(--gradient-cyan); }
+
+        .card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .card p, .card li { color: var(--text-secondary); font-size: 0.92rem; }
+        .card ul { list-style: none; margin-top: 0.5rem; }
+
+        .card ul li { padding: 0.35rem 0; padding-left: 1.4rem; position: relative; }
+
+        .card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-2);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section { padding: 3rem 1.2rem; }
+            .hero .stats-row { gap: 1.5rem; }
+            .hero .stat-number { font-size: 2rem; }
+            .idea-card, .sw-card { padding: 1.5rem; }
+            .idea-products, .features-grid { grid-template-columns: 1fr; }
+            .projection-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+            .social-grid, .charts-grid { grid-template-columns: 1fr; }
+            .roadmap { padding-left: 2.5rem; }
+            .escalera-step { flex-direction: column; text-align: center; }
+            .funnel-step { margin-left: 0 !important; margin-right: 0 !important; }
+            .mockup-screen { grid-template-columns: 1fr; }
+            .mockup-sidebar { display: none; }
+            .sw-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-badge">
+        <span>&#9200;</span> URGENTE: Inscripciones Ascenso Docente abren el 16 de abril
+    </div>
+    <h1>Aprende Maestro</h1>
+    <p class="subtitle">Plan completo de negocio digital + productos de software para la plataforma de capacitacion docente #1 de Peru</p>
+    <div class="stats-row">
+        <div class="stat-item">
+            <div class="stat-number">600K</div>
+            <div class="stat-label">Docentes en Peru</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">380K</div>
+            <div class="stat-label">Compiten cada ano</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">S/76M</div>
+            <div class="stat-label">Mercado potencial</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">11%</div>
+            <div class="stat-label">Tasa de exito</div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+    </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="#mercado">Mercado</a>
+    <a href="#ideas">Top Ideas</a>
+    <a href="#software">Software</a>
+    <a href="#concursos">Concursos 2026</a>
+    <a href="#ventajas">Ventajas</a>
+    <a href="#competencia">Competencia</a>
+    <a href="#escalera">Monetizacion</a>
+    <a href="#redes">Redes Sociales</a>
+    <a href="#funnel">Embudo</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#accion">Accion YA</a>
+</nav>
+
+<!-- MERCADO -->
+<section class="section" id="mercado">
+    <div class="section-header">
+        <h2><span class="gradient-text-gold">El Mercado es Enorme</span></h2>
+        <p>El ecosistema de concursos docentes en Peru mueve millones de soles al ano y la demanda es recurrente y predecible</p>
+    </div>
+
+    <div class="market-grid">
+        <div class="market-card">
+            <div class="market-number gradient-text-blue">~600,000</div>
+            <div class="market-label">Docentes en Peru</div>
+            <div class="market-detail">68-72% sector publico, 28-32% privado</div>
+        </div>
+        <div class="market-card">
+            <div class="market-number gradient-text-gold">223,000</div>
+            <div class="market-label">Postulan a Nombramiento</div>
+            <div class="market-detail">Solo 11% logra una plaza (~25,237)</div>
+        </div>
+        <div class="market-card">
+            <div class="market-number gradient-text-green">135,000</div>
+            <div class="market-label">Postulan a Ascenso 2026</div>
+            <div class="market-detail">Inscripciones: 16 abril - 4 mayo</div>
+        </div>
+        <div class="market-card">
+            <div class="market-number gradient-text-purple">36,000</div>
+            <div class="market-label">Postulan a Directivos</div>
+            <div class="market-detail">Director, subdirector, especialista</div>
+        </div>
+        <div class="market-card">
+            <div class="market-number gradient-text-red">S/200 - S/1,500</div>
+            <div class="market-label">Gasto en preparacion</div>
+            <div class="market-detail">Por docente, por ciclo de concurso</div>
+        </div>
+        <div class="market-card">
+            <div class="market-number gradient-text-gold">S/23M - S/76M</div>
+            <div class="market-label">Mercado total anual</div>
+            <div class="market-detail">USD 6-20 millones aprox.</div>
+        </div>
+    </div>
+
+    <div class="charts-grid" style="margin-top: 2rem;">
+        <div class="chart-container">
+            <h4>Postulantes por Concurso (miles)</h4>
+            <canvas id="chartConcursos"></canvas>
+        </div>
+        <div class="chart-container">
+            <h4>Distribucion del Mercado</h4>
+            <canvas id="chartMercado"></canvas>
+        </div>
+    </div>
+</section>
+
+<!-- TOP IDEAS DE NEGOCIO -->
+<section class="section" id="ideas">
+    <div class="section-header">
+        <h2><span class="gradient-text-blue">Ideas de Negocio: Contenido + Marca</span></h2>
+        <p>El core del negocio: la marca personal, los cursos y la comunidad de Aprende Maestro</p>
+    </div>
+
+    <!-- IDEA 1 -->
+    <div class="idea-card border-gold">
+        <div class="idea-rank">#1</div>
+        <div class="idea-header">
+            <div class="idea-icon" style="background: rgba(245,158,11,0.15);">&#127891;</div>
+            <div>
+                <div class="idea-title">Plataforma de Preparacion para Concursos Docentes</div>
+                <div class="idea-meta">
+                    <span class="tag tag-gold">CORE DEL NEGOCIO</span>
+                    <span class="tag tag-green">Inversion: S/ 0-300</span>
+                    <span class="tag tag-red">Empezar HOY</span>
+                </div>
+            </div>
+        </div>
+        <div class="idea-body">
+            Aprende Maestro prepara docentes para Nombramiento (~223K postulantes), Ascenso (~135K) y Directivos (~36K). Modelo creator economy: contenido gratuito en redes que construye audiencia + cursos de pago + membresia con ingreso recurrente. Mama es la cara de la marca, con credibilidad real como subdirectora y capacitadora.
+        </div>
+        <div class="idea-products">
+            <div class="product-item"><span class="product-name">Simulacros gratuitos (redes)</span><span class="product-price">S/ 0</span></div>
+            <div class="product-item"><span class="product-name">Pack simulacros premium</span><span class="product-price">S/ 29.90</span></div>
+            <div class="product-item"><span class="product-name">Guias de estudio por tema</span><span class="product-price">S/ 19.90</span></div>
+            <div class="product-item"><span class="product-name">Curso completo grabado</span><span class="product-price">S/ 299-499</span></div>
+            <div class="product-item"><span class="product-name">Membresia mensual</span><span class="product-price">S/ 49/mes</span></div>
+            <div class="product-item"><span class="product-name">Intensivo pre-examen</span><span class="product-price">S/ 499-999</span></div>
+        </div>
+        <div class="idea-projection">
+            <div class="projection-title">Proyeccion de ingresos (solo cursos + membresia)</div>
+            <div class="projection-grid">
+                <div class="projection-item">
+                    <div class="projection-year">Ano 1</div>
+                    <div class="projection-value gradient-text-blue">S/ 75K</div>
+                    <div class="projection-detail">~S/ 6,200/mes</div>
+                </div>
+                <div class="projection-item">
+                    <div class="projection-year">Ano 2</div>
+                    <div class="projection-value gradient-text-gold">S/ 280K</div>
+                    <div class="projection-detail">~S/ 23,000/mes</div>
+                </div>
+                <div class="projection-item">
+                    <div class="projection-year">Ano 3+</div>
+                    <div class="projection-value gradient-text-green">S/ 650K</div>
+                    <div class="projection-detail">~S/ 54,000/mes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IDEA 2 -->
+    <div class="idea-card border-blue">
+        <div class="idea-rank">#2</div>
+        <div class="idea-header">
+            <div class="idea-icon" style="background: rgba(37,99,235,0.15);">&#9654;&#65039;</div>
+            <div>
+                <div class="idea-title">YouTube + TikTok: El Motor de Crecimiento</div>
+                <div class="idea-meta">
+                    <span class="tag tag-blue">PRIORIDAD ALTA</span>
+                    <span class="tag tag-green">Inversion: S/ 0</span>
+                </div>
+            </div>
+        </div>
+        <div class="idea-body">
+            Reactivar el canal de YouTube + crear TikTok. Es el motor que alimenta todo lo demas. YouTube genera SEO (los docentes buscan "simulacro ascenso docente 2026"), TikTok genera viralidad. Ambos dirigen trafico a cursos, membresia y la plataforma.
+        </div>
+        <div class="idea-products">
+            <div class="product-item"><span class="product-name">AdSense (10K subs)</span><span class="product-price">S/ 200-500/mes</span></div>
+            <div class="product-item"><span class="product-name">AdSense (50K+ subs)</span><span class="product-price">S/ 1K-5K/mes</span></div>
+            <div class="product-item"><span class="product-name">Sponsors/afiliados</span><span class="product-price">S/ 2K-4K/mes</span></div>
+            <div class="product-item"><span class="product-name">Direccion a cursos pagos</span><span class="product-price">Multiplicador</span></div>
+        </div>
+    </div>
+
+    <!-- IDEA 3 -->
+    <div class="idea-card border-green">
+        <div class="idea-rank">#3</div>
+        <div class="idea-header">
+            <div class="idea-icon" style="background: rgba(16,185,129,0.15);">&#128101;</div>
+            <div>
+                <div class="idea-title">Comunidad de Pago "Club Aprende Maestro"</div>
+                <div class="idea-meta">
+                    <span class="tag tag-green">INGRESO RECURRENTE</span>
+                    <span class="tag tag-green">Inversion: S/ 0</span>
+                </div>
+            </div>
+        </div>
+        <div class="idea-body">
+            Membresia mensual: simulacros semanales exclusivos, clases en vivo, material actualizado, grupo de estudio y resolucion de dudas directa. Los docentes ya estan acostumbrados a grupos de estudio. Casi nadie ofrece una comunidad de pago estructurada en este nicho.
+        </div>
+        <div class="idea-projection">
+            <div class="projection-title">Proyeccion de miembros</div>
+            <div class="projection-grid">
+                <div class="projection-item"><div class="projection-year">Mes 3</div><div class="projection-value gradient-text-blue">50</div><div class="projection-detail">S/ 2,450/mes</div></div>
+                <div class="projection-item"><div class="projection-year">Ano 1</div><div class="projection-value gradient-text-gold">200</div><div class="projection-detail">S/ 9,800/mes</div></div>
+                <div class="projection-item"><div class="projection-year">Ano 2</div><div class="projection-value gradient-text-green">500</div><div class="projection-detail">S/ 24,500/mes</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IDEA 4 -->
+    <div class="idea-card border-purple">
+        <div class="idea-rank">#4</div>
+        <div class="idea-header">
+            <div class="idea-icon" style="background: rgba(139,92,246,0.15);">&#127942;</div>
+            <div>
+                <div class="idea-title">Cursos Premium para Directivos</div>
+                <div class="idea-meta">
+                    <span class="tag tag-purple">ALTO TICKET</span>
+                    <span class="tag tag-gold">VENTAJA UNICA</span>
+                </div>
+            </div>
+        </div>
+        <div class="idea-body">
+            Sub-nicho exclusivo donde mama tiene ventaja directa: ella ES subdirectora. Preparacion para director, subdirector, especialista UGEL/DRE. ~36K postulan con mayor poder adquisitivo (escalas altas = sueldos S/ 5,600-9,800/mes). Muy poca competencia.
+        </div>
+        <div class="idea-products">
+            <div class="product-item"><span class="product-name">"De docente a director"</span><span class="product-price">S/ 599</span></div>
+            <div class="product-item"><span class="product-name">Liderazgo pedagogico</span><span class="product-price">S/ 199</span></div>
+            <div class="product-item"><span class="product-name">Mentoria grupal (8 semanas)</span><span class="product-price">S/ 999</span></div>
+            <div class="product-item"><span class="product-name">Ebook experiencia real</span><span class="product-price">S/ 29.90</span></div>
+        </div>
+    </div>
+
+    <!-- IDEA 5 -->
+    <div class="idea-card border-red">
+        <div class="idea-rank">#5</div>
+        <div class="idea-header">
+            <div class="idea-icon" style="background: rgba(239,68,68,0.15);">&#127970;</div>
+            <div>
+                <div class="idea-title">Consultoria para Instituciones Educativas</div>
+                <div class="idea-meta">
+                    <span class="tag tag-red">TICKETS ALTOS</span>
+                    <span class="tag tag-blue">OFFLINE + ONLINE</span>
+                </div>
+            </div>
+        </div>
+        <div class="idea-body">
+            Capacitacion para colegios privados, UGELes, DREs y ONGs educativas. Es lo que mama ya sabe hacer como ex-capacitadora. Tickets altos (S/ 2,000-10,000 por taller). Complementa el negocio digital y refuerza la credibilidad de la marca.
+        </div>
+        <div class="idea-products">
+            <div class="product-item"><span class="product-name">Taller presencial (4-8h)</span><span class="product-price">S/ 2K-5K</span></div>
+            <div class="product-item"><span class="product-name">Programa (4 sesiones)</span><span class="product-price">S/ 5K-10K</span></div>
+            <div class="product-item"><span class="product-name">Charla motivacional</span><span class="product-price">S/ 1.5K-3K</span></div>
+            <div class="product-item"><span class="product-name">Consultoria mensual</span><span class="product-price">S/ 1.5K-3K/mes</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- SOFTWARE IDEAS -->
+<section class="section" id="software" style="background: var(--bg-secondary);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+            <h2><span class="gradient-text-cyan">Ideas de Software</span></h2>
+            <p>Productos tecnologicos que Angel puede construir para convertir Aprende Maestro en una plataforma con foso competitivo real. Esto es lo que la competencia NO puede replicar facilmente.</p>
+        </div>
+
+        <!-- SW 1: Plataforma Web con IA -->
+        <div class="sw-card">
+            <div class="sw-rank">S1</div>
+            <div class="sw-header">
+                <div class="sw-icon">&#129302;</div>
+                <div>
+                    <div class="sw-title">Plataforma Web con IA: El "Duolingo" de Concursos Docentes</div>
+                    <div class="sw-subtitle">Web app propia con simulacros inteligentes, rutas de estudio personalizadas y analytics</div>
+                </div>
+            </div>
+            <div class="sw-body">
+                Una plataforma web completa donde los docentes se registran, hacen simulacros adaptativos impulsados por IA, reciben un plan de estudio personalizado segun sus areas debiles, y ven su progreso en tiempo real. Ningun competidor en Peru tiene esto. Grupo Geard tiene simulacros basicos; Educa Auge tiene Zoom. Nadie tiene una experiencia tipo Duolingo/Khan Academy para docentes peruanos.
+            </div>
+
+            <!-- Mockup -->
+            <div class="mockup-container">
+                <div class="mockup-bar">
+                    <div class="mockup-dot" style="background: #f87171;"></div>
+                    <div class="mockup-dot" style="background: #fbbf24;"></div>
+                    <div class="mockup-dot" style="background: #34d399;"></div>
+                    <span style="margin-left: 1rem; font-size: 0.75rem; color: var(--text-muted);">aprendemaestro.pe/dashboard</span>
+                </div>
+                <div class="mockup-screen">
+                    <div class="mockup-sidebar">
+                        <div class="mockup-sidebar-item active">&#128202; Mi Progreso</div>
+                        <div class="mockup-sidebar-item">&#128221; Simulacros</div>
+                        <div class="mockup-sidebar-item">&#128218; Cursos</div>
+                        <div class="mockup-sidebar-item">&#127942; Ranking</div>
+                        <div class="mockup-sidebar-item">&#128172; Comunidad</div>
+                        <div class="mockup-sidebar-item">&#128467;&#65039; Mi Plan de Estudio</div>
+                        <div class="mockup-sidebar-item">&#128276; Clases en Vivo</div>
+                    </div>
+                    <div class="mockup-main">
+                        <div style="font-size: 0.85rem; margin-bottom: 0.8rem; color: var(--text-muted);">Bienvenida, Profesora Maria &#128075;</div>
+                        <div class="mockup-stat-row">
+                            <div class="mockup-stat">
+                                <div class="mockup-stat-value gradient-text-cyan">78%</div>
+                                <div class="mockup-stat-label">Puntaje promedio</div>
+                            </div>
+                            <div class="mockup-stat">
+                                <div class="mockup-stat-value gradient-text-gold">23</div>
+                                <div class="mockup-stat-label">Simulacros hechos</div>
+                            </div>
+                            <div class="mockup-stat">
+                                <div class="mockup-stat-value gradient-text-green">152</div>
+                                <div class="mockup-stat-label">Dias para examen</div>
+                            </div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Conocimientos pedagogicos</div>
+                        <div class="mockup-progress-bar"><div class="mockup-progress-fill" style="width: 85%;"></div></div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">Casuistica</div>
+                        <div class="mockup-progress-bar"><div class="mockup-progress-fill" style="width: 62%;"></div></div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">Conocimientos disciplinares</div>
+                        <div class="mockup-progress-bar"><div class="mockup-progress-fill" style="width: 45%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">&#129504;</div>
+                    <div class="feature-text">
+                        <h5>Simulacros Adaptativos con IA</h5>
+                        <p>La IA ajusta la dificultad segun el nivel del docente. Identifica areas debiles y genera preguntas enfocadas.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128200;</div>
+                    <div class="feature-text">
+                        <h5>Dashboard de Progreso</h5>
+                        <p>Graficos de rendimiento, historial de simulacros, comparacion con otros usuarios, prediccion de puntaje.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128467;&#65039;</div>
+                    <div class="feature-text">
+                        <h5>Plan de Estudio Personalizado</h5>
+                        <p>La IA genera una ruta de estudio dia a dia basada en la fecha del examen y las areas debiles del docente.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#127942;</div>
+                    <div class="feature-text">
+                        <h5>Gamificacion y Rankings</h5>
+                        <p>Puntos, rachas diarias, badges, leaderboard regional/nacional. Motivacion estilo Duolingo.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128221;</div>
+                    <div class="feature-text">
+                        <h5>Banco de +5,000 Preguntas</h5>
+                        <p>Preguntas reales de examenes pasados + generadas por IA, organizadas por tema, nivel y especialidad.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128250;</div>
+                    <div class="feature-text">
+                        <h5>Video Cursos Integrados</h5>
+                        <p>Clases de mama embebidas en la plataforma con quizzes inline, notas y marcadores.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <div class="projection-title">Tech stack sugerido</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Next.js / React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Claude API / OpenAI</span>
+                    <span class="tech-tag">Stripe / MercadoPago</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Redis</span>
+                </div>
+            </div>
+
+            <div class="idea-projection" style="margin-top: 1.5rem;">
+                <div class="projection-title">Potencial de la plataforma</div>
+                <div class="projection-grid">
+                    <div class="projection-item"><div class="projection-year">1,000 usuarios</div><div class="projection-value gradient-text-cyan">S/ 49K/mes</div><div class="projection-detail">Membresia S/ 49/mes</div></div>
+                    <div class="projection-item"><div class="projection-year">5,000 usuarios</div><div class="projection-value gradient-text-gold">S/ 245K/mes</div><div class="projection-detail">Membresia S/ 49/mes</div></div>
+                    <div class="projection-item"><div class="projection-year">10,000 usuarios</div><div class="projection-value gradient-text-green">S/ 490K/mes</div><div class="projection-detail">Precio escalable</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SW 2: App Movil -->
+        <div class="sw-card alt">
+            <div class="sw-rank">S2</div>
+            <div class="sw-header">
+                <div class="sw-icon">&#128241;</div>
+                <div>
+                    <div class="sw-title">App Movil "Aprende Maestro"</div>
+                    <div class="sw-subtitle">Practica diaria en el celular con notificaciones push, flashcards y modo offline</div>
+                </div>
+            </div>
+            <div class="sw-body">
+                Los docentes peruanos usan el celular como herramienta principal. Una app movil permite practica diaria con push notifications ("Tu pregunta del dia esta lista"), flashcards con repeticion espaciada, mini-simulacros de 10 preguntas en el bus, y modo offline para zonas rurales sin internet estable. Es el complemento perfecto de la plataforma web.
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">&#128276;</div>
+                    <div class="feature-text">
+                        <h5>Pregunta del Dia</h5>
+                        <p>Push notification diaria con una pregunta de examen. Mantiene el habito y la marca presente.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#127183;</div>
+                    <div class="feature-text">
+                        <h5>Flashcards con Repeticion Espaciada</h5>
+                        <p>Sistema tipo Anki para memorizar conceptos clave. El algoritmo repite lo que mas se olvida.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#9889;</div>
+                    <div class="feature-text">
+                        <h5>Mini-Simulacros (10 preguntas)</h5>
+                        <p>Para practicar en 5-10 minutos. Ideal para tiempos muertos: bus, espera, recreo.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128268;</div>
+                    <div class="feature-text">
+                        <h5>Modo Offline</h5>
+                        <p>Descarga simulacros y flashcards para estudiar sin internet. Critico para zonas rurales.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128293;</div>
+                    <div class="feature-text">
+                        <h5>Rachas y Streaks</h5>
+                        <p>Gamificacion: "Llevas 15 dias seguidos practicando". Retiene usuarios.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128266;</div>
+                    <div class="feature-text">
+                        <h5>Audio-lecciones</h5>
+                        <p>Resumenes en audio de temas clave para escuchar mientras se trasladan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <div class="projection-title">Tech stack sugerido</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">React Native / Expo</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">SQLite (offline)</span>
+                    <span class="tech-tag">Push Notifications</span>
+                    <span class="tech-tag">App Store + Play Store</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SW 3: Bot WhatsApp con IA -->
+        <div class="sw-card">
+            <div class="sw-rank">S3</div>
+            <div class="sw-header">
+                <div class="sw-icon">&#129302;</div>
+                <div>
+                    <div class="sw-title">Bot de WhatsApp con IA: Tutor 24/7</div>
+                    <div class="sw-subtitle">Un asistente inteligente que responde dudas, envia preguntas diarias y gestiona alumnos por WhatsApp</div>
+                </div>
+            </div>
+            <div class="sw-body">
+                WhatsApp es la app #1 de los docentes peruanos. Un bot con IA puede: enviar la pregunta del dia automaticamente, explicar respuestas con detalle usando Claude/GPT, responder dudas sobre temas del examen 24/7, enviar recordatorios de clases en vivo, y hasta gestionar inscripciones y pagos. Es como tener un asistente que nunca duerme. Alto impacto, bajo costo operativo. Puede atender a miles de docentes simultaneamente.
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">&#128172;</div>
+                    <div class="feature-text">
+                        <h5>Tutor IA 24/7</h5>
+                        <p>"Explicame las rubricas de observacion de aula" - el bot responde con la voz y conocimiento de mama.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128227;</div>
+                    <div class="feature-text">
+                        <h5>Pregunta Diaria Automatica</h5>
+                        <p>Cada manana a las 7am, el bot envia una pregunta tipo examen. Respuesta inmediata con explicacion.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128176;</div>
+                    <div class="feature-text">
+                        <h5>Inscripciones y Pagos</h5>
+                        <p>"Quiero inscribirme al curso de Ascenso" - el bot maneja todo el flujo de compra via Yape/Plin.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128202;</div>
+                    <div class="feature-text">
+                        <h5>Seguimiento de Progreso</h5>
+                        <p>"Como voy?" - el bot muestra estadisticas: preguntas respondidas, puntaje promedio, ranking.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128276;</div>
+                    <div class="feature-text">
+                        <h5>Recordatorios Automaticos</h5>
+                        <p>Clases en vivo, fechas del MINEDU, deadline de inscripcion. Todo automatizado.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#127757;</div>
+                    <div class="feature-text">
+                        <h5>Escalable sin limite</h5>
+                        <p>Un bot atiende a 10,000 docentes igual que a 10. Costo marginal cercano a cero.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <div class="projection-title">Tech stack sugerido</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">WhatsApp Business API</span>
+                    <span class="tech-tag">Claude API / Anthropic</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Twilio / Meta Cloud API</span>
+                    <span class="tech-tag">Cron Jobs</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SW 4: Generador de Simulacros con IA -->
+        <div class="sw-card alt">
+            <div class="sw-rank">S4</div>
+            <div class="sw-header">
+                <div class="sw-icon">&#9889;</div>
+                <div>
+                    <div class="sw-title">Generador de Simulacros con IA</div>
+                    <div class="sw-subtitle">IA que genera examenes ilimitados por especialidad, tema y dificultad con explicaciones detalladas</div>
+                </div>
+            </div>
+            <div class="sw-body">
+                El problema de todos los competidores: tienen un banco limitado de preguntas que se repiten. Con IA, Aprende Maestro puede generar simulacros ILIMITADOS, personalizados por especialidad (Inicial, Primaria, Secundaria-Matematica, etc.), por tema (casuistica, pedagogia, CNEB), y por nivel de dificultad. Cada pregunta incluye explicacion detallada. Mama valida y curata las preguntas generadas, asegurando calidad. Es un moat tecnologico brutal.
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">&#9854;&#65039;</div>
+                    <div class="feature-text">
+                        <h5>Simulacros Ilimitados</h5>
+                        <p>La competencia tiene 200-500 preguntas. Aprende Maestro puede generar 50,000+. Imposible de copiar.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#127919;</div>
+                    <div class="feature-text">
+                        <h5>Por Especialidad</h5>
+                        <p>Genera preguntas especificas: Inicial, Primaria, Secundaria-Ciencias, Secundaria-Comunicacion, EBA, EBE, ETP...</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128218;</div>
+                    <div class="feature-text">
+                        <h5>Explicaciones Detalladas</h5>
+                        <p>Cada respuesta incluye el por que, la normativa que la respalda, y referencias al CNEB/MBDD.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128736;&#65039;</div>
+                    <div class="feature-text">
+                        <h5>Panel de Curacion</h5>
+                        <p>Mama revisa, edita y aprueba preguntas generadas. Combina IA + expertise humano.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <div class="projection-title">Tech stack sugerido</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Claude API (generacion)</span>
+                    <span class="tech-tag">RAG + Embeddings</span>
+                    <span class="tech-tag">CNEB/MBDD como contexto</span>
+                    <span class="tech-tag">Panel admin React</span>
+                    <span class="tech-tag">PostgreSQL + pgvector</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SW 5: SaaS B2B -->
+        <div class="sw-card">
+            <div class="sw-rank">S5</div>
+            <div class="sw-header">
+                <div class="sw-icon">&#127959;&#65039;</div>
+                <div>
+                    <div class="sw-title">SaaS B2B: Plataforma White-Label para Academias</div>
+                    <div class="sw-subtitle">Vender la plataforma tecnologica a otras academias y capacitadoras docentes</div>
+                </div>
+            </div>
+            <div class="sw-body">
+                Play a largo plazo: una vez que la plataforma este probada con Aprende Maestro, licenciarla a otras academias de capacitacion docente en Peru y LATAM. Cada academia paga una suscripcion mensual por usar el motor de simulacros, el LMS, y las herramientas de IA. Es el modelo que convierte Aprende Maestro de un negocio de contenido en una empresa de tecnologia. Similar a lo que Teachable/Thinkific hicieron pero verticalmente especializado en concursos docentes LATAM.
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">&#127912;</div>
+                    <div class="feature-text">
+                        <h5>White-Label</h5>
+                        <p>Cada academia pone su logo, colores y dominio. Misma tecnologia, diferente marca.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#127757;</div>
+                    <div class="feature-text">
+                        <h5>Expansion LATAM</h5>
+                        <p>Colombia, Ecuador, Mexico tienen concursos docentes similares. La plataforma se adapta por pais.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128176;</div>
+                    <div class="feature-text">
+                        <h5>Revenue Recurrente B2B</h5>
+                        <p>S/ 500-2,000/mes por academia. 50 academias = S/ 50K-100K/mes en SaaS revenue.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">&#128640;</div>
+                    <div class="feature-text">
+                        <h5>Potencial Startup</h5>
+                        <p>Si escala a LATAM, es una startup de Edtech con potencial de VC funding y crecimiento exponencial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="idea-projection" style="margin-top: 1.5rem;">
+                <div class="projection-title">Potencial B2B</div>
+                <div class="projection-grid">
+                    <div class="projection-item"><div class="projection-year">10 academias</div><div class="projection-value gradient-text-cyan">S/ 10K/mes</div><div class="projection-detail">Solo Peru</div></div>
+                    <div class="projection-item"><div class="projection-year">50 academias</div><div class="projection-value gradient-text-gold">S/ 75K/mes</div><div class="projection-detail">Peru + Colombia</div></div>
+                    <div class="projection-item"><div class="projection-year">200+ academias</div><div class="projection-value gradient-text-green">S/ 300K/mes</div><div class="projection-detail">LATAM</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orden de desarrollo -->
+        <div style="margin-top: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
+            <h3 style="margin-bottom: 1rem; text-align: center;"><span class="gradient-text-cyan">Orden de Desarrollo Recomendado</span></h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; text-align: center;">
+                <div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Fase 1 (Mes 1-2)</div>
+                    <div style="font-size: 1rem; font-weight: 700; color: #22d3ee; margin: 0.3rem 0;">Bot WhatsApp</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Rapido de hacer, alto impacto inmediato</div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; color: var(--text-muted);">&#10148;</div>
+                <div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Fase 2 (Mes 2-4)</div>
+                    <div style="font-size: 1rem; font-weight: 700; color: #a78bfa; margin: 0.3rem 0;">Generador IA</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Alimenta el bot y futura plataforma</div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; color: var(--text-muted);">&#10148;</div>
+                <div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Fase 3 (Mes 4-8)</div>
+                    <div style="font-size: 1rem; font-weight: 700; color: #fbbf24; margin: 0.3rem 0;">Plataforma Web</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">LMS completo con IA integrada</div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; color: var(--text-muted);">&#10148;</div>
+                <div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Fase 4 (Mes 8-12)</div>
+                    <div style="font-size: 1rem; font-weight: 700; color: #34d399; margin: 0.3rem 0;">App Movil</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Complemento mobile de la plataforma</div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; color: var(--text-muted);">&#10148;</div>
+                <div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Fase 5 (Ano 2+)</div>
+                    <div style="font-size: 1rem; font-weight: 700; color: #f87171; margin: 0.3rem 0;">SaaS B2B</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">White-label para academias LATAM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONCURSOS 2026 -->
+<section class="section" id="concursos">
+    <div class="section-header">
+        <h2><span class="gradient-text-gold">Calendario de Concursos 2026-2027</span></h2>
+        <p>Cada concurso es una ventana de venta. Los ciclos se repiten cada ano = demanda predecible.</p>
+    </div>
+
+    <div class="calendar-grid">
+        <div class="calendar-card">
+            <div class="calendar-header">&#128293; Ascenso Docente 2026 (CONFIRMADO)</div>
+            <div class="calendar-body">
+                <div class="calendar-item"><span class="calendar-event">Inscripciones</span><span class="calendar-date urgent">16 abr - 4 may 2026</span></div>
+                <div class="calendar-item"><span class="calendar-event">Verificacion datos</span><span class="calendar-date">5-27 mayo</span></div>
+                <div class="calendar-item"><span class="calendar-event">Confirmacion</span><span class="calendar-date">2-8 junio</span></div>
+                <div class="calendar-item"><span class="calendar-event">Publicacion locales</span><span class="calendar-date">1 sept</span></div>
+                <div class="calendar-item"><span class="calendar-event">PRUEBA NACIONAL</span><span class="calendar-date urgent">13 sept 2026</span></div>
+                <div class="calendar-item"><span class="calendar-event">Resultados</span><span class="calendar-date">24 sept</span></div>
+            </div>
+        </div>
+        <div class="calendar-card">
+            <div class="calendar-header">&#128218; Nombramiento 2026-2027 (Proyectado)</div>
+            <div class="calendar-body">
+                <div class="calendar-item"><span class="calendar-event">Convocatoria</span><span class="calendar-date">May-Ago 2026</span></div>
+                <div class="calendar-item"><span class="calendar-event">Inscripciones</span><span class="calendar-date">Jul-Ago 2026</span></div>
+                <div class="calendar-item"><span class="calendar-event">Prueba Nacional</span><span class="calendar-date">Nov-Dic 2026</span></div>
+                <div class="calendar-item"><span class="calendar-event">Etapa descentralizada</span><span class="calendar-date">Ene-Abr 2027</span></div>
+                <div class="calendar-item"><span class="calendar-event">Nombramiento</span><span class="calendar-date">Jul-Ago 2027</span></div>
+            </div>
+        </div>
+        <div class="calendar-card">
+            <div class="calendar-header">&#128188; Directivos y Otros</div>
+            <div class="calendar-body">
+                <div class="calendar-item"><span class="calendar-event">Directivos 2025-2026</span><span class="calendar-date">Feb-Mar 2026</span></div>
+                <div class="calendar-item"><span class="calendar-event">Eval. desempeno 2026</span><span class="calendar-date">Todo 2026</span></div>
+                <div class="calendar-item"><span class="calendar-event">Contratacion docente</span><span class="calendar-date">Ene-Mar 2027</span></div>
+                <div class="calendar-item"><span class="calendar-event">Directivos 2027</span><span class="calendar-date">2do sem 2026</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Escalas Magisteriales y Sueldos 2026</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Escala</th><th>Tiempo min.</th><th>Sueldo 30h</th><th>Sueldo 40h</th><th>Puede postular a</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1ra</strong></td><td>Ingreso</td><td>S/ 3,500</td><td>S/ 4,667</td><td>Ascenso</td></tr>
+                    <tr><td><strong>2da</strong></td><td>4 anos</td><td>S/ 3,850</td><td>S/ 5,134</td><td>Ascenso</td></tr>
+                    <tr class="escala-highlight"><td><strong>3ra</strong></td><td>4 anos</td><td>S/ 4,200</td><td>S/ 5,601</td><td>Ascenso + Especialista</td></tr>
+                    <tr class="escala-highlight"><td><strong>4ta</strong></td><td>4 anos</td><td>S/ 4,550</td><td>S/ 6,067</td><td>+ Director + Jefaturas</td></tr>
+                    <tr><td><strong>5ta</strong></td><td>4 anos</td><td>S/ 5,251</td><td>S/ 7,001</td><td>Todos los cargos</td></tr>
+                    <tr><td><strong>6ta</strong></td><td>4 anos</td><td>S/ 6,126</td><td>S/ 8,168</td><td>Todos los cargos</td></tr>
+                    <tr><td><strong>7ma</strong></td><td>4 anos</td><td>S/ 6,651</td><td>S/ 8,868</td><td>Todos los cargos</td></tr>
+                    <tr><td><strong>8va</strong></td><td>4 anos</td><td>S/ 7,351</td><td>S/ 9,801</td><td>Escala maxima</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- VENTAJAS -->
+<section class="section" id="ventajas" style="background: var(--bg-secondary);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+            <h2><span class="gradient-text-green">Por que Aprende Maestro gana</span></h2>
+            <p>Ventajas competitivas que la competencia no puede replicar</p>
+        </div>
+
+        <div class="ventajas-grid">
+            <div class="ventaja-card">
+                <div class="ventaja-icon">&#127979;</div>
+                <h4>Subdirectora activa</h4>
+                <p>Conoce el sistema por dentro. Los docentes confian en quien vive su misma realidad.</p>
+            </div>
+            <div class="ventaja-card">
+                <div class="ventaja-icon">&#128218;</div>
+                <h4>Ex-capacitadora docente</h4>
+                <p>Ya sabe ensenar a docentes. Tiene la pedagogia para adultos profesionales.</p>
+            </div>
+            <div class="ventaja-card">
+                <div class="ventaja-icon">&#129505;</div>
+                <h4>Pasion genuina</h4>
+                <p>Ama la educacion. Esto se nota en camara y genera conexion autentica.</p>
+            </div>
+            <div class="ventaja-card">
+                <div class="ventaja-icon">&#128187;</div>
+                <h4>Hijo developer</h4>
+                <p>Puede construir tecnologia que la competencia ni suena: IA, apps, plataformas propias.</p>
+            </div>
+            <div class="ventaja-card">
+                <div class="ventaja-icon">&#129302;</div>
+                <h4>IA como moat tecnologico</h4>
+                <p>Simulacros ilimitados, tutor 24/7, planes personalizados. Imposible de copiar sin tech.</p>
+            </div>
+            <div class="ventaja-card">
+                <div class="ventaja-icon">&#128197;</div>
+                <h4>Demanda ciclica garantizada</h4>
+                <p>Los concursos se repiten cada ano. Negocio de temporadas predecibles.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPETENCIA -->
+<section class="section" id="competencia">
+    <div class="section-header">
+        <h2><span class="gradient-text-purple">Analisis de Competencia</span></h2>
+        <p>La competencia esta fragmentada. Nadie tiene tecnologia propia + marca personal + IA.</p>
+    </div>
+
+    <div class="competencia-grid">
+        <div class="comp-card"><div class="comp-name">Grupo Geard</div><div class="comp-type">Plataforma online multi-pais</div><div class="comp-price">S/ 179 (pago unico)</div><div class="comp-detail">Simulacros basicos, multiples especialidades. Generico, sin IA, sin marca personal.</div></div>
+        <div class="comp-card"><div class="comp-name">Educa Auge</div><div class="comp-type">Academia online</div><div class="comp-price">S/ 280/mes</div><div class="comp-detail">+55K docentes. Zoom + grabados. Sin plataforma propia, sin IA, sin app.</div></div>
+        <div class="comp-card"><div class="comp-name">PeruEduca (MINEDU)</div><div class="comp-type">Oficial gratuita</div><div class="comp-price">GRATIS</div><div class="comp-detail">Cursos oficiales con certificacion. Contenido basico, UX terrible.</div></div>
+        <div class="comp-card"><div class="comp-name">ElProfeVirtual</div><div class="comp-type">Blog informativo</div><div class="comp-price">GRATIS</div><div class="comp-detail">Noticias y guias. Solo blog, sin cursos, sin simulacros interactivos.</div></div>
+        <div class="comp-card"><div class="comp-name">DocentesDelPeru</div><div class="comp-type">Blog + comunidad</div><div class="comp-price">GRATIS</div><div class="comp-detail">Examenes pasados. Sin tecnologia, sin cursos estructurados.</div></div>
+        <div class="comp-card"><div class="comp-name">Academias locales</div><div class="comp-type">Presencial</div><div class="comp-price">S/ 150-400/mes</div><div class="comp-detail">Limitadas geograficamente. Modelo analogico, no escala.</div></div>
+    </div>
+
+    <div class="urgency-banner" style="margin-top: 2.5rem;">
+        <h3>Lo que Aprende Maestro tiene y NADIE mas ofrece</h3>
+        <p style="text-align: left; max-width: 700px;">
+            &#10148; Marca personal con rostro + credibilidad real (subdirectora activa)<br>
+            &#10148; Tecnologia propia con IA (simulacros adaptativos, tutor WhatsApp 24/7)<br>
+            &#10148; App movil nativa con modo offline<br>
+            &#10148; Generador de preguntas ilimitado con IA<br>
+            &#10148; Gamificacion tipo Duolingo (rachas, rankings, badges)<br>
+            &#10148; Comunidad activa + contenido gratuito masivo en redes<br>
+            &#10148; Sub-nicho directivos con experiencia directa
+        </p>
+    </div>
+</section>
+
+<!-- ESCALERA -->
+<section class="section" id="escalera" style="background: var(--bg-secondary);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+            <h2><span class="gradient-text-gold">Escalera de Valor</span></h2>
+            <p>Desde contenido gratuito hasta SaaS B2B. Cada escalon lleva al siguiente.</p>
+        </div>
+
+        <div class="escalera">
+            <div class="escalera-step"><div class="escalera-price" style="color: #9ca3af;">GRATIS</div><div class="escalera-info"><h4>Contenido en redes + Bot WhatsApp basico</h4><p>YouTube, TikTok, Facebook + pregunta diaria gratis</p></div></div>
+            <div class="escalera-arrow">&#9660;</div>
+            <div class="escalera-step"><div class="escalera-price" style="color: #60a5fa;">S/ 9.90-29.90</div><div class="escalera-info"><h4>Simulacros premium + guias PDF</h4><p>Primer contacto de pago, bajo riesgo</p></div></div>
+            <div class="escalera-arrow">&#9660;</div>
+            <div class="escalera-step"><div class="escalera-price" style="color: #34d399;">S/ 49/mes</div><div class="escalera-info"><h4>Membresia: plataforma + simulacros IA + comunidad</h4><p>Acceso a la plataforma web, simulacros ilimitados, lives, grupo VIP</p></div></div>
+            <div class="escalera-arrow">&#9660;</div>
+            <div class="escalera-step"><div class="escalera-price" style="color: #fbbf24;">S/ 299-499</div><div class="escalera-info"><h4>Curso completo de preparacion</h4><p>Video clases + simulacros + plan personalizado por IA</p></div></div>
+            <div class="escalera-arrow">&#9660;</div>
+            <div class="escalera-step"><div class="escalera-price" style="color: #f97316;">S/ 499-999</div><div class="escalera-info"><h4>Programa intensivo + coaching grupal</h4><p>Acompanamiento directo de mama, simulacros diarios, feedback personalizado</p></div></div>
+            <div class="escalera-arrow">&#9660;</div>
+            <div class="escalera-step"><div class="escalera-price" style="color: #f87171;">S/ 2,000+</div><div class="escalera-info"><h4>Consultoria institucional + SaaS para academias</h4><p>Talleres presenciales + licencias de plataforma para terceros</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- REDES SOCIALES -->
+<section class="section" id="redes">
+    <div class="section-header">
+        <h2><span class="gradient-text-blue">Estrategia de Redes Sociales</span></h2>
+        <p>Donde estan los docentes y que contenido crear en cada plataforma</p>
+    </div>
+
+    <div class="social-grid">
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-logo" style="background: rgba(37,99,235,0.15); color: #60a5fa;">f</div>
+                <div><div class="social-name">Facebook</div><div class="social-priority">PRIORIDAD #1 - Red #1 de docentes 30-55 anos</div></div>
+            </div>
+            <ul class="social-content">
+                <li><strong>Pagina "Aprende Maestro"</strong> - noticias MINEDU, tips, motivacion</li>
+                <li><strong>Grupo "Comunidad Aprende Maestro"</strong> - interaccion y materiales gratis</li>
+                <li><strong>Lives semanales</strong> - resolver dudas, analizar temas del examen</li>
+                <li><strong>Frecuencia</strong>: 1 post diario + 1 live semanal</li>
+                <li><strong>Contenido top</strong>: Noticias antes que nadie, preguntas resueltas, memes educativos</li>
+            </ul>
+        </div>
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-logo" style="background: rgba(239,68,68,0.15); color: #f87171;">&#9654;</div>
+                <div><div class="social-name">YouTube</div><div class="social-priority">PRIORIDAD #2 - SEO a largo plazo, autoridad</div></div>
+            </div>
+            <ul class="social-content">
+                <li><strong>Clases por tema</strong> (20-40 min) - contenido evergreen</li>
+                <li><strong>Resolver examenes pasados</strong> (45-90 min) - altisima demanda</li>
+                <li><strong>Noticias MINEDU</strong> (5-10 min) - trafico inmediato</li>
+                <li><strong>Simulacros en vivo</strong> (1-2 horas) - engagement masivo</li>
+                <li><strong>Frecuencia</strong>: Minimo 2 videos/semana + 1 live</li>
+            </ul>
+        </div>
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-logo" style="background: rgba(0,0,0,0.3); color: #e8ecf4;">&#9835;</div>
+                <div><div class="social-name">TikTok</div><div class="social-priority">PRIORIDAD #3 - Viralidad, nicho poco explotado</div></div>
+            </div>
+            <ul class="social-content">
+                <li><strong>Tips rapidos</strong> (60s) - "3 errores en la casuistica"</li>
+                <li><strong>Noticias MINEDU</strong> en formato rapido</li>
+                <li><strong>Preguntas de examen</strong> - "Resuelve en 30 segundos"</li>
+                <li><strong>Humor docente</strong> - altisimo engagement</li>
+                <li><strong>Frecuencia</strong>: 1 video diario (min 5/semana)</li>
+            </ul>
+        </div>
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-logo" style="background: rgba(16,185,129,0.15); color: #34d399;">&#9742;</div>
+                <div><div class="social-name">WhatsApp</div><div class="social-priority">CANAL DE CONVERSION + BOT IA</div></div>
+            </div>
+            <ul class="social-content">
+                <li><strong>Bot IA</strong> - pregunta diaria, tutor 24/7, inscripciones automaticas</li>
+                <li><strong>Canal de difusion</strong> - noticias, recordatorios de clases</li>
+                <li><strong>Grupos VIP</strong> - para miembros de la membresia</li>
+                <li><strong>WhatsApp Business</strong> - catalogo, respuestas rapidas</li>
+            </ul>
+        </div>
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-logo" style="background: rgba(236,72,153,0.15); color: #f472b6;">&#9679;</div>
+                <div><div class="social-name">Instagram</div><div class="social-priority">COMPLEMENTARIO - Marca personal visual</div></div>
+            </div>
+            <ul class="social-content">
+                <li><strong>Reels</strong> - reutilizar contenido de TikTok</li>
+                <li><strong>Stories</strong> - dia a dia, encuestas, preguntas</li>
+                <li><strong>Carruseles</strong> - infografias de temas del examen</li>
+                <li><strong>Frecuencia</strong>: 3-4 posts/semana + stories diarias</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- EMBUDO -->
+<section class="section" id="funnel" style="background: var(--bg-secondary);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+            <h2><span class="gradient-text-green">Embudo de Conversion</span></h2>
+            <p>Como convertir seguidores en clientes usando contenido + tecnologia</p>
+        </div>
+
+        <div class="funnel-container">
+            <div class="funnel-step"><div class="funnel-label">Etapa 1: Alcance</div><div class="funnel-title">Contenido gratuito en TikTok / YouTube / Facebook</div><div class="funnel-desc">Tips, noticias, preguntas resueltas, humor docente. Llegar a miles de docentes organicamente.</div></div>
+            <div class="funnel-step"><div class="funnel-label">Etapa 2: Captura</div><div class="funnel-title">"Agrega al bot de WhatsApp y recibe pregunta diaria GRATIS"</div><div class="funnel-desc">El bot de IA captura el contacto y empieza a enviar valor automaticamente. Sin friccion.</div></div>
+            <div class="funnel-step"><div class="funnel-label">Etapa 3: Confianza</div><div class="funnel-title">Bot IA + Grupo Facebook + Lives semanales</div><div class="funnel-desc">El bot nutre al lead con preguntas diarias. Los lives demuestran expertise. El grupo genera comunidad.</div></div>
+            <div class="funnel-step"><div class="funnel-label">Etapa 4: Primera venta</div><div class="funnel-title">Simulacros premium (S/ 9.90) o acceso a plataforma trial</div><div class="funnel-desc">Primer pago pequeno. El bot puede ofrecer esto automaticamente despues de 2 semanas de engagement.</div></div>
+            <div class="funnel-step"><div class="funnel-label">Etapa 5: Producto principal</div><div class="funnel-title">Membresia plataforma (S/ 49/mes) o curso completo (S/ 299-499)</div><div class="funnel-desc">El cliente ya confia, ya pago, ya vio el valor. La plataforma con IA cierra la venta.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- YOUTUBE -->
+<section class="section" id="youtube">
+    <div class="section-header">
+        <h2><span class="gradient-text-red">Plan para YouTube</span></h2>
+        <p>Reactivar el canal y convertirlo en la fuente #1 de preparacion docente en Peru</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem;">
+        <div class="card blue">
+            <h3 style="margin-bottom: 1rem;">Primeros 10 videos</h3>
+            <ol style="list-style: none;">
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">1.</strong> "ASCENSO DOCENTE 2026: Todo lo que necesitas saber"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">2.</strong> "Los 10 temas que MAS caen en el examen"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">3.</strong> "Resuelvo simulacro de Ascenso 2026 EN VIVO"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">4.</strong> "Casuistica: Los 5 tipos de preguntas"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">5.</strong> "Conocimientos pedagogicos: Repaso completo"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">6.</strong> "CNEB 2026: Lo que DEBES saber"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">7.</strong> "Rubricas de observacion de aula EXPLICADAS"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">8.</strong> "Mi experiencia como subdirectora"</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">9.</strong> "7 errores que te hacen reprobar"</li>
+                <li style="padding: 0.5rem 0; color: var(--text-secondary); font-size: 0.88rem;"><strong style="color: var(--accent-2);">10.</strong> "Simulacro completo - 60 preguntas"</li>
+            </ol>
+        </div>
+        <div class="card gold">
+            <h3 style="margin-bottom: 1rem;">Keywords SEO con alta demanda</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <span class="tag tag-gold">nombramiento docente 2026</span>
+                <span class="tag tag-gold">ascenso docente 2026</span>
+                <span class="tag tag-gold">simulacro ascenso docente</span>
+                <span class="tag tag-blue">casuistica examen docente</span>
+                <span class="tag tag-blue">rubricas observacion aula</span>
+                <span class="tag tag-blue">examen nombramiento resuelto</span>
+                <span class="tag tag-green">conocimientos pedagogicos</span>
+                <span class="tag tag-green">escala magisterial 2026</span>
+                <span class="tag tag-green">CNEB examen docente</span>
+                <span class="tag tag-purple">concurso directivos 2026</span>
+            </div>
+            <h3 style="margin-bottom: 0.8rem; margin-top: 1.5rem;">Pasos para reactivar</h3>
+            <ul>
+                <li>Renombrar canal a "Aprende Maestro"</li>
+                <li>Foto profesional + banner con Canva</li>
+                <li>Video de reintroduccion</li>
+                <li>Minimo 2 videos/semana + 1 live</li>
+                <li>Thumbnails llamativos (texto grande, colores vivos)</li>
+                <li>Links a plataforma y WhatsApp en descripcion</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap" style="background: var(--bg-secondary);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+            <h2><span class="gradient-text-purple">Roadmap: Plan Mes a Mes</span></h2>
+            <p>De cero a plataforma tecnologica con marca establecida</p>
+        </div>
+
+        <div class="roadmap">
+            <div class="roadmap-phase">
+                <div class="phase-header">
+                    <div class="phase-title" style="color: #f87171;">FASE 1: Lanzamiento</div>
+                    <span class="phase-date">Abril - Mayo 2026</span>
+                    <span class="tag tag-red">ARRANCAR YA</span>
+                </div>
+                <div class="phase-tasks">
+                    <div class="phase-task"><div class="task-check"></div> Crear pagina y grupo de Facebook "Aprende Maestro"</div>
+                    <div class="phase-task"><div class="task-check"></div> Crear cuenta TikTok + activar WhatsApp Business</div>
+                    <div class="phase-task"><div class="task-check"></div> Reactivar canal YouTube (renombrar, banner, descripcion)</div>
+                    <div class="phase-task"><div class="task-check"></div> Video #1: "Ascenso Docente 2026: Todo lo que necesitas saber"</div>
+                    <div class="phase-task"><div class="task-check"></div> 3 TikToks sobre inscripciones del Ascenso</div>
+                    <div class="phase-task"><div class="task-check"></div> Simulacro gratuito (Google Forms) como lead magnet</div>
+                    <div class="phase-task"><div class="task-check"></div> Primer LIVE en Facebook/YouTube</div>
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Empezar desarrollo del bot de WhatsApp con IA</div>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.8rem;">Meta: 500 seguidores FB, 200 subs YT, bot WhatsApp basico funcionando</p>
+            </div>
+
+            <div class="roadmap-phase">
+                <div class="phase-header">
+                    <div class="phase-title" style="color: #fbbf24;">FASE 2: Crecimiento + Bot</div>
+                    <span class="phase-date">Junio - Agosto 2026</span>
+                    <span class="tag tag-gold">MONETIZAR + TECH</span>
+                </div>
+                <div class="phase-tasks">
+                    <div class="phase-task"><div class="task-check"></div> Lanzar simulacros premium (S/ 29.90) en Hotmart</div>
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Bot WhatsApp con IA live: pregunta diaria + tutor</div>
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Generador de simulacros con IA (motor de preguntas)</div>
+                    <div class="phase-task"><div class="task-check"></div> Lanzar curso Ascenso 2026 (S/ 299) en Hotmart</div>
+                    <div class="phase-task"><div class="task-check"></div> Lanzar membresia "Club Aprende Maestro" (S/ 49/mes)</div>
+                    <div class="phase-task"><div class="task-check"></div> Programa intensivo pre-examen Ascenso (S/ 499)</div>
+                    <div class="phase-task"><div class="task-check"></div> Lives semanales como rutina + contenido diario TikTok</div>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.8rem;">Meta: 2K FB, 1K YT, 50 miembros, bot con 500+ usuarios, primeros ingresos</p>
+            </div>
+
+            <div class="roadmap-phase">
+                <div class="phase-header">
+                    <div class="phase-title" style="color: #34d399;">FASE 3: Plataforma Web</div>
+                    <span class="phase-date">Sept - Diciembre 2026</span>
+                    <span class="tag tag-green">ESCALAR CON TECH</span>
+                </div>
+                <div class="phase-tasks">
+                    <div class="phase-task"><div class="task-check"></div> Semana intensiva pre-examen Ascenso (13 sept)</div>
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Lanzar plataforma web aprendemaestro.pe (MVP)</div>
+                    <div class="phase-task"><div class="task-check"></div> Migrar membresia de Hotmart a plataforma propia</div>
+                    <div class="phase-task"><div class="task-check"></div> Pivotar contenido a Nombramiento 2026-2027</div>
+                    <div class="phase-task"><div class="task-check"></div> Lanzar curso Nombramiento en plataforma propia</div>
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Dashboard de progreso + simulacros adaptativos con IA</div>
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Sistema de gamificacion (rachas, rankings)</div>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.8rem;">Meta: 5K+ FB, 3K+ YT, 200 miembros plataforma, S/ 10K-15K/mes</p>
+            </div>
+
+            <div class="roadmap-phase">
+                <div class="phase-header">
+                    <div class="phase-title" style="color: #a78bfa;">FASE 4: App Movil</div>
+                    <span class="phase-date">Enero - Junio 2027</span>
+                    <span class="tag tag-purple">DOMINAR MOBILE</span>
+                </div>
+                <div class="phase-tasks">
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Lanzar app movil iOS + Android</div>
+                    <div class="phase-task"><div class="task-check"></div> Push notifications: pregunta del dia, recordatorios</div>
+                    <div class="phase-task"><div class="task-check"></div> Flashcards con repeticion espaciada</div>
+                    <div class="phase-task"><div class="task-check"></div> Modo offline para zonas rurales</div>
+                    <div class="phase-task"><div class="task-check"></div> Lanzar curso de preparacion para Directivos</div>
+                    <div class="phase-task"><div class="task-check"></div> Explorar capacitaciones presenciales institucionales</div>
+                    <div class="phase-task"><div class="task-check"></div> Escalar membresia a 500+ miembros</div>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.8rem;">Meta: App en stores, 500+ miembros, S/ 25K-35K/mes</p>
+            </div>
+
+            <div class="roadmap-phase">
+                <div class="phase-header">
+                    <div class="phase-title" style="color: #22d3ee;">FASE 5: Escala B2B</div>
+                    <span class="phase-date">2do semestre 2027+</span>
+                    <span class="tag tag-cyan">STARTUP MODE</span>
+                </div>
+                <div class="phase-tasks">
+                    <div class="phase-task"><div class="task-check"></div> <strong>[Angel]</strong> Plataforma white-label para academias</div>
+                    <div class="phase-task"><div class="task-check"></div> Primeros clientes B2B (academias regionales)</div>
+                    <div class="phase-task"><div class="task-check"></div> Contratar equipo (asistente redes, soporte)</div>
+                    <div class="phase-task"><div class="task-check"></div> Explorar expansion a Colombia/Ecuador</div>
+                    <div class="phase-task"><div class="task-check"></div> Evaluar busqueda de inversion (si el modelo B2B valida)</div>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.8rem;">Meta: Primeros clientes B2B, expansion LATAM, S/ 50K+/mes</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACCION INMEDIATA -->
+<section class="section" id="accion">
+    <div class="urgency-banner">
+        <h3>EL MOMENTO ES AHORA</h3>
+        <p>Inscripciones Ascenso Docente 2026: <strong>16 de abril</strong>. Hay <strong>135,000 docentes</strong> buscando informacion. Cada dia que pasa son docentes comprando en la competencia.</p>
+    </div>
+
+    <div class="section-header">
+        <h2><span class="gradient-text-red">Accion Inmediata</span></h2>
+        <p>Lo que hay que hacer esta semana. No manana. HOY.</p>
+    </div>
+
+    <div class="action-grid">
+        <div class="action-card">
+            <div class="action-day">HOY</div>
+            <div class="action-date">14 de Abril</div>
+            <ul class="action-list">
+                <li>Crear pagina de Facebook "Aprende Maestro"</li>
+                <li>Crear grupo "Comunidad Aprende Maestro"</li>
+                <li>Post de bienvenida en el grupo</li>
+                <li>Configurar WhatsApp Business</li>
+                <li><strong>[Angel]</strong> Registrar dominio aprendemaestro.pe</li>
+            </ul>
+        </div>
+        <div class="action-card">
+            <div class="action-day">MANANA</div>
+            <div class="action-date">15 de Abril</div>
+            <ul class="action-list">
+                <li>Grabar video: "MANANA abren inscripciones Ascenso 2026"</li>
+                <li>Subir a YouTube, Facebook y TikTok</li>
+                <li>Compartir en grupos de docentes de Facebook</li>
+                <li>Crear cuenta TikTok "Aprende Maestro"</li>
+                <li><strong>[Angel]</strong> Setup inicial del bot de WhatsApp</li>
+            </ul>
+        </div>
+        <div class="action-card">
+            <div class="action-day">DIA DE INSCRIPCIONES</div>
+            <div class="action-date">16 de Abril</div>
+            <ul class="action-list">
+                <li>Video/post: "Paso a paso como inscribirte"</li>
+                <li>Invitar al grupo para preparacion gratuita</li>
+                <li>Crear simulacro gratis como regalo de bienvenida</li>
+                <li>Responder TODAS las preguntas en el grupo</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Inversion -->
+    <div style="margin-top: 3rem;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;">Inversion necesaria</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="card green">
+                <h3 style="color: #34d399;">Para empezar HOY: S/ 0</h3>
+                <ul>
+                    <li>Celular para grabar</li>
+                    <li>Canva gratuito para disenar</li>
+                    <li>OBS Studio + CapCut para video</li>
+                    <li>Google Forms para simulacros</li>
+                    <li>Redes sociales (gratis)</li>
+                    <li>WhatsApp Business (gratis)</li>
+                    <li>Hotmart (gratis, cobra por venta)</li>
+                </ul>
+            </div>
+            <div class="card gold">
+                <h3 style="color: #fbbf24;">Equipo basico: S/ 140</h3>
+                <ul>
+                    <li>Aro de luz: S/ 40</li>
+                    <li>Microfono de solapa: S/ 35</li>
+                    <li>Tripode celular: S/ 25</li>
+                    <li>Fondo neutro: S/ 40</li>
+                </ul>
+            </div>
+            <div class="card cyan">
+                <h3 style="color: #22d3ee;">Tech (Angel): S/ ~100/mes</h3>
+                <ul>
+                    <li>Dominio .pe: S/ 80/ano</li>
+                    <li>Vercel Pro: ~$20/mes</li>
+                    <li>WhatsApp API: ~$15/mes</li>
+                    <li>Claude API: ~$20-50/mes</li>
+                    <li>Supabase/DB: gratis tier</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p><strong>Aprende Maestro</strong> - Plan de Negocio Digital + Software | 14 de abril de 2026</p>
+    <p style="margin-top: 0.5rem;">Datos: MINEDU, INEI, Infobae, Gestion, El Comercio, El Peruano | Tech: Angel</p>
+</footer>
+
+<script>
+    new Chart(document.getElementById('chartConcursos'), {
+        type: 'bar',
+        data: {
+            labels: ['Nombramiento', 'Ascenso', 'Directivos', 'Reasignacion'],
+            datasets: [{
+                label: 'Postulantes (miles)',
+                data: [223, 135, 36, 60],
+                backgroundColor: ['rgba(37,99,235,0.7)','rgba(245,158,11,0.7)','rgba(139,92,246,0.7)','rgba(16,185,129,0.7)'],
+                borderColor: ['rgba(37,99,235,1)','rgba(245,158,11,1)','rgba(139,92,246,1)','rgba(16,185,129,1)'],
+                borderWidth: 1, borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y},000 postulantes` } } },
+            scales: { y: { beginAtZero: true, grid: { color: 'rgba(30,45,74,0.5)' }, ticks: { color: '#94a3c0', callback: v => v + 'K' } }, x: { grid: { display: false }, ticks: { color: '#94a3c0' } } }
+        }
+    });
+
+    new Chart(document.getElementById('chartMercado'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Nombramiento (223K)', 'Ascenso (135K)', 'Directivos (36K)', 'Reasignacion (60K)'],
+            datasets: [{ data: [223, 135, 36, 60], backgroundColor: ['rgba(37,99,235,0.8)','rgba(245,158,11,0.8)','rgba(139,92,246,0.8)','rgba(16,185,129,0.8)'], borderColor: 'rgba(5,10,24,1)', borderWidth: 3 }]
+        },
+        options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: '#94a3c0', padding: 15, font: { size: 12 } } } } }
+    });
+
+    document.querySelectorAll('.nav a').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    const navLinks = document.querySelectorAll('.nav a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        document.querySelectorAll('[id]').forEach(s => { if (scrollY >= s.offsetTop - 100) current = s.id; });
+        navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+    });
+</script>
+
+</body>
+</html>
